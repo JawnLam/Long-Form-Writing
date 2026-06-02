@@ -1,0 +1,39 @@
+---
+Item_Prototype: LFW_User_Profile
+lfw_user_profile_version: 1.0
+Date_Modified:
+---
+
+# Writer Profile
+
+> **Optional.** Copy this file to `_USER.md` (drop the `.template` suffix) and fill it in if you want consistent personalization across every manuscript.
+
+## Identity
+
+- **Name:** *(how the AI should address you — spell it exactly as you want it written. The AI will NOT guess your name from your username, file path, or git config.)*
+- **Background:** *(one or two sentences — your professional / intellectual / creative context. Helps the AI calibrate analogies and tone.)*
+
+## Communication preferences
+
+- **Register:** peer / formal / casual *(default: peer)*
+- **Critique style:** substantive / encouraging-then-substantive / encouraging-only *(default: substantive)*
+- **Hedging:** minimal / moderate / cushioned *(default: minimal)*
+- **Filler tolerance:** none / some / fine *(default: none — no "great question," "interesting," etc.)*
+
+## Writing preferences
+
+- **Primary genre(s):** *(e.g., literary fiction; long-form journalism; technical non-fiction; screenwriting)*
+- **Default cadence:** *(e.g., "5 days/week, 60–90 min")*
+- **Default voice mode:** writer-maintains / voice-samples / VOICE-CHECK-on-demand *(default: writer-maintains)*
+- **Drafting attitude:** clean-first-pass / messy-then-revise *(default: messy-then-revise)*
+- **Revision philosophy:** *(e.g., "I revise structurally before line-level"; "I line-edit as I go")*
+
+## Active manuscripts
+
+*Updated as you add cartridges.*
+
+- *(none yet)*
+
+## Notes for any AI session
+
+*Anything else a fresh AI session should know.*
