@@ -1,0 +1,47 @@
+# Mac filesystem metadata
+.DS_Store
+**/.DS_Store
+
+# Editor / IDE artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Obsidian workspace state
+.obsidian/workspace*
+.obsidian/cache
+.obsidian/graph.json
+
+# OS / network artifacts
+Thumbs.db
+.directory
+
+# ----------------------------------------------------------------------
+# Personal manuscript work — excluded by default so this folder can be
+# shared without leaking unfinished drafts. If you want your OWN
+# manuscripts in version control (recommended for any serious writing
+# project), edit this section to remove the cartridge-content exclusions
+# before your first commit on your own work.
+# ----------------------------------------------------------------------
+
+# State files (live record of where each manuscript stands)
+**/_state.md
+
+# Optional user profile
+_USER.md
+
+# Cartridge content — sessions, drafts, revision passes, voice samples
+**/Sessions/*.md
+!**/Sessions/.gitkeep
+
+**/Revision-Passes/*.md
+!**/Revision-Passes/.gitkeep
+
+**/_voice-samples.md
+
+# ----------------------------------------------------------------------
+# Always tracked (overrides above for the shipped worked example):
+# ----------------------------------------------------------------------
+!Example-Project-*/**
