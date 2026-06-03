@@ -3,6 +3,7 @@ type: writing-engine
 role: meta-ontology
 scope: subject-agnostic
 updated: 2026-06-03
+schema_version: 1.4.0
 ---
 
 # Schema of Schemas — LFW Meta-Ontology
@@ -30,7 +31,7 @@ These hold inside every cartridge regardless of genre:
 - `Sessions/` folder with append-only logs
 - `Revision-Passes/` folder with append-only logs
 - Session lifecycle (READ → DIAGNOSE → PROPOSE → WAIT → EXECUTE → CAPTURE → WRITE → UPDATE)
-- The twenty-three universal activities (10 production + 6 development non-fiction-weighted + 4 development fiction-weighted v1.2 + 3 development fiction-craft v1.3.1)
+- The twenty-five universal activities (10 production + 6 development non-fiction-weighted + 4 development fiction-weighted v1.2 + 3 development fiction-craft v1.3.1 + 2 soft-skill v1.4.0)
 - The four standard revision passes
 - Optional opt-in overlay files: `_overlay-{name}.md` (chapter 14 §2)
 - Source-of-truth: `_state.md` for current state; session logs for history
@@ -115,12 +116,25 @@ v1.3.1 additions:
 - Optional per-POV voice-sample backbones (`_voice-samples-{pov-slug}.md`; chapter 13 §2)
 - Validator extended: check 9 exempts sequel-typed Scenes; new check 10 (scene-type-legal); new advisory check 11 (pov-voice-register on established protagonists/antagonists)
 
-v1.3.2 additions (this version):
+v1.3.2 additions:
 - New atom types: **Timeline** (Layer 1 universal; multi-layer — story-time / world-history / real-world / character-specific; chapter 15 §2), **Inspiration** (Layer 1 universal; research-as-compost; distinct from Source's citation discipline; chapter 15 §5)
 - New backbone files: `_worldbuilding.md` (required for SFF / fantasy / speculative / alt-history / horror with non-natural elements; chapter 15 §1), `_storyboard.md` (optional; scene-card view; chapter 15 §3), `_style-sheet.md` (optional but recommended; lexicon as sub-section; chapter 15 §4), `_relationships.md` (optional; symmetric multi-character map; chapter 15 §6)
 - `_spine.md` template gains Stakes-ladder section (per-chapter tracking of stakes at personal / relational / societal / existential levels; chapter 15 §7)
 - No new activities. Artifacts feed existing activities (READ-THROUGH, CONTINUITY-CHECK, CHARACTER-CONSISTENCY, BETA-PREP, REVISE)
 - Validator extended: new check 12 (timeline-layer); STATUS_ENUM gains `timeline` and `inspiration`; BACKBONE_FILES gains `_worldbuilding`, `_storyboard`, `_style-sheet`, `_relationships`
+
+v1.4.0 additions (this version):
+- **No new atoms, no new backbones, no new templates.** The first release in the v1.x series that adds purely activity-level behavior without growing the schema
+- New engine chapter: **`16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`** — two soft-skill activities that fill the gaps the production / development / structural-artifact layers don't touch
+- Activity set expanded from 23 → 25:
+  - **WEATHER-CHECK** — names and triages the writer's affective state (dread / doubt / grief / despair / boredom / burnout / overwhelm); acknowledgment + diagnostic, NOT therapy or motivation; 5-minute activity with explicit escalation boundary for severe distress
+  - **MIDDLE-AUDIT** — seven-question structural audit at the midpoint of the manuscript; surfaces the failure modes specific to the middle-of-book death spiral (spine slip, want forgotten, subplot gravity, confrontation avoidance, reader-question starvation, why drift, flat stakes)
+- Decision-algorithm updates (chapter 03):
+  - Step 2 — affective-weather signals trigger WEATHER-CHECK; affective + structural signals together → WEATHER-CHECK first, structural second (chapter 16 §3)
+  - Step 6b''' — new step: 40% word-count threshold surfaces MIDDLE-AUDIT heads-up; 50% threshold proposes it explicitly
+- New failure modes F52–F60: motivation-as-substitute-for-diagnostic, weather-check-as-therapy-substitute, affective-state-misdiagnosed-as-stuck, middle-spine-slip, want-forgotten, subplot-gravity, confrontation-avoidance-systemic, reader-question-starvation, why-drift
+- Validator unchanged (no schema additions to validate)
+- The architectural posture of v1.4.0 is **honest scope-limitation**: two carefully-scoped activities filling two specific gaps, not another schema-growth pass
 
 ## Connection to OVE's meta-ontology
 

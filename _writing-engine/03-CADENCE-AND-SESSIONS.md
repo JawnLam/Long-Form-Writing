@@ -35,9 +35,9 @@ This shapes everything below.
 
 Steps 1, 6, 7, 8 are non-negotiable. Step 5 varies by activity.
 
-## The twenty-three universal session activities
+## The twenty-five universal session activities
 
-Ten **production** activities (this chapter) plus thirteen **development** activities (six non-fiction-weighted in chapter 10; four fiction-weighted from v1.2 in chapters 11 + 12; three fiction-weighted from v1.3.1 in chapters 13 + 14). Together they are the full session-activity set the AI can propose.
+Ten **production** activities (this chapter) plus thirteen **development** activities (six non-fiction-weighted in chapter 10; four fiction-weighted from v1.2 in chapters 11 + 12; three fiction-weighted from v1.3.1 in chapters 13 + 14) plus two **soft-skill** activities from v1.4.0 (chapter 16: WEATHER-CHECK, MIDDLE-AUDIT). Together they are the full session-activity set the AI can propose.
 
 ### Production activities
 
@@ -82,6 +82,13 @@ Ten **production** activities (this chapter) plus thirteen **development** activ
 | **POV-VOICE-DRIFT** | Audit prose voice across alternating-POV chapters against each POV's `lfw_pov_voice_register`; surface register-bleed | 2+ POV-bearing Character atoms with `lfw_pov_voice_register` populated; ≥3 chapters drafted in each; ≥8 sessions since last drift check |
 | **THEME-CHECK** | Audit Theme atoms against drafted prose; surface gaps in threading, on-the-nose treatment, motif/theme cross-references | ≥1 Theme atom is `developing` or `threaded`; ≥5 scenes drafted since last check; ≥10 sessions since last THEME-CHECK; before READ-THROUGH |
 
+### Soft-skill activities (defined in chapter 16; v1.4.0)
+
+| Code | Activity | Right default when |
+|------|----------|---------------------|
+| **WEATHER-CHECK** | Name and triage the writer's affective state (dread / doubt / grief / despair / boredom / burnout / overwhelm). Acknowledgment + diagnostic, NOT therapy or motivation. Distinct from STUCK-DIAGNOSTIC (technical) and from craft-as-procrastination (avoidance pattern). 5–15 minute activity. | Writer signals affective weather directly ("I dread / hate / am grieving / am doubting"); 2+ weeks without opening the manuscript; recurring affective comments across 3+ session logs the writer hasn't named; after a milestone (act break, midpoint, draft completion, beta feedback, rejection); after a ≥1,000-word cut; writer requests |
+| **MIDDLE-AUDIT** | Seven-question structural audit at the midpoint of the manuscript; surface the failure modes specific to the middle (spine slip, want forgotten, subplot gravity, confrontation avoidance, reader-question starvation, why-drift, flat stakes) | Word count crosses 50% of target; writer reports middle dragging; ≥5 consecutive sessions of slow forward momentum during the middle; cadence has slowed ≥50% during the middle; writer requests |
+
 ## Decision algorithm
 
 Evaluate in order. First condition that fires determines the default proposal.
@@ -91,10 +98,14 @@ Evaluate in order. First condition that fires determines the default proposal.
 - **If** the writer explicitly named the activity for this session → execute that
 - **If** the writer named a specific atom or section → propose the appropriate activity for that atom's state (DRAFT if no prose; REVISE if drafted; OUTLINE if no beats)
 
-### Step 2 — Stuck signal
+### Step 2 — Stuck signal AND affective-weather signal
 
 - **If** the writer says "stuck" or "blocked" → propose **STUCK-DIAGNOSTIC**
 - **If** the most recent atoms in `_state.md` show repeated revisions with no advancement → propose **STUCK-DIAGNOSTIC**
+- **If** the writer says "dread" / "grieving" / "hate this book" / "doubt" / "burned out" / "overwhelmed" / "don't know why I'm doing this" / "want to quit" → propose **WEATHER-CHECK** (v1.4.0; chapter 16)
+- **If** the writer has not opened the manuscript in ≥2 weeks without an explicit pre-stated hiatus → propose **WEATHER-CHECK**
+- **If** a structural signal *and* an affective signal both fire → propose **WEATHER-CHECK first** (5–15 min), then the structural activity (chapter 16 §3 — order matters; addressing affective state first protects the structural diagnostic from being received as confirmation of despair)
+- **Critical:** affective weather and technical stuck are NOT the same; misdiagnosing one as the other is F54 (chapter 16). The disambiguation is the writer's call after WEATHER-CHECK Step 1's question
 
 ### Step 3 — Re-entry signal
 
@@ -149,6 +160,17 @@ For fiction, screenplay, and play cartridges, evaluate these. Same triggering po
 - **If** ≥2 POV-bearing Character atoms exist with `lfw_pov_voice_register` populated AND ≥3 chapters drafted in each AND ≥8 sessions since last POV-VOICE-DRIFT → propose **POV-VOICE-DRIFT** *(v1.3.1)*
 - **If** the writer signals "the dialogue is flat" or "the POVs sound alike" → propose the corresponding craft activity (DIALOGUE-AUDIT or POV-VOICE-DRIFT) even outside cadence thresholds *(v1.3.1)*
 - **If** ≥1 Theme atom is `developing` or `threaded` AND ≥5 scenes drafted since last check AND ≥10 sessions since last THEME-CHECK → propose **THEME-CHECK** *(v1.3.1)*
+
+### Step 6b''' — Middle-of-manuscript heads-up and MIDDLE-AUDIT *(v1.4.0)*
+
+For any cartridge with `_state.md` word-count progress:
+
+- **If** word count crosses **40% of target** for the first time → surface heads-up: *"You're approaching the middle. Consider running MIDDLE-AUDIT in the next 2–3 sessions per chapter 16 §3."* Do not impose
+- **If** word count crosses **50% of target** for the first time → propose **MIDDLE-AUDIT** (writer can defer)
+- **If** word count is between 40%–70% AND ≥5 consecutive sessions have shown slow forward momentum OR cadence has slowed ≥50% from normal → propose **MIDDLE-AUDIT** (the structural diagnostic; pair with WEATHER-CHECK if affective signals also present)
+- **If** writer signals "the middle is dragging" / "I don't know why I'm writing this chapter" / "I've lost the thread" → propose **MIDDLE-AUDIT**
+
+For very-long-form cartridges (200,000+ word target), MIDDLE-AUDIT may run more than once — at ~30%, ~50%, ~70%. Default is once at ~50%.
 
 ### Step 6b'' — Sub-genre-tuned defaults *(v1.3.1)*
 
