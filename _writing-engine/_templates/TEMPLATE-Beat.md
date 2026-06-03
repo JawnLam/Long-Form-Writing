@@ -4,7 +4,7 @@ Item_ID: "<slug>"
 Title: "<Beat name>"
 lfw_manuscript: ""
 lfw_atom_type: beat
-lfw_status: planned    # planned | drafted | revised | final
+lfw_status: planned    # planned | drafting | drafted | revising | revised | final
 lfw_parent: ""         # wikilink to parent Scene or Section
 lfw_order_in_parent:
 lfw_characters_present: []   # for fiction/screenplay/play

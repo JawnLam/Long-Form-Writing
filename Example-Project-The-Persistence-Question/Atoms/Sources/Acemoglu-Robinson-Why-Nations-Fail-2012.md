@@ -14,7 +14,7 @@ lfw_url: ""
 lfw_status: ingested
 lfw_relevance: medium
 lfw_sections_citing:
-  - "[[02-Four-Conditions-Introduced]]"
+  - "[[01-02-Four-Conditions-Introduced]]"
 Date_Added: 2026-04-25
 Date_Modified: 2026-05-05
 Needs_Processing: false
@@ -45,7 +45,7 @@ The book engages Acemoglu-Robinson primarily to:
 
 ## How to integrate
 
-- Cited in [[02-Four-Conditions-Introduced]] alongside Tainter to position the book's framework against existing structural frameworks
+- Cited in [[01-02-Four-Conditions-Introduced]] alongside Tainter to position the book's framework against existing structural frameworks
 - Possibly cited in Chapter 6 for the engagement with extractive-but-persistent regimes
 - Less central than Tainter or Beard; medium relevance overall
 

@@ -1,14 +1,14 @@
 ---
-lfw_version: "1.0.0"
+lfw_version: "1.0.1"
 schema_version: "1.0"
 schema_status: "STABLE"
 release_date: 2026-06-02
-release_phase: "Initial public release"
+release_phase: "Patch release — structural fixes"
 ---
 
 # Long-Form-Writing — Version
 
-This is Long-Form-Writing **v1.0.0** — initial public release.
+This is Long-Form-Writing **v1.0.1** — patch release with structural fixes (see CHANGELOG). Engine + schema unchanged at v1.0; the worked-example cartridge, naming conventions, status enum, and templates were tightened, and a stdlib-only validator (`_writing-engine/_scripts/validate.py`) was added to enforce the invariants going forward.
 
 ## Version identifiers
 

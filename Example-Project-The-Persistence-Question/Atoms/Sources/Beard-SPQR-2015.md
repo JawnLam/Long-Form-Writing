@@ -13,8 +13,8 @@ lfw_url: ""
 lfw_status: ingested
 lfw_relevance: high
 lfw_sections_citing:
-  - "[[02-Four-Conditions-Introduced]]"
-  - "[[03-Methodology-Note]]"
+  - "[[01-02-Four-Conditions-Introduced]]"
+  - "[[01-03-Methodology-Note]]"
 Date_Added: 2026-04-25
 Date_Modified: 2026-05-20
 Needs_Processing: false
@@ -46,7 +46,7 @@ Beyond content, *SPQR* is a model for the book's voice and posture: confident, w
 
 ## How to integrate
 
-- Already cited in [[02-Four-Conditions-Introduced]] and [[03-Methodology-Note]]
+- Already cited in [[01-02-Four-Conditions-Introduced]] and [[01-03-Methodology-Note]]
 - Will be cited heavily in Chapter 6 sections discussing the Roman Republic as counter-example
 - Will be cited in Chapter 5's discussion of mixed-constitution thinking (alongside Polybius primary)
 - Possibly cited in the synthesis chapter (Chapter 7) for the methodological framing of "structural rather than personal" institutional analysis

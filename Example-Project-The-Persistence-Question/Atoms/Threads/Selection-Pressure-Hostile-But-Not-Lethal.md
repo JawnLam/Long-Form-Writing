@@ -7,8 +7,8 @@ lfw_atom_type: thread
 lfw_kind: argument
 lfw_status: active
 lfw_sections_engaged:
-  - "[[02-Four-Conditions-Introduced]]"
-  - "[[04-Treaty-Analyzed-Against-Conditions]]"
+  - "[[01-02-Four-Conditions-Introduced]]"
+  - "[[02-04-Treaty-Analyzed-Against-Conditions]]"
 Date_Added: 2026-04-22
 Date_Modified: 2026-05-31
 Needs_Processing: false
@@ -28,8 +28,8 @@ The thread carries a counter-intuitive moral: *insulating* an institution from c
 
 ## Where it appears
 
-- [[02-Four-Conditions-Introduced]] — definitional
-- [[04-Treaty-Analyzed-Against-Conditions]] — detailed Antarctic example
+- [[01-02-Four-Conditions-Introduced]] — definitional
+- [[02-04-Treaty-Analyzed-Against-Conditions]] — detailed Antarctic example
 - *(Chapter 3 — planned)* — Hoshi Ryokan as multi-century survivor of: earthquakes, fires, the Meiji Restoration's economic dislocation, two world wars, post-war demilitarization, the 2011 Tōhoku disaster
 - *(Chapter 4 — planned)* — Benedictine order's survivals: Viking raids, Reformation in some regions, French Revolution, Counter-Reformation reforms, two world wars
 - *(Chapter 5 — planned)* — US Constitution's stressors: Civil War, Reconstruction, FDR's court-packing crisis, civil-rights era, post-Watergate, etc.
@@ -40,7 +40,7 @@ The thread carries a counter-intuitive moral: *insulating* an institution from c
 
 - [[Nassim-Taleb-Antifragile-2012]] — the canonical articulation of "things that gain from disorder." Strong support, with careful framing — the book's framework is narrower than Taleb's; "antifragile" claims more.
 - [[Andrew-Lo-Adaptive-Markets-2017]] — adaptive-evolution framing applied to financial institutions; selection-pressure analog.
-- [[Tainter-Collapse-of-Complex-Societies-1988]] — the negative case: how complex societies fail when stressors exceed their adaptive capacity.
+- [[Tainter-Collapse-1988]] — the negative case: how complex societies fail when stressors exceed their adaptive capacity.
 
 ## Sources that complicate or contradict it
 

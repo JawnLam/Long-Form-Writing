@@ -7,9 +7,9 @@ lfw_atom_type: thread
 lfw_kind: argument
 lfw_status: active
 lfw_sections_engaged:
-  - "[[02-Four-Conditions-Introduced]]"
-  - "[[03-The-Treaty-Today]]"
-  - "[[01-Hoshi-Opening]]"
+  - "[[01-02-Four-Conditions-Introduced]]"
+  - "[[02-03-The-Treaty-Today]]"
+  - "[[03-01-Hoshi-Opening]]"
 Date_Added: 2026-04-22
 Date_Modified: 2026-06-02
 Needs_Processing: false
@@ -29,9 +29,9 @@ The thread is about the sweet spot between rigidity and chaos.
 
 ## Where it appears
 
-- [[02-Four-Conditions-Introduced]] — defined briefly
-- [[03-The-Treaty-Today]] — the Consultative Meetings as paradigmatic example
-- [[01-Hoshi-Opening]] — the seasonal kaiseki menus and rotating scroll as adaptive-ritual artifacts
+- [[01-02-Four-Conditions-Introduced]] — defined briefly
+- [[02-03-The-Treaty-Today]] — the Consultative Meetings as paradigmatic example
+- [[03-01-Hoshi-Opening]] — the seasonal kaiseki menus and rotating scroll as adaptive-ritual artifacts
 - *(Chapter 4 Benedictine sections — planned)* — the Liturgy of the Hours; daily office; the Rule's commentary tradition
 - *(Chapter 5 US Constitution sections — planned)* — amendment, judicial interpretation, customary practice as adaptive-ritual mechanisms
 - *(Chapter 7 integration — planned)* — the thread is essential to how the four conditions interact

@@ -31,10 +31,10 @@ Key argumentative work:
 
 ## Composition
 
-1. [[01-Antarctic-Opening-Scene]]
-2. [[02-1959-Treaty-Conditions]]
-3. [[03-The-Treaty-Today]]
-4. [[04-Treaty-Analyzed-Against-Conditions]]
+1. [[02-01-Antarctic-Opening-Scene]]
+2. [[02-02-1959-Treaty-Conditions]]
+3. [[02-03-The-Treaty-Today]]
+4. [[02-04-Treaty-Analyzed-Against-Conditions]]
 
 ## Open Notes
 

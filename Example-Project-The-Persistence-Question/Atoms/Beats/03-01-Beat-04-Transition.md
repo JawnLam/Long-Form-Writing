@@ -5,7 +5,7 @@ Title: "Beat 4: Transition — Setting Up the Statistical Question"
 lfw_manuscript: "the-persistence-question"
 lfw_atom_type: beat
 lfw_status: planned
-lfw_parent: "[[01-Hoshi-Opening]]"
+lfw_parent: "[[03-01-Hoshi-Opening]]"
 lfw_order_in_parent: 4
 lfw_characters_present: []
 lfw_threads_engaged: []

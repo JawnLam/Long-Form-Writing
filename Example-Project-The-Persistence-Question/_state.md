@@ -70,16 +70,16 @@ Beats needed for Section 3.1:
 
 | Section | Status | Word count | Last touched |
 |---------|--------|------------|--------------|
-| [[01-The-Question]] (Ch 1) | drafted | 1,400 | 2026-05-26 |
-| [[02-Four-Conditions-Introduced]] (Ch 1) | drafted | 2,800 | 2026-05-27 |
-| [[03-Methodology-Note]] (Ch 1) | drafted | 2,000 | 2026-05-28 |
-| [[01-Antarctic-Opening-Scene]] (Ch 2) | drafted | 1,200 | 2026-05-29 |
-| [[02-1959-Treaty-Conditions]] (Ch 2) | drafted | 2,500 | 2026-05-30 |
-| [[03-The-Treaty-Today]] (Ch 2) | drafted | 3,800 | 2026-05-31 |
-| [[04-Treaty-Analyzed-Against-Conditions]] (Ch 2) | drafting | 3,300 | 2026-05-31 |
-| [[01-Hoshi-Opening]] (Ch 3) | drafting | 1,750 | 2026-06-02 |
-| [[02-Family-Business-Statistics]] (Ch 3) | planned | 0 | — |
-| [[03-Four-Conditions-As-Applied-To-Families]] (Ch 3) | planned | 0 | — |
+| [[01-01-The-Question]] (Ch 1) | drafted | 1,400 | 2026-05-26 |
+| [[01-02-Four-Conditions-Introduced]] (Ch 1) | drafted | 2,800 | 2026-05-27 |
+| [[01-03-Methodology-Note]] (Ch 1) | drafted | 2,000 | 2026-05-28 |
+| [[02-01-Antarctic-Opening-Scene]] (Ch 2) | drafted | 1,200 | 2026-05-29 |
+| [[02-02-1959-Treaty-Conditions]] (Ch 2) | drafted | 2,500 | 2026-05-30 |
+| [[02-03-The-Treaty-Today]] (Ch 2) | drafted | 3,800 | 2026-05-31 |
+| [[02-04-Treaty-Analyzed-Against-Conditions]] (Ch 2) | drafting | 3,300 | 2026-05-31 |
+| [[03-01-Hoshi-Opening]] (Ch 3) | drafting | 1,750 | 2026-06-02 |
+| [[03-02-Family-Business-Statistics]] (Ch 3) | planned | 0 | — |
+| [[03-03-Four-Conditions-As-Applied-To-Families]] (Ch 3) | planned | 0 | — |
 
 ### Threads (4 active)
 
@@ -99,9 +99,9 @@ Beats needed for Section 3.1:
 12 ingested sources. See `Atoms/Sources/` for full list. Most-cited:
 
 - [[Beard-SPQR-2015]] — for Roman case
-- [[Tainter-Collapse-1988]] — counter-image of the argument
+- [[Tainter-Collapse-1988]] — counter-image of the argument + methodological grounding
 - [[Acemoglu-Robinson-Why-Nations-Fail-2012]] — institutional framework
-- [[Joseph-Tainter-Complex-Societies-various]] — methodological grounding
+- [[Hoshi-Ryokan-Records]] — Chapter 3 primary-source corpus
 
 ### Notes (recent)
 

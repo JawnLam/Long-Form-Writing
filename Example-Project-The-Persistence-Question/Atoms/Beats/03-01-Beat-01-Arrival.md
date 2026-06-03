@@ -5,7 +5,7 @@ Title: "Beat 1: Arrival at the Ryokan"
 lfw_manuscript: "the-persistence-question"
 lfw_atom_type: beat
 lfw_status: drafted
-lfw_parent: "[[01-Hoshi-Opening]]"
+lfw_parent: "[[03-01-Hoshi-Opening]]"
 lfw_order_in_parent: 1
 lfw_characters_present: []
 lfw_threads_engaged: []
@@ -26,7 +26,7 @@ The beat should land present-tense — the inn is *there*, not *was there*. Voic
 
 ## Content
 
-*The first three paragraphs of Section 3.1 (see [[01-Hoshi-Opening]] for the drafted prose).*
+*The first three paragraphs of Section 3.1 (see [[03-01-Hoshi-Opening]] for the drafted prose).*
 
 The arrival scene: the road through Komatsu, the modern provincial buildings on either side, the bend in the road, the wooden inn with its tiled roof, the bridge over the stream, the pine tree, the wooden sign with the Hoshi characters.
 

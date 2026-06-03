@@ -5,7 +5,7 @@ Title: "Beat 2: Time Marker — 718 AD"
 lfw_manuscript: "the-persistence-question"
 lfw_atom_type: beat
 lfw_status: drafted
-lfw_parent: "[[01-Hoshi-Opening]]"
+lfw_parent: "[[03-01-Hoshi-Opening]]"
 lfw_order_in_parent: 2
 lfw_characters_present: []
 lfw_threads_engaged:
@@ -27,7 +27,7 @@ The beat should feel quiet. The weight of "1,300 years" should land through impl
 
 ## Content
 
-*Paragraphs 4 and 5 of Section 3.1 (see [[01-Hoshi-Opening]] for the drafted prose).*
+*Paragraphs 4 and 5 of Section 3.1 (see [[03-01-Hoshi-Opening]] for the drafted prose).*
 
 Anchors:
 
