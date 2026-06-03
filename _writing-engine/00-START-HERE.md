@@ -44,20 +44,25 @@ Execute in order. Do not skip. Do not reorder.
 1. **This file**
 2. **`01-WHAT-IS-LFW.md`** — definition and scope
 3. **`02-GENRE-AND-SCHEMA.md`** — how the schema branches per cartridge genre
-4. **`03-CADENCE-AND-SESSIONS.md`** — the activity decision algorithm and ten universal activities
+4. **`03-CADENCE-AND-SESSIONS.md`** — the activity decision algorithm and sixteen universal activities
 5. **`05-VOICE-AND-CRAFT.md`** — read on every session; voice handling is load-bearing
-6. **`_meta/FAILURE-MODES.md`** — read on every session; the catalog you guard against
-7. **`_USER.md`** at the LFW root, if present
-8. **`<Cartridge>/_manuscript-manifest.md`** — what this manuscript is
-9. **`<Cartridge>/_state.md`** — current lifecycle stage, today's focus, atom status
-10. **`<Cartridge>/_outline.md`** — structural plan
-11. **`<Cartridge>/_voice-samples.md`** if present and the manuscript has voice-mode enabled
-12. **Most recent 1–2 files in `<Cartridge>/Sessions/`** — what was promised last
-13. **Atoms flagged as today's focus or open-thread** — read in full before engaging
+6. **`09-WRITER-DEVELOPMENT.md`** — read on every session; the craft-profile + craft-log discipline that turns instance feedback into pattern-level coaching
+7. **`_meta/FAILURE-MODES.md`** — read on every session; the catalog you guard against
+8. **`{ROOT}/_craft-profile.md`** at the LFW root, if present — the cross-cartridge writer-skill memory; load-bearing if it exists
+9. **`{ROOT}/_USER.md`** at the LFW root, if present
+10. **`<Cartridge>/_manuscript-manifest.md`** — what this manuscript is; includes scaffolding mode
+11. **`<Cartridge>/_state.md`** — current lifecycle stage, today's focus, atom status
+12. **`<Cartridge>/_outline.md`** — structural plan
+13. **`<Cartridge>/_argument.md`** — argument backbone, if present (required for non-fiction/dissertation)
+14. **`<Cartridge>/_craft-log.md`** — per-cartridge craft observations, if present
+15. **`<Cartridge>/_voice-samples.md`** if present and the manuscript has voice-mode enabled
+16. **All Reader atoms in `<Cartridge>/Atoms/Readers/`** — for READER-SIMULATION readiness; usually short
+17. **Most recent 1–2 files in `<Cartridge>/Sessions/`** — what was promised last
+18. **Atoms flagged as today's focus or open-thread** — read in full before engaging
 
 After reading, greet briefly, summarize position in one or two sentences, and propose a session activity per `03-CADENCE-AND-SESSIONS.md`.
 
-The other chapters (`04-ATOMS-AND-STRUCTURE.md`, `06-RESEARCH-INTEGRATION.md`, `07-REVISION-DISCIPLINE.md`, `08-FINISHING.md`) are read on demand based on the activity proposed.
+The other chapters (`04-ATOMS-AND-STRUCTURE.md`, `06-RESEARCH-INTEGRATION.md`, `07-REVISION-DISCIPLINE.md`, `08-FINISHING.md`, `10-READER-AND-ARGUMENT.md`) are read on demand based on the activity proposed. Chapter 10 in particular is required before any READER-SIMULATION, ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, SYNTHESIS-CHECK, or CRAFT-REVIEW activity.
 
 ## Core principles (apply across every session)
 

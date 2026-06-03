@@ -81,7 +81,33 @@ How often will they work on this? How long is a typical session? This shapes the
 
 Chicago / MLA / APA / Harvard / custom?
 
-### CQ11 — Anything else load-bearing the AI should know?
+### CQ11 — Reader modeling (non-fiction emphasis)
+
+Who's the manuscript actually for? Get specific — name two or three reader archetypes the writer wants to satisfy. For non-fiction, the standard set is The Skeptic, The Impatient Generalist, The Domain Expert; the writer can adopt these, modify them, or define their own. These will become Reader atoms in the cartridge (see chapter 10) and the AI will use them in READER-SIMULATION activities.
+
+For fiction / screenplay / play, Reader atoms are optional but useful. For dissertation, Readers are usually the committee + future researchers in the field.
+
+### CQ12 — Argument articulation (non-fiction / dissertation only)
+
+What's the manuscript's thesis as a falsifiable claim? Not "this book is about X" — the actual sentence the writer is willing to defend, with the falsification condition. The writer's first articulation is fine even if it changes later; the point is to have an `_argument.md` to pressure-test.
+
+For fiction without thematic argument, skip. For memoir / narrative non-fiction, ask (most have an implicit argument worth articulating).
+
+### CQ13 — Scaffolding mode
+
+The default is `full` — AI proposes structure, argument, beats. The writer accepts or overrides. Standard LFW posture.
+
+Alternative: `gradual-fade`. Scaffolding intensity decreases across the lifetime of the cartridge on session-count thresholds (see chapter 09). Recommended for writers who want to develop independent structural intuition over the project's life.
+
+Alternative: `socratic`. From session one, the AI withholds proposals and only critiques what the writer generates. Recommended for experienced writers who want pressure-testing rather than scaffolding.
+
+Confirm or modify.
+
+### CQ14 — Craft-profile awareness
+
+Does the writer already have a `_craft-profile.md` at the OV root (from prior cartridges)? If yes, the AI reads it and the new cartridge benefits from accumulated craft observations. If no, propose creating one after the first few sessions in this cartridge (~session 5–8). No pressure; opt-in.
+
+### CQ15 — Anything else load-bearing the AI should know?
 
 Communication preferences, particular sensitivities, prior bad experiences with AI writing assistance, anything that should shape the engagement from the start.
 

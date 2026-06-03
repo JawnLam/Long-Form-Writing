@@ -14,6 +14,11 @@ lfw_citation_style: chicago-notes-bibliography
 lfw_writer_name: "<USER_NAME placeholder — this is a worked example, not a real attributed work>"
 lfw_bootstrapped: 2026-06-02
 lfw_custom_atoms: []
+lfw_scaffolding_mode: gradual-fade
+lfw_scaffolding_thresholds:
+  full_through_session: 10
+  partial_fade_through_session: 30
+  major_fade_through_session: 60
 ---
 
 # The Persistence Question — Manuscript Manifest
@@ -100,4 +105,18 @@ The writer is in `voice-samples` mode. Voice samples are in `_voice-samples.md`.
 
 - The writer values the AI as a structural and research partner, not a co-author. Voice samples are calibration, not invitation to draft prose unattended.
 - When the writer asks "draft this section," the expected output is structural scaffold + key beats + suggested passages the writer will revise heavily — not finished prose.
-- For controversial cases (long-lived authoritarian regimes especially), the AI should surface counter-evidence and the strongest version of the counter-argument in the relevant Thread atom.
+- For controversial cases (long-lived authoritarian regimes especially), the AI should surface counter-evidence and the strongest version of the counter-argument in the relevant Thread atom or in `_argument.md`'s `## Defeaters` section.
+
+## Development-layer files in this cartridge
+
+This cartridge uses the v1.1 development-layer artifacts:
+
+- **`_argument.md`** — the manuscript's argument backbone (thesis, sub-claims, evidence map, defeaters, honest unknown). Pressure-tested during ARGUMENT-AUDIT sessions. Currently at v2.
+- **`_craft-log.md`** — per-cartridge writer-pattern record. Updated during sessions when patterns are observed; reviewed during CRAFT-REVIEW.
+- **Reader atoms** — three primary Readers: [[Skeptic]], [[Impatient-Generalist]], [[Domain-Expert]]. Used in READER-SIMULATION activities.
+
+The OV-root `_craft-profile.md` is not yet created (this is the writer's first cartridge). Proposed creation point: end of Chapter 3 first-draft, when there will be enough material to start populating it.
+
+## Scaffolding mode
+
+`gradual-fade` (set above). Standard thresholds. Through session 10 the AI proposes structure freely; sessions 11–30 the AI asks the writer to draft outlines and arguments first then critiques; sessions 31+ the writer leads on structure and the AI is reader-coach-critic. See chapter 09 of the writing engine for the rationale.
