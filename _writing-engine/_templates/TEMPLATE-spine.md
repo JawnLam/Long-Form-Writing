@@ -48,6 +48,25 @@ lfw_spine_version: 1
 - **Mid-act crisis:** [[Scene-filename]] — what value-shift; what stakes
 - **Climax:** [[Scene-filename]] — what value-shift; what dramatic-question answer
 
+## Stakes ladder *(v1.3.2)*
+
+*Explicit per-chapter tracking of stakes at four levels. Stakes can operate at multiple levels simultaneously; rising-stakes means the level escalates across the manuscript. F51 (flat stakes) is what this section surfaces. See chapter 15 §7 for the discipline.*
+
+| Chapter | Personal | Relational | Societal | Existential | Notes |
+|---------|----------|------------|----------|-------------|-------|
+| 1 | | | | | |
+| 2 | | | | | |
+| 3 | | | | | |
+
+**Stakes-level taxonomy:**
+
+- **Personal** — what the protagonist privately stands to gain or lose; emotional, internal, intimate
+- **Relational** — what the protagonist's key relationships stand to gain or lose
+- **Societal** — what the broader world (community, institution, society) stands to gain or lose
+- **Existential** — what the protagonist's fundamental identity, soul, or being stands to gain or lose
+
+**Inverted-pyramid check:** If existential stakes appear by Chapter 3, the rest of the manuscript has nowhere left to escalate. Surface this if it's accidental; honor it if it's deliberate (some literary fiction front-loads existential framing and varies tone-pressure within it).
+
 ## Escalation map
 
 *Optional: list pressure level per scene (low / medium / high / peak) to surface flat stretches.*

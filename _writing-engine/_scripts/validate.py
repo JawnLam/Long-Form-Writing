@@ -48,6 +48,9 @@ Checks performed (each emits one line per failure):
  11. pov-voice-register   : advisory warning when an established protagonist /
                             antagonist Character omits lfw_pov_voice_register
                             (v1.3.1 — chapter 13 POV-voice differentiation).
+ 12. timeline-layer       : Timeline atom must declare lfw_timeline_layer in
+                            the legal set; character-specific layer must also
+                            declare lfw_character (v1.3.2 — chapter 15 §2).
 
 The script is intentionally simple and forgiving: it parses YAML frontmatter
 without a YAML library (regex + line-walk), so unusual frontmatter shapes
@@ -77,11 +80,16 @@ STATUS_ENUM = {
     "reader":          {"developing", "active", "retired"},
     "motif":           {"latent", "emerging", "woven", "resolved"},        # v1.2 addition
     "theme":           {"candidate", "developing", "threaded", "resolved"},  # v1.3.1 addition
+    "timeline":        {"drafting", "established", "revised", "final"},    # v1.3.2 addition
+    "inspiration":     {"noted", "absorbed", "folded-in", "retired"},      # v1.3.2 addition
     "thread":          {"emerging", "active", "concluded"},
     "source":          {"identified", "ingested", "folded-in", "superseded"},
     "setting":         {"sketched", "defined", "final"},
     "note":            {"unplaced", "placed", "discarded"},
 }
+
+# v1.3.2: legal lfw_timeline_layer values
+TIMELINE_LAYER_ENUM = {"story-time", "world-history", "real-world", "character-specific"}
 
 # v1.3.1: legal lfw_scene_type values
 SCENE_TYPE_ENUM = {"scene", "sequel", "scene-sequel"}
@@ -100,6 +108,8 @@ BACKBONE_FILES = {
     "_state", "_outline", "_voice-samples", "_manuscript-manifest",
     "_argument", "_craft-log",                       # v1.1 additions
     "_spine", "_continuity", "_promises",            # v1.2 fiction backbones
+    "_worldbuilding", "_storyboard",                 # v1.3.2 structural backbones
+    "_style-sheet", "_relationships",                # v1.3.2 structural backbones
 }
 
 # ---- Helpers -----------------------------------------------------------------
@@ -276,6 +286,18 @@ def check_cartridge(cartridge: pathlib.Path) -> list:
                 ):
                     # field absent entirely — flag soft warning
                     issues.append(("pov-voice-register-advisory", f"{rel}: established {role} Character should declare lfw_pov_voice_register (chapter 13)"))
+
+        # Check 12 (v1.3.2): Timeline layer must be legal
+        if atom_type == "timeline":
+            layer = fm.get("lfw_timeline_layer", "").strip()
+            if not layer:
+                issues.append(("timeline-layer", f"{rel}: timeline atom requires lfw_timeline_layer (story-time | world-history | real-world | character-specific)"))
+            elif layer not in TIMELINE_LAYER_ENUM:
+                issues.append(("timeline-layer", f"{rel}: lfw_timeline_layer='{layer}' not in legal set (expected: {', '.join(sorted(TIMELINE_LAYER_ENUM))})"))
+            # character-specific timelines should declare a Character
+            if layer == "character-specific":
+                if not fm.get("lfw_character", "").strip():
+                    issues.append(("timeline-layer", f"{rel}: character-specific Timeline should declare lfw_character (wikilink to Character atom)"))
 
     # Check 8: uniqueness
     for iid, paths in item_ids.items():

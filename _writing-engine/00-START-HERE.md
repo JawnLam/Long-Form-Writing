@@ -66,13 +66,14 @@ Execute in order. Do not skip. Do not reorder.
 
 After reading, greet briefly, summarize position in one or two sentences, and propose a session activity per `03-CADENCE-AND-SESSIONS.md`.
 
-The other chapters (`04-ATOMS-AND-STRUCTURE.md`, `06-RESEARCH-INTEGRATION.md`, `07-REVISION-DISCIPLINE.md`, `08-FINISHING.md`, `10-READER-AND-ARGUMENT.md`, `11-FICTION-PLOT-SPINE.md`, `12-FICTION-CHARACTER-AND-CONTINUITY.md`, `13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`) are read on demand based on the activity proposed.
+The other chapters (`04-ATOMS-AND-STRUCTURE.md`, `06-RESEARCH-INTEGRATION.md`, `07-REVISION-DISCIPLINE.md`, `08-FINISHING.md`, `10-READER-AND-ARGUMENT.md`, `11-FICTION-PLOT-SPINE.md`, `12-FICTION-CHARACTER-AND-CONTINUITY.md`, `13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `15-FICTION-PROJECT-ARTIFACTS.md`) are read on demand based on the activity proposed.
 
 - Chapter 10 is required before any READER-SIMULATION, ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, SYNTHESIS-CHECK, or CRAFT-REVIEW activity.
 - Chapter 11 is required before any SCENE-AUDIT or SETUP-PAYOFF-AUDIT activity.
 - Chapter 12 is required before any CHARACTER-CONSISTENCY or CONTINUITY-CHECK activity, or when running READER-SIMULATION on a fiction cartridge (the fiction-specific reframe is in 12 §6).
 - Chapter 13 is required before any DIALOGUE-AUDIT or POV-VOICE-DRIFT activity *(v1.3.1)*.
 - Chapter 14 is required before any THEME-CHECK activity, when working with Character-Bible atoms, when importing a beat-sheet overlay, or when consulting sub-genre-specific cues *(v1.3.1)*.
+- Chapter 15 is required when working with Timeline or Inspiration atoms, with the v1.3.2 backbone files (`_worldbuilding.md`, `_storyboard.md`, `_style-sheet.md`, `_relationships.md`), or with the Stakes-ladder section in `_spine.md` *(v1.3.2)*.
 
 ## Core principles (apply across every session)
 

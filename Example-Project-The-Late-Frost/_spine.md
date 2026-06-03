@@ -60,6 +60,37 @@ The value-shift discipline must escalate stakes across the book, not run flat.
 - **Chapter 8–10 (Act Two crisis):** *Existential* stakes for the relationship (the buyer makes the option of escape real; the fight about the father makes the past unavoidable).
 - **Chapter 11–14 (Act Three):** *Resolution at the level of who-each-sister-now-is* (the frost ends; the financial decision lands; the relationship reorganizes into the form that survives the truth).
 
+## Stakes ladder *(v1.3.2)*
+
+Explicit per-chapter tracking of the four stakes-levels. The escalation curve above gives the abstracted shape; the ladder gives the per-chapter texture.
+
+| Chapter | Personal | Relational | Societal | Existential | Notes |
+|---------|----------|------------|----------|-------------|-------|
+| 1 | Maya's unease; her competent-management self-account is being tested by the house | the sisters' careful distance | — | — | Personal + Relational only; right opening level for literary |
+| 2 | Sarah's secret-keeping cost is escalating internally | the unspoken conversation at dinner | — | — | Personal interior + Relational rising; no broader stakes yet |
+| 3 | the work; the frost; physical labor's interior weight | shared labor opens a bond | the vineyard's economic survival | — | Societal layer begins (the vineyard as a working entity) |
+| 4 | Sarah's window for telling is closing | the asymmetry is about to become visible | the financial reality | — | Societal compounds; Personal interior intensifies for Sarah |
+| 5 | Maya knows Sarah knew | the trust is now contingent | the financial reality | — | Relational at peak intensity; first major value-shift in the novel |
+| 6 | Sarah's defense lands and doesn't | confrontation continues | — | the question of whether the relationship can survive | First existential touch — the *relationship's* existence at stake |
+| 7 | both sisters working alongside the unspoken | sisters work together under new condition | the vineyard's second frost | — | Relational stays high; Societal returns; Existential briefly recedes |
+| 8 | Sarah considers the buyer's offer | the sisters now sharing a decision | the vineyard as marketable property | — | Societal at peak |
+| 9 | Maya at the worst cold night | the question of whether to sell becomes pressing | the vineyard's survival is up | — | Three levels operating simultaneously |
+| 10 | the fight; Maya cries while continuing to argue | the relationship at its lowest point | — | each sister's identity is at stake in what they say | Existential at peak; **the Act Two crisis** |
+| 11 | the frost passes; harvest fate is known | the sisters have to decide together | the vineyard's harvest is settled | each sister's identity continues to be at stake | All four levels operating |
+| 12 | both sisters facing the buyer's offer | the decision-as-shared | the vineyard's future | the question of who each sister now is | All four levels |
+| 13 | one sister speaks the morning thing | the relationship's actual ground is exposed | (recedes) | the central question is answered | **CLIMAX** — Existential at peak, declaration-level |
+| 14 | the morning after | the new relationship-form | (recedes) | each sister's identity has reformed | The dénouement; Existential settles |
+
+### Inverted-pyramid check
+
+Existential stakes don't enter until Chapter 6 (the relationship's existence) and the per-character identity-level doesn't engage until Chapter 10. The structure leaves room for escalation through the climax in Chapter 13. **No inverted-pyramid risk.**
+
+### Flat-stakes check
+
+The ladder above does not run flat at any level for any sustained stretch. Each chapter's row differs from the prior chapter's row by at least one cell. **No flat-stakes flag.**
+
+The literary-subgenre tuning (per [[_manuscript-manifest]]'s `lfw_fiction_subgenre: literary`) accepts that *Societal* stakes are intermittent and *Existential* stakes are reserved for the back half. This is correct for the genre.
+
 ## Mid-act crisis and climax markers
 
 - **Chapter 7 (Act Two middle):** The morning-after-the-confrontation is the structural pivot — the sisters work together under the new condition (the secret is now shared and contested). If this scene fails, the rest of Act Two has no foundation.

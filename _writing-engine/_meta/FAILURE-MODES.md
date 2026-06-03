@@ -3,6 +3,7 @@ type: writing-engine
 role: failure-catalog
 scope: subject-agnostic
 updated: 2026-06-03
+schema_version: 1.3.2
 ---
 
 # Failure Modes — Canonical Catalog
@@ -418,6 +419,76 @@ updated: 2026-06-03
 **Fix:** Update the manifest. Re-tag the sub-genre. Reset cadence thresholds.
 
 **Prevention:** BOOTSTRAP asks for the sub-genre with examples; the writer revisits the field at the first CRAFT-REVIEW.
+
+## F45 — Worldbuilding as procrastination *(v1.3.2 — fiction)*
+
+**Trigger:** SFF / fantasy / speculative cartridge. The writer expands `_worldbuilding.md` indefinitely as avoidance of drafting. The world grows; the manuscript doesn't.
+
+**Why it matters:** Worlds serve stories. A perfectly built world without a written novel is the same anti-pattern as research-as-procrastination (F11), craft-work-as-procrastination (F18), and character-bible-as-procrastination (F43).
+
+**Fix:** Suspend worldbuilding sessions; draft for several sessions; return to worldbuilding only to fill gaps the prose surfaces.
+
+**Prevention:** Same diagnostic posture as F11 / F18 / F43. The AI asks the avoidance-vs-need question when worldbuilding sessions dominate.
+
+## F46 — Timeline layers conflated *(v1.3.2 — fiction)*
+
+**Trigger:** Story-time, world-history, and character-specific events tracked in a single timeline document; layers contaminate; events drift to wrong layer; reconciliation becomes impossible.
+
+**Why it matters:** The whole point of multi-layer Timeline atoms is layer-isolation so each layer can be the source-of-truth for its scope. Conflation collapses the structural advantage.
+
+**Fix:** Split the conflated timeline into per-layer Timeline atoms. Reconcile in `_continuity.md`.
+
+**Prevention:** Validator check 12 requires `lfw_timeline_layer` to be declared; chapter 15 §2 documents the layer discipline.
+
+## F47 — Storyboard stale *(v1.3.2 — fiction)*
+
+**Trigger:** Storyboard not updated after scene revisions; produces false picture; worse than no storyboard.
+
+**Why it matters:** A stale storyboard misleads the writer about the manuscript's shape. Decisions made on stale data are decisions made on lies.
+
+**Fix:** Update the storyboard from current Scene atoms. Mark stale state explicitly (date the file).
+
+**Prevention:** Update the storyboard at session-end whenever a Scene atom was created or substantially revised. Do not let staleness exceed two sessions.
+
+## F48 — Style-sheet drift *(v1.3.2 — fiction)*
+
+**Trigger:** Spelling, capitalization, italics, punctuation conventions drift across chapters. The style sheet declares one convention; the prose uses another.
+
+**Why it matters:** Drift reads as inattention. Editors and agents notice within the first chapter. Readers feel it before they can name it.
+
+**Fix:** Pick a convention. State it once in `_style-sheet.md`. Honor it. Catch drift during line-edit REVISE pass and BETA-PREP.
+
+**Prevention:** `_style-sheet.md` consulted at BETA-PREP and at line-edit REVISE; documented choices once eliminate re-derivation drift.
+
+## F49 — Inspiration becomes citation *(v1.3.2 — fiction)*
+
+**Trigger:** Writer treats Inspiration atoms with Source-discipline rigor (full citations, quote-tracking, fold-in protocol); OR treats Source atoms with Inspiration-compost looseness (no citation, no fact-check).
+
+**Why it matters:** Each discipline is wrong-shaped for the other artifact. Source's discipline guards against non-fiction fabrication (F2); Inspiration's looseness allows fiction's research to remain compost. Confusing them either bloats the fiction process with non-fiction overhead or strips the non-fiction process of its anti-fabrication discipline.
+
+**Fix:** Re-classify atoms per their actual function — to-be-cited (Source) vs to-be-absorbed (Inspiration).
+
+**Prevention:** Chapter 15 §5's Source-vs-Inspiration distinction; BOOTSTRAP guidance on which to use.
+
+## F50 — Relationship map disconnected from prose *(v1.3.2 — fiction)*
+
+**Trigger:** `_relationships.md` is updated diligently with relationship arcs and subtext patterns; the drafted prose doesn't reflect them.
+
+**Why it matters:** A relationship map that doesn't track the prose is the relational equivalent of a bible disconnected from the prose (F24). The map becomes aspirational fiction *about* the manuscript.
+
+**Fix:** CHARACTER-CONSISTENCY activity surfaces the disconnect. Either update the map to match what the prose is actually doing, or revise prose to honor the map.
+
+**Prevention:** Update `_relationships.md` after each CHARACTER-CONSISTENCY session that touches relationships.
+
+## F51 — Flat stakes *(v1.3.2 — fiction)*
+
+**Trigger:** Stakes operate at the same level across the manuscript; nothing escalates. The Stakes-ladder section in `_spine.md` (v1.3.2) makes this visible at a glance.
+
+**Why it matters:** A novel without escalating stakes reads as static even if individual scenes turn. The reader registers the absence of momentum even when prose is competent.
+
+**Fix:** Identify chapters where stakes are not escalating. Decide what new level needs to be engaged (relational → societal? Personal → existential?). Revise to land the escalation.
+
+**Prevention:** SCENE-AUDIT and READ-THROUGH now consult the Stakes-ladder. Inverted-pyramid risk (existential too early) is also surfaced by the ladder.
 
 ## Adding new entries
 

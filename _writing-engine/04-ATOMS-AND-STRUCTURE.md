@@ -13,7 +13,7 @@ updated: 2026-06-02
 
 An atom is the smallest reusable, referenceable unit of a manuscript. Atoms have frontmatter, structured body sections, and named relationships to other atoms. They are stored as individual markdown files in the cartridge's `Atoms/` subfolders.
 
-The fourteen atom types in LFW v1.3.1:
+The sixteen atom types in LFW v1.3.2:
 
 | Type | Role | Genre relevance |
 |------|------|-----------------|
@@ -28,8 +28,10 @@ The fourteen atom types in LFW v1.3.1:
 | **Reader** | Modeled audience member; used in READER-SIMULATION | Non-fiction (primary) / dissertation / fiction (extended in chapter 12) |
 | **Motif** *(v1.2)* | Recurring sub-surface image, object, gesture, symbol, sound | Fiction (primary) / screenplay / play |
 | **Theme** *(v1.3.1)* | Abstract idea the manuscript is about; carried not declared | Fiction (primary) / screenplay / play / memoir |
+| **Timeline** *(v1.3.2)* | Multi-layer timeline (story-time / world-history / real-world / character-specific) | Fiction (primary) / historical (heavy) |
+| **Inspiration** *(v1.3.2)* | Research-as-compost; distinct from Source (no citation discipline) | Fiction primary; memoir / narrative non-fiction also |
 | **Thread** | Recurring topic / argument / framing device | Non-fiction / dissertation |
-| **Source** | External material informing the work | Non-fiction / dissertation (heavy); fiction (light) |
+| **Source** | External material informing the work; citation-disciplined | Non-fiction / dissertation (heavy); fiction (light) |
 | **Note** | Unplaced fragment, idea, future inclusion | All genres |
 
 Plus the cartridge backbone files (`_manuscript-manifest.md`, `_state.md`, `_outline.md`, `_voice-samples.md`, `_argument.md`, `_craft-log.md`, `_spine.md`, `_continuity.md`, `_promises.md`) which are not atoms but structural files that organize them. See "Cartridge backbone files" near the end of this chapter.
@@ -60,6 +62,8 @@ Other atom types use type-specific lifecycle fields, NOT `lfw_status`:
 | Reader | `lfw_status` | `developing`, `active`, `retired` |
 | Motif | `lfw_status` | `latent`, `emerging`, `woven`, `resolved` |
 | Theme *(v1.3.1)* | `lfw_status` | `candidate`, `developing`, `threaded`, `resolved` |
+| Timeline *(v1.3.2)* | `lfw_status` | `drafting`, `established`, `revised`, `final` |
+| Inspiration *(v1.3.2)* | `lfw_status` | `noted`, `absorbed`, `folded-in`, `retired` |
 | Thread | `lfw_status` | `emerging`, `active`, `concluded` |
 | Source | `lfw_status` | `identified`, `ingested`, `folded-in`, `superseded` |
 | Setting | `lfw_status` | `sketched`, `defined`, `final` |
@@ -85,6 +89,8 @@ This forces a **disciplined naming convention**, because a flat folder (`Atoms/S
 | Reader | `<Reader-Slug>.md` (Title-Case-Hyphenated) | `Skeptic.md`, `Impatient-Generalist.md` | `Atoms/Readers/` |
 | Motif | `<Motif-Name>.md` (Title-Case-Hyphenated) | `Cold-as-Inheritance.md`, `The-Empty-Chair.md` | `Atoms/Motifs/` |
 | Theme *(v1.3.1)* | `<Theme-Name>.md` (Title-Case-Hyphenated) | `Honesty-Under-Cost.md` | `Atoms/Themes/` |
+| Timeline *(v1.3.2)* | `<Layer>-<Slug>.md` (descriptive) | `Story-Time-Three-Weeks.md`, `Family-History-1968-2026.md`, `Maya-Life-1984-2026.md` | `Atoms/Timelines/` |
+| Inspiration *(v1.3.2)* | `<Inspiration-Slug>.md` | `Sonoma-Frost-2019-NYT.md` | `Atoms/Inspirations/` |
 | Thread | `<Thread-Name>.md` (Title-Case-Hyphenated) | `Distributed-Legitimacy.md` | `Atoms/Threads/` |
 | Source | `<Lastname>-<Short-Title>-<Year>.md` | `Beard-SPQR-2015.md` | `Atoms/Sources/` |
 | Setting | `<Setting-Name>.md` | `The-Conservatory.md` | `Atoms/Settings/` |
@@ -527,6 +533,77 @@ Needs_Processing: false
 
 See chapter 14 §4 for the full discipline and the THEME-CHECK activity.
 
+## Timeline (fiction primary) *(v1.3.2)*
+
+Multi-layer timeline atom. Distinct from `_continuity.md`'s embedded story-time timeline; provides per-layer source-of-truth where `_continuity.md` becomes the cross-layer reconciliation.
+
+**Frontmatter:**
+
+```yaml
+Item_Prototype: LFW_Timeline
+Item_ID: "<slug>"
+Title: "<Timeline name>"
+lfw_manuscript: <manuscript-slug>
+lfw_atom_type: timeline
+lfw_status: drafting | established | revised | final
+lfw_timeline_layer: story-time | world-history | real-world | character-specific
+lfw_character: "[[Character-filename]]"   # only for character-specific layer
+lfw_scope: "<e.g., 1968-2026>"
+Date_Added:
+Date_Modified:
+Needs_Processing: false
+```
+
+**Required body sections:**
+
+1. `# <Timeline name>`
+2. `## What this timeline tracks` — brief description of layer and scope
+3. `## Chronological events` — table or list of dated events with related-atom wikilinks
+4. `## Sub-periods` *(optional)* — grouping for long timelines
+5. `## Cross-references` — other Timelines + `_continuity.md` reconciliation notes
+6. `## Open questions`
+
+**Naming:** `<Layer>-<Slug>.md`. E.g., `Story-Time-Three-Weeks.md`, `Family-History-1968-2026.md`, `Maya-Life-1984-2026.md`.
+
+**Location:** `Atoms/Timelines/`.
+
+See chapter 15 §2 for layer discipline and when to use.
+
+## Inspiration (fiction primary; memoir / narrative non-fiction also) *(v1.3.2)*
+
+Research-as-compost. Distinct from Source (which carries non-fiction citation discipline): Inspiration atoms track the books, articles, films, conversations, and observations that shape the prose without being cited.
+
+**Frontmatter:**
+
+```yaml
+Item_Prototype: LFW_Inspiration
+Item_ID: "<slug>"
+Title: "<Inspiration title>"
+lfw_manuscript: <manuscript-slug>
+lfw_atom_type: inspiration
+lfw_status: noted | absorbed | folded-in | retired
+lfw_kind: book | article | film | conversation | observation | image | podcast | other
+lfw_for: "<setting | character | voice | theme | mood | other>"
+Date_Added:
+Date_Modified:
+Needs_Processing: false
+```
+
+**Required body sections:**
+
+1. `# <Inspiration title>`
+2. `## What it is` — brief description
+3. `## What it inspires in this manuscript` — specifically what it feeds
+4. `## How it's working in the prose` *(if folded-in)*
+5. `## Where it surfaces` — wikilinks to Scenes where the inspiration has landed
+6. `## Notes`
+
+**Naming:** `<Inspiration-Slug>.md`. E.g., `Sonoma-Frost-2019-NYT.md`.
+
+**Location:** `Atoms/Inspirations/`.
+
+See chapter 15 §5 for the Source-vs-Inspiration distinction. F49 catches the confusion of disciplines.
+
 ## Thread (non-fiction / dissertation)
 
 Recurring topic, argument, framing device, or analytical lens that spans sections and chapters.
@@ -672,8 +749,14 @@ In addition to the atoms above, every cartridge has a set of **backbone files** 
 | `_continuity.md` *(v1.2)* | World-rule + timeline + information-state (who-knows-what) ledger | **Required for genre fiction with worldbuilding and any plot-driven fiction with secrets**; required for screenplay; recommended for long-form fiction | Template + chapter 12 |
 | `_promises.md` *(v1.2)* | Setup/payoff ledger — promises planted, fired, outstanding, unsetup payoffs, retired | **Required for plot-driven fiction** (mystery, thriller, literary novel with subplot); required for screenplay/play; optional for non-plot literary fiction | Template + chapter 11 |
 | `_craft-log.md` | Per-cartridge writer-pattern observations + practice focus | Optional (recommended for any serious project) | Template + chapter 09 |
+| `_worldbuilding.md` *(v1.3.2)* | World design (rules, cultures, languages, cosmology) | **Required for SFF, fantasy, speculative, alt-history, horror with non-natural elements**; not applicable to contemporary realism / literary | Template + chapter 15 §1 |
+| `_storyboard.md` *(v1.3.2)* | Scene-card view — every Scene atom in compact form | Optional; recommended once cartridge has ≥10 drafted Scenes | Template + chapter 15 §3 |
+| `_style-sheet.md` *(v1.3.2)* | Style and language conventions; lexicon sub-section | Optional but recommended; required at BETA-PREP for any cartridge | Template + chapter 15 §4 |
+| `_relationships.md` *(v1.3.2)* | Symmetric multi-character relationship map | Optional; recommended for cartridges with ≥5 named relationships | Template + chapter 15 §6 |
+| `_overlay-<name>.md` *(v1.3.1)* | Beat-sheet overlay declaration (Story Circle / Save the Cat / Hero's Journey / Freytag) | Optional opt-in per cartridge declaration in manifest | Template + chapter 14 §2 |
+| `_voice-samples-<pov>.md` *(v1.3.1)* | Per-POV voice-sample reference (multi-POV cartridges with voice-samples mode) | Optional; in addition to manuscript-wide `_voice-samples.md` | Chapter 13 §2 |
 
-The argument and craft-log backbones were added in v1.1. The spine, continuity, and promises backbones are v1.2 additions for fiction parity with non-fiction's development layer. All five are **development-layer** artifacts that pair with the **OV-root** craft-profile (chapter 09).
+The argument and craft-log backbones were added in v1.1. The spine, continuity, and promises backbones are v1.2 additions for fiction parity with non-fiction's development layer. The overlay and per-POV voice-samples backbones are v1.3.1 additions. The worldbuilding, storyboard, style-sheet, and relationships backbones are v1.3.2 structural-artifact additions. Together with the OV-root craft-profile (chapter 09), the development-and-structural-artifact layer pairs with the production foundation.
 
 ### The `prefigures` relation as discipline *(v1.2)*
 

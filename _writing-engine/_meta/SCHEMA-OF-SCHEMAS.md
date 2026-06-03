@@ -26,7 +26,7 @@ These hold inside every cartridge regardless of genre:
 
 - Cartridge backbone files: `_manuscript-manifest.md`, `_state.md`, `_outline.md`
 - Conditional backbone files: `_voice-samples.md`, `_argument.md`, `_craft-log.md`, `_spine.md`, `_continuity.md`, `_promises.md`
-- Atom-storage subfolders: `Atoms/Beats/`, `Atoms/Chapters/`, `Atoms/Readers/`, `Atoms/Motifs/`, `Atoms/Themes/`, `Atoms/Character-Bibles/`, `Atoms/Notes/`, etc.
+- Atom-storage subfolders: `Atoms/Beats/`, `Atoms/Chapters/`, `Atoms/Readers/`, `Atoms/Motifs/`, `Atoms/Themes/`, `Atoms/Character-Bibles/`, `Atoms/Timelines/`, `Atoms/Inspirations/`, `Atoms/Notes/`, etc.
 - `Sessions/` folder with append-only logs
 - `Revision-Passes/` folder with append-only logs
 - Session lifecycle (READ → DIAGNOSE → PROPOSE → WAIT → EXECUTE → CAPTURE → WRITE → UPDATE)
@@ -102,7 +102,7 @@ v1.2 additions:
 - New opt-in craft module: `pov-and-psychic-distance` (chapter 12 §7)
 - The `prefigures` relation (which existed but was unused in v1.0–v1.1) becomes the canonical mechanism for declaring promises in `_promises.md`
 
-v1.3.1 additions (this version):
+v1.3.1 additions:
 - New atom types: **Character-Bible** (Layer 1 universal; opt-in extended companion to Character; chapter 14 §3), **Theme** (Layer 1 universal; primary for fiction; carried-not-declared; distinct from Motif and from `_argument.md`; chapter 14 §4)
 - Scene atom gains `lfw_scene_type` field (scene | sequel | scene-sequel; chapter 14 §1 scene-and-sequel rhythm); sequel-typed Scenes are exempt from value-shift requirements (they carry decisions instead)
 - Character atom gains `lfw_pov_voice_register` field (required for POV-bearing characters), dialogue-tells sub-section, optional subtext-patterns section; `lfw_character_bible` soft pointer
@@ -114,6 +114,13 @@ v1.3.1 additions (this version):
 - Fiction sub-genre tunings of cadence thresholds (chapter 03 §6b''; chapter 14 §5)
 - Optional per-POV voice-sample backbones (`_voice-samples-{pov-slug}.md`; chapter 13 §2)
 - Validator extended: check 9 exempts sequel-typed Scenes; new check 10 (scene-type-legal); new advisory check 11 (pov-voice-register on established protagonists/antagonists)
+
+v1.3.2 additions (this version):
+- New atom types: **Timeline** (Layer 1 universal; multi-layer — story-time / world-history / real-world / character-specific; chapter 15 §2), **Inspiration** (Layer 1 universal; research-as-compost; distinct from Source's citation discipline; chapter 15 §5)
+- New backbone files: `_worldbuilding.md` (required for SFF / fantasy / speculative / alt-history / horror with non-natural elements; chapter 15 §1), `_storyboard.md` (optional; scene-card view; chapter 15 §3), `_style-sheet.md` (optional but recommended; lexicon as sub-section; chapter 15 §4), `_relationships.md` (optional; symmetric multi-character map; chapter 15 §6)
+- `_spine.md` template gains Stakes-ladder section (per-chapter tracking of stakes at personal / relational / societal / existential levels; chapter 15 §7)
+- No new activities. Artifacts feed existing activities (READ-THROUGH, CONTINUITY-CHECK, CHARACTER-CONSISTENCY, BETA-PREP, REVISE)
+- Validator extended: new check 12 (timeline-layer); STATUS_ENUM gains `timeline` and `inspiration`; BACKBONE_FILES gains `_worldbuilding`, `_storyboard`, `_style-sheet`, `_relationships`
 
 ## Connection to OVE's meta-ontology
 

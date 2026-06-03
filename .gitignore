@@ -55,6 +55,14 @@ _craft-profile.md
 **/_overlay-*.md
 **/_voice-samples-*.md
 
+# v1.3.2 operator-private artifacts
+**/Atoms/Timelines/*.md
+**/Atoms/Inspirations/*.md
+**/_worldbuilding.md
+**/_storyboard.md
+**/_style-sheet.md
+**/_relationships.md
+
 # ----------------------------------------------------------------------
 # Always tracked (overrides above for the shipped worked example):
 # ----------------------------------------------------------------------
