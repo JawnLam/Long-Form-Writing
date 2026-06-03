@@ -17,14 +17,15 @@ Checks performed (each emits one line per failure):
   1. wiki-link-resolves   : every [[Foo]] in any .md file resolves to a real
                             file basename within the cartridge (or to a backbone
                             file like _state, _outline, _voice-samples,
-                            _manuscript-manifest).
+                            _manuscript-manifest, _argument, _craft-log, _spine,
+                            _continuity, _promises).
   2. state-atom-exists    : every wiki-link in <cartridge>/_state.md targets an
                             atom file that exists.
   3. status-legal         : every atom's lfw_status value is in the legal enum
                             for its lfw_atom_type.
   4. atom-type-known      : every atom's lfw_atom_type is a known type (beat,
-                            scene, section, chapter, act, character, thread,
-                            source, setting, note).
+                            scene, section, chapter, act, character, reader,
+                            motif, thread, source, setting, note).
   5. template-exists      : for every atom type seen, a corresponding
                             TEMPLATE-<Type>.md file exists in
                             _writing-engine/_templates/.
@@ -34,6 +35,11 @@ Checks performed (each emits one line per failure):
   7. required-frontmatter : Item_Prototype, Item_ID, Title present on every
                             atom.
   8. unique-item-id       : Item_IDs are unique across the cartridge.
+  9. scene-value-shift    : every Scene with status `drafted | revising |
+                            revised | final` must declare lfw_value_shift_from
+                            and lfw_value_shift_to, and the two must differ
+                            (v1.2 fiction-craft enforcement of the SCENE-AUDIT
+                            discipline in chapter 11 §1).
 
 The script is intentionally simple and forgiving: it parses YAML frontmatter
 without a YAML library (regex + line-walk), so unusual frontmatter shapes
@@ -60,6 +66,7 @@ STATUS_ENUM = {
     "act":       {"planned", "drafting", "drafted", "revising", "revised", "final"},
     "character": {"developing", "established", "revised", "final"},
     "reader":    {"developing", "active", "retired"},
+    "motif":     {"latent", "emerging", "woven", "resolved"},   # v1.2 addition
     "thread":    {"emerging", "active", "concluded"},
     "source":    {"identified", "ingested", "folded-in", "superseded"},
     "setting":   {"sketched", "defined", "final"},
@@ -71,7 +78,8 @@ KNOWN_ATOM_TYPES = set(STATUS_ENUM.keys())
 # Cartridge backbone files (not atoms; valid wiki-link targets)
 BACKBONE_FILES = {
     "_state", "_outline", "_voice-samples", "_manuscript-manifest",
-    "_argument", "_craft-log",     # v1.1 additions
+    "_argument", "_craft-log",                       # v1.1 additions
+    "_spine", "_continuity", "_promises",            # v1.2 fiction backbones
 }
 
 # ---- Helpers -----------------------------------------------------------------
@@ -192,11 +200,24 @@ def check_cartridge(cartridge: pathlib.Path) -> list:
             if not re.match(r'^\d{2}-\d{2}-', stem):
                 issues.append(("filename-conforms", f"{rel}: scene filename should be chapter-prefixed `<ch>-<order>-<slug>`"))
         elif atom_type == "beat":
-            if not re.match(r'^\d{2}-\d{2}-Beat-', stem):
-                issues.append(("filename-conforms", f"{rel}: beat filename should match `<ch>-<sec>-Beat-<order>-<slug>` pattern"))
+            if not re.match(r'^\d{2}-\d{2}-Beat-', stem) and not re.match(r'^Beat-\d{2}-\d{2}-\d{2}-', stem):
+                issues.append(("filename-conforms", f"{rel}: beat filename should match `Beat-NN-NN-NN-<slug>` or chapter-prefixed `<ch>-<sec>-Beat-<order>-<slug>` pattern"))
         elif atom_type == "act":
             if not re.match(r'^Act-\d+-', stem):
                 issues.append(("filename-conforms", f"{rel}: act filename should match `Act-N-<title>` pattern"))
+        # motif, character, reader, thread, source, setting, note: free TitleCase-Hyphenated naming; no filename check
+
+        # Check 9 (v1.2): value-shift declared on drafted Scenes
+        # If a Scene's status is `drafted | revising | revised | final`, both
+        # lfw_value_shift_from and lfw_value_shift_to must be set and must differ.
+        # SCENE-AUDIT (chapter 11 §1) treats a non-shifting scene as a flag.
+        if atom_type == "scene" and status in {"drafted", "revising", "revised", "final"}:
+            v_from = fm.get("lfw_value_shift_from", "").strip()
+            v_to = fm.get("lfw_value_shift_to", "").strip()
+            if not v_from or not v_to:
+                issues.append(("scene-value-shift", f"{rel}: scene status='{status}' but lfw_value_shift_from/to not both set"))
+            elif v_from == v_to:
+                issues.append(("scene-value-shift", f"{rel}: lfw_value_shift_from == lfw_value_shift_to ('{v_from}') — scene does not turn"))
 
     # Check 8: uniqueness
     for iid, paths in item_ids.items():

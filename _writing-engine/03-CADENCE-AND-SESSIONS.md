@@ -35,9 +35,9 @@ This shapes everything below.
 
 Steps 1, 6, 7, 8 are non-negotiable. Step 5 varies by activity.
 
-## The sixteen universal session activities
+## The twenty universal session activities
 
-Ten **production** activities (this chapter) plus six **development** activities (defined in chapter 10). Together they are the full session-activity set the AI can propose.
+Ten **production** activities (this chapter) plus ten **development** activities (six non-fiction-weighted in chapter 10; four fiction-weighted in chapters 11 + 12). Together they are the full session-activity set the AI can propose.
 
 ### Production activities
 
@@ -54,16 +54,25 @@ Ten **production** activities (this chapter) plus six **development** activities
 | **WORLDBUILDING** | Fiction-specific setting work | Fiction cartridge; writer flagged worldbuilding gap; new setting element is referenced in scenes |
 | **BETA-PREP** | Final pass before sending to beta readers | Manuscript is in `polishing` stage; writer signals readiness to send |
 
-### Development activities (defined in chapter 10)
+### Development activities — non-fiction weighted (defined in chapter 10)
 
 | Code | Activity | Right default when |
 |------|----------|---------------------|
-| **READER-SIMULATION** | Read a drafted section as a specific Reader atom; report resistance, lost threads, curse of knowledge | Section is drafted; ≥1 Reader atom is active; the section hasn't been simulated yet |
+| **READER-SIMULATION** | Read a drafted section as a specific Reader atom; non-fiction: resistance/lost-thread/curse-of-knowledge; fiction: dramatic-question/page-turn/sympathy/emotional-flatline (see chapter 12 §6) | Section is drafted; ≥1 Reader atom is active; the section hasn't been simulated yet |
 | **ARGUMENT-AUDIT** | Pressure-test `_argument.md` — contestability, sub-claim independence, evidence sufficiency, weakest link | `_argument.md` exists and has changed; new chapter touches new sub-claims; ≥8 sessions since last audit |
 | **CLAIM-EVIDENCE-CHECK** | Test whether prose claims are stronger or weaker than the cited sources actually warrant | Section is drafted with cited Sources; before accuracy revision pass |
 | **STEELMAN** | Build the strongest version of a counterargument before the writer rebuts it | A Thread's counter-evidence section has un-steelmanned entries; writer is preparing to rebut |
 | **SYNTHESIS-CHECK** | Flag sections that are annotated-bibliography-in-disguise — sources cited but not synthesized into the writer's argument | Section is drafted with 3+ sources cited |
 | **CRAFT-REVIEW** | Read recent sessions + craft-log + craft-profile; surface recurring patterns; propose next practice focus | ≥10 sessions since last CRAFT-REVIEW; end of a chapter draft; a craft-log pattern is ready to graduate |
+
+### Development activities — fiction weighted (defined in chapters 11 + 12)
+
+| Code | Activity | Right default when |
+|------|----------|---------------------|
+| **SCENE-AUDIT** | Value-shift diagnostic: whose want drives this scene, what's the conflict, what's different at the end vs. beginning (the load-bearing fiction craft test) | Scene is drafted; value-shift fields unpopulated or identical; 3+ scenes drafted without a SCENE-AUDIT |
+| **CHARACTER-CONSISTENCY** | Does the prose deliver the Character atom's stated want, voice, and arc? + antagonist-steelman for antagonist atoms | Character is `established` and has appeared in 3+ Scenes since last check; antagonist hasn't been steelmanned |
+| **CONTINUITY-CHECK** | Verify drafted prose against `_continuity.md`: world-rules, timeline, information-state (who-knows-what) | New scene references continuity items; 10+ scenes since last check; before READ-THROUGH |
+| **SETUP-PAYOFF-AUDIT** | Audit `_promises.md` against drafted manuscript: outstanding/unfired promises, unearned/unsetup payoffs | 10+ scenes drafted since last audit; before READ-THROUGH; before BETA-PREP |
 
 ## Decision algorithm
 
@@ -116,12 +125,27 @@ For non-fiction and dissertation cartridges, evaluate these in addition to the p
 - **If** Section has 3+ cited Sources AND high source-to-prose ratio → propose **SYNTHESIS-CHECK**
 - **If** ≥10 sessions since last CRAFT-REVIEW OR chapter draft just completed → propose **CRAFT-REVIEW**
 
+### Step 6b' — Development activities (fiction emphasis)
+
+For fiction, screenplay, and play cartridges, evaluate these. Same triggering posture as non-fiction development activities: not silent defaults; explicit triggers only.
+
+- **If** Scene is `drafted` AND value-shift fields are unpopulated OR identical (no turn declared) → propose **SCENE-AUDIT**
+- **If** 3+ scenes have been drafted without any SCENE-AUDIT → propose **SCENE-AUDIT** on the most recent
+- **If** a Character is `established` AND has appeared in 3+ drafted Scenes since last check → propose **CHARACTER-CONSISTENCY** for that Character
+- **If** a Character has `lfw_role: antagonist` AND hasn't been steelmanned → propose **CHARACTER-CONSISTENCY** with antagonist-steelman sub-mode
+- **If** `_continuity.md` exists AND new Scenes reference continuity items AND 10+ scenes since last check → propose **CONTINUITY-CHECK**
+- **If** ≥10 scenes drafted since last SETUP-PAYOFF-AUDIT → propose **SETUP-PAYOFF-AUDIT**
+- **If** the writer signals "the plot feels slack" or "I don't know why this chapter happens" → propose checking the spine; if the spine reads mostly *and then*, propose **SCENE-AUDIT** across the affected chapter
+- **If** a fiction worldbuilding gap is flagged → propose **WORLDBUILDING** (generative); after the session, propose **CONTINUITY-CHECK** to verify drafted scenes against new rules
+
 ### Step 6c — Scaffolding-mode awareness
 
-If the cartridge declares `lfw_scaffolding_mode: gradual-fade` or `socratic`, the AI's proposal style changes for OUTLINE, ARGUMENT-AUDIT, and STUCK-DIAGNOSTIC activities per chapter 09. Specifically:
+If the cartridge declares `lfw_scaffolding_mode: gradual-fade` or `socratic`, the AI's proposal style changes for OUTLINE, ARGUMENT-AUDIT, STUCK-DIAGNOSTIC, SCENE-AUDIT (for fiction), and the fiction worldbuilding/continuity activities per chapter 09. Specifically:
 
-- In `gradual-fade` mode past the relevant session threshold, the AI asks the writer to draft the structure / claim / diagnosis first, then critiques rather than proposes
-- In `socratic` mode from session one, the AI never proposes a beat list, a claim, or a counterargument — only critiques what the writer proposes
+- In `gradual-fade` mode past the relevant session threshold, the AI asks the writer to draft the structure / claim / value-shift / plot-turn / character-arc / diagnosis first, then critiques rather than proposes
+- In `socratic` mode from session one, the AI never proposes a beat list, a claim, a value-shift, a character arc, a plot turn, or a counterargument — only critiques what the writer proposes
+
+Scaffolding fade matters **more** in fiction than in non-fiction (chapter 12 §carry-over). Invention is the central fiction skill; an AI that generates the writer's plot turns and character moves doesn't make them a better novelist. Fiction cartridges should typically default to `gradual-fade` or `socratic`; `full` indefinitely is the highest-risk mode for fiction.
 
 See chapter 09 for the full fade schedule and the rationale.
 

@@ -54,15 +54,23 @@ Execute in order. Do not skip. Do not reorder.
 11. **`<Cartridge>/_state.md`** — current lifecycle stage, today's focus, atom status
 12. **`<Cartridge>/_outline.md`** — structural plan
 13. **`<Cartridge>/_argument.md`** — argument backbone, if present (required for non-fiction/dissertation)
-14. **`<Cartridge>/_craft-log.md`** — per-cartridge craft observations, if present
-15. **`<Cartridge>/_voice-samples.md`** if present and the manuscript has voice-mode enabled
-16. **All Reader atoms in `<Cartridge>/Atoms/Readers/`** — for READER-SIMULATION readiness; usually short
-17. **Most recent 1–2 files in `<Cartridge>/Sessions/`** — what was promised last
-18. **Atoms flagged as today's focus or open-thread** — read in full before engaging
+14. **`<Cartridge>/_spine.md`** — causal backbone, if present (required for fiction/screenplay/play; v1.2)
+15. **`<Cartridge>/_continuity.md`** — world-rules + timeline + info-state ledger, if present (v1.2)
+16. **`<Cartridge>/_promises.md`** — setup/payoff ledger, if present (v1.2)
+17. **`<Cartridge>/_craft-log.md`** — per-cartridge craft observations, if present
+18. **`<Cartridge>/_voice-samples.md`** if present and the manuscript has voice-mode enabled
+19. **All Reader atoms in `<Cartridge>/Atoms/Readers/`** — for READER-SIMULATION readiness; usually short
+20. **All Motif atoms in `<Cartridge>/Atoms/Motifs/`** — for fiction cartridges; usually short; load-bearing for Motif-aware activities
+21. **Most recent 1–2 files in `<Cartridge>/Sessions/`** — what was promised last
+22. **Atoms flagged as today's focus or open-thread** — read in full before engaging
 
 After reading, greet briefly, summarize position in one or two sentences, and propose a session activity per `03-CADENCE-AND-SESSIONS.md`.
 
-The other chapters (`04-ATOMS-AND-STRUCTURE.md`, `06-RESEARCH-INTEGRATION.md`, `07-REVISION-DISCIPLINE.md`, `08-FINISHING.md`, `10-READER-AND-ARGUMENT.md`) are read on demand based on the activity proposed. Chapter 10 in particular is required before any READER-SIMULATION, ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, SYNTHESIS-CHECK, or CRAFT-REVIEW activity.
+The other chapters (`04-ATOMS-AND-STRUCTURE.md`, `06-RESEARCH-INTEGRATION.md`, `07-REVISION-DISCIPLINE.md`, `08-FINISHING.md`, `10-READER-AND-ARGUMENT.md`, `11-FICTION-PLOT-SPINE.md`, `12-FICTION-CHARACTER-AND-CONTINUITY.md`) are read on demand based on the activity proposed.
+
+- Chapter 10 is required before any READER-SIMULATION, ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, SYNTHESIS-CHECK, or CRAFT-REVIEW activity.
+- Chapter 11 is required before any SCENE-AUDIT or SETUP-PAYOFF-AUDIT activity.
+- Chapter 12 is required before any CHARACTER-CONSISTENCY or CONTINUITY-CHECK activity, or when running READER-SIMULATION on a fiction cartridge (the fiction-specific reframe is in 12 §6).
 
 ## Core principles (apply across every session)
 

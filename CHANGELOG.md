@@ -2,6 +2,87 @@
 
 All notable changes to Long-Form-Writing are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] — 2026-06-02
+
+### Added — fiction conceptual pass
+
+The shift this release makes is two-sided. First, the v1.1 production-and-growth reframe that the development layer brought to non-fiction is now extended to fiction (Reader atoms, scaffolding fade, CRAFT-REVIEW, and craft-profile/log already work for fiction; v1.2 adds fiction-weighted activities, error vocabulary, and a craft module that fiction needed). Second, and specific to fiction: the v1.0/v1.1 schema was *under-serving* fiction structurally. The plot's causal backbone, scene-by-scene value-shifts, the setup-payoff relationship between scenes, motif tracking, world-rule continuity, and the information-state ledger between POV characters were all left to ad-hoc notes. v1.2 makes them first-class.
+
+**New engine chapters:**
+
+- **`11-FICTION-PLOT-SPINE.md`** — the **`_spine.md` backbone** as premise-as-causal-claim, dramatic question, scene-by-scene value-shift ledger, but/therefore audit, escalation curve, mid-act crisis and climax markers, honest open; the **value-shift discipline** as load-bearing scene-craft (every drafted Scene must turn — `from` and `to` value-states must differ); the **but/therefore vs. and-then test** for causal-chain soundness; the **`_promises.md` setup-payoff ledger** as the fiction equivalent of the argument-evidence ledger, with promises planted / fired / outstanding / retired; the **SCENE-AUDIT** and **SETUP-PAYOFF-AUDIT** activities defined formally
+- **`12-FICTION-CHARACTER-AND-CONTINUITY.md`** — the **Motif atom** as first-class atom for image-clusters, recurrent objects, and thematic carriers (Status enum: `latent | emerging | woven | resolved`); the **CHARACTER-CONSISTENCY** activity with the antagonist-steelman discipline (the antagonist's reasoning must be sound from inside the antagonist's frame, not merely "what the antagonist would think"); the **`_continuity.md` ledger** as the cybernetic memory for world-rules, timeline, and the information-state ledger (who knows what, when); the **CONTINUITY-CHECK** activity; the **`pov-and-psychic-distance`** opt-in craft module; the **fiction READER-SIMULATION reframe** (the reader is reading for emotional weight, tonal register, and character-cues — not for arguments)
+
+**New atom type:**
+
+- **Motif** (`LFW_Motif`) — first-class atom representing recurrent image, object, or thematic carrier. Status enum: `latent | emerging | woven | resolved`. Tracks intended appearances across the manuscript with avoid-lists for vocabulary discipline. Used in MOTIF-CHECK and READ-THROUGH activities.
+
+**New backbone files (fiction-weighted):**
+
+- **`_spine.md`** — per-cartridge causal-spine backbone (premise-as-causal-claim, dramatic question, scene-by-scene value-shift ledger, escalation curve, mid-act and climax markers, and-then check). Required for plot-driven fiction; recommended for any narrative work
+- **`_continuity.md`** — per-cartridge continuity ledger (world-rules, timeline, information-state ledger, cross-reference index). Required for any fiction with non-trivial worldbuilding or multi-POV information asymmetry
+- **`_promises.md`** — per-cartridge setup-payoff ledger (promises planted / fired / outstanding / retired). Required for plot-driven fiction
+
+**Scene schema update:**
+
+- Two new optional Scene frontmatter fields: `lfw_value_shift_from`, `lfw_value_shift_to`. Optional at status `planned | drafting`; **required and must differ** at status `drafted | revising | revised | final`. The validator enforces this (check 9, scene-value-shift). New `## Value-shift` body section in the Scene template captures whose want, the conflict, the start-state, the end-state, the turn, and the but/therefore connector to the next scene.
+
+**Activity set expanded 16 → 20:**
+
+The original ten production activities (v1.0) and six development activities (v1.1) are unchanged. Four new fiction-weighted development activities:
+
+- **SCENE-AUDIT** — works against `_spine.md`; checks that each Scene's value-shift is declared, that `from ≠ to`, that the but/therefore connector to the next scene is not "and then"
+- **CHARACTER-CONSISTENCY** — works against Character atoms; surfaces voice / behavior / want drift; for antagonist Characters specifically checks the steelman is still loadbearing
+- **CONTINUITY-CHECK** — works against `_continuity.md`; surfaces world-rule violations, timeline inconsistencies, information-state violations (a character "knowing" something they shouldn't yet)
+- **SETUP-PAYOFF-AUDIT** — works against `_promises.md`; surfaces unfired promises, payoffs without setups, and faded promises (outstanding for many chapters with no recent foreshadowing)
+
+**Craft profile and log additions:**
+
+- **`pov-and-psychic-distance`** opt-in craft module added to the v1.1 module set (`concrete-to-abstract`, `signposting`, `given-new`, `curse-of-knowledge`) — on-demand coverage of close-third / omniscient / first-person consistency and psychic-distance modulation
+- **Fiction-specific error vocabulary** added to chapter 09 (the writer-development chapter): asserted-not-shown value-shifts, antagonist-not-steelmanned, motif-overstated, motif-orphaned, scene-doesn't-turn, and-then-spine, information-state violation, voice-bleeds-between-POVs, planted-promise-not-fired, payoff-not-planted, on-the-nose-symbolism. These become the diagnostic vocabulary for CRAFT-REVIEW on fiction cartridges.
+
+**New templates:**
+
+- `TEMPLATE-Motif.md`
+- `TEMPLATE-spine.md`
+- `TEMPLATE-continuity.md`
+- `TEMPLATE-promises.md`
+- Updated: `TEMPLATE-Scene.md` (adds `lfw_value_shift_from` and `lfw_value_shift_to` to frontmatter; adds `## Value-shift` body section)
+
+**Meta updates:**
+
+- `_meta/SCHEMA-OF-SCHEMAS.md` — Layer 1 universals updated for v1.2 fiction backbones and Motif atom; Layer 2 per-genre branch expanded with fiction-specific elements; audit checklist expanded; v1.2 additions section added
+- `_meta/FAILURE-MODES.md` — added F22 (asserted-not-shown value-shift), F23 (antagonist-not-steelmanned), F24 (motif-overstated-by-AI), F25 (and-then-spine-allowed-to-ship), F26 (continuity-violations-treated-as-prose-issues), F27 (information-state-violation), F28 (POV-distance-collapses-during-revision), F29 (scaffolding-fails-to-fade-in-fiction), F30 (planted-promises-go-unfired)
+
+**Validator:**
+
+- Extended `STATUS_ENUM` to include `motif: {latent, emerging, woven, resolved}`
+- Extended `BACKBONE_FILES` to include `_spine`, `_continuity`, `_promises`
+- New check 9 (`scene-value-shift`): enforces value-shift discipline on drafted Scenes — both fields set and must differ
+- Beat filename pattern broadened to accept both v1.1 chapter-prefixed and v1.2 cartridge-side `Beat-NN-NN-NN-<slug>` forms
+
+**Worked example added:**
+
+- **`Example-Project-The-Late-Frost/`** — fiction cartridge (literary novel, two estranged sisters + Sonoma vineyard + late-frost season + family-debt secret) at session 3 / early-drafting stage. Demonstrates: all four v1.2 backbones populated (`_spine.md`, `_continuity.md`, `_promises.md`, `_craft-log.md`); 1 Chapter + 1 Scene with full value-shift section; 5 Beats with one (Beat-04) carrying a worked SCENE-AUDIT flag (asserted-not-shown value-shift); 2 Characters (Maya the protagonist + Sarah the antagonist with explicit four-reason steelman); 2 Readers (literary-fiction reader + vineyard expert); 2 Motifs (the late frost + the empty chair) at different status levels (`emerging` and `latent`); 1 bootstrap session log capturing the steelman-discipline moment.
+
+**`.gitignore` updates:**
+
+- `**/_spine.md`, `**/_continuity.md`, `**/_promises.md` now excluded by default (operator-private working artifacts; same logic as `_argument.md` and `_craft-log.md` in v1.1). Worked-example overrides preserve the shipped reference content.
+
+### Notes
+
+v1.2 is the conceptual completion of the four-corners design. Non-fiction has its argument-and-evidence backbone (v1.1); fiction now has its causal-spine, motif, continuity, and setup-payoff backbone (v1.2). The development layer (writer-skill model, scaffolding fade, opt-in craft modules, CRAFT-REVIEW) now applies cleanly across both, with fiction-weighted activities and a fiction-specific error vocabulary that v1.1 deliberately deferred.
+
+The value-shift discipline is the single most load-bearing fiction-craft enforcement v1.2 adds. Validator check 9 makes the SCENE-AUDIT rule executable, not merely aspirational. The steelmanned-antagonist discipline is the second — character atoms for antagonists must now include a from-inside-the-frame steelman, and the CHARACTER-CONSISTENCY activity audits whether the steelman is still loadbearing as the manuscript evolves.
+
+The fiction READER-SIMULATION reframe matters: v1.1's READER-SIMULATION was implicitly argumentative (the Reader is reading for argument quality). For fiction, the Reader is reading for emotional weight, tonal register, character-specific cues, and the moment-to-moment perceptual experience. The Vineyard-Expert reader atom in the worked example shows the domain-expert reader specialized for fiction (catching technical errors in the setting without flattening the literary read).
+
+The scaffolding-fade discipline matters more in fiction than in non-fiction, because invention is the central skill the OV must not crowd out. The Late Frost cartridge ships in `gradual-fade` mode, with the explicit chapter-12 note about why fiction's fade thresholds are tighter than non-fiction's.
+
+This release is backward-compatible with all v1.0 and v1.1 cartridges. Existing fiction cartridges without `_spine.md`, `_continuity.md`, `_promises.md`, or Motif atoms remain valid; the AI surfaces the v1.2 additions during BOOTSTRAP and CRAFT-REVIEW sessions but does not retroactively require them.
+
+---
+
 ## [1.1.0] — 2026-06-02
 
 ### Added — the development layer
