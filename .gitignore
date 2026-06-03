@@ -29,10 +29,12 @@ Thumbs.db
 # State files (live record of where each manuscript stands)
 **/_state.md
 
-# Optional user profile
+# Optional user profile and craft profile (operator-private, v1.1)
 _USER.md
+_craft-profile.md
 
-# Cartridge content — sessions, drafts, revision passes, voice samples
+# Cartridge content — sessions, drafts, revision passes, voice samples,
+# craft logs, argument backbone (the writer's working artifacts)
 **/Sessions/*.md
 !**/Sessions/.gitkeep
 
@@ -40,6 +42,8 @@ _USER.md
 !**/Revision-Passes/.gitkeep
 
 **/_voice-samples.md
+**/_craft-log.md
+**/_argument.md
 
 # ----------------------------------------------------------------------
 # Always tracked (overrides above for the shipped worked example):

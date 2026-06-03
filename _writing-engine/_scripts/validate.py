@@ -59,6 +59,7 @@ STATUS_ENUM = {
     "chapter":   {"planned", "drafting", "drafted", "revising", "revised", "final"},
     "act":       {"planned", "drafting", "drafted", "revising", "revised", "final"},
     "character": {"developing", "established", "revised", "final"},
+    "reader":    {"developing", "active", "retired"},
     "thread":    {"emerging", "active", "concluded"},
     "source":    {"identified", "ingested", "folded-in", "superseded"},
     "setting":   {"sketched", "defined", "final"},
@@ -70,6 +71,7 @@ KNOWN_ATOM_TYPES = set(STATUS_ENUM.keys())
 # Cartridge backbone files (not atoms; valid wiki-link targets)
 BACKBONE_FILES = {
     "_state", "_outline", "_voice-samples", "_manuscript-manifest",
+    "_argument", "_craft-log",     # v1.1 additions
 }
 
 # ---- Helpers -----------------------------------------------------------------

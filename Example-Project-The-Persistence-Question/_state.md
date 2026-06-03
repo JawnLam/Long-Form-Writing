@@ -94,6 +94,16 @@ Beats needed for Section 3.1:
 
 *Non-fiction cartridge — Character atoms not used. Named individuals (e.g., Hoshi family generations) are referenced inline in Section atoms.*
 
+### Readers (3 active — new in v1.1)
+
+| Reader | Status | Priority |
+|--------|--------|----------|
+| [[Skeptic]] | active | primary |
+| [[Impatient-Generalist]] | active | primary |
+| [[Domain-Expert]] | active | primary |
+
+READER-SIMULATION sessions: none yet run (the activity is new in v1.1; planned for after Chapter 3 first-draft completes).
+
 ### Sources
 
 12 ingested sources. See `Atoms/Sources/` for full list. Most-cited:
@@ -113,6 +123,10 @@ Beats needed for Section 3.1:
 - [ ] Decide whether the Hoshi Ryokan opening scene should be in present tense (immediate) or past tense (historical-distance) — voice consideration
 - [ ] Verify Hoshi family founding-year claim (currently 718 AD) against primary sources before drafting prose
 - [ ] Chapter 2 is over target word count — schedule structural revision pass after Chapter 3 first-draft complete
+- [ ] **NEW (v1.1):** First READER-SIMULATION on Chapter 2 (drafted) using all three Reader atoms; planned for after Chapter 3 first-draft completes
+- [ ] **NEW (v1.1):** First ARGUMENT-AUDIT on `_argument.md` v2 — particularly pressure-test the independence concerns flagged for Sub-claims 1+4 and the weakest-link assessment for Sub-claim 4
+- [ ] **NEW (v1.1):** Confirm proposed practice focus "landing-the-closing-claim" with writer at next CRAFT-REVIEW
+- [ ] **NEW (v1.1):** Propose creating `_craft-profile.md` at OV root once a second cartridge exists OR end of Chapter 3 first-draft, whichever comes first
 
 ## Stuck Flags
 

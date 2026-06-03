@@ -149,6 +149,46 @@ updated: 2026-06-02
 
 **Prevention:** `AI-BOOTSTRAP.md` Phase 0.3 requires identifying the active cartridge.
 
+## F18 — Craft work as procrastination
+
+**Trigger:** Development activities (ARGUMENT-AUDIT, CRAFT-REVIEW, STEELMAN, READER-SIMULATION, etc.) dominate 5+ consecutive sessions with no DRAFT or REVISE-on-existing-prose. Structurally identical to F11 (research as procrastination).
+
+**Why it matters:** The blank page is the actual work. Craft-development is real but it's also an extremely comfortable place to hide. A writer can spend three months auditing their argument and reading source material without producing any prose, and the OV will dutifully record those sessions as productive.
+
+**Fix:** AI surfaces the pattern: *"You've been doing development work for several sessions without producing or revising prose. Is this the right rhythm right now, or is this craft-as-avoidance? Either answer is fine; I want it to be the answer you'd give if asked."* Writer answers honestly.
+
+**Prevention:** Chapter 09 documents this anti-pattern explicitly and tasks the AI with watching for it. Connected to F11 (research as procrastination) — same root pattern, different surface.
+
+## F19 — Scaffolding never fades
+
+**Trigger:** Cartridge declares `lfw_scaffolding_mode: gradual-fade` but the AI keeps proposing structure / claims / counterarguments past the session-count thresholds documented in chapter 09. The writer never develops independent structural intuition.
+
+**Why it matters:** The scaffolding fade is the mechanism by which the OV makes itself less needed over time. If the AI silently ignores the mode, the writer remains dependent indefinitely and the development goal fails.
+
+**Fix:** AI checks `lfw_scaffolding_mode` at session start (it's in the mandatory read order via `_manuscript-manifest.md`) and the current session count. If past the relevant threshold, AI asks the writer to draft structure/claim/diagnosis first, then critiques rather than proposes.
+
+**Prevention:** Chapter 09 spells out the fade schedule; chapter 03 documents the scaffolding-mode-awareness step in the decision algorithm.
+
+## F20 — Skill scoring attempted
+
+**Trigger:** AI tries to assign numeric ratings to the writer's craft ("Voice: 7/10"; "Argument: B+"). Or `_craft-profile.md` starts accumulating skill-tree-style level numbers.
+
+**Why it matters:** Writing skill does not quantify cleanly. A number is either wrong (no one knows what the units are) or corrosive (the writer games it or feels graded). The craft-profile's value is observational specificity — concrete patterns, cited instances — not measurement.
+
+**Fix:** Stop. Re-read chapter 09's first caution. Replace any scores with pattern descriptions + concrete examples.
+
+**Prevention:** Chapter 09's "skill model is observational, not scored" caution. The craft-profile template has no numeric fields.
+
+## F21 — Reader atoms used to flatter the writer
+
+**Trigger:** Writer creates Reader atoms whose "what they reward" sections are tightly aligned with the writer's existing voice and the "what they punish" sections are empty or perfunctory. READER-SIMULATION sessions then produce only positive reports.
+
+**Why it matters:** The Reader's value is that they're *not* the writer. A Reader who agrees with everything the writer wrote is a mirror, not a reader. The Skeptic exists precisely to resist; if she resists nothing, she's malfunctioning.
+
+**Fix:** During Reader-atom creation (cartridging or whenever a new Reader is added), the AI tests the Reader against the writer's existing drafted prose: does this Reader actually push back somewhere? If no, the Reader is incompletely modeled. Revise the Reader's "where they resist" section.
+
+**Prevention:** READER-SIMULATION reports must surface at least one resistance point or one curse-of-knowledge instance, or the AI flags that the Reader may be misconfigured.
+
 ## Adding new entries
 
 When a new failure mode surfaces in real use, add it here with the same fields. The catalog grows; the engine references it; the failure recurs less.

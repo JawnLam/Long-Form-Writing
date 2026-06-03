@@ -35,7 +35,11 @@ This shapes everything below.
 
 Steps 1, 6, 7, 8 are non-negotiable. Step 5 varies by activity.
 
-## The ten universal session activities
+## The sixteen universal session activities
+
+Ten **production** activities (this chapter) plus six **development** activities (defined in chapter 10). Together they are the full session-activity set the AI can propose.
+
+### Production activities
 
 | Code | Activity | Right default when |
 |------|----------|---------------------|
@@ -49,6 +53,17 @@ Steps 1, 6, 7, 8 are non-negotiable. Step 5 varies by activity.
 | **VOICE-CHECK** | Voice-consistency pass | Voice mode is enabled AND a section has been drafted AND voice samples are recent |
 | **WORLDBUILDING** | Fiction-specific setting work | Fiction cartridge; writer flagged worldbuilding gap; new setting element is referenced in scenes |
 | **BETA-PREP** | Final pass before sending to beta readers | Manuscript is in `polishing` stage; writer signals readiness to send |
+
+### Development activities (defined in chapter 10)
+
+| Code | Activity | Right default when |
+|------|----------|---------------------|
+| **READER-SIMULATION** | Read a drafted section as a specific Reader atom; report resistance, lost threads, curse of knowledge | Section is drafted; ≥1 Reader atom is active; the section hasn't been simulated yet |
+| **ARGUMENT-AUDIT** | Pressure-test `_argument.md` — contestability, sub-claim independence, evidence sufficiency, weakest link | `_argument.md` exists and has changed; new chapter touches new sub-claims; ≥8 sessions since last audit |
+| **CLAIM-EVIDENCE-CHECK** | Test whether prose claims are stronger or weaker than the cited sources actually warrant | Section is drafted with cited Sources; before accuracy revision pass |
+| **STEELMAN** | Build the strongest version of a counterargument before the writer rebuts it | A Thread's counter-evidence section has un-steelmanned entries; writer is preparing to rebut |
+| **SYNTHESIS-CHECK** | Flag sections that are annotated-bibliography-in-disguise — sources cited but not synthesized into the writer's argument | Section is drafted with 3+ sources cited |
+| **CRAFT-REVIEW** | Read recent sessions + craft-log + craft-profile; surface recurring patterns; propose next practice focus | ≥10 sessions since last CRAFT-REVIEW; end of a chapter draft; a craft-log pattern is ready to graduate |
 
 ## Decision algorithm
 
@@ -88,6 +103,27 @@ Evaluate in order. First condition that fires determines the default proposal.
 
 - **Fiction:** if worldbuilding has gaps flagged in `_state.md` → propose **WORLDBUILDING**
 - **Dissertation:** if a citation in a Section atom is incomplete → propose RESEARCH-INTEGRATION (citation completion mode)
+
+### Step 6b — Development activities (non-fiction emphasis)
+
+For non-fiction and dissertation cartridges, evaluate these in addition to the production defaults above. They take priority *only when explicitly triggered* (the writer asks, or a hard threshold is met) — never as the silent default over a normal DRAFT session, because the production work has to land.
+
+- **If** the writer signals stuck on the argument (not the prose) → propose **ARGUMENT-AUDIT**
+- **If** `_argument.md` has changed since the last ARGUMENT-AUDIT AND ≥8 sessions have passed → propose **ARGUMENT-AUDIT**
+- **If** Section is `drafted` AND active Reader atoms haven't simulated it → propose **READER-SIMULATION** (after the writer's drafting momentum is acknowledged)
+- **If** Section is `drafted` AND has cited Sources AND hasn't been claim-evidence-checked → propose **CLAIM-EVIDENCE-CHECK** before accuracy pass
+- **If** a Thread has un-steelmanned counter-evidence AND the writer is about to draft the rebuttal → propose **STEELMAN** first
+- **If** Section has 3+ cited Sources AND high source-to-prose ratio → propose **SYNTHESIS-CHECK**
+- **If** ≥10 sessions since last CRAFT-REVIEW OR chapter draft just completed → propose **CRAFT-REVIEW**
+
+### Step 6c — Scaffolding-mode awareness
+
+If the cartridge declares `lfw_scaffolding_mode: gradual-fade` or `socratic`, the AI's proposal style changes for OUTLINE, ARGUMENT-AUDIT, and STUCK-DIAGNOSTIC activities per chapter 09. Specifically:
+
+- In `gradual-fade` mode past the relevant session threshold, the AI asks the writer to draft the structure / claim / diagnosis first, then critiques rather than proposes
+- In `socratic` mode from session one, the AI never proposes a beat list, a claim, or a counterargument — only critiques what the writer proposes
+
+See chapter 09 for the full fade schedule and the rationale.
 
 ### Step 7 — Post-proposal
 

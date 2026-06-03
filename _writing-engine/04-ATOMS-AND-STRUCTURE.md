@@ -13,7 +13,7 @@ updated: 2026-06-02
 
 An atom is the smallest reusable, referenceable unit of a manuscript. Atoms have frontmatter, structured body sections, and named relationships to other atoms. They are stored as individual markdown files in the cartridge's `Atoms/` subfolders.
 
-The ten atom types in LFW v1.0:
+The eleven atom types in LFW v1.1:
 
 | Type | Role | Genre relevance |
 |------|------|-----------------|
@@ -24,11 +24,12 @@ The ten atom types in LFW v1.0:
 | **Act** | Composes scenes (screenplay/play equivalent of Chapter) | Screenplay / play |
 | **Setting** | Location, period, and stage-condition record | Play (primary); fiction / screenplay (optional) |
 | **Character** | Recurring participant in fiction/screenplay/play | Fiction / screenplay / play |
+| **Reader** | Modeled audience member; used in READER-SIMULATION | Non-fiction (primary) / dissertation / fiction (optional) |
 | **Thread** | Recurring topic / argument / framing device | Non-fiction / dissertation |
 | **Source** | External material informing the work | Non-fiction / dissertation (heavy); fiction (light) |
 | **Note** | Unplaced fragment, idea, future inclusion | All genres |
 
-Plus the cartridge backbone files (`_manuscript-manifest.md`, `_state.md`, `_outline.md`, `_voice-samples.md`) which are not atoms but structural files that organize them.
+Plus the cartridge backbone files (`_manuscript-manifest.md`, `_state.md`, `_outline.md`, `_voice-samples.md`, `_argument.md`, `_craft-log.md`) which are not atoms but structural files that organize them. See "Cartridge backbone files" near the end of this chapter.
 
 ## Universal status enum (load-bearing)
 
@@ -52,6 +53,7 @@ Other atom types use type-specific lifecycle fields, NOT `lfw_status`:
 |-----------|-----------------|--------------|
 | Beat / Scene / Section / Chapter / Act | `lfw_status` | `planned`, `drafting`, `drafted`, `revising`, `revised`, `final` (+ `fact-checked` for non-fiction Section) |
 | Character | `lfw_status` | `developing`, `established`, `revised`, `final` |
+| Reader | `lfw_status` | `developing`, `active`, `retired` |
 | Thread | `lfw_status` | `emerging`, `active`, `concluded` |
 | Source | `lfw_status` | `identified`, `ingested`, `folded-in`, `superseded` |
 | Setting | `lfw_status` | `sketched`, `defined`, `final` |
@@ -73,6 +75,7 @@ This forces a **disciplined naming convention**, because a flat folder (`Atoms/S
 | Chapter | `Chapter-<NN>-<short-title>.md` | `Chapter-03-Family-Business-Persistence.md` | `Atoms/Chapters/` |
 | Act | `Act-<N>-<short-title>.md` | `Act-2-The-Reversal.md` | `Atoms/Acts/` |
 | Character | `<First-Last>.md` or `<Slug>.md` | `Maya-Chen.md` | `Atoms/Characters/` |
+| Reader | `<Reader-Slug>.md` (Title-Case-Hyphenated) | `Skeptic.md`, `Impatient-Generalist.md` | `Atoms/Readers/` |
 | Thread | `<Thread-Name>.md` (Title-Case-Hyphenated) | `Distributed-Legitimacy.md` | `Atoms/Threads/` |
 | Source | `<Lastname>-<Short-Title>-<Year>.md` | `Beard-SPQR-2015.md` | `Atoms/Sources/` |
 | Setting | `<Setting-Name>.md` | `The-Conservatory.md` | `Atoms/Settings/` |
@@ -318,6 +321,42 @@ Needs_Processing: false
 
 **Location:** `Atoms/Settings/`.
 
+## Reader (non-fiction primary; optional elsewhere)
+
+A modeled audience member: what they bring to the page, what they reward, what they punish. Used by the **READER-SIMULATION** activity (chapter 10). For non-fiction the typical recommended set is three Readers — The Skeptic, The Impatient Generalist, The Domain Expert.
+
+**Frontmatter:**
+
+```yaml
+Item_Prototype: LFW_Reader
+Item_ID: "<lowercase-kebab-slug>"
+Title: "<Reader name — short, descriptive>"
+lfw_manuscript: <manuscript-slug>
+lfw_atom_type: reader
+lfw_status: developing   # developing | active | retired
+lfw_priority: primary    # primary | secondary | tertiary
+Date_Added:
+Date_Modified:
+Needs_Processing: false
+```
+
+**Required body sections:**
+
+1. `# <Reader name>`
+2. `## Who they are` — concrete sketch; one paragraph
+3. `## Background they bring` — what they already know; basis for curse-of-knowledge detection
+4. `## What they reward` — moves that land with this reader
+5. `## What they punish` — moves that lose this reader
+6. `## Where they resist` — places this reader is predisposed to push back
+7. `## What they're patient with vs. impatient with`
+8. `## Notes`
+
+**Naming:** `<Reader-Slug>.md`. E.g., `Skeptic.md`, `Impatient-Generalist.md`, `The-Atlantic-Reader.md`.
+
+**Location:** `Atoms/Readers/`.
+
+See chapter 10 for the READER-SIMULATION activity that uses Reader atoms.
+
 ## Character (fiction / screenplay / play)
 
 Recurring participant. First-class atom.
@@ -481,8 +520,23 @@ Used in atom frontmatter and body wiki-links:
 - **A Scene/Section composes Beats** in a defined order (`lfw_order_in_parent`).
 - **A Chapter composes Scenes (fiction) or Sections (non-fiction)** in a defined order.
 - **Optionally, a Part composes Chapters.** Not required; many books have no parts.
-- **Characters and Threads are not composed into other atoms.** They're referenced (appears-in, engaged-in) but they don't have an "order in parent."
+- **Characters, Readers, and Threads are not composed into other atoms.** They're referenced (appears-in, engaged-in, simulated-by) but they don't have an "order in parent."
 - **Sources and Notes are floating.** They reference things and are referenced by things, but they have no parent.
+
+## Cartridge backbone files (not atoms)
+
+In addition to the atoms above, every cartridge has a set of **backbone files** — structural markdown files at the cartridge root that organize the atoms and capture state, outline, argument, and development context. They are not atoms (no `lfw_atom_type` field) but they have their own prototypes and are first-class engine artifacts.
+
+| File | Purpose | Required in | Defined in |
+|------|---------|-------------|------------|
+| `_manuscript-manifest.md` | The cartridge's manifest — what this manuscript is, genre, voice mode, scaffolding mode | All cartridges | Template + chapter 02 |
+| `_state.md` | Single source of truth for current state, today's focus, atom-status snapshot | All cartridges | Template + chapter 03 |
+| `_outline.md` | Container hierarchy (book → chapter → section/scene → beat) | All cartridges | Template + chapter 04 |
+| `_voice-samples.md` | Voice-mode reference passages (only when voice mode is `voice-samples` or `voice-check-on-demand`) | Conditional | Template + chapter 05 |
+| `_argument.md` | Argument backbone — thesis, sub-claims, evidence map, defeaters, honest unknown | **Required for non-fiction and dissertation**; optional for memoir/narrative non-fiction; rare for fiction; not applicable to screenplay/play | Template + chapter 10 |
+| `_craft-log.md` | Per-cartridge writer-pattern observations + practice focus | Optional (recommended for any serious project) | Template + chapter 09 |
+
+The argument and craft-log backbones are new in v1.1. They are the **development-layer** artifacts that pair with the **OV-root** craft-profile (see chapter 09).
 
 ## Status field lifecycle (recap)
 

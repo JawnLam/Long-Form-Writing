@@ -1,14 +1,14 @@
 ---
-lfw_version: "1.0.1"
-schema_version: "1.0"
+lfw_version: "1.1.0"
+schema_version: "1.1"
 schema_status: "STABLE"
 release_date: 2026-06-02
-release_phase: "Patch release — structural fixes"
+release_phase: "Minor release — development-layer additions (writer-skill model, Reader atoms, argument backbone, six new activities, scaffolding fade, opt-in craft modules)"
 ---
 
 # Long-Form-Writing — Version
 
-This is Long-Form-Writing **v1.0.1** — patch release with structural fixes (see CHANGELOG). Engine + schema unchanged at v1.0; the worked-example cartridge, naming conventions, status enum, and templates were tightened, and a stdlib-only validator (`_writing-engine/_scripts/validate.py`) was added to enforce the invariants going forward.
+This is Long-Form-Writing **v1.1.0** — minor release adding the development layer that turns the OV from a production-and-continuity engine into a production-and-growth engine. Engine v1.0 production machinery (chapters 00–08) is unchanged; v1.1 adds two new chapters (09 + 10), a new atom type (Reader), two new cartridge-backbone files (`_argument.md`, `_craft-log.md`), an OV-root file (`_craft-profile.md`), six new universal activities, scaffolding-fade modes, and opt-in craft modules. All additions are backward-compatible with v1.0 cartridges.
 
 ## Version identifiers
 
