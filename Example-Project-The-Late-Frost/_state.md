@@ -9,10 +9,10 @@ lfw_manuscript: "the-late-frost"
 lfw_lifecycle_stage: drafting
 lfw_genre: fiction
 lfw_fiction_subgenre: literary
-lfw_sessions_completed: 5
-lfw_total_writing_hours: 5.75
+lfw_sessions_completed: 6
+lfw_total_writing_hours: 5.95
 lfw_last_session_date: 2026-06-03
-lfw_next_session_default_activity: REVISE
+lfw_next_session_default_activity: DRAFT
 lfw_current_revision_pass: null
 lfw_current_revision_round: 0
 lfw_word_count_total: 1800
@@ -25,8 +25,8 @@ lfw_word_count_target: 75000
 
 - **Stage:** drafting
 - **Stage entry date:** 2026-06-02 (session 003)
-- **Sessions completed in this stage:** 3 (sessions 004 and 005 were META sessions for v1.3.1 and v1.3.2 cartridge updates respectively; no prose advanced in either)
-- **Sessions completed total:** 5
+- **Sessions completed in this stage:** 4 (sessions 004 and 005 were META sessions; session 006 was a WEATHER-CHECK; sessions 003, 007+ are the actual drafting sessions)
+- **Sessions completed total:** 6
 
 ## Today's Focus
 
@@ -140,6 +140,7 @@ Scene 1 is drafted (1,800 words). Value-shift is declared (ignorant-of-debt → 
 
 ## Recent Sessions
 
+- [[2026-06-03_006_WEATHER-CHECK]] — WEATHER-CHECK (v1.4.0) on commitment-dread for Beat 5; triaged as today-state; next session opens with DRAFT on Beat 5
 - [[2026-06-03_005_v1.3.2-UPDATE]] — META session; cartridge migrated to v1.3.2; minimal _worldbuilding stub; 3 Timeline atoms (story-time, world-history, character-specific); _style-sheet, _relationships, _storyboard backbones; Patchett Inspiration; stakes-ladder added to spine
 - [[2026-06-03_004_v1.3.1-UPDATE]] — META session; cartridge migrated to v1.3.1; sub-genre declared; POV-voice-registers populated; Maya bible drafted; Honesty-Under-Cost theme created; Story Circle overlay populated
 - [[2026-06-02_003_DRAFT]] — Scene 1 Beats 1–4 drafted (1,800 words); Beat 4 flagged for revision

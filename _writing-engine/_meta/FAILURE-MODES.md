@@ -3,7 +3,7 @@ type: writing-engine
 role: failure-catalog
 scope: subject-agnostic
 updated: 2026-06-03
-schema_version: 1.3.2
+schema_version: 1.4.0
 ---
 
 # Failure Modes — Canonical Catalog
@@ -489,6 +489,96 @@ schema_version: 1.3.2
 **Fix:** Identify chapters where stakes are not escalating. Decide what new level needs to be engaged (relational → societal? Personal → existential?). Revise to land the escalation.
 
 **Prevention:** SCENE-AUDIT and READ-THROUGH now consult the Stakes-ladder. Inverted-pyramid risk (existential too early) is also surfaced by the ladder.
+
+## F52 — Motivation as substitute for diagnostic *(v1.4.0 — soft-skill)*
+
+**Trigger:** Writer signals affective weather (dread, doubt, grief, despair, burnout). AI fires affirmations ("you've got this," "your book is great") instead of running WEATHER-CHECK (chapter 16 §2).
+
+**Why it matters:** Affirmation without acknowledgment treats the writer as a generalized person to be soothed rather than a specific adult naming a specific state. The writer is left without diagnostic, without triage, without next move. Trust in the OV erodes — the writer learns the AI is not a real interlocutor for the difficult parts.
+
+**Fix:** Run WEATHER-CHECK. Name the state specifically. Distinguish it from adjacent technical states. Triage scope. Identify next move (which may be no move).
+
+**Prevention:** The OV's anti-encouragement norm (chapter 00, chapter 09, chapter 16 §1) is the structural defense. Affirmation phrases like "you've got this" and "your book is great" are flags that the AI has reached for motivation instead of diagnostic.
+
+## F53 — Weather-check used as therapy substitute *(v1.4.0 — soft-skill)*
+
+**Trigger:** Writer's distress signals severe states the OV is not appropriate for — suicidal ideation, acute clinical depression, abuse, substance-use crisis. The AI attempts WEATHER-CHECK protocol instead of escalating.
+
+**Why it matters:** The OV is not equipped to provide mental health support. Attempting structural diagnostic over severe distress is harmful — it may delay the writer's access to actual support; it may be misread as the AI taking responsibility for a state it cannot hold.
+
+**Fix:** Stop the structural protocol immediately. State clearly that this is past what the OV is the right response to. Name that external support — therapist, crisis line, trusted person — is appropriate now. Offer to wait or to log the step-away without judgment.
+
+**Prevention:** Chapter 16 §1's escalation discipline is non-negotiable. The boundary is firm and respected without judgment. The AI does not attempt to be the response to states it cannot hold.
+
+## F54 — Affective state misdiagnosed as stuck *(v1.4.0 — soft-skill)*
+
+**Trigger:** Writer reports affective weather (dread, despair, doubt). AI runs STUCK-DIAGNOSTIC (which assumes technical blockage). The writer's affective state is not addressed; the writer experiences being misread.
+
+**Why it matters:** Being misread by a tool feels worse than not being read at all. STUCK-DIAGNOSTIC asks "what specifically are you blocked on?" — when the writer's answer is "everything; I hate the book," the tool's questions feel like an insult to the actual experience. Trust erodes.
+
+**Fix:** When the writer's signal is affective rather than technical, propose WEATHER-CHECK. The disambiguation question (chapter 16 §2 Step 2) helps the writer recognize which they're in.
+
+**Prevention:** Chapter 16 §2 Step 2's adjacent-states distinction. AI should propose WEATHER-CHECK when affective signals are present, even when structural signals are also present — chapter 16 §3 specifies WEATHER-CHECK first.
+
+## F55 — Middle-spine-slip *(v1.4.0 — fiction)*
+
+**Trigger:** Detected by MIDDLE-AUDIT Question 1. The prose has stopped tracking `_spine.md`'s premise-as-causal-claim and dramatic question while the writer kept drafting. The spine has become a fossil; the prose has gone elsewhere.
+
+**Why it matters:** Without a working spine, the middle of the book has no organizing causality. Scenes drift; subplots take over; the reader's investment in the dramatic question bleeds out.
+
+**Fix:** Trigger OUTLINE on the spine itself. Reconcile spine with current prose. Decide which is correct: the original spine (and the recent prose needs revision) or the current prose (and the spine needs to be re-articulated). Often a hybrid.
+
+**Prevention:** SCENE-AUDIT cadence (every ~5 scenes) and MIDDLE-AUDIT at midpoint catch this early. Cartridges that skip these activities are at higher risk.
+
+## F56 — Want forgotten *(v1.4.0 — fiction)*
+
+**Trigger:** Detected by MIDDLE-AUDIT Question 2. The protagonist's want has faded from the prose. The Character atom's `## Want / Need / Wound` section declares one want; the recent scenes don't show it operating as fuel for behavior.
+
+**Why it matters:** The protagonist's want is the engine of forward motion in fiction. A protagonist without active want becomes a passenger in their own novel. Middle-of-book sag is most often caused by this specific failure.
+
+**Fix:** Re-engage the want at the per-scene level going forward. CHARACTER-CONSISTENCY audit on the specific Character. Possibly revise the Character atom if the want has *legitimately* evolved (sometimes it has — the writer's understanding of the character may be ahead of the atom).
+
+**Prevention:** CHARACTER-CONSISTENCY cadence catches early drift; MIDDLE-AUDIT catches the systemic case.
+
+## F57 — Subplot gravity *(v1.4.0 — fiction)*
+
+**Trigger:** Detected by MIDDLE-AUDIT Question 4. A subplot has captured the central narrative. Word-count distribution shows a B-story or C-story consuming disproportionate prose; the main spine is dying of malnutrition.
+
+**Why it matters:** Subplot gravity is one of the two or three most-common mid-book failure modes. The writer falls in love with a subplot (often because it's working in ways the main plot isn't) and slowly cedes the book to it. By the time it's noticed the structural distortion may require substantial revision.
+
+**Fix:** Structural-revision decision. Options: cut the subplot back to its intended weight; recommit to it as the new central narrative (renaming what was main as subplot); hybrid with substantial re-outlining. The writer makes this call; the OV surfaces it.
+
+**Prevention:** MIDDLE-AUDIT is the main defense. SETUP-PAYOFF-AUDIT's tracking of `_promises.md` distribution surfaces subplot weight indirectly.
+
+## F58 — Confrontation avoidance, systemic *(v1.4.0 — fiction)*
+
+**Trigger:** Detected by MIDDLE-AUDIT Question 5. The spine's central confrontation (or hard scene, or emotional climax) has been postponed across many sessions. Planned-status scenes from earlier in the spine remain `planned` while later scenes have moved to `drafted`.
+
+**Why it matters:** The most reliable cause of mid-book death. The writer is afraid of the hard scene; the prose moves around it; the book's structural promise is not being kept.
+
+**Fix:** The AI asks: is the postponement structural (the scene's time hasn't come; the dramatic logic puts it later than the planning suggested) or avoidance (the writer is afraid of the scene)? Most often it's the second. The fix is to write the scene, however imperfectly — the SCENE-AUDIT discipline means today's draft is not the commitment
+
+**Prevention:** MIDDLE-AUDIT catches the systemic case. WEATHER-CHECK on the writer's specific dread of the hard scene addresses the affective layer beneath the avoidance.
+
+## F59 — Reader-question starvation *(v1.4.0 — fiction)*
+
+**Trigger:** Detected by MIDDLE-AUDIT Question 6. No new dramatic question has opened in ≥4 chapters. The reader has been holding the same questions for so long that investment is bleeding out.
+
+**Why it matters:** Reader investment is fed by new questions opening at regular intervals — even small ones (will she go to the party? what's in the box? will he take the call?). Long stretches without new questions cause the reader to disengage, regardless of prose quality.
+
+**Fix:** Identify chapters where a new question could be opened (often the writer has the material; it's framing that's missing). Possibly revise to open a question retroactively. Sometimes the fix is at the next-chapter level (open the question that was missing from chapters back).
+
+**Prevention:** MIDDLE-AUDIT cadence at midpoint; the seven-question protocol catches starvation early enough to recover.
+
+## F60 — Why drift *(v1.4.0 — fiction)*
+
+**Trigger:** Detected by MIDDLE-AUDIT Question 7. The book has become a different book than the manifest's "why this manuscript, why now" section declares. The originating intention and the current trajectory have diverged.
+
+**Why it matters:** Sometimes legitimate (the writer's understanding evolved; the new book is more honest than the planned one); sometimes drift (the writer lost the center and is drifting). The audit's job is to surface the divergence and ask the writer which it is.
+
+**Fix:** Decide. If legitimate evolution, update the manifest's why and proceed. If drift, recover the original why — possibly via a re-read of older session logs, the bootstrap session, the original outline.
+
+**Prevention:** The audit at midpoint is the cleanest moment to ask. Earlier may be premature; later may be too late.
 
 ## Adding new entries
 

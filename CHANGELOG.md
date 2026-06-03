@@ -2,6 +2,75 @@
 
 All notable changes to Long-Form-Writing are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] — 2026-06-03
+
+### Added — soft-skill activities
+
+Two new universal activities that fill the soft-skill gaps named in the v1.3.2 self-critique. **No new atoms. No new backbones. No new templates. No new validator checks.** The architectural posture is honest scope-limitation: two carefully-scoped activities filling two specific gaps, not another schema-growth pass. The schema-creep concern flagged in the v1.3.2 critique is respected.
+
+**New engine chapter:**
+
+- **`16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`** — covers WEATHER-CHECK (5–15 min affective-state activity), MIDDLE-AUDIT (seven-question structural audit at the manuscript's midpoint), and the non-therapeutic posture discipline that both activities require
+
+**Activity set expanded 23 → 25:**
+
+- **WEATHER-CHECK** — names and triages the writer's affective state (dread / doubt / grief / despair / boredom / burnout / overwhelm). Five-step protocol: name the weather; distinguish from adjacent technical states (STUCK-DIAGNOSTIC, craft-as-procrastination, research-as-procrastination); triage scope (today / this-week / this-month / this-project); identify smallest possible next move; log and escalate. **Acknowledgment + diagnostic, NOT therapy or motivation.** Severe-distress escalation boundary is non-negotiable
+- **MIDDLE-AUDIT** — seven-question structural audit at the midpoint of the manuscript. Questions: spine integrity; want integrity; stakes escalation; subplot gravity; confrontation avoidance; reader-question opened recently; original why. Triggered at 50% of word-count target by default; earlier if writer signals middle-of-book trouble
+
+**Decision-algorithm updates (chapter 03):**
+
+- Step 2 — affective-weather signals (dread / grief / hate this book / doubt / burned out / overwhelmed / want to quit / 2+ weeks without opening the manuscript) trigger WEATHER-CHECK
+- Step 2 — when affective + structural signals both fire, WEATHER-CHECK runs first; the structural activity follows. Order matters: addressing affective state first protects the structural diagnostic from being received as confirmation of despair
+- New Step 6b''' — 40% word-count threshold surfaces MIDDLE-AUDIT heads-up; 50% threshold proposes it explicitly; 40–70% with cadence slowdown triggers proposal
+
+**New failure modes (F52–F60):**
+
+- F52 — Motivation as substitute for diagnostic
+- F53 — Weather-check used as therapy substitute
+- F54 — Affective state misdiagnosed as stuck
+- F55 — Middle-spine-slip
+- F56 — Want forgotten
+- F57 — Subplot gravity
+- F58 — Confrontation avoidance, systemic
+- F59 — Reader-question starvation
+- F60 — Why drift
+
+**Worked example updated:**
+
+- `Example-Project-The-Late-Frost/` gained session 006 — WEATHER-CHECK on commitment-dread for Beat 5 (the planting moment for Promise 2). The worked example of an affective-state activity in practice on a real-state cartridge. Twelve-minute session; named the dread as specifically *commitment*-dread; triaged as today-state; next move emerged from the writer (write Beat 5 today, hold loosely, status `drafting` not `drafted`)
+- The non-affirmation discipline is demonstrated explicitly — the AI did not say "you've got this" or "your book is good" or "I believe in you" at any point. Per F52 — affirmation as substitute for diagnostic is the failure mode the activity guards against
+
+**Schema-of-schemas:**
+
+- Layer 1 universals updated to twenty-five activities
+- v1.4.0 additions section added
+- Both meta files (`SCHEMA-OF-SCHEMAS.md`, `FAILURE-MODES.md`) gain explicit `schema_version: 1.4.0` frontmatter
+
+### Notes
+
+v1.4.0 closes two real gaps the v1.3.2 self-critique flagged:
+
+1. **The emotional weather gap** — long-form fiction's psychological reality (despair, dread, grief over cut work, doubt, envy, boredom, burnout, imposter syndrome, overwhelm) was not addressed by any v1.0–v1.3.2 activity. STUCK-DIAGNOSTIC was the closest, but its assumption of technical blockage meant it misread affective states (F54). WEATHER-CHECK fills the gap with explicit non-therapeutic posture and escalation discipline
+2. **The middle-of-book gap** — the middle 50% is where most fiction projects die. SCENE-AUDIT works at scene scale; READ-THROUGH works at chapter scale; neither asked the middle-specific structural questions. MIDDLE-AUDIT's seven questions are calibrated to the failure modes specific to the middle
+
+The release deliberately did NOT do the other things the v1.3.2 self-critique flagged. It did not:
+
+- Address onboarding gradient / `lfw_complexity_mode`
+- Add series / cross-cartridge architecture
+- Add the publishing pipeline (query letters, beta-feedback integration, copyedits, marketing)
+- Add sub-genre-specific structural tools
+- Add sentence-level craft modules
+- Add assembly / export tooling
+- Run the deflation pass on existing artifacts
+
+These remain open for future versions. v1.4.0's scope was the two highest-leverage soft-skill additions; v1.5+ may address the others, ideally informed by real-world use of LFW on a completed novel.
+
+The non-affirmation discipline in WEATHER-CHECK is the single most important calibration in v1.4.0. AI tools default to motivation; LFW's anti-encouragement norm (chapter 00, chapter 09) was already structurally protective, but WEATHER-CHECK formalizes it for the specific case where affective state is involved. The activity acknowledges, names, distinguishes, triages, and surfaces options — and it does not affirm. The writer is the judge of the work; the AI is the diagnostic.
+
+This release is backward-compatible with all v1.0 / v1.1 / v1.2 / v1.3.1 / v1.3.2 cartridges. The two new activities are additive only; no existing cartridge needs migration.
+
+---
+
 ## [1.3.2] — 2026-06-03
 
 ### Added — structural-artifact layer
