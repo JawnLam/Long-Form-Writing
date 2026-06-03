@@ -107,7 +107,17 @@ Confirm or modify.
 
 Does the writer already have a `_craft-profile.md` at the OV root (from prior cartridges)? If yes, the AI reads it and the new cartridge benefits from accumulated craft observations. If no, propose creating one after the first few sessions in this cartridge (~session 5–8). No pressure; opt-in.
 
-### CQ15 — Anything else load-bearing the AI should know?
+### CQ15 — Fiction-specific: spine, motifs, promises, continuity (fiction / screenplay / play only)
+
+**For fiction cartridges only. Skip if non-fiction/dissertation.**
+
+- **Spine** (`_spine.md`) — required for fiction. The writer's first articulation of the dramatic question (a yes/no or which question the manuscript answers at the climax) and the premise as a causal claim. First articulation is provisional; ARGUMENT-AUDIT's fiction equivalent (SCENE-AUDIT walked across the spine) will pressure-test.
+- **Motifs** — what 2–4 recurring sub-surface elements does the writer want to track deliberately (image systems, recurring objects, thematic patterns)? These become Motif atoms.
+- **Promises** (`_promises.md`) — required for plot-driven fiction. Initially populated as the writer outlines; setups planted in early chapters are recorded so SETUP-PAYOFF-AUDIT can track them.
+- **Continuity** (`_continuity.md`) — required for genre fiction with worldbuilding and any plot with secrets. The writer's initial world-rules, timeline, and information-state ledger.
+- **Scaffolding mode reminder** — fiction cartridges should typically default to `gradual-fade` or `socratic` (CQ13), not `full`. Invention is the central fiction skill the OV must not crowd out.
+
+### CQ16 — Anything else load-bearing the AI should know?
 
 Communication preferences, particular sensitivities, prior bad experiences with AI writing assistance, anything that should shape the engagement from the start.
 

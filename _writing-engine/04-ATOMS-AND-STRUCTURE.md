@@ -13,7 +13,7 @@ updated: 2026-06-02
 
 An atom is the smallest reusable, referenceable unit of a manuscript. Atoms have frontmatter, structured body sections, and named relationships to other atoms. They are stored as individual markdown files in the cartridge's `Atoms/` subfolders.
 
-The eleven atom types in LFW v1.1:
+The twelve atom types in LFW v1.2:
 
 | Type | Role | Genre relevance |
 |------|------|-----------------|
@@ -24,12 +24,13 @@ The eleven atom types in LFW v1.1:
 | **Act** | Composes scenes (screenplay/play equivalent of Chapter) | Screenplay / play |
 | **Setting** | Location, period, and stage-condition record | Play (primary); fiction / screenplay (optional) |
 | **Character** | Recurring participant in fiction/screenplay/play | Fiction / screenplay / play |
-| **Reader** | Modeled audience member; used in READER-SIMULATION | Non-fiction (primary) / dissertation / fiction (optional) |
+| **Reader** | Modeled audience member; used in READER-SIMULATION | Non-fiction (primary) / dissertation / fiction (extended in chapter 12) |
+| **Motif** *(v1.2)* | Recurring sub-surface element (theme, image system, recurring object, gesture, symbol, sound) | Fiction (primary) / screenplay / play |
 | **Thread** | Recurring topic / argument / framing device | Non-fiction / dissertation |
 | **Source** | External material informing the work | Non-fiction / dissertation (heavy); fiction (light) |
 | **Note** | Unplaced fragment, idea, future inclusion | All genres |
 
-Plus the cartridge backbone files (`_manuscript-manifest.md`, `_state.md`, `_outline.md`, `_voice-samples.md`, `_argument.md`, `_craft-log.md`) which are not atoms but structural files that organize them. See "Cartridge backbone files" near the end of this chapter.
+Plus the cartridge backbone files (`_manuscript-manifest.md`, `_state.md`, `_outline.md`, `_voice-samples.md`, `_argument.md`, `_craft-log.md`, `_spine.md`, `_continuity.md`, `_promises.md`) which are not atoms but structural files that organize them. See "Cartridge backbone files" near the end of this chapter.
 
 ## Universal status enum (load-bearing)
 
@@ -54,6 +55,7 @@ Other atom types use type-specific lifecycle fields, NOT `lfw_status`:
 | Beat / Scene / Section / Chapter / Act | `lfw_status` | `planned`, `drafting`, `drafted`, `revising`, `revised`, `final` (+ `fact-checked` for non-fiction Section) |
 | Character | `lfw_status` | `developing`, `established`, `revised`, `final` |
 | Reader | `lfw_status` | `developing`, `active`, `retired` |
+| Motif | `lfw_status` | `latent`, `emerging`, `woven`, `resolved` |
 | Thread | `lfw_status` | `emerging`, `active`, `concluded` |
 | Source | `lfw_status` | `identified`, `ingested`, `folded-in`, `superseded` |
 | Setting | `lfw_status` | `sketched`, `defined`, `final` |
@@ -76,6 +78,7 @@ This forces a **disciplined naming convention**, because a flat folder (`Atoms/S
 | Act | `Act-<N>-<short-title>.md` | `Act-2-The-Reversal.md` | `Atoms/Acts/` |
 | Character | `<First-Last>.md` or `<Slug>.md` | `Maya-Chen.md` | `Atoms/Characters/` |
 | Reader | `<Reader-Slug>.md` (Title-Case-Hyphenated) | `Skeptic.md`, `Impatient-Generalist.md` | `Atoms/Readers/` |
+| Motif | `<Motif-Name>.md` (Title-Case-Hyphenated) | `Cold-as-Inheritance.md`, `The-Empty-Chair.md` | `Atoms/Motifs/` |
 | Thread | `<Thread-Name>.md` (Title-Case-Hyphenated) | `Distributed-Legitimacy.md` | `Atoms/Threads/` |
 | Source | `<Lastname>-<Short-Title>-<Year>.md` | `Beard-SPQR-2015.md` | `Atoms/Sources/` |
 | Setting | `<Setting-Name>.md` | `The-Conservatory.md` | `Atoms/Settings/` |
@@ -157,6 +160,8 @@ lfw_setting: "<location/time>"
 lfw_pov: "<character or narrator>"
 lfw_characters_present: []
 lfw_purpose: "<one-sentence: what this scene must do in the larger work>"
+lfw_value_shift_from: ""    # v1.2: starting value-state (e.g., "safe", "hopeful", "ignorant")
+lfw_value_shift_to: ""      # v1.2: ending value-state (must differ from `from` for the scene to turn)
 lfw_first_drafted: <YYYY-MM-DD | null>
 lfw_word_count: <int>
 Date_Added:
@@ -168,14 +173,17 @@ Needs_Processing: false
 
 1. `# <Scene title>`
 2. `## Setting and Stakes` — where, when, who, what's at stake
-3. `## Beats` — ordered list of beats (with wiki-links to beat atoms)
-4. `## Prose` — the drafted scene; or `*To be drafted*` if not yet
-5. `## Connections` — what this scene sets up / pays off
-6. `## Open Notes` — known weaknesses, alternate versions considered
+3. `## Value-shift` *(v1.2)* — start-state → end-state; whose want drives this scene; what's the conflict; what's different at the end (the SCENE-AUDIT discipline made structural; see chapter 11 §2)
+4. `## Beats` — ordered list of beats (with wiki-links to beat atoms)
+5. `## Prose` — the drafted scene; or `*To be drafted*` if not yet
+6. `## Connections` — what this scene sets up / pays off (the `prefigures` relation captures setups; see chapter 11 §3 for the SETUP-PAYOFF-AUDIT discipline)
+7. `## Open Notes` — known weaknesses, alternate versions considered
 
 **Naming:** `<chapter>-<order>-<short-slug>.md`. E.g., `04-03-Library-Confrontation.md` for Chapter 4, Scene 3.
 
 **Location:** `Atoms/Scenes/`.
+
+**v1.2 value-shift discipline:** A Scene whose `lfw_value_shift_from` and `lfw_value_shift_to` fields are identical (or both empty after the scene is drafted) has not turned. The SCENE-AUDIT activity (chapter 11) flags these. The most teachable fiction craft discipline the v1.0–v1.1 engine ignored.
 
 ## Section (non-fiction / dissertation)
 
@@ -355,7 +363,43 @@ Needs_Processing: false
 
 **Location:** `Atoms/Readers/`.
 
-See chapter 10 for the READER-SIMULATION activity that uses Reader atoms.
+See chapter 10 for the READER-SIMULATION activity that uses Reader atoms. Chapter 12 §6 extends READER-SIMULATION with fiction-specific protocol (dramatic-question, page-turn-impulse, emotional-flatline detection).
+
+## Motif (fiction primary; optional for screenplay/play) *(v1.2)*
+
+A recurring sub-surface element — theme, image system, recurring object, gesture, symbol, sound — that surfaces across scenes and builds (or fails to build) across the manuscript. Fiction's first-class atom for thematic through-lines. Structural equivalent to non-fiction's Thread.
+
+**Frontmatter:**
+
+```yaml
+Item_Prototype: LFW_Motif
+Item_ID: "<lowercase-kebab-slug>"
+Title: "<Motif name>"
+lfw_manuscript: <manuscript-slug>
+lfw_atom_type: motif
+lfw_kind: image-system | recurring-object | thematic-pattern | gesture | symbol | sound
+lfw_status: latent | emerging | woven | resolved
+lfw_priority: primary | secondary
+lfw_scenes_present: []
+Date_Added:
+Date_Modified:
+Needs_Processing: false
+```
+
+**Required body sections:**
+
+1. `# <Motif name>`
+2. `## What this motif is` — what the recurring element is and what it carries; one or two paragraphs
+3. `## Where it appears` — wiki-links to Scene atoms with a one-line note on what the motif does in each
+4. `## What it builds toward` — accumulation pattern; does it gain meaning or just repeat?
+5. `## Risk of over-use` — the writer's own awareness of when the motif becomes heavy-handed
+6. `## Notes`
+
+**Naming:** `<Motif-Name>.md`. E.g., `Cold-as-Inheritance.md`, `The-Empty-Chair.md`, `Vine-and-Blood.md`.
+
+**Location:** `Atoms/Motifs/`.
+
+See chapter 12 §2 for the full Motif discipline and the F27 (motif-stated-not-woven) failure mode.
 
 ## Character (fiction / screenplay / play)
 
@@ -533,10 +577,17 @@ In addition to the atoms above, every cartridge has a set of **backbone files** 
 | `_state.md` | Single source of truth for current state, today's focus, atom-status snapshot | All cartridges | Template + chapter 03 |
 | `_outline.md` | Container hierarchy (book → chapter → section/scene → beat) | All cartridges | Template + chapter 04 |
 | `_voice-samples.md` | Voice-mode reference passages (only when voice mode is `voice-samples` or `voice-check-on-demand`) | Conditional | Template + chapter 05 |
-| `_argument.md` | Argument backbone — thesis, sub-claims, evidence map, defeaters, honest unknown | **Required for non-fiction and dissertation**; optional for memoir/narrative non-fiction; rare for fiction; not applicable to screenplay/play | Template + chapter 10 |
+| `_argument.md` | Argument backbone — thesis, sub-claims, evidence map, defeaters, honest unknown | **Required for non-fiction and dissertation**; optional for memoir/narrative non-fiction; not applicable to screenplay/play | Template + chapter 10 |
+| `_spine.md` *(v1.2)* | Causal backbone — premise as causal claim, scene-by-scene value-shifts, but/therefore linkage, escalation curve | **Required for fiction, screenplay, play**; recommended for memoir/narrative non-fiction; not applicable to non-fiction/dissertation | Template + chapter 11 |
+| `_continuity.md` *(v1.2)* | World-rule + timeline + information-state (who-knows-what) ledger | **Required for genre fiction with worldbuilding and any plot-driven fiction with secrets**; required for screenplay; recommended for long-form fiction | Template + chapter 12 |
+| `_promises.md` *(v1.2)* | Setup/payoff ledger — promises planted, fired, outstanding, unsetup payoffs, retired | **Required for plot-driven fiction** (mystery, thriller, literary novel with subplot); required for screenplay/play; optional for non-plot literary fiction | Template + chapter 11 |
 | `_craft-log.md` | Per-cartridge writer-pattern observations + practice focus | Optional (recommended for any serious project) | Template + chapter 09 |
 
-The argument and craft-log backbones are new in v1.1. They are the **development-layer** artifacts that pair with the **OV-root** craft-profile (see chapter 09).
+The argument and craft-log backbones were added in v1.1. The spine, continuity, and promises backbones are v1.2 additions for fiction parity with non-fiction's development layer. All five are **development-layer** artifacts that pair with the **OV-root** craft-profile (chapter 09).
+
+### The `prefigures` relation as discipline *(v1.2)*
+
+The relationship vocabulary (below) includes `prefigures` for scene-to-scene foreshadowing. In v1.0–v1.1 this relation existed but had no discipline; in v1.2 it is the canonical mechanism for declaring promises in `_promises.md`. When the writer marks Scene A as `prefigures` Scene B, the SETUP-PAYOFF-AUDIT activity (chapter 11) treats this as a planted promise; when the corresponding payoff lands, the relation is exercised. See chapter 11 §3 for the protocol.
 
 ## Status field lifecycle (recap)
 

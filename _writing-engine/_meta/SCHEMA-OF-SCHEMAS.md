@@ -25,12 +25,12 @@ Layer 0 is what makes LFW more than a per-project tool. The craft-profile in par
 These hold inside every cartridge regardless of genre:
 
 - Cartridge backbone files: `_manuscript-manifest.md`, `_state.md`, `_outline.md`
-- Conditional backbone files: `_voice-samples.md`, `_argument.md`, `_craft-log.md`
-- Atom-storage subfolders: `Atoms/Beats/`, `Atoms/Chapters/`, `Atoms/Readers/`, `Atoms/Notes/`, etc.
+- Conditional backbone files: `_voice-samples.md`, `_argument.md`, `_craft-log.md`, `_spine.md`, `_continuity.md`, `_promises.md`
+- Atom-storage subfolders: `Atoms/Beats/`, `Atoms/Chapters/`, `Atoms/Readers/`, `Atoms/Motifs/`, `Atoms/Notes/`, etc.
 - `Sessions/` folder with append-only logs
 - `Revision-Passes/` folder with append-only logs
 - Session lifecycle (READ → DIAGNOSE → PROPOSE → WAIT → EXECUTE → CAPTURE → WRITE → UPDATE)
-- The sixteen universal activities (10 production + 6 development)
+- The twenty universal activities (10 production + 6 development non-fiction-weighted + 4 development fiction-weighted)
 - The four standard revision passes
 - Source-of-truth: `_state.md` for current state; session logs for history
 
@@ -38,13 +38,17 @@ These hold inside every cartridge regardless of genre:
 
 Documented in `02-GENRE-AND-SCHEMA.md`. Each genre emphasizes different atoms:
 
-- **Fiction** — Scenes + Characters + Beats
-- **Non-fiction** — Sections + Threads + Sources + **Readers** + `_argument.md`
-- **Screenplay** — Scenes + Characters + Acts + Beats
-- **Play** — Scenes + Characters + Acts + Settings
-- **Dissertation** — Sections + Threads + Sources (heavy) + **Readers** + `_argument.md`
+- **Fiction** — Scenes + Characters + Beats + **Motifs** + Readers (fiction-mode) + `_spine.md` + `_promises.md` + (`_continuity.md` if plot has secrets)
+- **Non-fiction** — Sections + Threads + Sources + Readers + `_argument.md`
+- **Screenplay** — Scenes + Characters + Acts + Beats + Motifs + `_spine.md` + `_continuity.md` + `_promises.md`
+- **Play** — Scenes + Characters + Acts + Settings + Motifs + `_spine.md` + (`_continuity.md` if scope warrants) + `_promises.md`
+- **Dissertation** — Sections + Threads + Sources (heavy) + Readers + `_argument.md`
 
-The branch is declared in `_manuscript-manifest.md` (`lfw_genre`). Non-fiction and dissertation add `_argument.md` as a required backbone file and Reader atoms as a primary atom type.
+The branch is declared in `_manuscript-manifest.md` (`lfw_genre`). 
+
+- Non-fiction and dissertation add `_argument.md` as required backbone and Reader atoms as primary atom type.
+- Fiction, screenplay, and play add `_spine.md` and `_promises.md` as required backbones, plus Motif atoms as the recurring-element atom (the fiction analog to non-fiction's Thread).
+- Fiction with worldbuilding or plot secrets adds `_continuity.md` as required backbone.
 
 ### Layer 3 — Per-cartridge instance
 
@@ -61,10 +65,12 @@ Each cartridge's specific atoms, outline, state, voice samples. The cartridge is
 A well-formed cartridge satisfies:
 
 - [ ] Has all required Layer 1 files (`_manuscript-manifest.md`, `_state.md`, `_outline.md`)
-- [ ] Has all required-by-genre Layer 2 files (`_argument.md` for non-fiction/dissertation; `_voice-samples.md` if voice mode is `voice-samples`)
+- [ ] Has all required-by-genre Layer 2 files (`_argument.md` for non-fiction/dissertation; `_spine.md` for fiction/screenplay/play; `_promises.md` for plot-driven; `_continuity.md` for genre-fiction with worldbuilding or plot secrets; `_voice-samples.md` if voice mode is `voice-samples`)
 - [ ] Genre is declared and matches Layer 2 expectations
 - [ ] Every atom note has valid frontmatter per its template
 - [ ] Every Reader atom has all required body sections (chapter 04)
+- [ ] Every Motif atom (fiction) has all required body sections (chapter 04)
+- [ ] Every Scene atom (fiction) has `lfw_value_shift_from` and `lfw_value_shift_to` populated once drafted; if identical, the SCENE-AUDIT flag should be active
 - [ ] No dangling wiki-links to non-existent atoms
 - [ ] `_state.md` references atoms that actually exist
 - [ ] If `_voice-samples.md` is present, voice mode in `_manuscript-manifest.md` matches
@@ -77,13 +83,23 @@ The validator at `_writing-engine/_scripts/validate.py` enforces a subset of the
 
 The Layer 1 universals are stable. Schema additions (new optional atom types, new optional backbone files, new activities) are minor releases (v1.x). Breaking changes (removed fields, renamed atom types, changed required-field shape) require a major release (v2.0). See `CONTRIBUTING.md`.
 
-v1.1 additions (this version):
+v1.1 additions:
 - Layer 0 introduced (OV-root files: `_craft-profile.md`)
 - New atom type: **Reader** (Layer 1 universal; primary for non-fiction)
 - New backbone files: `_argument.md` (required for non-fiction/dissertation), `_craft-log.md` (optional, recommended)
 - Activity set expanded from 10 → 16 (six new development activities defined in chapter 10)
 - Scaffolding-mode setting (`lfw_scaffolding_mode`) added to `_manuscript-manifest.md` frontmatter
 - Opt-in craft modules introduced as a coaching framework (chapter 09)
+
+v1.2 additions (this version):
+- New atom type: **Motif** (Layer 1 universal; primary for fiction). The fiction analog to non-fiction's Thread.
+- New backbone files: `_spine.md` (required for fiction/screenplay/play — causal backbone), `_continuity.md` (required for genre-fiction-with-worldbuilding and plot-with-secrets — verification ledger), `_promises.md` (required for plot-driven fiction — setup/payoff ledger)
+- Activity set expanded from 16 → 20 (four new fiction-weighted development activities defined in chapters 11 + 12: SCENE-AUDIT, CHARACTER-CONSISTENCY, CONTINUITY-CHECK, SETUP-PAYOFF-AUDIT)
+- READER-SIMULATION extended (not duplicated) with fiction sub-protocol (chapter 12 §6)
+- WORLDBUILDING extended (not duplicated) to propose CONTINUITY-CHECK at session end (chapter 12 §5)
+- Scene atom template gains `lfw_value_shift_from` and `lfw_value_shift_to` frontmatter fields and a required `## Value-shift` body section
+- New opt-in craft module: `pov-and-psychic-distance` (chapter 12 §7)
+- The `prefigures` relation (which existed but was unused in v1.0–v1.1) becomes the canonical mechanism for declaring promises in `_promises.md`
 
 ## Connection to OVE's meta-ontology
 

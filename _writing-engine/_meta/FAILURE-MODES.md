@@ -189,6 +189,96 @@ updated: 2026-06-02
 
 **Prevention:** READER-SIMULATION reports must surface at least one resistance point or one curse-of-knowledge instance, or the AI flags that the Reader may be misconfigured.
 
+## F22 — Scene doesn't turn *(v1.2 — fiction)*
+
+**Trigger:** A Scene atom is at `drafted` status. Its `lfw_value_shift_from` and `lfw_value_shift_to` fields are identical (or both empty). The scene has setting, stakes, and stated purpose but nothing changes — the character ends where they began.
+
+**Why it matters:** No-turn scenes are the single most common structural flaw in fiction drafts. A novel where most scenes don't turn reads as sequence rather than story, regardless of how interesting each scene is in isolation.
+
+**Fix:** Run SCENE-AUDIT (chapter 11 §2). State the start-state and end-state. If genuinely identical, the scene needs revising, cutting, merging, or repurposing. Sometimes a no-turn scene works (mood pieces, quiet beats); usually it doesn't.
+
+**Prevention:** SCENE-AUDIT triggers automatically after 3+ scenes drafted without an audit. The Scene template's required `## Value-shift` body section forces the writer to declare the turn before marking `drafted`.
+
+## F23 — Promise unfired or unearned *(v1.2 — fiction)*
+
+**Trigger:** Two halves of the same failure. (a) A setup planted in chapter 2 (recorded as a `prefigures` relation) has no corresponding payoff visible — the unfired Chekhov's gun. (b) A reveal or payoff in chapter 18 has no setup in earlier chapters — the unearned payoff.
+
+**Why it matters:** Reader satisfaction in fiction depends significantly on promises being kept. An unfired promise reads as the author having lost track of their own setup; an unearned payoff reads as arbitrary plot mechanics.
+
+**Fix:** Run SETUP-PAYOFF-AUDIT (chapter 11 §4). The audit categorizes promises as unfired-long-outstanding, unearned-recently-fired, unsetup-recently-delivered, or healthy.
+
+**Prevention:** `_promises.md` ledger; `prefigures` relation used as discipline; SETUP-PAYOFF-AUDIT triggered every ~10 scenes drafted and before READ-THROUGH.
+
+## F24 — Character bible disconnected from the prose *(v1.2 — fiction)*
+
+**Trigger:** A Character atom has a developed arc, voice, and relationships. The drafted scenes featuring the character don't deliver the stated want, drift away from the stated voice, or claim arc changes the prose doesn't dramatize.
+
+**Why it matters:** A novel can have gorgeous Character atoms and flat characters in the actual chapters. The writer reads the atom, feels the character is well-developed, then writes scenes that don't bear that development out. The reader experiences flatness.
+
+**Fix:** Run CHARACTER-CONSISTENCY (chapter 12 §1). Either the Character atom needs updating or the prose needs revising. The AI surfaces; the writer judges which side is right.
+
+**Prevention:** CHARACTER-CONSISTENCY triggers when a Character is `established` and has appeared in 3+ Scenes since the last check.
+
+## F25 — Arc asserted, not earned *(v1.2 — fiction)*
+
+**Trigger:** Prose claims a character change ("she finally understood," "he stopped fighting it") without dramatizing the steps that produce the change.
+
+**Why it matters:** The single most common character-level fiction failure after no-turn scenes. The writer feels the change (they know the character's internal arc) but the reader doesn't see the steps. The reader experiences the change as told, not earned.
+
+**Fix:** Surface during CHARACTER-CONSISTENCY. Writer either dramatizes the missing steps or recognizes the change isn't warranted.
+
+**Prevention:** CHARACTER-CONSISTENCY watches for asserted-change language patterns.
+
+## F26 — Antagonist weak, unflagged *(v1.2 — fiction)*
+
+**Trigger:** The antagonist's want is flimsier than the protagonist's; opposition is plot-mechanical rather than character-driven; the antagonist's atom has weak content (or doesn't exist).
+
+**Why it matters:** Weak opposition is the most reliable cause of weak fiction. A protagonist whose obstacles aren't legitimate-from-the-antagonist's-frame produces a story without genuine tension.
+
+**Fix:** Run CHARACTER-CONSISTENCY with antagonist-steelman sub-mode (chapter 12 §1). The AI builds the strongest version of the antagonist's position; if a sophisticated reader wouldn't find the want legitimate within the character's own frame, the antagonist needs more development.
+
+**Prevention:** CHARACTER-CONSISTENCY automatically runs antagonist-steelman for any Character with `lfw_role: antagonist`.
+
+## F27 — Motif stated, not woven *(v1.2 — fiction)*
+
+**Trigger:** A Motif atom exists with developed body sections; its `## Where it appears` lists only 1–2 scenes across a 60,000+ word manuscript. The motif is declared but not built.
+
+**Why it matters:** Theme that's stated is a lecture; theme that's woven is craft. A motif that appears twice in a novel is a recurring detail, not a motif.
+
+**Fix:** Surface during CRAFT-REVIEW or READ-THROUGH. Writer either weaves the motif into more scenes or retires it.
+
+**Prevention:** Motif atoms with `lfw_status: woven` but fewer than ~4 scene appearances get flagged. The writer's `## Risk of over-use` self-awareness is the other guardrail.
+
+## F28 — Continuity drift *(v1.2 — fiction)*
+
+**Trigger:** A drafted Scene contradicts a world-rule established earlier, breaks the timeline, or has a character act on information they shouldn't have yet (or fail to act on information they should have).
+
+**Why it matters:** Continuity errors break the reader's immersion immediately. Information-state errors specifically destroy plot mechanics — the reader can't follow a mystery whose clues drift in inconsistent direction.
+
+**Fix:** Run CONTINUITY-CHECK (chapter 12 §4). Writer decides whether to revise the scene, revise the rule, or recognize the apparent inconsistency as intentional.
+
+**Prevention:** `_continuity.md` ledger; CONTINUITY-CHECK every ~10 scenes drafted; required after WORLDBUILDING when new rules are added.
+
+## F29 — POV pane of glass *(v1.2 — fiction; opt-in)*
+
+**Trigger:** A scene's prose is dense with filter words (*she saw, he felt, she noticed*) that put a pane of glass between the reader and the experience. Or POV switches mid-scene unintentionally.
+
+**Why it matters:** Filter words distance the reader from immersion in ways the writer rarely notices. They're voice-load-bearing in some cases (when the act of noticing IS the point) and craft tells in most others.
+
+**Fix:** Run the `pov-and-psychic-distance` craft module (chapter 12 §7). The module flags candidates; the writer decides which are intentional.
+
+**Prevention:** Opt-in only — never silently enforced.
+
+## F30 — Head-hop within scene *(v1.2 — fiction)*
+
+**Trigger:** Within a single scene, the POV character switches without deliberate cause. Mid-scene drift from the `lfw_pov` field's declared POV.
+
+**Why it matters:** Head-hopping inside a scene disorients the reader and is almost always unintentional. Omniscient narration handles this deliberately; close-third and first-person scenes shouldn't.
+
+**Fix:** Surface via the `pov-and-psychic-distance` craft module or during a dedicated REVISE pass.
+
+**Prevention:** The Scene's `lfw_pov` field declares the intended POV; mid-scene drift from that POV is the flag.
+
 ## Adding new entries
 
 When a new failure mode surfaces in real use, add it here with the same fields. The catalog grows; the engine references it; the failure recurs less.

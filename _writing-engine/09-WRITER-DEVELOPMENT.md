@@ -162,6 +162,18 @@ Reads sections looking for places where the writer has assumed knowledge the tar
 
 The module's output is a list of specific assumptions the writer should examine. Never silent rewrites.
 
+### `pov-and-psychic-distance` *(v1.2 — fiction)*
+
+The fiction equivalent of the non-fiction modules above. Flags three patterns the writer can choose to address:
+
+- **Psychic distance shifts** — the zoom from distant narration ("It was a small town") to deep interiority ("The wallpaper smelled exactly like her grandmother's house, and Maya felt the old hatred wake up"). Good fiction modulates psychic distance deliberately; bad fiction wobbles between zoom levels without intention.
+- **Head-hopping within a scene** — the POV character should be consistent within any single scene (with limited, deliberate exceptions in omniscient narration). Mid-scene POV switches are usually unintentional and disorient the reader.
+- **Filter words** — *she saw, he felt, she noticed, he heard, she realized, he wondered, she thought.* The words that put a pane of glass between the reader and the experience. Sometimes filter words are correct (when the act of noticing is itself the point). Usually they're a craft tell.
+
+The module is opt-in because filter-word density and psychic-distance choices are voice-load-bearing. A writer whose voice depends on careful filter-word use should not have them silently flagged on every drafted section. They surface only when the writer asks.
+
+See chapter 12 §7 for the full module specification.
+
 ### How modules are invoked
 
 In a REVISE or READ-THROUGH session:
@@ -180,6 +192,22 @@ A writer who finds a recurring craft issue not covered by the shipped modules ca
 - A recommended use case (which kinds of cartridges, which kinds of revision passes)
 
 Custom modules live in `_writing-engine/_craft-modules/` if added. Out of scope for v1.x core; pattern documented here for future extensibility.
+
+## Fiction-specific error vocabulary (v1.2)
+
+The craft-log discipline (above) names patterns observed in the writer's prose. For non-fiction the patterns tend to be: buries-the-lede, hedging-stack, soft-close-on-example, paragraph-rhythm-monotone, etc. For fiction cartridges the patterns are different:
+
+- **scene-doesn't-turn** — recurring no-turn scenes (the load-bearing fiction craft regression; see chapter 11 F22)
+- **and-then-not-but-therefore** — recurring causal-chain slack between scenes
+- **arc-asserted-not-earned** — the prose claims a character change it doesn't dramatize
+- **antagonist-mechanical** — recurring weak-antagonist patterns
+- **motif-stated-not-woven** — themes named in atom files; only one or two appearances in 80,000 words
+- **continuity-slip** — world-rule or information-state drift
+- **filter-word-density** — recurring pane-of-glass patterns
+- **head-hop-within-scene** — unintentional POV switches inside scenes
+- **telling-not-showing** — the canonical fiction-craft failure
+
+These get logged in `_craft-log.md` per the standard chapter-09 discipline. Patterns that appear in 3+ cartridges graduate to `_craft-profile.md`. See chapters 11 and 12 for the activities that produce these observations (SCENE-AUDIT, CHARACTER-CONSISTENCY, CONTINUITY-CHECK, SETUP-PAYOFF-AUDIT, READER-SIMULATION in fiction mode).
 
 ## Two cautions
 
