@@ -7,8 +7,23 @@ lfw_atom_type: character
 lfw_status: developing
 lfw_role: "antagonist (relational, not villainous); POV of even chapters"
 lfw_appears_in_scenes: []
+lfw_pov_voice_register:
+  sentence_length: "cadenced-slightly-longer"
+  diction: "visual-kinetic"
+  interiority_mode: "replays-the-same-moment-three-times"
+  tense_preference: "scene-tense-default-with-occasional-replay-loops"
+  signature_moves:
+    - "sees-then-re-sees (film-editor's eye for the same moment from a different angle)"
+    - "okay as one-word holding-pattern that means 'I have heard you and have not yet agreed'"
+    - "trail-off with 'and' rather than landing the sentence"
+    - "interior cuts on rhythm (sentence ends where a film cut would be)"
+  avoid_moves:
+    - "Maya's all-right-as-decision-mode"
+    - "architectural-spatial noticing"
+    - "I see as placeholder"
+lfw_character_bible: ""
 Date_Added: 2026-06-02
-Date_Modified: 2026-06-02
+Date_Modified: 2026-06-03
 Needs_Processing: false
 ---
 
@@ -52,6 +67,22 @@ The novel's central question — will Sarah tell Maya before Maya finds out from
 - **Diction:** Visual, kinetic, often present-tense even in interiority. Sarah sees and re-sees
 - **Habits of mind:** Replays. The same moment three times, slightly differently each time, looking for what she missed
 - **Pet phrases / verbal tics:** trails off with "and." Says "okay" as a one-word agreement that means "I have heard you and have not yet agreed"
+
+### Dialogue tells *(v1.3.1)*
+
+- **Sentence shape:** Slightly longer than Maya's; cadenced. Most often lands on a verb rather than a noun. Frequently leaves the last clause unsaid (trail-off with "and").
+- **Diction range:** Visual / kinetic / present-tense even in past discussion. Sarah speaks the way she edits — by rhythm.
+- **Pet phrases:** "okay" (the pending-agreement). "I don't know," repeated. The trail-off-with-"and."
+- **Verbal tics:** Holds eye contact longer than is comfortable, then looks away mid-sentence. Never says Maya's name when speaking to her directly. (The withholding of the name is its own tell.)
+- **What she says when she doesn't know what to say:** "Okay." Then a beat. Then a half-sentence that goes nowhere.
+- **What she says when she's lying:** Goes shorter. The sentences clip. She has rehearsed the lie; the rehearsal smooths the speech.
+- **What she says under pressure:** Register expands — sentences lengthen, dependent clauses proliferate. The opposite of Maya's compression. The two POV-registers thus diverge most clearly at high pressure (intentional craft choice for the alternating-POV form).
+
+## Subtext patterns *(v1.3.1)*
+
+Sarah's central subtext-pattern is *what she's not saying about the debts.* For three months pre-novel, then for the duration of the novel until Chapter 5 (Maya opens the letter), every conversation has an undercurrent the reader can hear and Maya can almost hear. The craft challenge: render Sarah's withholding without breaking the close-third interiority that lets the reader inside her reasoning.
+
+Solution: Sarah's interior monologue rehearses the telling and the not-telling on a loop. The reader is inside the rehearsal; Maya is not. Sarah's spoken dialogue, by contrast, is plain — even oddly so. The plainness becomes the subtext, the absence-of-the-debt-conversation as audible as a missing tooth.
 
 ## Relationships
 

@@ -24,8 +24,9 @@ Checks performed (each emits one line per failure):
   3. status-legal         : every atom's lfw_status value is in the legal enum
                             for its lfw_atom_type.
   4. atom-type-known      : every atom's lfw_atom_type is a known type (beat,
-                            scene, section, chapter, act, character, reader,
-                            motif, thread, source, setting, note).
+                            scene, section, chapter, act, character,
+                            character-bible, reader, motif, theme, thread,
+                            source, setting, note).
   5. template-exists      : for every atom type seen, a corresponding
                             TEMPLATE-<Type>.md file exists in
                             _writing-engine/_templates/.
@@ -39,7 +40,14 @@ Checks performed (each emits one line per failure):
                             revised | final` must declare lfw_value_shift_from
                             and lfw_value_shift_to, and the two must differ
                             (v1.2 fiction-craft enforcement of the SCENE-AUDIT
-                            discipline in chapter 11 §1).
+                            discipline in chapter 11 §1). Exempt: sequel-typed
+                            Scenes (v1.3.1 — they carry decisions, not turns).
+ 10. scene-type-legal     : lfw_scene_type, when set, must be one of
+                            scene | sequel | scene-sequel (v1.3.1 — chapter 14
+                            §1 scene-and-sequel discipline).
+ 11. pov-voice-register   : advisory warning when an established protagonist /
+                            antagonist Character omits lfw_pov_voice_register
+                            (v1.3.1 — chapter 13 POV-voice differentiation).
 
 The script is intentionally simple and forgiving: it parses YAML frontmatter
 without a YAML library (regex + line-walk), so unusual frontmatter shapes
@@ -59,18 +67,30 @@ from collections import defaultdict
 # Prose-bearing atoms share the universal enum; non-fiction Section adds
 # fact-checked. Non-prose atoms have type-specific lifecycles.
 STATUS_ENUM = {
-    "beat":      {"planned", "drafting", "drafted", "revising", "revised", "final"},
-    "scene":     {"planned", "drafting", "drafted", "revising", "revised", "final"},
-    "section":   {"planned", "drafting", "drafted", "revising", "revised", "fact-checked", "final"},
-    "chapter":   {"planned", "drafting", "drafted", "revising", "revised", "final"},
-    "act":       {"planned", "drafting", "drafted", "revising", "revised", "final"},
-    "character": {"developing", "established", "revised", "final"},
-    "reader":    {"developing", "active", "retired"},
-    "motif":     {"latent", "emerging", "woven", "resolved"},   # v1.2 addition
-    "thread":    {"emerging", "active", "concluded"},
-    "source":    {"identified", "ingested", "folded-in", "superseded"},
-    "setting":   {"sketched", "defined", "final"},
-    "note":      {"unplaced", "placed", "discarded"},
+    "beat":            {"planned", "drafting", "drafted", "revising", "revised", "final"},
+    "scene":           {"planned", "drafting", "drafted", "revising", "revised", "final"},
+    "section":         {"planned", "drafting", "drafted", "revising", "revised", "fact-checked", "final"},
+    "chapter":         {"planned", "drafting", "drafted", "revising", "revised", "final"},
+    "act":             {"planned", "drafting", "drafted", "revising", "revised", "final"},
+    "character":       {"developing", "established", "revised", "final"},
+    "character-bible": {"drafting", "established", "revised", "final"},   # v1.3.1 addition
+    "reader":          {"developing", "active", "retired"},
+    "motif":           {"latent", "emerging", "woven", "resolved"},        # v1.2 addition
+    "theme":           {"candidate", "developing", "threaded", "resolved"},  # v1.3.1 addition
+    "thread":          {"emerging", "active", "concluded"},
+    "source":          {"identified", "ingested", "folded-in", "superseded"},
+    "setting":         {"sketched", "defined", "final"},
+    "note":            {"unplaced", "placed", "discarded"},
+}
+
+# v1.3.1: legal lfw_scene_type values
+SCENE_TYPE_ENUM = {"scene", "sequel", "scene-sequel"}
+
+# v1.3.1: legal lfw_fiction_subgenre values (advisory; enforced on manuscript-manifest only)
+FICTION_SUBGENRE_ENUM = {
+    "literary", "thriller", "mystery", "romance",
+    "sff", "speculative", "historical", "horror", "ya",
+    "",  # unset is legal
 }
 
 KNOWN_ATOM_TYPES = set(STATUS_ENUM.keys())
@@ -123,8 +143,21 @@ def parse_frontmatter(text: str) -> dict:
     return out
 
 def extract_wiki_links(text: str) -> set:
-    """Return the set of wiki-link names (without [[ ]]) in the text."""
-    return set(re.findall(r'\[\[([^\]]+)\]\]', text))
+    """Return the set of wiki-link names (without [[ ]]) in the text.
+
+    Handles Obsidian-style pipe aliases: [[Target|alias]] yields "Target".
+    Handles section anchors: [[Target#Section]] yields "Target".
+    Strips outer whitespace.
+    """
+    raw = re.findall(r'\[\[([^\]]+)\]\]', text)
+    out = set()
+    for link in raw:
+        # Strip alias after |
+        target = link.split("|", 1)[0]
+        # Strip section anchor after #
+        target = target.split("#", 1)[0]
+        out.add(target.strip())
+    return out
 
 def file_basenames(cartridge: pathlib.Path) -> set:
     """Return the set of .md basenames (without .md) in the cartridge."""
@@ -207,17 +240,42 @@ def check_cartridge(cartridge: pathlib.Path) -> list:
                 issues.append(("filename-conforms", f"{rel}: act filename should match `Act-N-<title>` pattern"))
         # motif, character, reader, thread, source, setting, note: free TitleCase-Hyphenated naming; no filename check
 
-        # Check 9 (v1.2): value-shift declared on drafted Scenes
+        # Check 9 (v1.2 + v1.3.1): value-shift declared on drafted Scenes
         # If a Scene's status is `drafted | revising | revised | final`, both
         # lfw_value_shift_from and lfw_value_shift_to must be set and must differ.
         # SCENE-AUDIT (chapter 11 §1) treats a non-shifting scene as a flag.
+        # v1.3.1: scenes with lfw_scene_type = "sequel" are exempt — they carry
+        # decisions, not value-shifts (chapter 14 §1).
         if atom_type == "scene" and status in {"drafted", "revising", "revised", "final"}:
-            v_from = fm.get("lfw_value_shift_from", "").strip()
-            v_to = fm.get("lfw_value_shift_to", "").strip()
-            if not v_from or not v_to:
-                issues.append(("scene-value-shift", f"{rel}: scene status='{status}' but lfw_value_shift_from/to not both set"))
-            elif v_from == v_to:
-                issues.append(("scene-value-shift", f"{rel}: lfw_value_shift_from == lfw_value_shift_to ('{v_from}') — scene does not turn"))
+            scene_type = fm.get("lfw_scene_type", "scene").strip() or "scene"
+            if scene_type != "sequel":
+                v_from = fm.get("lfw_value_shift_from", "").strip()
+                v_to = fm.get("lfw_value_shift_to", "").strip()
+                if not v_from or not v_to:
+                    issues.append(("scene-value-shift", f"{rel}: scene status='{status}' but lfw_value_shift_from/to not both set"))
+                elif v_from == v_to:
+                    issues.append(("scene-value-shift", f"{rel}: lfw_value_shift_from == lfw_value_shift_to ('{v_from}') — scene does not turn"))
+
+        # Check 10 (v1.3.1): scene-type legal value
+        if atom_type == "scene":
+            scene_type = fm.get("lfw_scene_type", "").strip()
+            if scene_type and scene_type not in SCENE_TYPE_ENUM:
+                issues.append(("scene-type-legal", f"{rel}: lfw_scene_type='{scene_type}' not in legal set (expected: {', '.join(sorted(SCENE_TYPE_ENUM))})"))
+
+        # Check 11 (v1.3.1): POV-bearing Characters should declare lfw_pov_voice_register
+        # Soft check — only fires if the Character's `lfw_role` includes "pov" or
+        # the Character's filename appears as `lfw_pov:` in any Scene atom.
+        # For v1.3.1 the simple form: if lfw_role contains "protagonist" or "antagonist"
+        # and the Character is `established` or above, expect lfw_pov_voice_register populated.
+        # This is advisory — emits warnings only when status >= established AND the field is missing entirely.
+        if atom_type == "character" and status in {"established", "revised", "final"}:
+            role = fm.get("lfw_role", "").strip().lower()
+            if any(r in role for r in ("protagonist", "antagonist")):
+                if "lfw_pov_voice_register" not in fm and not any(
+                    k.startswith("lfw_pov_voice_register") for k in fm
+                ):
+                    # field absent entirely — flag soft warning
+                    issues.append(("pov-voice-register-advisory", f"{rel}: established {role} Character should declare lfw_pov_voice_register (chapter 13)"))
 
     # Check 8: uniqueness
     for iid, paths in item_ids.items():

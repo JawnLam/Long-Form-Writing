@@ -13,6 +13,7 @@ lfw_characters_present: ["Maya Hollis"]
 lfw_purpose: "Open the novel. Plant the frost-warning (Promise 1) and the unopened letter (Promise 2). Establish Maya's POV and the empty-house atmosphere."
 lfw_value_shift_from: "ignorant"
 lfw_value_shift_to: "suspecting"
+lfw_scene_type: scene
 lfw_first_drafted: 2026-06-02
 lfw_word_count: 1800
 Date_Added: 2026-06-02

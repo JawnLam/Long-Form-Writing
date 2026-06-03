@@ -2,6 +2,134 @@
 
 All notable changes to Long-Form-Writing are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.1] — 2026-06-03
+
+### Added — writer-side fiction craft pass
+
+First of a two-pass patch series. v1.3.1 covers the line-level craft and structural-overlay artifacts: dialogue, POV-voice differentiation, scene-and-sequel rhythm, show-don't-tell craft module, Character-Bible atom, Theme atom, fiction sub-genre branching, beat-sheet overlays. v1.3.2 (next) will add the structural-artifact layer (`_worldbuilding.md`, multi-layer timeline, storyboard, style sheet, names list, research-as-inspiration, relationship map, stakes ladder).
+
+**New engine chapters:**
+
+- **`13-FICTION-DIALOGUE-AND-POV-VOICE.md`** — four-axis dialogue function check (Plot / Character / Subtext / Rhythm); the dialogue-tells sub-section; the DIALOGUE-AUDIT activity; POV-voice-register frontmatter and the POV-VOICE-DRIFT activity; per-POV voice samples (optional); show-don't-tell craft module with calibration field; updated Beat atom Subtext body section
+- **`14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`** — scene-and-sequel rhythm with the `lfw_scene_type` field; four beat-sheet overlays (Story Circle, Save the Cat, Hero's Journey, Freytag); the Theme atom with THEME-CHECK activity; the Character-Bible atom; fiction sub-genre branching with per-sub-genre cadence-tunings
+
+**New atom types:**
+
+- **Character-Bible** (`LFW_Character_Bible`) — opt-in extended companion to Character; for POV-bearing, antagonist, and major-supporting characters. Status enum: `drafting | established | revised | final`. Lives in `Atoms/Character-Bibles/`. Operator-private by default
+- **Theme** (`LFW_Theme`) — first-class atom for the abstract idea the manuscript is about; carried-not-declared; distinct from Motif (image) and `_argument.md` (logical structure). Status enum: `candidate | developing | threaded | resolved`. Lives in `Atoms/Themes/`
+
+**Scene atom additions (backward-compatible):**
+
+- `lfw_scene_type: scene | sequel | scene-sequel` — defaults to `scene`; sequel-typed atoms carry a decision (next scene's want) instead of a value-shift. Validator check 9 exempts sequel-typed Scenes from value-shift requirements. New `## Sequel` body section for sequel-typed atoms
+
+**Character atom additions (backward-compatible):**
+
+- `lfw_pov_voice_register` — structured POV-voice fields (sentence_length, diction, interiority_mode, tense_preference, signature_moves, avoid_moves). Required for POV-bearing Characters per chapter 13; optional otherwise. Validator check 11 issues advisory warnings when an established protagonist/antagonist omits the field
+- `lfw_character_bible` — soft pointer to extended Character-Bible atom
+- `### Dialogue tells` sub-section under Voice and prose register — sentence shape, diction range, pet phrases, verbal tics, what they say when they don't know what to say, what they say when lying, what they say under pressure
+- Optional `## Subtext patterns` body section
+
+**Beat atom addition (backward-compatible):**
+
+- Optional `## Subtext` body section — for beats where dialogue carries weight (surface, underneath, listener-registers, reader-registers)
+
+**Manuscript-manifest additions (backward-compatible):**
+
+- `lfw_fiction_subgenre: literary | thriller | mystery | romance | sff | speculative | historical | horror | ya` — advisory; tunes activity cadence per chapter 03 §6b''
+- `lfw_active_overlays: []` — declares which beat-sheet overlays are active
+- `lfw_active_craft_modules: []` — declares which opt-in craft modules are active
+- `lfw_show_dont_tell_calibration` — standing position (strict-show / balanced / telling-narrator-as-voice / off) and load-bearing-only flag
+
+**Activity set expanded 20 → 23:**
+
+- **DIALOGUE-AUDIT** — four-axis function check on drafted dialogue; surface zero/one-axis lines
+- **POV-VOICE-DRIFT** — audit prose voice across alternating-POV chapters against each POV's lfw_pov_voice_register; surface register-bleed
+- **THEME-CHECK** — audit Theme atoms against drafted prose; surface gaps in threading, on-the-nose treatment, motif/theme cross-references
+
+**Sub-genre tunings (chapter 03 §6b''):**
+
+Cadence thresholds shift per sub-genre:
+
+- thriller / mystery / horror: SETUP-PAYOFF-AUDIT triggers at ≥6 scenes (default ≥10)
+- romance / multi-POV literary: POV-VOICE-DRIFT triggers at ≥6 sessions (default ≥8)
+- SFF / historical: WORLDBUILDING more frequent; CONTINUITY-CHECK at ≥6 scenes
+- literary / speculative: THEME-CHECK at ≥6 sessions (default ≥10)
+
+**Beat-sheet overlays (opt-in):**
+
+Four shipped overlay templates that read against `_spine.md` as a diagnostic lens (not a writing prescription):
+
+- Story Circle (Dan Harmon, 8 beats) — most fiction; literary-friendly
+- Save the Cat (Blake Snyder, 15 beats) — commercial; screenplay-adjacent
+- Hero's Journey (Campbell / Vogler, 12 stages) — mythic / fantasy / quest
+- Freytag's Pyramid (1863, 5 beats) — classical / dramatic / literary
+
+Cartridges declare active overlays in the manifest; the overlay file lives at `<Cartridge>/_overlay-{name}.md`.
+
+**New opt-in craft modules:**
+
+- `show-dont-tell` (chapter 13 §4) — calibrated to the writer's standing position; surfaces asserted-not-shown moments and over-dramatized routine transitions
+- `dialogue-and-subtext` (chapter 13 §1) — scene-running quick check during revision (lighter than the full DIALOGUE-AUDIT activity)
+
+**New templates:**
+
+- `TEMPLATE-Character-Bible.md`
+- `TEMPLATE-Theme.md`
+- `TEMPLATE-overlay-story-circle.md`
+- `TEMPLATE-overlay-save-the-cat.md`
+- `TEMPLATE-overlay-heros-journey.md`
+- `TEMPLATE-overlay-freytag.md`
+- Updated: `TEMPLATE-Scene.md` (lfw_scene_type field; Sequel body section)
+- Updated: `TEMPLATE-Character.md` (lfw_pov_voice_register, lfw_character_bible, dialogue-tells sub-section, subtext-patterns section)
+- Updated: `TEMPLATE-Beat.md` (Subtext body section)
+- Updated: `TEMPLATE-manuscript-manifest.md` (sub-genre, active-overlays, active-craft-modules, show-don't-tell calibration)
+- Updated: `TEMPLATE-spine.md` (scene-vs-sequel column in ledger)
+
+**Meta updates:**
+
+- `_meta/SCHEMA-OF-SCHEMAS.md` — Layer 1 universals updated for v1.3.1 atoms and fields; activity count 20 → 23; v1.3.1 additions section added
+- `_meta/FAILURE-MODES.md` — added F31 (dialogue-as-info-dump), F32 (interchangeable-dialogue), F33 (on-the-nose-subtext), F34 (POV-voice-bleed), F35 (show-everything-pathology), F36 (style-sheet-drift), F37 (AI-homogenizes-POV-voices), F38 (missing-sequels), F39 (over-sequel'd-thriller), F40 (sequel-without-decision), F41 (overlay-as-formula), F42 (on-the-nose-theme), F43 (character-bible-as-procrastination), F44 (sub-genre-miscalibration)
+
+**Validator:**
+
+- Extended `STATUS_ENUM` with `character-bible` and `theme`
+- Updated check 9 (scene-value-shift) to exempt sequel-typed Scenes
+- New check 10 (scene-type-legal) — lfw_scene_type, when set, must be scene / sequel / scene-sequel
+- New check 11 (pov-voice-register-advisory) — established protagonists/antagonists should declare lfw_pov_voice_register
+- Beat filename pattern broadened further to accept both v1.1 and v1.2 forms (no change from v1.2; documented for completeness)
+
+**Worked example updated:**
+
+- `Example-Project-The-Late-Frost/` migrated to v1.3.1 in session 004 (META session):
+  - Sub-genre declared (`literary`); three craft modules activated; show-don't-tell calibrated to `balanced`
+  - Maya and Sarah Character atoms gained POV-voice-register (with mirror-discipline avoid-moves), dialogue tells sub-sections, subtext patterns sections
+  - Maya gained extended Character-Bible (`Maya-Hollis-Bible`) — 15 sections including chronological backstory 1984–2026
+  - Theme atom created: `Honesty-Under-Cost` — central; cross-referenced with both motifs and both Characters; treatment-risks section names four specific risks for this manuscript
+  - Story Circle overlay populated; beat 8 (Change) deliberately divergent; divergence documented as enactment of theme
+  - Scene 01-01 declared `lfw_scene_type: scene`
+
+**`.gitignore` updates:**
+
+- `Atoms/Character-Bibles/*` excluded by default (operator-private bibles)
+- `**/_overlay-*.md` excluded by default
+- `**/_voice-samples-*.md` excluded by default (per-POV voice samples)
+- Theme atoms remain tracked by default (themes are often discussed in pitches and proposals)
+- Worked-example overrides preserve shipped reference content
+
+### Notes
+
+v1.3.1 closes three of the highest-leverage line-level craft gaps in fiction. The POV-voice-register's mirror-discipline (each POV's avoid_moves are the other POV's signature_moves) is the structural defense against POV-voice-bleed; the four-axis dialogue function check makes line-level dialogue auditable; the Character-Bible gives long-novel character work the depth-of-record it needs without bloating the Character atom.
+
+The scene-and-sequel discipline matters most for literary fiction (where sequel-beats often do the prose's emotional work) and least for thriller (where the form compresses or skips sequels). The sub-genre tuning ensures the activity-decision algorithm respects this.
+
+The beat-sheet overlays are deliberately opt-in and explicitly framed as reading lenses rather than writing prescriptions. The most-common failure mode (F41 — overlay-as-formula) is named in every overlay template's Risks section.
+
+The Theme atom is distinct from Motif (image-cluster) and from `_argument.md` (non-fiction's declared logical structure). Theme is what's *carried* through the manuscript by mechanism; the validator does not enforce theme treatment, but the THEME-CHECK activity surfaces on-the-nose moments and threading gaps.
+
+This release is backward-compatible with all v1.0 / v1.1 / v1.2 cartridges. Existing fiction cartridges without v1.3.1 fields remain valid; the AI surfaces the v1.3.1 additions during CRAFT-REVIEW and the next BOOTSTRAP-NEW-MANUSCRIPT session.
+
+---
+
 ## [1.2.0] — 2026-06-02
 
 ### Added — fiction conceptual pass

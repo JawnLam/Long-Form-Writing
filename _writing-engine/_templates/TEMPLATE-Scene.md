@@ -13,6 +13,7 @@ lfw_characters_present: []
 lfw_purpose: ""              # one-sentence: what this scene must do
 lfw_value_shift_from: ""     # v1.2: starting value-state (e.g., "safe", "hopeful", "ignorant")
 lfw_value_shift_to: ""       # v1.2: ending value-state (must differ from `from` for the scene to turn)
+lfw_scene_type: scene        # v1.3.1: scene (value-shifting, default) | sequel (reactive-processing) | scene-sequel (compound)
 lfw_first_drafted: null
 lfw_word_count: 0
 Date_Added:
@@ -26,9 +27,9 @@ Needs_Processing: false
 
 *Where. When. Who's present. What's at stake. POV.*
 
-## Value-shift *(v1.2)*
+## Value-shift *(v1.2 — for lfw_scene_type: scene or scene-sequel)*
 
-*The load-bearing fiction-craft discipline. Fill in before this scene is marked `drafted`. If `from` and `to` are identical, the scene doesn't turn — SCENE-AUDIT will flag.*
+*The load-bearing fiction-craft discipline. Fill in before this scene is marked `drafted`. If `from` and `to` are identical, the scene doesn't turn — SCENE-AUDIT will flag. Omit this section entirely if lfw_scene_type is `sequel`.*
 
 - **Whose want drives this scene:** *(character, what they want in this scene)*
 - **What's the conflict:** *(what stands between the want and its satisfaction)*
@@ -36,6 +37,16 @@ Needs_Processing: false
 - **End-state (to):** *(value-state at the scene's close — must be different, or the scene doesn't turn)*
 - **The turn — what changes:** *(one sentence: what is true at the end that wasn't at the start?)*
 - **But / Therefore connector to the next scene:** *(the next scene happens because of this one — "therefore" — or despite it — "but." If "and then" is the only honest connector, the spine has gone slack here.)*
+
+## Sequel *(v1.3.1 — for lfw_scene_type: sequel or scene-sequel)*
+
+*The reactive-processing beat. Reaction → Dilemma → Decision. The decision becomes the NEXT scene's want. Omit this section entirely if lfw_scene_type is `scene`. See chapter 14 §1 for the scene-and-sequel discipline.*
+
+- **Whose reaction this sequel carries:** *(POV character)*
+- **Reaction (emotional, physical, immediate):** *(the first response to the prior scene's outcome)*
+- **Dilemma (the new situation):** *(what new choice the prior outcome forces)*
+- **Decision (the new want):** *(what the character decides to pursue next)*
+- **Carry-forward connector to next scene:** *(the decision IS the next scene's want — make the linkage explicit)*
 
 ## Beats
 

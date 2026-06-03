@@ -26,6 +26,15 @@ Needs_Processing: false
 
 *The actual prose (when drafted) or planned content (when in outline).*
 
+## Subtext *(v1.3.1, optional — for beats where dialogue carries weight)*
+
+- **Surface:** *(what is said)*
+- **Underneath:** *(what is meant)*
+- **What the listener registers:** *(what the OTHER character hears in the gap, or doesn't)*
+- **What the reader registers:** *(reader's awareness; may differ from listener's)*
+
+*(omit this section entirely on beats that are pure action, observation, or movement)*
+
 ## Connects
 
 - **Follows from:** *(beat or atom)*

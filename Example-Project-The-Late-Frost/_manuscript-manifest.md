@@ -8,6 +8,7 @@ Needs_Processing: false
 lfw_manuscript_title: "The Late Frost"
 lfw_manuscript_slug: "the-late-frost"
 lfw_genre: fiction
+lfw_fiction_subgenre: literary
 lfw_target_length: "75,000 words"
 lfw_voice_mode: writer-maintains
 lfw_citation_style: ""
@@ -19,6 +20,14 @@ lfw_scaffolding_thresholds:
   full_through_session: 10
   partial_fade_through_session: 30
   major_fade_through_session: 60
+lfw_active_overlays: ["story-circle"]
+lfw_active_craft_modules:
+  - show-dont-tell
+  - dialogue-and-subtext
+  - pov-and-psychic-distance
+lfw_show_dont_tell_calibration:
+  standing_position: balanced
+  load_bearing_moments_only: true
 ---
 
 # The Late Frost — Manuscript Manifest

@@ -50,6 +50,11 @@ _craft-profile.md
 **/_continuity.md
 **/_promises.md
 
+# v1.3.1 operator-private artifacts
+**/Atoms/Character-Bibles/*.md
+**/_overlay-*.md
+**/_voice-samples-*.md
+
 # ----------------------------------------------------------------------
 # Always tracked (overrides above for the shipped worked example):
 # ----------------------------------------------------------------------

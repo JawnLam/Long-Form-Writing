@@ -162,6 +162,28 @@ Reads sections looking for places where the writer has assumed knowledge the tar
 
 The module's output is a list of specific assumptions the writer should examine. Never silent rewrites.
 
+### `show-dont-tell` *(v1.3.1 — fiction)*
+
+Specified in chapter 13 §4. Surfaces:
+
+- Emotional states asserted in interiority without sensory or behavioral ground (F22 from v1.2)
+- Backstory summary at moments where the reader needs the present
+- Redundant telling that restates what an earlier scene already showed
+- Over-dramatization of routine transitions (F35 — show-everything pathology)
+
+The module is calibrated to the writer's standing position (`strict-show` / `balanced` / `telling-narrator-as-voice` / `off`). Voice-load-bearing telling is protected; weaponized show-don't-tell is the failure mode the calibration prevents.
+
+### `dialogue-and-subtext` *(v1.3.1 — fiction)*
+
+Specified in chapter 13 §1. Surfaces in REVISE and READ-THROUGH passes:
+
+- Lines that score on only one of the four dialogue function axes (plot / character / subtext / rhythm)
+- Stretches of 4+ consecutive lines scoring on the same single axis (information-dump cluster; character-demonstration cluster)
+- Dialogue that doesn't sound like the speaking character per their dialogue-tells
+- Declared subtext (on the Beat atom) that the surface dialogue doesn't carry
+
+Different from the DIALOGUE-AUDIT activity (which is a full-scene audit); the module is a scene-running quick check during revision.
+
 ### `pov-and-psychic-distance` *(v1.2 — fiction)*
 
 The fiction equivalent of the non-fiction modules above. Flags three patterns the writer can choose to address:
@@ -206,6 +228,16 @@ The craft-log discipline (above) names patterns observed in the writer's prose. 
 - **filter-word-density** — recurring pane-of-glass patterns
 - **head-hop-within-scene** — unintentional POV switches inside scenes
 - **telling-not-showing** — the canonical fiction-craft failure
+- **dialogue-as-info-dump** *(v1.3.1)* — recurring lines that score only on Plot axis
+- **interchangeable-dialogue** *(v1.3.1)* — recurring lines that score zero on Character axis
+- **on-the-nose-subtext** *(v1.3.1)* — characters explaining their feelings; the gap between surface and meaning collapses
+- **pov-voice-bleed** *(v1.3.1)* — recurring register-bleed between POVs in alternating-POV work
+- **show-everything-pathology** *(v1.3.1)* — routine transitions over-dramatized; pacing collapses
+- **on-the-nose-theme** *(v1.3.1)* — theme stated by character or narration as thesis
+- **missing-sequels** *(v1.3.1)* — literary fiction where every scene turns and no reactive beats appear
+- **over-sequel'd** *(v1.3.1)* — thriller/commercial where action scenes routinely produce extended interiority that violates the form
+- **overlay-as-formula** *(v1.3.1)* — beat-sheet overlay treated as writing prescription rather than diagnostic lens
+- **character-bible-as-procrastination** *(v1.3.1)* — bible expands indefinitely as avoidance of drafting
 
 These get logged in `_craft-log.md` per the standard chapter-09 discipline. Patterns that appear in 3+ cartridges graduate to `_craft-profile.md`. See chapters 11 and 12 for the activities that produce these observations (SCENE-AUDIT, CHARACTER-CONSISTENCY, CONTINUITY-CHECK, SETUP-PAYOFF-AUDIT, READER-SIMULATION in fiction mode).
 
