@@ -67,6 +67,16 @@ The AI does NOT rewrite character dialogue or interiority to "fix" inconsistenci
 
 **F26 — antagonist-weak-unflagged.** The protagonist's opposition is mechanical rather than character-driven, and the writer hasn't surfaced the problem.
 
+### When Character-Bible atoms are present *(v1.3.1)*
+
+If the Character atom has `lfw_character_bible` populated and the Bible atom exists, CHARACTER-CONSISTENCY reads the Bible in full as part of the activity. The audit then can:
+
+- Test the prose against the Bible's deep backstory, contradictions, and arc-across-manuscript (not just against the Character atom's surface)
+- Surface drift between Bible and prose (e.g., a habit declared in the Bible that hasn't surfaced in any drafted scene, suggesting the prose is forgetting the character)
+- Surface drift between Character atom and Bible (the Character atom may be ahead of the Bible, or vice versa)
+
+The Character-Bible's structure and discipline are defined in chapter 14 §3. CHARACTER-CONSISTENCY is the primary consumer of the Bible — most other activities read only the Character atom's surface.
+
 ## Part two — Motif atom: fiction's Thread analog
 
 ### What it is

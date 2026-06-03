@@ -26,13 +26,13 @@ lfw_spine_version: 1
 
 ## Scene-by-scene value-shifts
 
-*The spine's primary content. For each Scene, the value-state at the start and at the end. A scene with from-state = to-state has not turned (F22).*
+*The spine's primary content. For each Scene, the value-state at the start and at the end. A scene with from-state = to-state has not turned (F22). v1.3.1: Type column captures scene-vs-sequel; sequel-typed atoms carry a decision (the next scene's want) rather than a value-shift.*
 
-| Scene | From | To | But/Therefore connector to next |
-|-------|------|-----|---------------------------------|
-| [[Scene-filename]] | safe | threatened | **therefore** the next scene happens because... |
-| [[Scene-filename]] | hopeful | crushed | **but** despite this, the next scene... |
-|  |  |  |  |
+| # | Scene | Type | POV | From → To (scenes) / Decision (sequels) | But/Therefore connector to next |
+|---|-------|------|-----|-----------------------------------------|---------------------------------|
+| 1 | [[Scene-filename]] | scene | | safe → threatened | **therefore** the next scene happens because... |
+| 2 | [[Scene-filename]] | sequel | | decision: confront the manager | **therefore** the next scene's want is the confrontation |
+| 3 | [[Scene-filename]] | scene | | hopeful → crushed | **but** despite this, the next scene... |
 
 ## Cause→effect linkage
 

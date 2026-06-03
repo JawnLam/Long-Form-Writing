@@ -7,8 +7,23 @@ lfw_atom_type: character
 lfw_status: developing
 lfw_role: "protagonist; POV of odd chapters"
 lfw_appears_in_scenes: ["[[01-01-The-Approach]]"]
+lfw_pov_voice_register:
+  sentence_length: "short-with-one-layered-passage-per-beat"
+  diction: "plain-observational-architectural"
+  interiority_mode: "observational-with-suppressed-calculation"
+  tense_preference: "scene-tense-default"
+  signature_moves:
+    - "architectural-spatial-noticing (she sees rooms as compositions)"
+    - "all-right as a sentence at decision moments"
+    - "short self-check then continues without confirming"
+    - "calculates, catches herself, does not stop"
+  avoid_moves:
+    - "Sarah's replay pattern (re-seeing a moment three times)"
+    - "okay as one-word agreement"
+    - "trail-off with 'and'"
+lfw_character_bible: "[[Maya-Hollis-Bible]]"
 Date_Added: 2026-06-02
-Date_Modified: 2026-06-02
+Date_Modified: 2026-06-03
 Needs_Processing: false
 ---
 
@@ -39,6 +54,22 @@ Maya is the protagonist and the POV of odd-numbered chapters. She is the sister 
 - **Diction:** Architectural, spatial — Maya notices rooms, surfaces, light, the way furniture is arranged. The vineyard becomes a kind of building to her
 - **Habits of mind:** Calculates. Catches herself calculating. Resists the calculation but does not stop it
 - **Pet phrases / verbal tics:** "all right" as a sentence ("All right.") at moments of decision. "I see" as a placeholder when she does not yet see
+
+### Dialogue tells *(v1.3.1)*
+
+- **Sentence shape:** Short, declarative. Often fragmentary in moments of decision.
+- **Diction range:** Plain. Slight register-shifting downward toward Hector (more equal, less manager-shaped). No shift around Sarah — they speak the shorthand of a long shared life.
+- **Pet phrases:** "All right." as a sentence. "I see" as a placeholder. "Fine." as an end-of-conversation marker.
+- **Verbal tics:** Says the listener's name when she's about to say something hard ("Sarah —")
+- **What she says when she doesn't know what to say:** "I see." Followed by silence. The silence is the answer.
+- **What she says when she's lying:** Goes more precise. Adds a detail that isn't necessary. (The tell: necessary detail in a lying-Maya sentence is the same shape as decorative detail in a truthful-Maya sentence; only the precision-density shifts.)
+- **What she says under pressure:** Register doesn't escalate. Sentences get shorter. Cuts adverbs. The compression IS the pressure.
+
+## Subtext patterns *(v1.3.1)*
+
+Maya speaks plainly when the topic is *external* (the vineyard, the work, the weather). She speaks around when the topic is *interior* (the relationship, the father, the past). The reader will register the pattern: short plain sentences about cabernet block frost defense; sentences-with-evasions about Sarah's three-year silence.
+
+The most reliable subtext-mechanism in Maya's dialogue: she answers the *previous* question. Sarah asks something hard; Maya answers something else from earlier in the conversation. The reader hears the gap; Sarah hears it too but does not name it.
 
 ## Relationships
 

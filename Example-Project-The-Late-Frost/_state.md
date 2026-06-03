@@ -3,15 +3,16 @@ Item_Prototype: LFW_State
 Item_ID: "the-late-frost-state"
 Title: "The Late Frost — State"
 Date_Added: 2026-06-02
-Date_Modified: 2026-06-02
+Date_Modified: 2026-06-03
 Needs_Processing: false
 lfw_manuscript: "the-late-frost"
 lfw_lifecycle_stage: drafting
 lfw_genre: fiction
-lfw_sessions_completed: 3
-lfw_total_writing_hours: 3.5
-lfw_last_session_date: 2026-06-02
-lfw_next_session_default_activity: DRAFT
+lfw_fiction_subgenre: literary
+lfw_sessions_completed: 4
+lfw_total_writing_hours: 4.5
+lfw_last_session_date: 2026-06-03
+lfw_next_session_default_activity: REVISE
 lfw_current_revision_pass: null
 lfw_current_revision_round: 0
 lfw_word_count_total: 1800
@@ -24,8 +25,8 @@ lfw_word_count_target: 75000
 
 - **Stage:** drafting
 - **Stage entry date:** 2026-06-02 (session 003)
-- **Sessions completed in this stage:** 1
-- **Sessions completed total:** 3
+- **Sessions completed in this stage:** 2 (session 004 was a META session for v1.3.1 cartridge update; no prose advanced)
+- **Sessions completed total:** 4
 
 ## Today's Focus
 
@@ -59,10 +60,23 @@ Scene 1 is drafted (1,800 words). Value-shift is declared (ignorant-of-debt → 
 
 ### Characters
 
-| Character | Status | Role |
-|-----------|--------|------|
-| [[Maya-Hollis]] | developing | protagonist |
-| [[Sarah-Hollis]] | developing | antagonist (relational, not villainous) |
+| Character | Status | Role | POV-voice-register populated? | Bible? |
+|-----------|--------|------|-------------------------------|--------|
+| [[Maya-Hollis]] | developing | protagonist | yes (v1.3.1) | [[Maya-Hollis-Bible]] drafting |
+| [[Sarah-Hollis]] | developing | antagonist (relational, not villainous) | yes (v1.3.1) | deferred |
+| [[Hector-Reyes]] | developing | vineyard manager | n/a | none |
+
+### Character-Bibles *(v1.3.1)*
+
+| Bible | Status | Character |
+|-------|--------|-----------|
+| [[Maya-Hollis-Bible]] | drafting | [[Maya-Hollis]] |
+
+### Themes *(v1.3.1)*
+
+| Theme | Status | Priority | Scenes appearing in |
+|-------|--------|----------|---------------------|
+| [[Honesty-Under-Cost]] | developing | central | 1 (planned in many more) |
 
 ### Motifs
 
@@ -77,6 +91,12 @@ Scene 1 is drafted (1,800 words). Value-shift is declared (ignorant-of-debt → 
 |--------|--------|----------|
 | [[Literary-Fiction-Reader]] | active | primary |
 | [[Vineyard-Expert]] | active | secondary |
+
+### Active overlays *(v1.3.1)*
+
+| Overlay | File | Notes |
+|---------|------|-------|
+| Story Circle | `_overlay-story-circle.md` | Beat 8 (Change) deliberately divergent |
 
 ## Open Threads (to address next session)
 
@@ -99,6 +119,7 @@ Scene 1 is drafted (1,800 words). Value-shift is declared (ignorant-of-debt → 
 
 ## Recent Sessions
 
+- [[2026-06-03_004_v1.3.1-UPDATE]] — META session; cartridge migrated to v1.3.1; sub-genre declared; POV-voice-registers populated; Maya bible drafted; Honesty-Under-Cost theme created; Story Circle overlay populated
 - [[2026-06-02_003_DRAFT]] — Scene 1 Beats 1–4 drafted (1,800 words); Beat 4 flagged for revision
 - [[2026-06-02_002_OUTLINE]] — Chapter 1 and Chapter 2 outlined at scene level; spine v1 drafted
 - [[2026-06-02_001_BOOTSTRAP]] — Cartridge setup; manifest, outline, characters, readers, motifs, spine v1, continuity v1, promises v1 all initialized
@@ -112,8 +133,14 @@ Scene 1 is drafted (1,800 words). Value-shift is declared (ignorant-of-debt → 
 
 - [x] Outline at chapter level complete
 - [x] Outline at scene level for Chapter 1 complete
+- [x] POV-voice-registers populated for both POV-bearing Characters *(v1.3.1)*
+- [x] First Theme atom created *(v1.3.1)*
+- [x] Story Circle overlay mapped *(v1.3.1)*
 - [ ] Chapter 1 first-draft — 1 of ~5 scenes drafted
 - [ ] First SCENE-AUDIT formal pass on Chapter 1 Scenes
+- [ ] First DIALOGUE-AUDIT — not yet triggerable (Scene 1 has < 10 dialogue lines)
+- [ ] First POV-VOICE-DRIFT — not yet triggerable (need 3+ chapters drafted in each POV)
+- [ ] First THEME-CHECK — not yet triggerable (need ≥5 scenes drafted, literary sub-genre tuning)
 - [ ] First READER-SIMULATION on drafted Chapter 1 Scenes
 - [ ] First SETUP-PAYOFF-AUDIT after 10+ scenes drafted
 - [ ] First CRAFT-REVIEW after ~10 sessions

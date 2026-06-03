@@ -2,7 +2,7 @@
 type: writing-engine
 role: meta-ontology
 scope: subject-agnostic
-updated: 2026-06-02
+updated: 2026-06-03
 ---
 
 # Schema of Schemas — LFW Meta-Ontology
@@ -26,12 +26,13 @@ These hold inside every cartridge regardless of genre:
 
 - Cartridge backbone files: `_manuscript-manifest.md`, `_state.md`, `_outline.md`
 - Conditional backbone files: `_voice-samples.md`, `_argument.md`, `_craft-log.md`, `_spine.md`, `_continuity.md`, `_promises.md`
-- Atom-storage subfolders: `Atoms/Beats/`, `Atoms/Chapters/`, `Atoms/Readers/`, `Atoms/Motifs/`, `Atoms/Notes/`, etc.
+- Atom-storage subfolders: `Atoms/Beats/`, `Atoms/Chapters/`, `Atoms/Readers/`, `Atoms/Motifs/`, `Atoms/Themes/`, `Atoms/Character-Bibles/`, `Atoms/Notes/`, etc.
 - `Sessions/` folder with append-only logs
 - `Revision-Passes/` folder with append-only logs
 - Session lifecycle (READ → DIAGNOSE → PROPOSE → WAIT → EXECUTE → CAPTURE → WRITE → UPDATE)
-- The twenty universal activities (10 production + 6 development non-fiction-weighted + 4 development fiction-weighted)
+- The twenty-three universal activities (10 production + 6 development non-fiction-weighted + 4 development fiction-weighted v1.2 + 3 development fiction-craft v1.3.1)
 - The four standard revision passes
+- Optional opt-in overlay files: `_overlay-{name}.md` (chapter 14 §2)
 - Source-of-truth: `_state.md` for current state; session logs for history
 
 ### Layer 2 — Per-genre branch
@@ -91,7 +92,7 @@ v1.1 additions:
 - Scaffolding-mode setting (`lfw_scaffolding_mode`) added to `_manuscript-manifest.md` frontmatter
 - Opt-in craft modules introduced as a coaching framework (chapter 09)
 
-v1.2 additions (this version):
+v1.2 additions:
 - New atom type: **Motif** (Layer 1 universal; primary for fiction). The fiction analog to non-fiction's Thread.
 - New backbone files: `_spine.md` (required for fiction/screenplay/play — causal backbone), `_continuity.md` (required for genre-fiction-with-worldbuilding and plot-with-secrets — verification ledger), `_promises.md` (required for plot-driven fiction — setup/payoff ledger)
 - Activity set expanded from 16 → 20 (four new fiction-weighted development activities defined in chapters 11 + 12: SCENE-AUDIT, CHARACTER-CONSISTENCY, CONTINUITY-CHECK, SETUP-PAYOFF-AUDIT)
@@ -100,6 +101,19 @@ v1.2 additions (this version):
 - Scene atom template gains `lfw_value_shift_from` and `lfw_value_shift_to` frontmatter fields and a required `## Value-shift` body section
 - New opt-in craft module: `pov-and-psychic-distance` (chapter 12 §7)
 - The `prefigures` relation (which existed but was unused in v1.0–v1.1) becomes the canonical mechanism for declaring promises in `_promises.md`
+
+v1.3.1 additions (this version):
+- New atom types: **Character-Bible** (Layer 1 universal; opt-in extended companion to Character; chapter 14 §3), **Theme** (Layer 1 universal; primary for fiction; carried-not-declared; distinct from Motif and from `_argument.md`; chapter 14 §4)
+- Scene atom gains `lfw_scene_type` field (scene | sequel | scene-sequel; chapter 14 §1 scene-and-sequel rhythm); sequel-typed Scenes are exempt from value-shift requirements (they carry decisions instead)
+- Character atom gains `lfw_pov_voice_register` field (required for POV-bearing characters), dialogue-tells sub-section, optional subtext-patterns section; `lfw_character_bible` soft pointer
+- Beat atom gains optional Subtext body section (for beats where dialogue carries weight)
+- Manuscript-manifest gains `lfw_fiction_subgenre` (literary | thriller | mystery | romance | sff | speculative | historical | horror | ya), `lfw_active_overlays`, `lfw_active_craft_modules`, `lfw_show_dont_tell_calibration`
+- Activity set expanded from 20 → 23: **DIALOGUE-AUDIT** (chapter 13 §3), **POV-VOICE-DRIFT** (chapter 13 §2), **THEME-CHECK** (chapter 14 §4)
+- New opt-in craft modules: `show-dont-tell` (chapter 13 §4), `dialogue-and-subtext` (chapter 13 §1)
+- Beat-sheet overlays as opt-in templates (Layer 2.5 between genre and instance): Story Circle, Save the Cat, Hero's Journey, Freytag (chapter 14 §2)
+- Fiction sub-genre tunings of cadence thresholds (chapter 03 §6b''; chapter 14 §5)
+- Optional per-POV voice-sample backbones (`_voice-samples-{pov-slug}.md`; chapter 13 §2)
+- Validator extended: check 9 exempts sequel-typed Scenes; new check 10 (scene-type-legal); new advisory check 11 (pov-voice-register on established protagonists/antagonists)
 
 ## Connection to OVE's meta-ontology
 

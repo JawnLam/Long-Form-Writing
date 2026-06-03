@@ -13,19 +13,21 @@ updated: 2026-06-02
 
 An atom is the smallest reusable, referenceable unit of a manuscript. Atoms have frontmatter, structured body sections, and named relationships to other atoms. They are stored as individual markdown files in the cartridge's `Atoms/` subfolders.
 
-The twelve atom types in LFW v1.2:
+The fourteen atom types in LFW v1.3.1:
 
 | Type | Role | Genre relevance |
 |------|------|-----------------|
-| **Beat** | Smallest dramatic or rhetorical move | All genres |
-| **Scene** | Composed of beats; prose lives here (fiction, screenplay, play) | Fiction / screenplay / play |
+| **Beat** | Smallest dramatic or rhetorical move; optional Subtext body section *(v1.3.1)* | All genres |
+| **Scene** | Composed of beats; prose lives here (fiction, screenplay, play); value-shift *(v1.2)* + optional scene-type *(v1.3.1)* | Fiction / screenplay / play |
 | **Section** | Composed of beats; prose lives here (non-fiction, dissertation) | Non-fiction / dissertation |
 | **Chapter** | Composes scenes or sections | Fiction / non-fiction / dissertation |
 | **Act** | Composes scenes (screenplay/play equivalent of Chapter) | Screenplay / play |
 | **Setting** | Location, period, and stage-condition record | Play (primary); fiction / screenplay (optional) |
-| **Character** | Recurring participant in fiction/screenplay/play | Fiction / screenplay / play |
+| **Character** | Recurring participant; v1.3.1 adds POV-voice-register and dialogue-tells | Fiction / screenplay / play |
+| **Character-Bible** *(v1.3.1)* | Extended companion to Character for POV-bearing, antagonist, and major-supporting characters | Fiction / screenplay / play |
 | **Reader** | Modeled audience member; used in READER-SIMULATION | Non-fiction (primary) / dissertation / fiction (extended in chapter 12) |
-| **Motif** *(v1.2)* | Recurring sub-surface element (theme, image system, recurring object, gesture, symbol, sound) | Fiction (primary) / screenplay / play |
+| **Motif** *(v1.2)* | Recurring sub-surface image, object, gesture, symbol, sound | Fiction (primary) / screenplay / play |
+| **Theme** *(v1.3.1)* | Abstract idea the manuscript is about; carried not declared | Fiction (primary) / screenplay / play / memoir |
 | **Thread** | Recurring topic / argument / framing device | Non-fiction / dissertation |
 | **Source** | External material informing the work | Non-fiction / dissertation (heavy); fiction (light) |
 | **Note** | Unplaced fragment, idea, future inclusion | All genres |
@@ -54,8 +56,10 @@ Other atom types use type-specific lifecycle fields, NOT `lfw_status`:
 |-----------|-----------------|--------------|
 | Beat / Scene / Section / Chapter / Act | `lfw_status` | `planned`, `drafting`, `drafted`, `revising`, `revised`, `final` (+ `fact-checked` for non-fiction Section) |
 | Character | `lfw_status` | `developing`, `established`, `revised`, `final` |
+| Character-Bible *(v1.3.1)* | `lfw_status` | `drafting`, `established`, `revised`, `final` |
 | Reader | `lfw_status` | `developing`, `active`, `retired` |
 | Motif | `lfw_status` | `latent`, `emerging`, `woven`, `resolved` |
+| Theme *(v1.3.1)* | `lfw_status` | `candidate`, `developing`, `threaded`, `resolved` |
 | Thread | `lfw_status` | `emerging`, `active`, `concluded` |
 | Source | `lfw_status` | `identified`, `ingested`, `folded-in`, `superseded` |
 | Setting | `lfw_status` | `sketched`, `defined`, `final` |
@@ -77,8 +81,10 @@ This forces a **disciplined naming convention**, because a flat folder (`Atoms/S
 | Chapter | `Chapter-<NN>-<short-title>.md` | `Chapter-03-Family-Business-Persistence.md` | `Atoms/Chapters/` |
 | Act | `Act-<N>-<short-title>.md` | `Act-2-The-Reversal.md` | `Atoms/Acts/` |
 | Character | `<First-Last>.md` or `<Slug>.md` | `Maya-Chen.md` | `Atoms/Characters/` |
+| Character-Bible *(v1.3.1)* | `<First-Last>.md` (mirrors Character filename) | `Maya-Chen.md` | `Atoms/Character-Bibles/` |
 | Reader | `<Reader-Slug>.md` (Title-Case-Hyphenated) | `Skeptic.md`, `Impatient-Generalist.md` | `Atoms/Readers/` |
 | Motif | `<Motif-Name>.md` (Title-Case-Hyphenated) | `Cold-as-Inheritance.md`, `The-Empty-Chair.md` | `Atoms/Motifs/` |
+| Theme *(v1.3.1)* | `<Theme-Name>.md` (Title-Case-Hyphenated) | `Honesty-Under-Cost.md` | `Atoms/Themes/` |
 | Thread | `<Thread-Name>.md` (Title-Case-Hyphenated) | `Distributed-Legitimacy.md` | `Atoms/Threads/` |
 | Source | `<Lastname>-<Short-Title>-<Year>.md` | `Beard-SPQR-2015.md` | `Atoms/Sources/` |
 | Setting | `<Setting-Name>.md` | `The-Conservatory.md` | `Atoms/Settings/` |
@@ -162,6 +168,7 @@ lfw_characters_present: []
 lfw_purpose: "<one-sentence: what this scene must do in the larger work>"
 lfw_value_shift_from: ""    # v1.2: starting value-state (e.g., "safe", "hopeful", "ignorant")
 lfw_value_shift_to: ""      # v1.2: ending value-state (must differ from `from` for the scene to turn)
+lfw_scene_type: scene       # v1.3.1: scene (value-shifting, default) | sequel (reactive-processing) | scene-sequel (compound)
 lfw_first_drafted: <YYYY-MM-DD | null>
 lfw_word_count: <int>
 Date_Added:
@@ -173,11 +180,12 @@ Needs_Processing: false
 
 1. `# <Scene title>`
 2. `## Setting and Stakes` — where, when, who, what's at stake
-3. `## Value-shift` *(v1.2)* — start-state → end-state; whose want drives this scene; what's the conflict; what's different at the end (the SCENE-AUDIT discipline made structural; see chapter 11 §2)
-4. `## Beats` — ordered list of beats (with wiki-links to beat atoms)
-5. `## Prose` — the drafted scene; or `*To be drafted*` if not yet
-6. `## Connections` — what this scene sets up / pays off (the `prefigures` relation captures setups; see chapter 11 §3 for the SETUP-PAYOFF-AUDIT discipline)
-7. `## Open Notes` — known weaknesses, alternate versions considered
+3. `## Value-shift` *(v1.2; for lfw_scene_type: scene or scene-sequel)* — start-state → end-state; whose want drives this scene; what's the conflict; what's different at the end (the SCENE-AUDIT discipline made structural; see chapter 11 §2)
+4. `## Sequel` *(v1.3.1; for lfw_scene_type: sequel or scene-sequel)* — reaction → dilemma → decision; the decision IS the next scene's want (see chapter 14 §1 for the scene-and-sequel rhythm)
+5. `## Beats` — ordered list of beats (with wiki-links to beat atoms)
+6. `## Prose` — the drafted scene; or `*To be drafted*` if not yet
+7. `## Connections` — what this scene sets up / pays off (the `prefigures` relation captures setups; see chapter 11 §3 for the SETUP-PAYOFF-AUDIT discipline)
+8. `## Open Notes` — known weaknesses, alternate versions considered
 
 **Naming:** `<chapter>-<order>-<short-slug>.md`. E.g., `04-03-Library-Confrontation.md` for Chapter 4, Scene 3.
 
@@ -417,6 +425,14 @@ lfw_role: protagonist | antagonist | major-supporting | minor | speaking | non-s
 lfw_first_appearance: "[[Scene-slug]]"
 lfw_scenes_present: []
 lfw_status: developing | established | revised | final
+lfw_pov_voice_register:        # v1.3.1: required for POV-bearing characters; optional otherwise
+  sentence_length: ""          # "short" | "long" | "cadenced" | "fragmentary" | "varied"
+  diction: ""                  # "plain" | "mixed" | "formal" | "register-shifting"
+  interiority_mode: ""         # "observational" | "ruminating" | "kinetic" | "associative"
+  tense_preference: ""         # "scene-tense" | "tense-slippage-into-memory" | "strict-scene-tense"
+  signature_moves: []          # 2-4 prose patterns marking this POV
+  avoid_moves: []              # patterns the OTHER POV uses that this POV must not
+lfw_character_bible: ""        # v1.3.1: wikilink to extended Character-Bible atom if present
 Date_Added:
 Date_Modified:
 Needs_Processing: false
@@ -428,14 +444,88 @@ Needs_Processing: false
 2. `## Role` — function in the story
 3. `## Background` — relevant history before the story
 4. `## Voice and Manner` — speech patterns, defining gestures, what they sound like
-5. `## Arc` — how this character changes (or doesn't) across the book
-6. `## Relationships` — wiki-links to other characters with relationship type
-7. `## Scenes Present` — wiki-links to scenes they appear in
-8. `## Open Questions` — things about the character not yet decided
+   - `### Dialogue tells` *(v1.3.1)* — sentence shape; diction range; pet phrases; verbal tics; what they say when they don't know what to say; what they say when lying; what they say under pressure (chapter 13 §1)
+5. `## Subtext patterns` *(v1.3.1, optional)* — if the character habitually says-other-than-meant, what's the pattern?
+6. `## Arc` — how this character changes (or doesn't) across the book
+7. `## Relationships` — wiki-links to other characters with relationship type
+8. `## Scenes Present` — wiki-links to scenes they appear in
+9. `## Open Questions` — things about the character not yet decided
 
 **Naming:** `<FirstName-LastName>.md` or `<Slug>.md`. E.g., `Maya-Chen.md`.
 
 **Location:** `Atoms/Characters/`.
+
+See chapter 13 for POV-voice-register discipline and the POV-VOICE-DRIFT activity.
+
+## Character-Bible (fiction / screenplay / play) *(v1.3.1)*
+
+The extended companion atom for POV-bearing characters, antagonists, and major supporting characters in long novels. Most secondary characters never get one. The Character atom captures function and arc; the Bible captures the depth that the prose draws on.
+
+**Frontmatter:**
+
+```yaml
+Item_Prototype: LFW_Character_Bible
+Item_ID: "<character-slug>-bible"
+Title: "<Character Name> — Bible"
+lfw_manuscript: <manuscript-slug>
+lfw_atom_type: character-bible
+lfw_status: drafting | established | revised | final
+lfw_character: "[[<Character-filename>]]"
+Date_Added:
+Date_Modified:
+Needs_Processing: false
+```
+
+**Body sections** (all optional; populate as the manuscript demands):
+
+At-a-glance / Physical / Backstory (chronological) / Family-lineage-ancestry / Worldview / Habits and routines / Skills, knowledge, and competence / Wounds (deep) / Secrets / Contradictions / Arc across this manuscript / Relationships (per-relationship) / Voice (extended) / Sensory signatures / Notes-not-yet-decided
+
+See `_writing-engine/_templates/TEMPLATE-Character-Bible.md` for the full structure and chapter 14 §3 for usage discipline.
+
+**Naming:** `<First-Last>.md` mirroring the Character filename. E.g., a `Maya-Chen.md` Character has `Maya-Chen.md` Bible.
+
+**Location:** `Atoms/Character-Bibles/` (separate folder; folder makes the bible/character distinction immediate).
+
+**Operator-private by default** — gitignored in writers' own work; shipped in worked examples via `!Example-Project-*` override.
+
+## Theme (fiction / memoir / narrative non-fiction) *(v1.3.1)*
+
+The abstract idea the manuscript is *about*. Carried, not declared. Distinct from premise (the situation), distinct from motif (the recurring image), distinct from `_argument.md` (which is non-fiction's logical backbone where the argument is *declared* and *defended*).
+
+**Frontmatter:**
+
+```yaml
+Item_Prototype: LFW_Theme
+Item_ID: "<theme-slug>"
+Title: "Theme — <Name>"
+lfw_manuscript: <manuscript-slug>
+lfw_atom_type: theme
+lfw_status: candidate | developing | threaded | resolved
+lfw_priority: central | secondary | incidental
+lfw_appears_in_scenes: []
+lfw_related_motifs: []
+lfw_related_characters: []
+Date_Added:
+Date_Modified:
+Needs_Processing: false
+```
+
+**Required body sections:**
+
+1. `# Theme — <Name>`
+2. `## What this theme is` — the abstract idea in plain words
+3. `## Why this theme matters in this manuscript`
+4. `## How it's carried (not declared)` — mechanisms: character / motif / plot-shape / dramatic question
+5. `## Tension within the theme` — positions A and B; what the manuscript does with the tension
+6. `## Where it surfaces (scene-by-scene)` — table of scenes + how the theme appears + which position carried
+7. `## What it must NOT do` — guard against on-the-nose treatment
+8. `## Audit notes` — THEME-CHECK findings logged here
+
+**Naming:** `<Theme-Name>.md`. E.g., `Honesty-Under-Cost.md`.
+
+**Location:** `Atoms/Themes/`.
+
+See chapter 14 §4 for the full discipline and the THEME-CHECK activity.
 
 ## Thread (non-fiction / dissertation)
 

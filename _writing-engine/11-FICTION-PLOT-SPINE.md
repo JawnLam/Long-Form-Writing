@@ -185,13 +185,15 @@ A novel may have a few "and then" transitions (a time skip; a pure mood scene; a
 
 ## Part six — how this chapter interacts with the rest of the engine
 
-- **Chapter 03 (Cadence and Sessions)** — adds SCENE-AUDIT and SETUP-PAYOFF-AUDIT to the activity table (now 20 activities)
-- **Chapter 04 (Atoms and Structure)** — Scene template updated with `lfw_value_shift_from` and `lfw_value_shift_to` frontmatter fields; the three new backbone files (`_spine.md`, `_continuity.md`, `_promises.md`) documented in the Cartridge backbone files section
+- **Chapter 03 (Cadence and Sessions)** — adds SCENE-AUDIT and SETUP-PAYOFF-AUDIT to the activity table (now 23 activities total as of v1.3.1)
+- **Chapter 04 (Atoms and Structure)** — Scene template updated with `lfw_value_shift_from` and `lfw_value_shift_to` frontmatter fields; the three new backbone files (`_spine.md`, `_continuity.md`, `_promises.md`) documented in the Cartridge backbone files section. *(v1.3.1: Scene also gains `lfw_scene_type` field for scene-vs-sequel distinction — see chapter 14 §1.)*
 - **Chapter 07 (Revision Discipline)** — SCENE-AUDIT findings feed into structural and prose-line revision passes
 - **Chapter 09 (Writer Development)** — fiction-specific error vocabulary added to the craft-log discipline (scene-doesn't-turn, telling-not-showing, flat-antagonist, head-hopping, filter words, arc-asserted-not-earned)
 - **Chapter 10 (Reader and Argument)** — non-fiction's analogs; fiction's chapter 11 is structured to parallel chapter 10's organization
-- **Chapter 12 (Fiction Character and Continuity)** — sister chapter; together they're the fiction development layer
-- **`_meta/FAILURE-MODES.md`** — adds F22 (scene-doesn't-turn), F23 (promise-unfired-or-unearned)
+- **Chapter 12 (Fiction Character and Continuity)** — sister chapter; together with this chapter forms the fiction-craft-foundation layer (v1.2)
+- **Chapter 13 (Fiction Dialogue and POV-Voice)** *(v1.3.1)* — line-level craft inside the Scene
+- **Chapter 14 (Fiction Structure Overlays and Extensions)** *(v1.3.1)* — scene-and-sequel rhythm extends this chapter's value-shift discipline; Theme atom, beat-sheet overlays, Character-Bible
+- **`_meta/FAILURE-MODES.md`** — adds F22 (scene-doesn't-turn), F23 (promise-unfired-or-unearned); v1.3.1 adds F38–F40 (missing-sequels, over-sequel'd, sequel-without-decision)
 
 ## When the discipline applies and when it relaxes
 

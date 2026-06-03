@@ -35,9 +35,9 @@ This shapes everything below.
 
 Steps 1, 6, 7, 8 are non-negotiable. Step 5 varies by activity.
 
-## The twenty universal session activities
+## The twenty-three universal session activities
 
-Ten **production** activities (this chapter) plus ten **development** activities (six non-fiction-weighted in chapter 10; four fiction-weighted in chapters 11 + 12). Together they are the full session-activity set the AI can propose.
+Ten **production** activities (this chapter) plus thirteen **development** activities (six non-fiction-weighted in chapter 10; four fiction-weighted from v1.2 in chapters 11 + 12; three fiction-weighted from v1.3.1 in chapters 13 + 14). Together they are the full session-activity set the AI can propose.
 
 ### Production activities
 
@@ -65,14 +65,22 @@ Ten **production** activities (this chapter) plus ten **development** activities
 | **SYNTHESIS-CHECK** | Flag sections that are annotated-bibliography-in-disguise — sources cited but not synthesized into the writer's argument | Section is drafted with 3+ sources cited |
 | **CRAFT-REVIEW** | Read recent sessions + craft-log + craft-profile; surface recurring patterns; propose next practice focus | ≥10 sessions since last CRAFT-REVIEW; end of a chapter draft; a craft-log pattern is ready to graduate |
 
-### Development activities — fiction weighted (defined in chapters 11 + 12)
+### Development activities — fiction weighted (defined in chapters 11 + 12; v1.2)
 
 | Code | Activity | Right default when |
 |------|----------|---------------------|
 | **SCENE-AUDIT** | Value-shift diagnostic: whose want drives this scene, what's the conflict, what's different at the end vs. beginning (the load-bearing fiction craft test) | Scene is drafted; value-shift fields unpopulated or identical; 3+ scenes drafted without a SCENE-AUDIT |
-| **CHARACTER-CONSISTENCY** | Does the prose deliver the Character atom's stated want, voice, and arc? + antagonist-steelman for antagonist atoms | Character is `established` and has appeared in 3+ Scenes since last check; antagonist hasn't been steelmanned |
+| **CHARACTER-CONSISTENCY** | Does the prose deliver the Character atom's stated want, voice, and arc? + antagonist-steelman for antagonist atoms; reads Character-Bible if present *(v1.3.1)* | Character is `established` and has appeared in 3+ Scenes since last check; antagonist hasn't been steelmanned |
 | **CONTINUITY-CHECK** | Verify drafted prose against `_continuity.md`: world-rules, timeline, information-state (who-knows-what) | New scene references continuity items; 10+ scenes since last check; before READ-THROUGH |
 | **SETUP-PAYOFF-AUDIT** | Audit `_promises.md` against drafted manuscript: outstanding/unfired promises, unearned/unsetup payoffs | 10+ scenes drafted since last audit; before READ-THROUGH; before BETA-PREP |
+
+### Development activities — fiction craft (defined in chapters 13 + 14; v1.3.1)
+
+| Code | Activity | Right default when |
+|------|----------|---------------------|
+| **DIALOGUE-AUDIT** | Four-axis function check on drafted dialogue (plot / character / subtext / rhythm); surface zero- or one-axis lines | Scene with ≥10 dialogue lines is `drafted`; ≥5 dialogue-heavy scenes drafted without a DIALOGUE-AUDIT; writer signals "dialogue feels flat"; before BETA-PREP on a critical dialogue scene |
+| **POV-VOICE-DRIFT** | Audit prose voice across alternating-POV chapters against each POV's `lfw_pov_voice_register`; surface register-bleed | 2+ POV-bearing Character atoms with `lfw_pov_voice_register` populated; ≥3 chapters drafted in each; ≥8 sessions since last drift check |
+| **THEME-CHECK** | Audit Theme atoms against drafted prose; surface gaps in threading, on-the-nose treatment, motif/theme cross-references | ≥1 Theme atom is `developing` or `threaded`; ≥5 scenes drafted since last check; ≥10 sessions since last THEME-CHECK; before READ-THROUGH |
 
 ## Decision algorithm
 
@@ -137,6 +145,21 @@ For fiction, screenplay, and play cartridges, evaluate these. Same triggering po
 - **If** ≥10 scenes drafted since last SETUP-PAYOFF-AUDIT → propose **SETUP-PAYOFF-AUDIT**
 - **If** the writer signals "the plot feels slack" or "I don't know why this chapter happens" → propose checking the spine; if the spine reads mostly *and then*, propose **SCENE-AUDIT** across the affected chapter
 - **If** a fiction worldbuilding gap is flagged → propose **WORLDBUILDING** (generative); after the session, propose **CONTINUITY-CHECK** to verify drafted scenes against new rules
+- **If** a Scene with ≥10 dialogue lines is `drafted` AND hasn't been DIALOGUE-AUDIT'd → propose **DIALOGUE-AUDIT** *(v1.3.1)*
+- **If** ≥2 POV-bearing Character atoms exist with `lfw_pov_voice_register` populated AND ≥3 chapters drafted in each AND ≥8 sessions since last POV-VOICE-DRIFT → propose **POV-VOICE-DRIFT** *(v1.3.1)*
+- **If** the writer signals "the dialogue is flat" or "the POVs sound alike" → propose the corresponding craft activity (DIALOGUE-AUDIT or POV-VOICE-DRIFT) even outside cadence thresholds *(v1.3.1)*
+- **If** ≥1 Theme atom is `developing` or `threaded` AND ≥5 scenes drafted since last check AND ≥10 sessions since last THEME-CHECK → propose **THEME-CHECK** *(v1.3.1)*
+
+### Step 6b'' — Sub-genre-tuned defaults *(v1.3.1)*
+
+If `lfw_fiction_subgenre` is declared in `_manuscript-manifest.md`, the cadence thresholds above shift per chapter 14 §5:
+
+- **thriller / mystery / horror:** SETUP-PAYOFF-AUDIT triggers at ≥6 scenes (default ≥10); promises drift faster in plot-heavy work
+- **romance / multi-POV literary:** POV-VOICE-DRIFT triggers at ≥6 sessions (default ≥8); register-difference is load-bearing
+- **SFF / historical:** WORLDBUILDING surfaces as frequent default; CONTINUITY-CHECK runs at ≥6 scenes (default ≥10)
+- **literary / speculative:** THEME-CHECK triggers at ≥6 sessions (default ≥10); theme work is high-priority
+
+These are tunings, not new activities. The sub-genre cues live in chapter 14 §5.
 
 ### Step 6c — Scaffolding-mode awareness
 

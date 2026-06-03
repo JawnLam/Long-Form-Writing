@@ -2,7 +2,7 @@
 type: writing-engine
 role: failure-catalog
 scope: subject-agnostic
-updated: 2026-06-02
+updated: 2026-06-03
 ---
 
 # Failure Modes — Canonical Catalog
@@ -278,6 +278,146 @@ updated: 2026-06-02
 **Fix:** Surface via the `pov-and-psychic-distance` craft module or during a dedicated REVISE pass.
 
 **Prevention:** The Scene's `lfw_pov` field declares the intended POV; mid-scene drift from that POV is the flag.
+
+## F31 — Dialogue as information dump *(v1.3.1 — fiction)*
+
+**Trigger:** A stretch of dialogue lines that score only on the Plot axis (chapter 13 §1's four-axis check). Lines deliver information or advance state; none reveal character, carry subtext, or vary rhythm.
+
+**Why it matters:** Reader experiences as exposition in conversational clothing. Common in genre fiction's "as you know, Bob" passages and in expository scenes where the writer is solving plot rather than dramatizing it.
+
+**Fix:** DIALOGUE-AUDIT surfaces specific lines. Revise toward 2+ axis coverage: make the information-delivery reveal character; add the subtext gap; vary the rhythm.
+
+**Prevention:** DIALOGUE-AUDIT activity (chapter 13 §3) on any drafted scene with ≥10 dialogue lines.
+
+## F32 — Interchangeable dialogue *(v1.3.1 — fiction)*
+
+**Trigger:** Lines that score zero on the Character axis — any character could say them. The Character atom's dialogue tells (chapter 13 §1) are not internalized in the prose.
+
+**Why it matters:** Reader cannot identify who is speaking without the dialogue tags; characters reduce to plot-functions; the novel feels populated by interchangeable mouthpieces.
+
+**Fix:** Re-read the Character atom's dialogue-tells section before revising. Rewrite the lines in question with the speaker's specific tells.
+
+**Prevention:** DIALOGUE-AUDIT cross-references each line against the speaking Character's dialogue tells. Character atoms with thin dialogue-tells sections are themselves a flag.
+
+## F33 — On-the-nose subtext *(v1.3.1 — fiction)*
+
+**Trigger:** Characters explain their feelings; the gap between surface and meaning collapses; declared subtext (in Beat atom) is spelled out in the prose.
+
+**Why it matters:** Reader has nothing to do. The pleasure of dialogue-craft is registering the gap between line and meaning; collapsing the gap removes that pleasure and the work that subtext does to characterize.
+
+**Fix:** Identify the line carrying the on-the-nose moment. Rewrite so the meaning is implied by what the character *doesn't* say, or by an action-beat, or by a non-sequitur.
+
+**Prevention:** Beat atoms with a Subtext body section (chapter 13 §1) make the gap auditable. DIALOGUE-AUDIT flags surface dialogue that doesn't carry declared subtext.
+
+## F34 — POV-voice bleed *(v1.3.1 — fiction)*
+
+**Trigger:** In multi-POV fiction, one POV's chapter sounds like another POV's chapter. Reader cannot identify whose POV they are inside by the second sentence.
+
+**Why it matters:** The whole point of alternating POV is the perceptual experience of being inside different consciousnesses. Register-bleed flattens this into single-voice narration with POV-labels.
+
+**Fix:** POV-VOICE-DRIFT activity (chapter 13 §2) surfaces specific drift instances. Per-POV revision with the Character atom's `lfw_pov_voice_register` open as a reference.
+
+**Prevention:** `lfw_pov_voice_register` populated for every POV-bearing Character atom; POV-VOICE-DRIFT every ~8 sessions for multi-POV cartridges; optional per-POV voice samples.
+
+## F35 — Show-everything pathology *(v1.3.1 — fiction)*
+
+**Trigger:** The opposite of F22 (asserted-not-shown). Writer dramatizes everything, including routine transitions; never tells; the prose runs at uniform high-intensity; pacing collapses.
+
+**Why it matters:** Show-don't-tell weaponized as a rule produces exhausting prose. The reader needs respite; the form requires summary at non-load-bearing moments.
+
+**Fix:** Identify the routine transitions; rewrite as summary. Reserve dramatization for moments that are actually load-bearing for character, plot, or emotional weight.
+
+**Prevention:** The `show-dont-tell` craft module (chapter 13 §4) flags over-dramatized routine transitions when active.
+
+## F36 — Style-sheet drift in dialogue formatting *(v1.3.1 — fiction)*
+
+**Trigger:** Said-vs-action-beat, em-dash-vs-ellipsis, italics-vs-no-marker for inner dialogue — inconsistent across chapters. Reads as inattention.
+
+**Why it matters:** Dialogue formatting is a small problem that signals a large failure of attention. Editors and agents notice; readers feel it before they can name it.
+
+**Fix:** State the choices once in the manifest (or in `_style-sheet.md` v1.3.2 when shipped). Honor them. Audit during BETA-PREP.
+
+**Prevention:** v1.3.2 will ship `_style-sheet.md`; for v1.3.1, state choices in manifest voice notes and check during BETA-PREP READ-THROUGH.
+
+## F37 — AI homogenizes POV voices *(v1.3.1 — fiction)*
+
+**Trigger:** AI offers revision suggestions that smooth both POVs toward a single register. AI's "improvement" reduces register-difference.
+
+**Why it matters:** The AI's job in multi-POV work is to *preserve* difference, not to harmonize. F34's flip side: the writer maintained difference; the AI ironed it out.
+
+**Fix:** Stop accepting AI's smoothing revisions. Re-affirm `writer-maintains` voice mode. If AI must surface revisions, they must respect each POV's `lfw_pov_voice_register`.
+
+**Prevention:** Voice mode `writer-maintains` (default); POV-VOICE-DRIFT activity rejects AI revisions that reduce register-distance.
+
+## F38 — Missing sequels in literary fiction *(v1.3.1 — fiction)*
+
+**Trigger:** Every scene is a value-shifting scene; no reactive beats; reader has no room to feel the turns. The novel reads as relentless.
+
+**Why it matters:** Literary fiction often does its most powerful work in the sequel-beats — the silent walk home, the conversation that doesn't happen, the moment alone afterwards. Omitting them collapses the form's emotional weight.
+
+**Fix:** Identify chapters that read as relentless. Tag specific scenes as `lfw_scene_type: sequel` and develop their reaction-dilemma-decision structure. Often the writer has been writing sequels implicitly and just hasn't named them.
+
+**Prevention:** SCENE-AUDIT now considers scene-type (chapter 14 §1); literary-subgenre cartridges' decision algorithm surfaces sequel-density as a check.
+
+## F39 — Over-sequel'd thriller *(v1.3.1 — fiction)*
+
+**Trigger:** Every action scene is followed by extended interiority; pacing collapses; the form's grammar (escalation, momentum, dramatic compression) is violated.
+
+**Why it matters:** Thriller readers register slow pacing as form-violation. The interior beats that work in literary fiction kill thriller momentum.
+
+**Fix:** Compress sequel-beats to a paragraph or skip them entirely between high-tension scenes. Sub-genre tuning (chapter 03 §6b'') should already have flagged this.
+
+**Prevention:** Sub-genre field (thriller / mystery / horror) tunes the SCENE-AUDIT defaults to expect compressed sequels.
+
+## F40 — Sequel without decision *(v1.3.1 — fiction)*
+
+**Trigger:** A `lfw_scene_type: sequel` atom that processes the prior scene's outcome but produces no decision (no new want for the next scene). The chain breaks.
+
+**Why it matters:** The sequel's job is to produce the next scene's want. Sequels that only react and dwell leave the reader without forward motion.
+
+**Fix:** Identify the decision the sequel must produce. Often the writer wrote the reaction and the dilemma but skipped the decision because it felt premature; the answer is to commit the character to a specific next-step want even if the next step is small.
+
+**Prevention:** The Sequel body section's Decision sub-section is required for sequel-typed scenes at SCENE-AUDIT.
+
+## F41 — Overlay as formula *(v1.3.1 — fiction)*
+
+**Trigger:** Beat-sheet overlay (Save the Cat / Hero's Journey / Story Circle / Freytag) treated as a writing prescription rather than a diagnostic lens. Story contorts to hit beats at their expected percentages.
+
+**Why it matters:** Overlay-as-formula produces predictable, hollow fiction. The most-weaponized version is Save the Cat for screenplays/commercial fiction; the failure mode is genre-agnostic.
+
+**Fix:** Walk away from the overlay. Treat it as one possible reading lens, not the writing prescription. Beats that don't fit are not necessarily defects.
+
+**Prevention:** Overlay templates explicitly state the risk and the divergence-notes section (chapter 14 §2).
+
+## F42 — On-the-nose theme *(v1.3.1 — fiction)*
+
+**Trigger:** Theme stated by a character or by narration as the novel's thesis. The reader is left no work.
+
+**Why it matters:** Theme is what's carried, not what's declared. A novel that names its theme reduces to allegory or sermon — both inferior to the novel that lets the theme emerge.
+
+**Fix:** Identify the on-the-nose statement(s). Rewrite to carry the theme by mechanism (character choice, motif recurrence, dramatic question) rather than by declaration.
+
+**Prevention:** THEME-CHECK activity (chapter 14 §4); Theme atom's "What it must NOT do" section.
+
+## F43 — Character-bible as procrastination *(v1.3.1 — fiction)*
+
+**Trigger:** Writer expands the Character-Bible indefinitely as avoidance of drafting. Same anti-pattern as research-as-procrastination (F11) and craft-work-as-procrastination (F18).
+
+**Why it matters:** Bibles serve drafting. Bibles that grow indefinitely without prose advancing are the bible-equivalent of perpetual outlining.
+
+**Fix:** Suspend bible work; draft for several sessions; return to the bible only to update for things prose revealed.
+
+**Prevention:** Same diagnostic posture as F18; the AI asks the avoidance-vs-need question when bible sessions dominate.
+
+## F44 — Sub-genre miscalibration *(v1.3.1 — fiction)*
+
+**Trigger:** Cartridge declares a sub-genre whose conventions don't match what's actually being written; activity defaults misfire (e.g., thriller-tuned SETUP-PAYOFF-AUDIT triggers too aggressively for a literary novel mis-tagged as thriller).
+
+**Why it matters:** The activity-decision algorithm assumes the sub-genre tag is accurate. Misfiring activities waste sessions and surface false flags.
+
+**Fix:** Update the manifest. Re-tag the sub-genre. Reset cadence thresholds.
+
+**Prevention:** BOOTSTRAP asks for the sub-genre with examples; the writer revisits the field at the first CRAFT-REVIEW.
 
 ## Adding new entries
 

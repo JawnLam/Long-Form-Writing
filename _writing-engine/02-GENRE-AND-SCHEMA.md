@@ -33,8 +33,12 @@ Genre is locked at cartridge bootstrap. Changing genre mid-cartridge is a major 
 
 - **Scene** (primary) — the unit of dramatic action; prose lives here
 - **Character** (primary) — recurring participants; first-class atoms with their own files
+- **Character-Bible** *(v1.3.1, opt-in)* — extended companion to Character for POV-bearing, antagonist, and major-supporting characters
+- **Motif** *(v1.2)* — image-cluster / recurring-object / thematic carrier
+- **Theme** *(v1.3.1)* — abstract idea the manuscript is about, carried not declared
 - **Chapter** (medium) — composes Scenes; sometimes absent (some novels are chapter-less)
-- **Beat** (medium) — within Scenes, the dramatic moves
+- **Beat** (medium) — within Scenes, the dramatic moves; optional Subtext body section in v1.3.1
+- **Reader** (medium, fiction-reframed in chapter 12 §6) — modeled audience members
 - **Source** (light) — for research-informed fiction; otherwise rare
 - **Note** (medium) — story ideas, alternate paths
 
@@ -42,9 +46,20 @@ Genre is locked at cartridge bootstrap. Changing genre mid-cartridge is a major 
 
 **Lifecycle stages:** outlining → drafting → revising → polishing → shipped
 
-**Genre-specific activities:** WORLDBUILDING (setting, magic systems, alternate-history rules)
+**Genre-specific activities:** WORLDBUILDING (setting, magic systems, alternate-history rules), SCENE-AUDIT, CHARACTER-CONSISTENCY, CONTINUITY-CHECK, SETUP-PAYOFF-AUDIT *(v1.2)*, DIALOGUE-AUDIT, POV-VOICE-DRIFT, THEME-CHECK *(v1.3.1)*
 
 **"Done" looks like:** A complete manuscript that the writer is ready to send to beta readers / an agent / a developmental editor. Voice consistent. Plot tight. Characters consistent.
+
+### Fiction sub-genre *(v1.3.1)*
+
+Fiction cartridges optionally declare a sub-genre:
+
+```yaml
+lfw_genre: fiction
+lfw_fiction_subgenre: literary | thriller | mystery | romance | sff | speculative | historical | horror | ya
+```
+
+Sub-genre tunes the activity-decision algorithm's defaults (chapter 03 §6b'): cadence thresholds shift, certain activities promote, the reader-simulation lens calibrates to the sub-genre's reader expectations. The sub-genre is *advisory* — it does not change required schema. See chapter 14 §5 for the per-sub-genre cues.
 
 ## Genre branch — Non-fiction
 
