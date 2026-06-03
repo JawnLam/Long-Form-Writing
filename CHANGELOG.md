@@ -2,6 +2,102 @@
 
 All notable changes to Long-Form-Writing are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.2] — 2026-06-03
+
+### Added — structural-artifact layer
+
+Second of the two-pass patch series (closing the v1.3.x work). Where v1.3.1 added the writer-side craft layer (dialogue, POV-voice, scene-sequel, show-don't-tell, bibles, themes, overlays), v1.3.2 adds the structural-artifact layer: worldbuilding, multi-layer timelines, storyboard, style sheet, inspiration tracking, relationship map, stakes ladder. **No new activities are added** — these artifacts feed existing activities.
+
+**New engine chapter:**
+
+- **`15-FICTION-PROJECT-ARTIFACTS.md`** — six artifacts that organize the fiction creative process beyond what the v1.0–v1.3.1 schema covered. Plus the stakes-ladder addition to `_spine.md`. Plus the Source-vs-Inspiration distinction (chapter 15 §5). Plus sub-genre defaults table (chapter 15 §8) showing which artifacts are central / useful / rarely-needed per sub-genre
+
+**New atom types:**
+
+- **Timeline** (`LFW_Timeline`) — multi-layer timeline (`story-time` / `world-history` / `real-world` / `character-specific`); distinct from `_continuity.md`'s embedded story-time timeline; provides per-layer source-of-truth where `_continuity.md` becomes cross-layer reconciliation. Status enum: `drafting | established | revised | final`. Lives in `Atoms/Timelines/`
+- **Inspiration** (`LFW_Inspiration`) — research-as-compost; distinct from Source (which carries non-fiction citation discipline). For fiction's research-tracking that doesn't pretend to citation. Status enum: `noted | absorbed | folded-in | retired`. Lives in `Atoms/Inspirations/`
+
+**New backbone files:**
+
+- **`_worldbuilding.md`** — world-design backbone for SFF / fantasy / speculative / alt-history / horror. Distinct from `_continuity.md` (which is per-novel verification). Required for SFF/spec/horror; minimal/stub for contemporary realism. Chapter 15 §1
+- **`_storyboard.md`** — scene-card view of every Scene atom. Derived from Scene atoms; do not edit story content here. Updated semi-manually as scenes are revised. Chapter 15 §3
+- **`_style-sheet.md`** — spellings, capitalization, italics conventions, punctuation, dialogue-formatting, anachronism flags, lexicon. Consulted at BETA-PREP and at line-edit REVISE. Chapter 15 §4
+- **`_relationships.md`** — symmetric multi-character relationship map. Complements (does not replace) per-character Relationships sections in Character atoms. Most useful for cartridges with ≥5 named characters. Chapter 15 §6
+
+**`_spine.md` addition:**
+
+- **Stakes-ladder section** — per-chapter tracking of stakes at four levels (Personal / Relational / Societal / Existential). Makes flat-stakes (F51) and inverted-pyramid risks visible at a glance. Chapter 15 §7
+
+**No new activities:**
+
+The v1.3.2 artifacts feed existing activities — READ-THROUGH, CONTINUITY-CHECK, CHARACTER-CONSISTENCY, BETA-PREP, REVISE — rather than introducing new ones. Activity count remains at 23.
+
+**Sub-genre relevance:**
+
+Chapter 15 §8's sub-genre defaults table shows which v1.3.2 artifacts are central / useful / rarely-needed per sub-genre. Key calls:
+
+- **`_worldbuilding`:** central for SFF; rarely needed for literary / thriller / mystery / romance / ya
+- **Timeline (world-history):** central for SFF and historical; lower priority for contemporary work
+- **Timeline (real-world):** central for historical; rarely needed elsewhere
+- **`_style-sheet`:** central for historical (anachronism risk); useful for all genres
+- **Inspiration:** central for historical (research load); useful for most fiction; rarely needed for thriller
+- **`_relationships`:** central for romance; useful for most fiction
+- **Stakes ladder:** central for thriller and horror; useful for all fiction
+
+**Templates:**
+
+- `TEMPLATE-Timeline.md` (new)
+- `TEMPLATE-Inspiration.md` (new)
+- `TEMPLATE-worldbuilding.md` (new)
+- `TEMPLATE-storyboard.md` (new)
+- `TEMPLATE-style-sheet.md` (new; with lexicon as sub-section)
+- `TEMPLATE-relationships.md` (new)
+- Updated: `TEMPLATE-spine.md` (Stakes-ladder section)
+
+**Meta updates:**
+
+- `_meta/SCHEMA-OF-SCHEMAS.md` — Layer 1 universals updated for v1.3.2 atoms and backbones; sub-folder list extended; v1.3.2 additions section added
+- `_meta/FAILURE-MODES.md` — added F45 (worldbuilding-as-procrastination), F46 (timeline-layers-conflated), F47 (storyboard-stale), F48 (style-sheet-drift), F49 (inspiration-becomes-citation), F50 (relationship-map-disconnected-from-prose), F51 (flat-stakes)
+
+**Validator:**
+
+- Extended `STATUS_ENUM` with `timeline` and `inspiration`
+- Extended `BACKBONE_FILES` with `_worldbuilding`, `_storyboard`, `_style-sheet`, `_relationships`
+- New check 12 (`timeline-layer`): Timeline atoms must declare `lfw_timeline_layer` in the legal set; `character-specific` layer must also declare `lfw_character`
+
+**Worked example updated:**
+
+- `Example-Project-The-Late-Frost/` migrated to v1.3.2 in session 005 (META session):
+  - `_worldbuilding.md` — minimal one-page stub documenting the deliberate choice not to expand (contemporary realism). Worked example of *what a minimal worldbuilding file looks like when the cartridge doesn't need substantive worldbuilding*
+  - **Three Timeline atoms:** `Story-Time-Three-Weeks` (story-time; April 4–25, 2026), `Family-History-1968-2026` (world-history; 58 years of vineyard history), `Maya-Life-1984-2026` (character-specific; Maya's life pre-novel)
+  - `_style-sheet.md` — full spelling / punctuation / italics / lexicon (14 entries including viticultural vocabulary and character-name pronunciations); minimal anachronism catalog for contemporary setting
+  - `_relationships.md` — 5 characters; 10 pairs (including deceased characters); 3 triangles named; each pair's asymmetry between the two one-sided Character-atom views documented explicitly (F50 prevention)
+  - `_storyboard.md` — scene-card view; mostly planning at this early stage; open structural questions surfaced
+  - **One Inspiration atom:** `Patchett-Dutch-House-2019` — worked example of `lfw_status: absorbed` and Source-vs-Inspiration distinction (F49 boundary)
+  - **Stakes ladder added to `_spine.md`** — all 14 chapters mapped at four stakes-levels; no inverted-pyramid risk; no flat-stakes flag
+
+**`.gitignore` updates:**
+
+- `Atoms/Timelines/*` and `Atoms/Inspirations/*` excluded by default (operator-private)
+- `**/_worldbuilding.md`, `**/_storyboard.md`, `**/_style-sheet.md`, `**/_relationships.md` excluded by default
+- Worked-example overrides preserve shipped reference content
+
+### Notes
+
+v1.3.2 closes the v1.3.x two-pass series. The fiction-side of LFW now has:
+
+- **Foundation (v1.2):** spine, motifs, continuity, promises; SCENE-AUDIT, CHARACTER-CONSISTENCY, CONTINUITY-CHECK, SETUP-PAYOFF-AUDIT
+- **Writer-side craft (v1.3.1):** dialogue tells + DIALOGUE-AUDIT; POV-voice register + POV-VOICE-DRIFT; scene-and-sequel rhythm; show-don't-tell + dialogue-and-subtext craft modules; Character-Bible; Theme + THEME-CHECK; sub-genre branching; four beat-sheet overlays
+- **Structural artifacts (v1.3.2):** _worldbuilding; multi-layer Timelines (story-time + world-history + real-world + character-specific); _storyboard; _style-sheet (with lexicon); Inspiration; _relationships; stakes ladder
+
+The Source-vs-Inspiration distinction is the most important conceptual addition of v1.3.2. Confusing the two (F49) is the failure mode the chapter 15 §5 discipline prevents. Source carries non-fiction's anti-fabrication discipline (F2); Inspiration acknowledges fiction's research as compost. Each is wrong-shaped for the other artifact.
+
+The minimal `_worldbuilding.md` in The Late Frost is itself a worked-example pattern: when a cartridge does not need substantive worldbuilding, the right artifact is a deliberate one-page non-use rather than expanding the file to fill space (F45).
+
+This release is backward-compatible with all v1.0 / v1.1 / v1.2 / v1.3.1 cartridges. The v1.3.x series is now complete; v1.4 (when it ships) will likely address ensemble / multi-protagonist structures, non-fiction-side parity refinements, or other gaps surfaced from real-world use.
+
+---
+
 ## [1.3.1] — 2026-06-03
 
 ### Added — writer-side fiction craft pass

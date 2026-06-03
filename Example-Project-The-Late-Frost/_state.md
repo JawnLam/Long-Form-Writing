@@ -9,8 +9,8 @@ lfw_manuscript: "the-late-frost"
 lfw_lifecycle_stage: drafting
 lfw_genre: fiction
 lfw_fiction_subgenre: literary
-lfw_sessions_completed: 4
-lfw_total_writing_hours: 4.5
+lfw_sessions_completed: 5
+lfw_total_writing_hours: 5.75
 lfw_last_session_date: 2026-06-03
 lfw_next_session_default_activity: REVISE
 lfw_current_revision_pass: null
@@ -25,8 +25,8 @@ lfw_word_count_target: 75000
 
 - **Stage:** drafting
 - **Stage entry date:** 2026-06-02 (session 003)
-- **Sessions completed in this stage:** 2 (session 004 was a META session for v1.3.1 cartridge update; no prose advanced)
-- **Sessions completed total:** 4
+- **Sessions completed in this stage:** 3 (sessions 004 and 005 were META sessions for v1.3.1 and v1.3.2 cartridge updates respectively; no prose advanced in either)
+- **Sessions completed total:** 5
 
 ## Today's Focus
 
@@ -98,6 +98,27 @@ Scene 1 is drafted (1,800 words). Value-shift is declared (ignorant-of-debt → 
 |---------|------|-------|
 | Story Circle | `_overlay-story-circle.md` | Beat 8 (Change) deliberately divergent |
 
+### Timelines *(v1.3.2)*
+
+| Timeline | Layer | Scope | Status |
+|----------|-------|-------|--------|
+| [[Story-Time-Three-Weeks]] | story-time | Apr 4–25, 2026 | established |
+| [[Family-History-1968-2026]] | world-history | 58 years of vineyard history | established |
+| [[Maya-Life-1984-2026]] | character-specific | Maya's life pre-novel | established |
+
+### Inspirations *(v1.3.2)*
+
+| Inspiration | Status | For |
+|-------------|--------|-----|
+| [[Patchett-Dutch-House-2019]] | absorbed | inheritance + sibling structure |
+
+### v1.3.2 backbone files
+
+- [[_worldbuilding]] — minimal stub (contemporary realism doesn't need it)
+- [[_storyboard]] — scene-card view (mostly planning at this stage)
+- [[_style-sheet]] — spelling, punctuation, italics, lexicon
+- [[_relationships]] — symmetric multi-character map; 10 pairs; 3 triangles named
+
 ## Open Threads (to address next session)
 
 - [ ] REVISE Beat 4 of [[01-01-The-Approach]] — the closing moment doesn't quite earn the value-shift from "ignorant" to "suspecting." The shift is asserted in the prose ("she knew something was off") rather than dramatized through observation. Apply SCENE-AUDIT findings.
@@ -119,6 +140,7 @@ Scene 1 is drafted (1,800 words). Value-shift is declared (ignorant-of-debt → 
 
 ## Recent Sessions
 
+- [[2026-06-03_005_v1.3.2-UPDATE]] — META session; cartridge migrated to v1.3.2; minimal _worldbuilding stub; 3 Timeline atoms (story-time, world-history, character-specific); _style-sheet, _relationships, _storyboard backbones; Patchett Inspiration; stakes-ladder added to spine
 - [[2026-06-03_004_v1.3.1-UPDATE]] — META session; cartridge migrated to v1.3.1; sub-genre declared; POV-voice-registers populated; Maya bible drafted; Honesty-Under-Cost theme created; Story Circle overlay populated
 - [[2026-06-02_003_DRAFT]] — Scene 1 Beats 1–4 drafted (1,800 words); Beat 4 flagged for revision
 - [[2026-06-02_002_OUTLINE]] — Chapter 1 and Chapter 2 outlined at scene level; spine v1 drafted
@@ -136,6 +158,11 @@ Scene 1 is drafted (1,800 words). Value-shift is declared (ignorant-of-debt → 
 - [x] POV-voice-registers populated for both POV-bearing Characters *(v1.3.1)*
 - [x] First Theme atom created *(v1.3.1)*
 - [x] Story Circle overlay mapped *(v1.3.1)*
+- [x] Stakes ladder mapped in _spine.md *(v1.3.2)*
+- [x] _style-sheet established *(v1.3.2)*
+- [x] _relationships map established *(v1.3.2)*
+- [x] _storyboard initialized *(v1.3.2)*
+- [x] Three Timeline atoms (story-time + world-history + character-specific) *(v1.3.2)*
 - [ ] Chapter 1 first-draft — 1 of ~5 scenes drafted
 - [ ] First SCENE-AUDIT formal pass on Chapter 1 Scenes
 - [ ] First DIALOGUE-AUDIT — not yet triggerable (Scene 1 has < 10 dialogue lines)
