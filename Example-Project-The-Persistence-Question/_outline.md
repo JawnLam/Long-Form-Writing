@@ -35,9 +35,9 @@ Total target: 70,000–80,000 words. Trade non-fiction pacing — each chapter ~
 - **Purpose:** Open the book. Pose the central question. Introduce the four-conditions framework. State the project's scope and method.
 - **Scope:** Set up; not yet applying the framework to a case. ~7,500 words.
 - **Sections:**
-  1. [[01-The-Question]] — opening; the question and why it matters
-  2. [[02-Four-Conditions-Introduced]] — the framework, briefly
-  3. [[03-Methodology-Note]] — what counts as evidence; what doesn't; the book's epistemic stance
+  1. [[01-01-The-Question]] — opening; the question and why it matters
+  2. [[01-02-Four-Conditions-Introduced]] — the framework, briefly
+  3. [[01-03-Methodology-Note]] — what counts as evidence; what doesn't; the book's epistemic stance
 - **Threads engaged:** All four (distributed legitimacy, adaptive ritual, selection pressure, written tradition)
 - **Status:** drafted; awaits structural revision once Chapters 2–3 are drafted
 
@@ -46,10 +46,10 @@ Total target: 70,000–80,000 words. Trade non-fiction pacing — each chapter ~
 - **Purpose:** First detailed worked example. The Antarctic Treaty (1959) is the most institutionally elegant case the writer has — explicit, multi-stakeholder, designed-from-scratch, sixty-five years old, still functional. Use it to make the framework concrete.
 - **Scope:** Treaty history → current functioning → analysis against the four conditions → what makes it persist where similar arrangements (League of Nations) didn't. ~9,000 words.
 - **Sections:**
-  1. [[01-Antarctic-Opening-Scene]] — opening narrative; researchers at McMurdo
-  2. [[02-1959-Treaty-Conditions]] — the political/strategic context that produced the treaty
-  3. [[03-The-Treaty-Today]] — current functioning
-  4. [[04-Treaty-Analyzed-Against-Conditions]] — applying the framework
+  1. [[02-01-Antarctic-Opening-Scene]] — opening narrative; researchers at McMurdo
+  2. [[02-02-1959-Treaty-Conditions]] — the political/strategic context that produced the treaty
+  3. [[02-03-The-Treaty-Today]] — current functioning
+  4. [[02-04-Treaty-Analyzed-Against-Conditions]] — applying the framework
 - **Threads engaged:** Distributed-Legitimacy (strong), Adaptive-Ritual (medium), Selection-Pressure (medium — the treaty has survived genuine challenges), Written-Tradition (medium)
 - **Status:** drafting; over target word count; structural pass scheduled
 
@@ -58,11 +58,11 @@ Total target: 70,000–80,000 words. Trade non-fiction pacing — each chapter ~
 - **Purpose:** Second worked example. Different shape — a family firm, not an institution. Hoshi Ryokan (Komatsu, Japan) has operated in the same family since 718 AD. Use it to extend the framework into a non-state, non-formal-institution domain.
 - **Scope:** Hoshi as case → statistical framing of multi-century family firms → conditions applied. ~9,000 words.
 - **Sections:**
-  1. [[01-Hoshi-Opening]] — opening narrative scene at the ryokan
-  2. [[02-Family-Business-Statistics]] — how rare is this? statistical framing
-  3. [[03-Four-Conditions-As-Applied-To-Families]] — how the framework adapts for family firms
-  4. [[04-Hoshi-Through-The-Framework]] — the case analyzed
-  5. [[05-Other-Long-Lived-Family-Firms]] — Kongo Gumi (Japanese construction, 578–2006), Stiftskeller St. Peter (Austrian restaurant, 803), Antinori (Italian wine, 1385), with shorter treatment
+  1. [[03-01-Hoshi-Opening]] — opening narrative scene at the ryokan
+  2. [[03-02-Family-Business-Statistics]] — how rare is this? statistical framing
+  3. [[03-03-Four-Conditions-As-Applied-To-Families]] — how the framework adapts for family firms
+  4. [[03-04-Hoshi-Through-The-Framework]] — the case analyzed
+  5. [[03-05-Other-Long-Lived-Family-Firms]] — Kongo Gumi (Japanese construction, 578–2006), Stiftskeller St. Peter (Austrian restaurant, 803), Antinori (Italian wine, 1385), with shorter treatment
 - **Threads engaged:** All four
 - **Status:** Section 01 drafting; rest planned
 

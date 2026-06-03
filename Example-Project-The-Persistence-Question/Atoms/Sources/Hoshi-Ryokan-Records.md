@@ -13,7 +13,7 @@ lfw_url: ""
 lfw_status: identified
 lfw_relevance: high
 lfw_sections_citing:
-  - "[[01-Hoshi-Opening]]"
+  - "[[03-01-Hoshi-Opening]]"
 Date_Added: 2026-05-15
 Date_Modified: 2026-06-02
 Needs_Processing: false
@@ -53,8 +53,8 @@ Currently planned ingestion content (based on preliminary correspondence with th
 
 ## How to integrate
 
-- Cited in [[01-Hoshi-Opening]] for the 718 AD claim and the 46-generation count
-- Will be cited in Section 3.4 ([[04-Hoshi-Through-The-Framework]]) for the framework's application to the case — specifically the distributed-legitimacy and adaptive-ritual threads
+- Cited in [[03-01-Hoshi-Opening]] for the 718 AD claim and the 46-generation count
+- Will be cited in Section 3.4 ([[03-04-Hoshi-Through-The-Framework]]) for the framework's application to the case — specifically the distributed-legitimacy and adaptive-ritual threads
 - Will be cited in the chapter's accuracy revision pass when the writer can verify specific claim-source pairings
 
 ## Worries

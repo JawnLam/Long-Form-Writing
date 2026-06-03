@@ -13,8 +13,8 @@ lfw_url: ""
 lfw_status: ingested
 lfw_relevance: high
 lfw_sections_citing:
-  - "[[03-Methodology-Note]]"
-  - "[[02-1959-Treaty-Conditions]]"
+  - "[[01-03-Methodology-Note]]"
+  - "[[02-02-1959-Treaty-Conditions]]"
 Date_Added: 2026-04-25
 Date_Modified: 2026-05-12
 Needs_Processing: false
@@ -47,8 +47,8 @@ For the book's argument specifically, Tainter helps in two ways:
 
 ## How to integrate
 
-- Already cited in [[03-Methodology-Note]] for methodological grounding
-- Will be cited in [[02-1959-Treaty-Conditions]] when the Antarctic Treaty's *avoidance* of marginal-returns problems is discussed (the Treaty stays *deliberately thin* on institutional complexity)
+- Already cited in [[01-03-Methodology-Note]] for methodological grounding
+- Will be cited in [[02-02-1959-Treaty-Conditions]] when the Antarctic Treaty's *avoidance* of marginal-returns problems is discussed (the Treaty stays *deliberately thin* on institutional complexity)
 - Heavy citation in Chapter 6 (Roman Republic counter-example) and Chapter 7 (synthesis)
 - Possibly cited in Chapter 8 (conclusion) when the framework's contemporary implications are surfaced
 

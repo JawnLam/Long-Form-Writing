@@ -7,8 +7,8 @@ lfw_atom_type: thread
 lfw_kind: argument
 lfw_status: active
 lfw_sections_engaged:
-  - "[[02-Four-Conditions-Introduced]]"
-  - "[[04-Treaty-Analyzed-Against-Conditions]]"
+  - "[[01-02-Four-Conditions-Introduced]]"
+  - "[[02-04-Treaty-Analyzed-Against-Conditions]]"
 Date_Added: 2026-04-22
 Date_Modified: 2026-05-31
 Needs_Processing: false
@@ -28,8 +28,8 @@ The thread is about *institutional immortality through text*.
 
 ## Where it appears
 
-- [[02-Four-Conditions-Introduced]] — definitional
-- [[04-Treaty-Analyzed-Against-Conditions]] — Antarctic Treaty as a treaty-text reconstructable institution
+- [[01-02-Four-Conditions-Introduced]] — definitional
+- [[02-04-Treaty-Analyzed-Against-Conditions]] — Antarctic Treaty as a treaty-text reconstructable institution
 - *(Chapter 3 — planned)* — Hoshi Ryokan family records as the case where written tradition is *thinner*; argues that long-lived family firms typically have less written tradition than long-lived state institutions, and that the family compensates through other conditions
 - *(Chapter 4 — planned, STRONG CASE)* — Benedictine Rule as paradigmatic; this is the thread's strongest chapter
 - *(Chapter 5 — planned)* — US Constitution + amendments + Federalist Papers + Supreme Court opinions as reconstructable corpus
@@ -40,7 +40,7 @@ The thread is about *institutional immortality through text*.
 
 - [[Walter-Ong-Orality-and-Literacy-1982]] — the foundational study on how the written word changes the cognitive and institutional possibilities available to a society
 - [[Eric-Havelock-Preface-to-Plato-1963]] — the transition from oral-formulaic to literate-text-based knowledge transmission
-- [[Mary-Beard-SPQR-2015]] — Roman law as a written tradition that survived the Western Empire's collapse and reconstituted institutions a thousand years later
+- [[Beard-SPQR-2015]] — Roman law as a written tradition that survived the Western Empire's collapse and reconstituted institutions a thousand years later
 - [[Hugh-Trevor-Roper-The-Invention-of-Scotland-2008]] — interesting complication; written "tradition" can be substantially constructed retroactively
 
 ## Sources that complicate or contradict it

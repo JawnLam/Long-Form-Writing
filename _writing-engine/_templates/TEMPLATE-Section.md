@@ -4,7 +4,7 @@ Item_ID: "<slug>"
 Title: "<Section title>"
 lfw_manuscript: ""
 lfw_atom_type: section
-lfw_status: planned    # planned | drafted | revised | fact-checked | final
+lfw_status: planned    # planned | drafting | drafted | revising | revised | fact-checked | final
 lfw_parent: ""         # wikilink to Chapter
 lfw_order_in_parent:
 lfw_purpose: ""        # one-sentence: what this section argues or narrates

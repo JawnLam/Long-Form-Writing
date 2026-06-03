@@ -5,7 +5,7 @@ Title: "Beat 3: The Family — Zengoro Hoshi and the Apprenticeship Line"
 lfw_manuscript: "the-persistence-question"
 lfw_atom_type: beat
 lfw_status: drafted
-lfw_parent: "[[01-Hoshi-Opening]]"
+lfw_parent: "[[03-01-Hoshi-Opening]]"
 lfw_order_in_parent: 3
 lfw_characters_present: []
 lfw_threads_engaged:
@@ -29,7 +29,7 @@ The closing move — the inn as *not a relic* — sets up Beat 4's transition in
 
 ## Content
 
-*Paragraphs 6 and 7 of Section 3.1 (see [[01-Hoshi-Opening]] for the drafted prose).*
+*Paragraphs 6 and 7 of Section 3.1 (see [[03-01-Hoshi-Opening]] for the drafted prose).*
 
 Anchors:
 

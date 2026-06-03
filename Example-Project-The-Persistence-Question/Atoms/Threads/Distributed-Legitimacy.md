@@ -7,11 +7,11 @@ lfw_atom_type: thread
 lfw_kind: argument
 lfw_status: active
 lfw_sections_engaged:
-  - "[[01-The-Question]]"
-  - "[[02-Four-Conditions-Introduced]]"
-  - "[[02-1959-Treaty-Conditions]]"
-  - "[[04-Treaty-Analyzed-Against-Conditions]]"
-  - "[[01-Hoshi-Opening]]"
+  - "[[01-01-The-Question]]"
+  - "[[01-02-Four-Conditions-Introduced]]"
+  - "[[02-02-1959-Treaty-Conditions]]"
+  - "[[02-04-Treaty-Analyzed-Against-Conditions]]"
+  - "[[03-01-Hoshi-Opening]]"
 Date_Added: 2026-04-22
 Date_Modified: 2026-06-02
 Needs_Processing: false
@@ -33,11 +33,11 @@ The thread is one of the book's load-bearing arguments. It runs through every ca
 
 In rough book order:
 
-- [[01-The-Question]] — introduced obliquely in the opening question
-- [[02-Four-Conditions-Introduced]] — defined formally as one of the four conditions
-- [[02-1959-Treaty-Conditions]] — early development; the Antarctic Treaty's twelve-signatory structure as paradigmatic case
-- [[04-Treaty-Analyzed-Against-Conditions]] — explicit analysis of the Treaty's distributed legitimacy mechanisms
-- [[01-Hoshi-Opening]] — touched lightly; the family-as-institution distributes legitimacy across generations rather than persons
+- [[01-01-The-Question]] — introduced obliquely in the opening question
+- [[01-02-Four-Conditions-Introduced]] — defined formally as one of the four conditions
+- [[02-02-1959-Treaty-Conditions]] — early development; the Antarctic Treaty's twelve-signatory structure as paradigmatic case
+- [[02-04-Treaty-Analyzed-Against-Conditions]] — explicit analysis of the Treaty's distributed legitimacy mechanisms
+- [[03-01-Hoshi-Opening]] — touched lightly; the family-as-institution distributes legitimacy across generations rather than persons
 - *(Chapter 4 Benedictine sections — planned)* — distributed across abbots and the Rule itself
 - *(Chapter 5 US Constitution sections — planned)* — distributed across branches, levels, parties, judiciary
 - *(Chapter 6 counter-examples — planned)* — surfaced as the condition that the failed cases most often lack

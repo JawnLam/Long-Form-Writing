@@ -4,7 +4,7 @@ Item_ID: "<slug>"
 Title: "<Scene title>"
 lfw_manuscript: ""
 lfw_atom_type: scene
-lfw_status: planned    # planned | drafted | revised | final
+lfw_status: planned    # planned | drafting | drafted | revising | revised | final
 lfw_parent: ""         # wikilink to Chapter or Act
 lfw_order_in_parent:
 lfw_setting: ""        # location / time

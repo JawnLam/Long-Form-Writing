@@ -4,7 +4,7 @@ Item_ID: "<slug>"
 Title: "Chapter <N>: <Title>"
 lfw_manuscript: ""
 lfw_atom_type: chapter
-lfw_status: outlined    # outlined | drafting | drafted | revising | revised | final
+lfw_status: planned    # planned | drafting | drafted | revising | revised | final
 lfw_parent: ""          # wikilink to Part (optional)
 lfw_order_in_parent:
 lfw_word_count: 0

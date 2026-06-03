@@ -31,11 +31,11 @@ Key argumentative work:
 
 ## Composition
 
-1. [[01-Hoshi-Opening]] — opening narrative scene at the ryokan
-2. [[02-Family-Business-Statistics]] — how rare is multi-century family business?
-3. [[03-Four-Conditions-As-Applied-To-Families]] — framework adaptation
-4. [[04-Hoshi-Through-The-Framework]] — the case analyzed
-5. [[05-Other-Long-Lived-Family-Firms]] — Kongō Gumi, Stiftskeller St. Peter, Antinori (shorter treatment)
+1. [[03-01-Hoshi-Opening]] — opening narrative scene at the ryokan
+2. [[03-02-Family-Business-Statistics]] — how rare is multi-century family business?
+3. [[03-03-Four-Conditions-As-Applied-To-Families]] — framework adaptation
+4. [[03-04-Hoshi-Through-The-Framework]] — the case analyzed
+5. [[03-05-Other-Long-Lived-Family-Firms]] — Kongō Gumi, Stiftskeller St. Peter, Antinori (shorter treatment)
 
 ## Open Notes
 

@@ -30,10 +30,10 @@ The section should not yet apply the framework. That's Section 3.4. Section 3.1 
 
 ## Beats
 
-1. [[Beat-01-Arrival]] — arrival at the ryokan; sensory anchor
-2. [[Beat-02-Time-Marker]] — the gentle establishment of "this place has been doing this for 1,300 years"
-3. [[Beat-03-The-Family]] — meet (briefly) the current operating generation
-4. [[Beat-04-Transition]] — set up the question Sections 3.2 and 3.3 will address
+1. [[03-01-Beat-01-Arrival]] — arrival at the ryokan; sensory anchor
+2. [[03-01-Beat-02-Time-Marker]] — the gentle establishment of "this place has been doing this for 1,300 years"
+3. [[03-01-Beat-03-The-Family]] — meet (briefly) the current operating generation
+4. [[03-01-Beat-04-Transition]] — set up the question Sections 3.2 and 3.3 will address
 
 ## Prose
 

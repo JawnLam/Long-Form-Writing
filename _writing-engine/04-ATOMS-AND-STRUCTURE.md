@@ -13,20 +13,91 @@ updated: 2026-06-02
 
 An atom is the smallest reusable, referenceable unit of a manuscript. Atoms have frontmatter, structured body sections, and named relationships to other atoms. They are stored as individual markdown files in the cartridge's `Atoms/` subfolders.
 
-The eight atom types in LFW v1.0:
+The ten atom types in LFW v1.0:
 
 | Type | Role | Genre relevance |
 |------|------|-----------------|
 | **Beat** | Smallest dramatic or rhetorical move | All genres |
 | **Scene** | Composed of beats; prose lives here (fiction, screenplay, play) | Fiction / screenplay / play |
 | **Section** | Composed of beats; prose lives here (non-fiction, dissertation) | Non-fiction / dissertation |
-| **Chapter** | Composes scenes or sections | All genres (sometimes absent) |
+| **Chapter** | Composes scenes or sections | Fiction / non-fiction / dissertation |
+| **Act** | Composes scenes (screenplay/play equivalent of Chapter) | Screenplay / play |
+| **Setting** | Location, period, and stage-condition record | Play (primary); fiction / screenplay (optional) |
 | **Character** | Recurring participant in fiction/screenplay/play | Fiction / screenplay / play |
 | **Thread** | Recurring topic / argument / framing device | Non-fiction / dissertation |
 | **Source** | External material informing the work | Non-fiction / dissertation (heavy); fiction (light) |
 | **Note** | Unplaced fragment, idea, future inclusion | All genres |
 
 Plus the cartridge backbone files (`_manuscript-manifest.md`, `_state.md`, `_outline.md`, `_voice-samples.md`) which are not atoms but structural files that organize them.
+
+## Universal status enum (load-bearing)
+
+Every prose-bearing atom (Beat, Scene, Section, Chapter, Act) uses **one** canonical lifecycle:
+
+```
+planned → drafting → drafted → revising → revised → final
+```
+
+Non-fiction and dissertation **Section** atoms add one optional value, `fact-checked`, between `revised` and `final`:
+
+```
+planned → drafting → drafted → revising → revised → fact-checked → final
+```
+
+These are the **only** legal `lfw_status` values for prose-bearing atoms. Templates and validators enforce this. Older drafts of the engine had Chapter-specific values (`outlined`); these are deprecated. Use `planned` for "outline not yet done" and `drafting` for "outline done, prose in progress."
+
+Other atom types use type-specific lifecycle fields, NOT `lfw_status`:
+
+| Atom type | Lifecycle field | Legal values |
+|-----------|-----------------|--------------|
+| Beat / Scene / Section / Chapter / Act | `lfw_status` | `planned`, `drafting`, `drafted`, `revising`, `revised`, `final` (+ `fact-checked` for non-fiction Section) |
+| Character | `lfw_status` | `developing`, `established`, `revised`, `final` |
+| Thread | `lfw_status` | `emerging`, `active`, `concluded` |
+| Source | `lfw_status` | `identified`, `ingested`, `folded-in`, `superseded` |
+| Setting | `lfw_status` | `sketched`, `defined`, `final` |
+| Note | `lfw_status` | `unplaced`, `placed`, `discarded` |
+
+## Naming conventions and wiki-links
+
+Wiki-links in atom bodies (`[[Foo]]`) target the **filename without the `.md` extension**. There is no other link resolution mechanism. The validator enforces that every wiki-link resolves to an actual file.
+
+This forces a **disciplined naming convention**, because a flat folder (`Atoms/Sections/`) collects sections from every chapter and order-only names (`01-Opening.md`) collide globally. Canonical names below.
+
+### Filename conventions per atom type
+
+| Atom type | Naming pattern | Example | Folder |
+|-----------|---------------|---------|--------|
+| Beat | `<chapter>-<section-or-scene>-Beat-<order>-<short-slug>.md` | `03-01-Beat-01-Arrival.md` | `Atoms/Beats/` |
+| Scene | `<chapter>-<order>-<short-slug>.md` (chapter-prefixed) | `04-03-Library-Confrontation.md` | `Atoms/Scenes/` |
+| Section | `<chapter>-<order>-<short-slug>.md` (chapter-prefixed) | `03-01-Hoshi-Opening.md` | `Atoms/Sections/` |
+| Chapter | `Chapter-<NN>-<short-title>.md` | `Chapter-03-Family-Business-Persistence.md` | `Atoms/Chapters/` |
+| Act | `Act-<N>-<short-title>.md` | `Act-2-The-Reversal.md` | `Atoms/Acts/` |
+| Character | `<First-Last>.md` or `<Slug>.md` | `Maya-Chen.md` | `Atoms/Characters/` |
+| Thread | `<Thread-Name>.md` (Title-Case-Hyphenated) | `Distributed-Legitimacy.md` | `Atoms/Threads/` |
+| Source | `<Lastname>-<Short-Title>-<Year>.md` | `Beard-SPQR-2015.md` | `Atoms/Sources/` |
+| Setting | `<Setting-Name>.md` | `The-Conservatory.md` | `Atoms/Settings/` |
+| Note | `<YYYY-MM-DD>-<short-slug>.md` | `2026-06-02-bell-curve-observation.md` | `Atoms/Notes/` |
+
+**Canonicalization rules:**
+
+- For a given Source, pick **one** canonical name (typically last-name + short title + year). All wiki-links use that name. Multiple variants (`[[Beard-SPQR-2015]]` and `[[Mary-Beard-SPQR-2015]]` for the same source) are link-graph corruption.
+- Chapter-prefixing is non-negotiable for Sections, Scenes, and Beats. Order-only naming (`01-Opening`) collides across chapters in a flat folder.
+- Filenames are case-sensitive in the link graph; pick a case convention per cartridge and stay consistent.
+
+### Item_ID is a SEPARATE namespace from filenames
+
+Every atom has both:
+
+- A **filename** (e.g., `Beard-SPQR-2015.md`) — case-sensitive Title-Case-Hyphenated; used as the wiki-link target
+- An **`Item_ID`** in frontmatter (e.g., `beard-spqr-2015`) — lowercase-kebab; used for data queries (Obsidian Bases, external scripts, citation graphs)
+
+These two namespaces serve different purposes and should not be conflated:
+
+- **Wiki-links** in atom bodies always use the filename form, never the Item_ID
+- **Data queries** that walk frontmatter use the Item_ID
+- **Renaming the file** does not automatically change the Item_ID, and vice versa — both are stable identifiers in their respective domains
+
+Older drafts of this engine ambiguously suggested wiki-links could use Item_IDs. They cannot. Filenames are the link key. Period.
 
 ## Beat
 
@@ -36,12 +107,12 @@ The smallest unit. A beat is a single move — a turn in argument, a moment of a
 
 ```yaml
 Item_Prototype: LFW_Beat
-Item_ID: "<slug>"
+Item_ID: "<lowercase-kebab-slug>"
 Title: "<short descriptive name>"
 lfw_manuscript: <manuscript-slug>
 lfw_atom_type: beat
-lfw_status: planned | drafted | revised | final
-lfw_parent: "[[Section-or-Scene-slug]]"
+lfw_status: planned   # planned | drafting | drafted | revising | revised | final
+lfw_parent: "[[<chapter-prefixed-section-or-scene-filename>]]"
 lfw_order_in_parent: <int>     # 1, 2, 3, ... within the parent scene/section
 lfw_characters_present: []     # for fiction/screenplay/play
 lfw_threads_engaged: []        # for non-fiction/dissertation
@@ -60,9 +131,9 @@ Needs_Processing: false
 4. `## Connects` — beats this follows from / leads to
 5. `## Notes` — anything the writer wants to remember about this beat
 
-**Naming:** `<order>-<short-slug>.md` within the parent. E.g., `01-Hook-Open.md`, `02-State-Premise.md`.
+**Naming:** `<chapter>-<section-or-scene-order>-Beat-<beat-order>-<short-slug>.md`. E.g., `03-01-Beat-01-Arrival.md` for Chapter 3, Section 1, Beat 1.
 
-**Location:** `Atoms/Beats/` or nested under the parent — the cartridge's convention.
+**Location:** `Atoms/Beats/` (flat folder; chapter-prefixing avoids collisions).
 
 ## Scene (fiction / screenplay / play)
 
@@ -72,12 +143,12 @@ A scene is a dramatic unit: typically continuous in time and place, with charact
 
 ```yaml
 Item_Prototype: LFW_Scene
-Item_ID: "<slug>"
+Item_ID: "<lowercase-kebab-slug>"
 Title: "<descriptive title>"
 lfw_manuscript: <manuscript-slug>
 lfw_atom_type: scene
-lfw_status: planned | drafted | revised | final
-lfw_parent: "[[Chapter-or-Act-slug]]"
+lfw_status: planned   # planned | drafting | drafted | revising | revised | final
+lfw_parent: "[[<chapter-or-act-filename>]]"
 lfw_order_in_parent: <int>
 lfw_setting: "<location/time>"
 lfw_pov: "<character or narrator>"
@@ -99,7 +170,7 @@ Needs_Processing: false
 5. `## Connections` — what this scene sets up / pays off
 6. `## Open Notes` — known weaknesses, alternate versions considered
 
-**Naming:** `<order>-<short-slug>.md`. E.g., `03-Arrival-at-the-Door.md`.
+**Naming:** `<chapter>-<order>-<short-slug>.md`. E.g., `04-03-Library-Confrontation.md` for Chapter 4, Scene 3.
 
 **Location:** `Atoms/Scenes/`.
 
@@ -111,12 +182,12 @@ A section is a unit of argument or narrative within a chapter. Roughly analogous
 
 ```yaml
 Item_Prototype: LFW_Section
-Item_ID: "<slug>"
+Item_ID: "<lowercase-kebab-slug>"
 Title: "<section title>"
 lfw_manuscript: <manuscript-slug>
 lfw_atom_type: section
-lfw_status: planned | drafted | revised | final | fact-checked
-lfw_parent: "[[Chapter-slug]]"
+lfw_status: planned   # planned | drafting | drafted | revising | revised | fact-checked | final
+lfw_parent: "[[<chapter-filename>]]"
 lfw_order_in_parent: <int>
 lfw_purpose: "<one-sentence: what this section argues or narrates>"
 lfw_threads_engaged: []
@@ -138,9 +209,11 @@ Needs_Processing: false
 6. `## Threads Engaged` — wiki-links to Thread atoms
 7. `## Open Notes` — weaknesses, fact-checks pending, alternate approaches
 
-**Naming:** `<order>-<short-slug>.md`. E.g., `02-The-Argument-Against-Decline.md`.
+**Naming:** `<chapter>-<order>-<short-slug>.md`. E.g., `03-01-Hoshi-Opening.md` for Chapter 3, Section 1.
 
 **Location:** `Atoms/Sections/`.
+
+**Note:** `fact-checked` is a non-fiction / dissertation-only status value between `revised` and `final`. Fiction Section atoms (rare; most fiction uses Scenes) skip it.
 
 ## Chapter
 
@@ -150,12 +223,12 @@ A chapter is a composition of scenes or sections, usually with a coherent arc.
 
 ```yaml
 Item_Prototype: LFW_Chapter
-Item_ID: "<slug>"
+Item_ID: "<lowercase-kebab-slug>"
 Title: "<chapter title>"
 lfw_manuscript: <manuscript-slug>
 lfw_atom_type: chapter
-lfw_status: outlined | drafting | drafted | revising | revised | final
-lfw_parent: "[[Part-slug]]"   # optional; some books have no parts
+lfw_status: planned   # planned | drafting | drafted | revising | revised | final
+lfw_parent: "[[<part-filename>]]"   # optional; some books have no parts
 lfw_order_in_parent: <int>
 lfw_word_count: <int>
 lfw_target_word_count: <int>
@@ -174,9 +247,76 @@ Needs_Processing: false
 4. `## Open Notes` — chapter-level issues
 5. `## Revision History` — log of revision passes that touched this chapter
 
-**Naming:** `Chapter-N-<short-title>.md`. E.g., `Chapter-03-The-Antarctic-Treaty-Case.md`.
+**Naming:** `Chapter-<NN>-<short-title>.md`. E.g., `Chapter-03-Family-Business-Persistence.md`. Two-digit chapter numbers (`01`, `02`, ..., `10`, `11`) so files sort correctly in flat folders.
 
 **Location:** `Atoms/Chapters/`.
+
+## Act (screenplay / play)
+
+Screenplay and play equivalent of Chapter. Composes scenes within an act structure.
+
+**Frontmatter:**
+
+```yaml
+Item_Prototype: LFW_Act
+Item_ID: "<lowercase-kebab-slug>"
+Title: "Act <N>: <title>"
+lfw_manuscript: <manuscript-slug>
+lfw_atom_type: act
+lfw_status: planned   # planned | drafting | drafted | revising | revised | final
+lfw_order_in_parent: <int>
+lfw_purpose: "<one sentence: what this act does in the larger work>"
+lfw_target_page_count: <int>     # screenplay convention: pages ≈ minutes
+lfw_first_drafted: <YYYY-MM-DD | null>
+Date_Added:
+Date_Modified:
+Needs_Processing: false
+```
+
+**Required sections:**
+
+1. `# Act <N>: <title>`
+2. `## Purpose` — what this act accomplishes
+3. `## Composition` — ordered list of scenes (wiki-links)
+4. `## Open Notes` — act-level issues
+5. `## Revision History`
+
+**Naming:** `Act-<N>-<short-title>.md`. E.g., `Act-2-The-Reversal.md`.
+
+**Location:** `Atoms/Acts/`.
+
+## Setting (play; optional for fiction/screenplay)
+
+Records a location, period, and stage-condition combination that scenes can reference. Play-primary; useful in fiction and screenplay when a setting recurs across multiple scenes with distinctive features worth preserving.
+
+**Frontmatter:**
+
+```yaml
+Item_Prototype: LFW_Setting
+Item_ID: "<lowercase-kebab-slug>"
+Title: "<Setting name>"
+lfw_manuscript: <manuscript-slug>
+lfw_atom_type: setting
+lfw_status: sketched   # sketched | defined | final
+lfw_period: "<historical/narrative period>"
+lfw_location: "<location>"
+lfw_scenes_using: []   # auto-populated from Scene atoms
+Date_Added:
+Date_Modified:
+Needs_Processing: false
+```
+
+**Required sections:**
+
+1. `# <Setting name>`
+2. `## Place and period` — where, when
+3. `## Stage requirements` (plays) — set pieces, sightlines, entrances/exits
+4. `## Sensory anchors` — what the audience/reader experiences
+5. `## Scenes using this setting` — wiki-links to Scene atoms
+
+**Naming:** `<Setting-Name>.md`. E.g., `The-Conservatory.md`.
+
+**Location:** `Atoms/Settings/`.
 
 ## Character (fiction / screenplay / play)
 
@@ -344,16 +484,19 @@ Used in atom frontmatter and body wiki-links:
 - **Characters and Threads are not composed into other atoms.** They're referenced (appears-in, engaged-in) but they don't have an "order in parent."
 - **Sources and Notes are floating.** They reference things and are referenced by things, but they have no parent.
 
-## Status field lifecycle
+## Status field lifecycle (recap)
 
-The `lfw_status` field on each atom progresses:
+For prose-bearing atoms (Beat / Scene / Section / Chapter / Act), the canonical lifecycle is:
 
-- **planned** → atom exists with frontmatter and outline but no prose
-- **drafted** → prose has been written
-- **revised** → at least one revision pass has touched it
+- **planned** → atom exists with frontmatter; outline (beats) may or may not exist yet; no prose
+- **drafting** → outline is done; prose is being written but not yet complete
+- **drafted** → first-pass prose is complete
+- **revising** → a revision pass is currently touching this atom
+- **revised** → at least one revision pass has completed on it
+- **fact-checked** (non-fiction Section only) → accuracy pass completed
 - **final** → marked finished by the writer
 
-For Sections in non-fiction, an additional `fact-checked` status indicates accuracy pass completion.
+Non-prose atoms (Character, Thread, Source, Setting, Note) use type-specific status vocabularies — see the "Universal status enum" table earlier in this chapter.
 
 ## Atom file conventions
 
