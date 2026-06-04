@@ -4,6 +4,8 @@ schema_version: "1.4"
 schema_status: "STABLE"
 release_date: 2026-06-03
 release_phase: "Minor release — soft-skill activities (WEATHER-CHECK + MIDDLE-AUDIT); honest scope-limitation pass; zero schema growth"
+proposed_next_version: "1.5.0"
+proposed_next_version_notes: "Branch feat/core-pack-progressive-disclosure proposes 1.5.0 — minor bump (additive validator + tooling) with schema_version unchanged at 1.4 because no atom or schema additions. The final version number is left for human confirmation in the PR description; see CHANGELOG [Unreleased] for the full scope."
 ---
 
 # Long-Form-Writing — Version

@@ -64,6 +64,12 @@ Checks performed (each emits one line per failure):
                             for (cartridge-genre, session-activity). Missing
                             required chapters fails; extra chapters warn.
                             Unknown activities (META, BOOTSTRAP) skip (v1.5).
+ 16. genre-isolation      : positive assertion that the router never
+                            dispatches fiction-pack chapters under non-fiction
+                            or dissertation genres, and never dispatches
+                            chapter 06 / 10-ARGUMENT under fiction / screenplay
+                            / play. The packaging is correct by construction
+                            and this check is the executable proof (v1.5).
 
 The script is intentionally simple and forgiving: it parses YAML frontmatter
 without a YAML library (regex + line-walk), so unusual frontmatter shapes
@@ -477,6 +483,49 @@ def check_router_fresh(ov_root: pathlib.Path, build_router) -> list:
     return []
 
 
+def check_genre_isolation(build_router) -> list:
+    """Check 16 (v1.5): positive assertion that the router never dispatches
+    fiction-pack chapters for non-fiction/dissertation cartridges, and never
+    dispatches chapter 06 / 10-ARGUMENT for fiction cartridges. The router
+    construction makes this impossible by design; this check is the executable
+    proof."""
+    if build_router is None:
+        return [("genre-isolation", "build-router.py is unavailable; cannot assert genre isolation")]
+    sources = build_router.collect_sources()
+    _, _, by_genre_activity = build_router.build_dispatch_tables(sources)
+
+    # Identify the chapters that should NEVER appear under the wrong genre.
+    fiction_pack_paths = set()
+    nonfic_pack_paths = set()
+    for rel, ll, _ in sources:
+        if ll.get("tier") != "pack":
+            continue
+        genres = ll.get("genres", [])
+        if "fiction" in genres or "screenplay" in genres or "play" in genres:
+            if "non-fiction" not in genres and "dissertation" not in genres:
+                fiction_pack_paths.add(rel)
+        if "non-fiction" in genres or "dissertation" in genres:
+            if "fiction" not in genres and "screenplay" not in genres and "play" not in genres:
+                nonfic_pack_paths.add(rel)
+
+    issues = []
+    # Fiction-pack must never appear under non-fiction or dissertation
+    for (g, a), paths in by_genre_activity.items():
+        if g in ("non-fiction", "dissertation"):
+            for p in paths:
+                if p in fiction_pack_paths:
+                    issues.append(("genre-isolation",
+                                   f"router dispatches fiction-pack chapter '{p}' under "
+                                   f"genre='{g}' activity='{a}' — this should never happen"))
+        if g in ("fiction", "screenplay", "play"):
+            for p in paths:
+                if p in nonfic_pack_paths:
+                    issues.append(("genre-isolation",
+                                   f"router dispatches non-fiction-pack chapter '{p}' under "
+                                   f"genre='{g}' activity='{a}' — this should never happen"))
+    return issues
+
+
 # Activity codes legal in chapter 03's set (kept here as a fallback if build-router
 # is unavailable; build_router.VALID_ACTIVITIES is the canonical source).
 _SESSION_KNOWN_ACTIVITIES = {
@@ -607,10 +656,11 @@ def main():
     total_warnings = 0
     all_types = set()
 
-    # OV-level router checks: load-declared (check 13) and router-fresh (check 14)
+    # OV-level router checks: load-declared (13), router-fresh (14), genre-isolation (16)
     print("=== Engine router checks ===")
     engine_issues = check_load_declared(ov_root, build_router)
     engine_issues += check_router_fresh(ov_root, build_router)
+    engine_issues += check_genre_isolation(build_router)
     if not engine_issues:
         print("  (no issues)")
     else:

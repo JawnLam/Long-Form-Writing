@@ -81,12 +81,80 @@ The Late Frost cartridge contains many references to "Chapter 10" — these refe
 ## Phase progression
 
 - [x] Phase 0: branch, baseline validator, ground-truth reads, migration notes
-- [ ] Phase 1: lfw_load declarations + build-router.py + _ROUTER.md
-- [ ] Phase 2: split chapter 10
-- [ ] Phase 3: rewrite AI-BOOTSTRAP reading list
-- [ ] Phase 4: validator extensions + session read-coverage
-- [ ] Phase 5: teeth test + genre-isolation + CHANGELOG + VERSION
+- [x] Phase 1: lfw_load declarations + build-router.py + _ROUTER.md
+- [x] Phase 2: split chapter 10
+- [x] Phase 3: rewrite AI-BOOTSTRAP reading list
+- [x] Phase 4: validator extensions + session read-coverage
+- [x] Phase 5: teeth test + genre-isolation + CHANGELOG + VERSION
 
 ## Teeth-test record (Phase 5)
 
-*To be populated.*
+All three mutations were performed in the working copy, the validator was run, the expected failure was confirmed, and the state was restored. No mutation was committed.
+
+### Teeth test (a) — router-fresh fails on hand-edited lfw_load without router regeneration
+
+**Mutation:** changed chapter 11's `activities` declaration from `[SCENE-AUDIT, SETUP-PAYOFF-AUDIT, OUTLINE, READ-THROUGH]` to `[SCENE-AUDIT]` (a real change that shrinks the dispatch table), and did NOT run `build-router.py` afterwards.
+
+**Validator output (relevant lines):**
+
+```
+[router-fresh] 1 issue(s) (FAIL):
+TOTAL ISSUES: 1 (+4 warning(s))
+```
+
+**Diagnosis confirmed:** the check correctly detected that the committed `_ROUTER.md` no longer matches what `render_router(collect_sources())` produces. Stale router → build failure, as designed. (Initial attempt with a `tier: core → pack` change was a no-op because the chapter's `genres/activities` were both `[all]`, so the dispatch table was unchanged. The second mutation, on `activities`, exercised the check meaningfully.)
+
+**Restoration:** original chapter 11 content restored; validator returns to clean state.
+
+### Teeth test (b) — wiki-link-resolves fails on dangling reference
+
+**Mutation:** appended `<!-- teeth-test dangling: [[Definitely-Not-A-Real-Atom-99999]] -->` to `Example-Project-The-Late-Frost/_outline.md`.
+
+**Validator output (relevant lines):**
+
+```
+[wiki-link-resolves] 1 issue(s) (FAIL):
+TOTAL ISSUES: 1 (+3 warning(s))
+```
+
+**Diagnosis confirmed:** the existing v1.0.1 wiki-link-resolves check correctly catches dangling references in cartridge files. Phase 4 preserves this check unchanged. (First attempt on `00-START-HERE.md` was a no-op because the link check walks cartridge files, not engine chapters — by design; engine isn't a cartridge.)
+
+**Restoration:** original outline restored; validator returns to clean state.
+
+### Teeth test (c) — session-read-coverage fails on fiction OUTLINE missing required pack chapter
+
+**Mutation:** created `Example-Project-The-Late-Frost/Sessions/2099-12-31_999_TEETH-TEST.md` declaring `lfw_session_activity: OUTLINE` but a `lfw_chapters_loaded` list that omits `_writing-engine/11-FICTION-PLOT-SPINE.md` and `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md` (both required for fiction OUTLINE per the router).
+
+**Validator output (relevant lines):**
+
+```
+[session-read-coverage] 1 issue(s) (FAIL):
+TOTAL ISSUES: 1 (+3 warning(s))
+```
+
+**Diagnosis confirmed:** the new session-read-coverage check correctly fails when a fiction OUTLINE session omits required fiction-pack chapters from `lfw_chapters_loaded`.
+
+**Restoration:** teeth-test session log deleted; validator returns to clean state.
+
+### Genre-isolation positive assertion
+
+Added as validator check 16 (`genre-isolation`). Walks the router's dispatch table and asserts:
+
+- No fiction-pack chapter ever appears under `genre = non-fiction` or `genre = dissertation`
+- No non-fiction-pack chapter (chapter 06, 10-ARGUMENT) ever appears under `genre = fiction`, `screenplay`, or `play`
+
+Passes on the current router. Combined with `router-fresh`, isolation is correct by construction: the only way to violate isolation is to hand-edit `_ROUTER.md` after build-router writes it (which `router-fresh` then catches) or to introduce contradictory `lfw_load` frontmatter (which `load-declared` would catch only structurally — the genre/activity codes are valid even if semantically wrong; this is why the positive assertion is added as its own check).
+
+## Final state
+
+- New validator checks: **13** (load-declared), **14** (router-fresh), **15** (session-read-coverage, FAIL + warn), **16** (genre-isolation)
+- New scripts: `_writing-engine/_scripts/build-router.py`
+- New generated file: `_writing-engine/_ROUTER.md`
+- Split: `10-READER-AND-ARGUMENT.md` → `10-READER.md` (core) + `10-ARGUMENT.md` (non-fic pack)
+- Rewritten: `AI-BOOTSTRAP.md` reading-list section
+- Updated: `TEMPLATE-Session.md` (gains `lfw_chapters_loaded`)
+- Backfilled: 7 example session logs with `lfw_chapters_loaded`
+- No new atoms, activities, chapters, templates, or failure modes
+- No files physically moved
+- Stdlib-only preserved (no new runtime dependencies)
+- Both example cartridges pass with the new checks active
