@@ -2,6 +2,11 @@
 .DS_Store
 **/.DS_Store
 
+# Python bytecode cache (from running the stdlib scripts)
+__pycache__/
+**/__pycache__/
+*.pyc
+
 # Editor / IDE artifacts
 .vscode/
 .idea/

@@ -3,6 +3,11 @@ type: writing-engine
 role: concept-definition
 scope: subject-agnostic
 updated: 2026-06-02
+lfw_load:
+  tier: core
+  genres: [all]
+  activities: [SESSION-START]
+  phase: on-demand
 ---
 
 # 01 — WHAT IS LONG-FORM-WRITING?

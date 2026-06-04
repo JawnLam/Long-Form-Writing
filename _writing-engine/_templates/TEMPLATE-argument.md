@@ -94,7 +94,7 @@ lfw_argument_version: 1
 For the AI:
 
 - Read at session start when activity is ARGUMENT-AUDIT, STEELMAN, CLAIM-EVIDENCE-CHECK, SYNTHESIS-CHECK, or any session in a non-fiction/dissertation cartridge that touches argument
-- Pressure-test during ARGUMENT-AUDIT (chapter 10)
+- Pressure-test during ARGUMENT-AUDIT (chapter 10-ARGUMENT)
 - Never silently rewrite; surface issues and let the writer revise
 
 For the writer:

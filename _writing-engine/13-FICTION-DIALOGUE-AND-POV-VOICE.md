@@ -3,6 +3,11 @@ type: writing-engine
 role: fiction-craft-deepening
 scope: fiction
 updated: 2026-06-03
+lfw_load:
+  tier: pack
+  genres: [fiction, screenplay, play]
+  activities: [DIALOGUE-AUDIT, POV-VOICE-DRIFT, REVISE]
+  phase: on-demand
 ---
 
 # 13 — FICTION: DIALOGUE AND POV-VOICE

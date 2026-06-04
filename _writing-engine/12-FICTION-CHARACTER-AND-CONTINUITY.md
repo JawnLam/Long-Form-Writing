@@ -3,6 +3,11 @@ type: writing-engine
 role: fiction-character-continuity
 scope: fiction-screenplay-play
 updated: 2026-06-02
+lfw_load:
+  tier: pack
+  genres: [fiction, screenplay, play]
+  activities: [CHARACTER-CONSISTENCY, CONTINUITY-CHECK, WORLDBUILDING, READER-SIMULATION]
+  phase: on-demand
 ---
 
 # 12 — FICTION CHARACTER AND CONTINUITY
@@ -210,7 +215,7 @@ The engine's slight v1.2 update to WORLDBUILDING: at the end of every WORLDBUILD
 
 ## Part six — Fiction READER-SIMULATION reframe
 
-The READER-SIMULATION activity defined in chapter 10 was framed around non-fiction reader experience: resistance, lost threads, curse of knowledge. For fiction, the questions are different and arguably more important:
+The READER-SIMULATION activity defined in chapter 10-READER was framed around non-fiction reader experience: resistance, lost threads, curse of knowledge. For fiction, the questions are different and arguably more important:
 
 ### Fiction reader-simulation questions
 
@@ -295,7 +300,7 @@ This chapter assumes plot-driven, character-driven fiction. Form variations:
 - **Chapter 06 (Research Integration)** — generally not applicable to fiction; some research-informed fiction uses Sources
 - **Chapter 07 (Revision Discipline)** — CHARACTER-CONSISTENCY and CONTINUITY-CHECK findings feed into revision passes
 - **Chapter 09 (Writer Development)** — fiction error vocabulary added to the craft-log discipline; POV module added to the craft-module list
-- **Chapter 10 (Reader and Argument)** — Readers are extended with fiction-specific want/fear/hope tracking
+- **Chapter 10-READER** — Readers are extended with fiction-specific want/fear/hope tracking
 - **Chapter 11 (Fiction Plot and Spine)** — sister chapter; together they're the fiction-specific development layer
 - **`_meta/FAILURE-MODES.md`** — adds F24–F30 (character-disconnected, arc-asserted, antagonist-weak, motif-not-woven, continuity-drift, pov-pane-of-glass, head-hop)
 
