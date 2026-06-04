@@ -3,6 +3,11 @@ type: writing-engine
 role: atom-definitions
 scope: subject-agnostic
 updated: 2026-06-02
+lfw_load:
+  tier: core
+  genres: [all]
+  activities: [OUTLINE, DRAFT, REVISE, READ-THROUGH, BETA-PREP]
+  phase: on-demand
 ---
 
 # 04 — ATOMS AND STRUCTURE

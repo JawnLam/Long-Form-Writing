@@ -3,6 +3,11 @@ type: writing-engine
 role: fiction-plot-spine
 scope: fiction-screenplay-play
 updated: 2026-06-02
+lfw_load:
+  tier: pack
+  genres: [fiction, screenplay, play]
+  activities: [SCENE-AUDIT, SETUP-PAYOFF-AUDIT, OUTLINE, READ-THROUGH]
+  phase: on-demand
 ---
 
 # 11 — FICTION PLOT AND SPINE

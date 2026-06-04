@@ -3,6 +3,11 @@ type: writing-engine
 role: writer-development
 scope: subject-agnostic
 updated: 2026-06-02
+lfw_load:
+  tier: core
+  genres: [all]
+  activities: [all]
+  phase: on-demand
 ---
 
 # 09 — WRITER DEVELOPMENT

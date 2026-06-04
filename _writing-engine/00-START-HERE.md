@@ -3,6 +3,11 @@ type: writing-engine
 role: assistant-entry-point
 scope: subject-agnostic
 updated: 2026-06-03
+lfw_load:
+  tier: core
+  genres: [all]
+  activities: [all]
+  phase: bootstrap
 ---
 
 # 00 — START HERE (Writing Engine Entry Point)

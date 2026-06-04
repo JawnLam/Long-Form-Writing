@@ -3,6 +3,11 @@ type: writing-engine
 role: fiction-character-continuity
 scope: fiction-screenplay-play
 updated: 2026-06-02
+lfw_load:
+  tier: pack
+  genres: [fiction, screenplay, play]
+  activities: [CHARACTER-CONSISTENCY, CONTINUITY-CHECK, WORLDBUILDING, READER-SIMULATION]
+  phase: on-demand
 ---
 
 # 12 — FICTION CHARACTER AND CONTINUITY

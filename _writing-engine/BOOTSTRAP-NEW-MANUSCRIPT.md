@@ -3,6 +3,11 @@ type: writing-engine
 role: cartridge-bootstrapping-prompt
 scope: subject-agnostic
 updated: 2026-06-02
+lfw_load:
+  tier: core
+  genres: [all]
+  activities: [SESSION-START]
+  phase: on-demand
 ---
 
 # BOOTSTRAP A NEW MANUSCRIPT

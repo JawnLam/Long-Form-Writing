@@ -3,6 +3,11 @@ type: writing-engine
 role: research-integration
 scope: non-fiction-and-dissertation
 updated: 2026-06-02
+lfw_load:
+  tier: pack
+  genres: [non-fiction, dissertation]
+  activities: [RESEARCH-INTEGRATION, CLAIM-EVIDENCE-CHECK, SYNTHESIS-CHECK]
+  phase: on-demand
 ---
 
 # 06 — RESEARCH INTEGRATION

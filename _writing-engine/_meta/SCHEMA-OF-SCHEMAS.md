@@ -4,6 +4,11 @@ role: meta-ontology
 scope: subject-agnostic
 updated: 2026-06-03
 schema_version: 1.4.0
+lfw_load:
+  tier: core
+  genres: [all]
+  activities: [SESSION-START]
+  phase: on-demand
 ---
 
 # Schema of Schemas — LFW Meta-Ontology

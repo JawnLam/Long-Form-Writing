@@ -3,6 +3,11 @@ type: writing-engine
 role: session-protocol
 scope: subject-agnostic
 updated: 2026-06-02
+lfw_load:
+  tier: core
+  genres: [all]
+  activities: [all]
+  phase: bootstrap
 ---
 
 # 03 — CADENCE AND SESSIONS

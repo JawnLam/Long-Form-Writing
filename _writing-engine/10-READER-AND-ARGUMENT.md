@@ -3,6 +3,11 @@ type: writing-engine
 role: reader-and-argument
 scope: subject-agnostic-with-non-fiction-emphasis
 updated: 2026-06-02
+lfw_load:
+  tier: pack
+  genres: [non-fiction, dissertation]
+  activities: [READER-SIMULATION, ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, SYNTHESIS-CHECK, CRAFT-REVIEW]
+  phase: on-demand
 ---
 
 # 10 — READER AND ARGUMENT

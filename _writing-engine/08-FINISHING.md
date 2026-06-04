@@ -3,6 +3,11 @@ type: writing-engine
 role: finishing
 scope: subject-agnostic
 updated: 2026-06-02
+lfw_load:
+  tier: core
+  genres: [all]
+  activities: [BETA-PREP, READ-THROUGH]
+  phase: on-demand
 ---
 
 # 08 — FINISHING
