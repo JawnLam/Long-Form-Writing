@@ -3,6 +3,11 @@ type: writing-engine
 role: session-protocol
 scope: subject-agnostic
 updated: 2026-06-02
+lfw_load:
+  tier: core
+  genres: [all]
+  activities: [all]
+  phase: bootstrap
 ---
 
 # 03 — CADENCE AND SESSIONS
@@ -37,7 +42,7 @@ Steps 1, 6, 7, 8 are non-negotiable. Step 5 varies by activity.
 
 ## The twenty-five universal session activities
 
-Ten **production** activities (this chapter) plus thirteen **development** activities (six non-fiction-weighted in chapter 10; four fiction-weighted from v1.2 in chapters 11 + 12; three fiction-weighted from v1.3.1 in chapters 13 + 14) plus two **soft-skill** activities from v1.4.0 (chapter 16: WEATHER-CHECK, MIDDLE-AUDIT). Together they are the full session-activity set the AI can propose.
+Ten **production** activities (this chapter) plus thirteen **development** activities (six non-fiction-weighted in chapters 10-READER and 10-ARGUMENT; four fiction-weighted from v1.2 in chapters 11 + 12; three fiction-weighted from v1.3.1 in chapters 13 + 14) plus two **soft-skill** activities from v1.4.0 (chapter 16: WEATHER-CHECK, MIDDLE-AUDIT). Together they are the full session-activity set the AI can propose.
 
 ### Production activities
 
@@ -54,7 +59,7 @@ Ten **production** activities (this chapter) plus thirteen **development** activ
 | **WORLDBUILDING** | Fiction-specific setting work | Fiction cartridge; writer flagged worldbuilding gap; new setting element is referenced in scenes |
 | **BETA-PREP** | Final pass before sending to beta readers | Manuscript is in `polishing` stage; writer signals readiness to send |
 
-### Development activities — non-fiction weighted (defined in chapter 10)
+### Development activities — non-fiction weighted (defined in chapters 10-READER and 10-ARGUMENT)
 
 | Code | Activity | Right default when |
 |------|----------|---------------------|

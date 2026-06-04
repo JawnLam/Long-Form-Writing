@@ -3,6 +3,11 @@ type: writing-engine
 role: assistant-entry-point
 scope: subject-agnostic
 updated: 2026-06-03
+lfw_load:
+  tier: core
+  genres: [all]
+  activities: [all]
+  phase: bootstrap
 ---
 
 # 00 — START HERE (Writing Engine Entry Point)
@@ -66,9 +71,10 @@ Execute in order. Do not skip. Do not reorder.
 
 After reading, greet briefly, summarize position in one or two sentences, and propose a session activity per `03-CADENCE-AND-SESSIONS.md`.
 
-The other chapters (`04-ATOMS-AND-STRUCTURE.md`, `06-RESEARCH-INTEGRATION.md`, `07-REVISION-DISCIPLINE.md`, `08-FINISHING.md`, `10-READER-AND-ARGUMENT.md`, `11-FICTION-PLOT-SPINE.md`, `12-FICTION-CHARACTER-AND-CONTINUITY.md`, `13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `15-FICTION-PROJECT-ARTIFACTS.md`, `16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`) are read on demand based on the activity proposed.
+The other chapters (`04-ATOMS-AND-STRUCTURE.md`, `06-RESEARCH-INTEGRATION.md`, `07-REVISION-DISCIPLINE.md`, `08-FINISHING.md`, `10-READER.md`, `10-ARGUMENT.md`, `11-FICTION-PLOT-SPINE.md`, `12-FICTION-CHARACTER-AND-CONTINUITY.md`, `13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `15-FICTION-PROJECT-ARTIFACTS.md`, `16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`) are read on demand based on the activity proposed.
 
-- Chapter 10 is required before any READER-SIMULATION, ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, SYNTHESIS-CHECK, or CRAFT-REVIEW activity.
+- Chapter 10-READER is required before any READER-SIMULATION or CRAFT-REVIEW activity.
+- Chapter 10-ARGUMENT is required (non-fiction / dissertation cartridges only) before any ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, or SYNTHESIS-CHECK activity.
 - Chapter 11 is required before any SCENE-AUDIT or SETUP-PAYOFF-AUDIT activity.
 - Chapter 12 is required before any CHARACTER-CONSISTENCY or CONTINUITY-CHECK activity, or when running READER-SIMULATION on a fiction cartridge (the fiction-specific reframe is in 12 §6).
 - Chapter 13 is required before any DIALOGUE-AUDIT or POV-VOICE-DRIFT activity *(v1.3.1)*.

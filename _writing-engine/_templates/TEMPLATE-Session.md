@@ -7,12 +7,13 @@ Date_Modified:
 Needs_Processing: false
 lfw_manuscript: "<manuscript-slug>"
 lfw_session_number:
-lfw_activity: ""    # SESSION-START | OUTLINE | DRAFT | REVISE | RESEARCH-INTEGRATION | READ-THROUGH | STUCK-DIAGNOSTIC | VOICE-CHECK | WORLDBUILDING | BETA-PREP
+lfw_activity: ""    # one of the 25 activities defined in chapter 03 (consult _ROUTER.md for the canonical set); META / BOOTSTRAP / etc. are tolerated but skip session-read-coverage
 lfw_duration_minutes:
 lfw_atoms_touched: []
 lfw_words_written: 0
 lfw_words_revised: 0
 lfw_quality_gates_passed: false
+lfw_chapters_loaded: []    # v1.5: engine chapter paths loaded for this session. Required for cadence-activity sessions; the validator's session-read-coverage check (#15) verifies coverage against the router. Skip for META/BOOTSTRAP sessions.
 ---
 
 # Session <NNN> — <Date> — <Activity>

@@ -3,6 +3,11 @@ type: writing-engine
 role: soft-skill-activities
 scope: subject-agnostic
 updated: 2026-06-03
+lfw_load:
+  tier: core
+  genres: [all]
+  activities: [all]
+  phase: on-demand
 ---
 
 # 16 — WRITER WEATHER AND MIDDLE AUDIT

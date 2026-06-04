@@ -3,6 +3,11 @@ type: writing-engine
 role: revision-discipline
 scope: subject-agnostic
 updated: 2026-06-02
+lfw_load:
+  tier: core
+  genres: [all]
+  activities: [REVISE, READ-THROUGH, BETA-PREP]
+  phase: on-demand
 ---
 
 # 07 — REVISION DISCIPLINE

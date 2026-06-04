@@ -3,6 +3,11 @@ type: writing-engine
 role: fiction-structure-overlays-and-extensions
 scope: fiction
 updated: 2026-06-03
+lfw_load:
+  tier: pack
+  genres: [fiction, screenplay, play]
+  activities: [THEME-CHECK, OUTLINE, CHARACTER-CONSISTENCY, READ-THROUGH]
+  phase: on-demand
 ---
 
 # 14 — FICTION: STRUCTURE OVERLAYS AND EXTENSIONS

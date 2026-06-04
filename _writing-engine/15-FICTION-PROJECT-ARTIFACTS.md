@@ -3,6 +3,11 @@ type: writing-engine
 role: fiction-structural-artifacts
 scope: fiction
 updated: 2026-06-03
+lfw_load:
+  tier: pack
+  genres: [fiction, screenplay, play]
+  activities: [WORLDBUILDING, CONTINUITY-CHECK, READ-THROUGH, BETA-PREP, REVISE]
+  phase: on-demand
 ---
 
 # 15 — FICTION: PROJECT ARTIFACTS

@@ -3,6 +3,11 @@ type: writing-engine
 role: cartridge-bootstrapping-prompt
 scope: subject-agnostic
 updated: 2026-06-02
+lfw_load:
+  tier: core
+  genres: [all]
+  activities: [SESSION-START]
+  phase: on-demand
 ---
 
 # BOOTSTRAP A NEW MANUSCRIPT
@@ -83,7 +88,7 @@ Chicago / MLA / APA / Harvard / custom?
 
 ### CQ11 — Reader modeling (non-fiction emphasis)
 
-Who's the manuscript actually for? Get specific — name two or three reader archetypes the writer wants to satisfy. For non-fiction, the standard set is The Skeptic, The Impatient Generalist, The Domain Expert; the writer can adopt these, modify them, or define their own. These will become Reader atoms in the cartridge (see chapter 10) and the AI will use them in READER-SIMULATION activities.
+Who's the manuscript actually for? Get specific — name two or three reader archetypes the writer wants to satisfy. For non-fiction, the standard set is The Skeptic, The Impatient Generalist, The Domain Expert; the writer can adopt these, modify them, or define their own. These will become Reader atoms in the cartridge (see chapter 10-READER) and the AI will use them in READER-SIMULATION activities.
 
 For fiction / screenplay / play, Reader atoms are optional but useful. For dissertation, Readers are usually the committee + future researchers in the field.
 

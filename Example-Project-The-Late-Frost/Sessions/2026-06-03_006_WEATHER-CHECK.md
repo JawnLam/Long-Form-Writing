@@ -6,6 +6,14 @@ lfw_manuscript: "the-late-frost"
 lfw_session_date: 2026-06-03
 lfw_session_number: 6
 lfw_session_activity: WEATHER-CHECK
+lfw_chapters_loaded:
+  - _writing-engine/00-START-HERE.md
+  - _writing-engine/03-CADENCE-AND-SESSIONS.md
+  - _writing-engine/_ROUTER.md
+  - _writing-engine/05-VOICE-AND-CRAFT.md
+  - _writing-engine/09-WRITER-DEVELOPMENT.md
+  - _writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md
+  - _writing-engine/_meta/FAILURE-MODES.md
 lfw_session_duration_minutes: 12
 lfw_session_words_added: 0
 Date_Added: 2026-06-03
