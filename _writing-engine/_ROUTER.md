@@ -44,7 +44,8 @@ a genre are never loaded for that genre, no matter what activity is run.
 - `_writing-engine/07-REVISION-DISCIPLINE.md`
 - `_writing-engine/08-FINISHING.md`
 - `_writing-engine/09-WRITER-DEVELOPMENT.md`
-- `_writing-engine/10-READER-AND-ARGUMENT.md`
+- `_writing-engine/10-ARGUMENT.md`
+- `_writing-engine/10-READER.md`
 - `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`
 - `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`
 - `_writing-engine/_meta/FAILURE-MODES.md`
@@ -59,6 +60,7 @@ a genre are never loaded for that genre, no matter what activity is run.
 - `_writing-engine/07-REVISION-DISCIPLINE.md`
 - `_writing-engine/08-FINISHING.md`
 - `_writing-engine/09-WRITER-DEVELOPMENT.md`
+- `_writing-engine/10-READER.md`
 - `_writing-engine/11-FICTION-PLOT-SPINE.md`
 - `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`
 - `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
@@ -79,7 +81,8 @@ a genre are never loaded for that genre, no matter what activity is run.
 - `_writing-engine/07-REVISION-DISCIPLINE.md`
 - `_writing-engine/08-FINISHING.md`
 - `_writing-engine/09-WRITER-DEVELOPMENT.md`
-- `_writing-engine/10-READER-AND-ARGUMENT.md`
+- `_writing-engine/10-ARGUMENT.md`
+- `_writing-engine/10-READER.md`
 - `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`
 - `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`
 - `_writing-engine/_meta/FAILURE-MODES.md`
@@ -94,6 +97,7 @@ a genre are never loaded for that genre, no matter what activity is run.
 - `_writing-engine/07-REVISION-DISCIPLINE.md`
 - `_writing-engine/08-FINISHING.md`
 - `_writing-engine/09-WRITER-DEVELOPMENT.md`
+- `_writing-engine/10-READER.md`
 - `_writing-engine/11-FICTION-PLOT-SPINE.md`
 - `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`
 - `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
@@ -113,6 +117,7 @@ a genre are never loaded for that genre, no matter what activity is run.
 - `_writing-engine/07-REVISION-DISCIPLINE.md`
 - `_writing-engine/08-FINISHING.md`
 - `_writing-engine/09-WRITER-DEVELOPMENT.md`
+- `_writing-engine/10-READER.md`
 - `_writing-engine/11-FICTION-PLOT-SPINE.md`
 - `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`
 - `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
@@ -132,31 +137,32 @@ chapters (§1).
 
 ### dissertation
 
-- **ARGUMENT-AUDIT** → `_writing-engine/10-READER-AND-ARGUMENT.md`
+- **ARGUMENT-AUDIT** → `_writing-engine/10-ARGUMENT.md`
 - **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`
-- **CLAIM-EVIDENCE-CHECK** → `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/10-READER-AND-ARGUMENT.md`
-- **CRAFT-REVIEW** → `_writing-engine/10-READER-AND-ARGUMENT.md`
+- **CLAIM-EVIDENCE-CHECK** → `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/10-ARGUMENT.md`
+- **CRAFT-REVIEW** → `_writing-engine/10-READER.md`
 - **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
 - **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
 - **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`
-- **READER-SIMULATION** → `_writing-engine/10-READER-AND-ARGUMENT.md`
+- **READER-SIMULATION** → `_writing-engine/10-READER.md`
 - **RESEARCH-INTEGRATION** → `_writing-engine/06-RESEARCH-INTEGRATION.md`
 - **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`
 - **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
-- **STEELMAN** → `_writing-engine/10-READER-AND-ARGUMENT.md`
-- **SYNTHESIS-CHECK** → `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/10-READER-AND-ARGUMENT.md`
+- **STEELMAN** → `_writing-engine/10-ARGUMENT.md`
+- **SYNTHESIS-CHECK** → `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/10-ARGUMENT.md`
 - **all** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
 ### fiction
 
 - **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
 - **CHARACTER-CONSISTENCY** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
 - **CONTINUITY-CHECK** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
+- **CRAFT-REVIEW** → `_writing-engine/10-READER.md`
 - **DIALOGUE-AUDIT** → `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
 - **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
 - **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
 - **POV-VOICE-DRIFT** → `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
 - **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **READER-SIMULATION** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`
+- **READER-SIMULATION** → `_writing-engine/10-READER.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`
 - **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
 - **SCENE-AUDIT** → `_writing-engine/11-FICTION-PLOT-SPINE.md`
 - **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
@@ -166,31 +172,32 @@ chapters (§1).
 - **all** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
 ### non-fiction
 
-- **ARGUMENT-AUDIT** → `_writing-engine/10-READER-AND-ARGUMENT.md`
+- **ARGUMENT-AUDIT** → `_writing-engine/10-ARGUMENT.md`
 - **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`
-- **CLAIM-EVIDENCE-CHECK** → `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/10-READER-AND-ARGUMENT.md`
-- **CRAFT-REVIEW** → `_writing-engine/10-READER-AND-ARGUMENT.md`
+- **CLAIM-EVIDENCE-CHECK** → `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/10-ARGUMENT.md`
+- **CRAFT-REVIEW** → `_writing-engine/10-READER.md`
 - **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
 - **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
 - **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`
-- **READER-SIMULATION** → `_writing-engine/10-READER-AND-ARGUMENT.md`
+- **READER-SIMULATION** → `_writing-engine/10-READER.md`
 - **RESEARCH-INTEGRATION** → `_writing-engine/06-RESEARCH-INTEGRATION.md`
 - **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`
 - **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
-- **STEELMAN** → `_writing-engine/10-READER-AND-ARGUMENT.md`
-- **SYNTHESIS-CHECK** → `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/10-READER-AND-ARGUMENT.md`
+- **STEELMAN** → `_writing-engine/10-ARGUMENT.md`
+- **SYNTHESIS-CHECK** → `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/10-ARGUMENT.md`
 - **all** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
 ### play
 
 - **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
 - **CHARACTER-CONSISTENCY** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
 - **CONTINUITY-CHECK** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
+- **CRAFT-REVIEW** → `_writing-engine/10-READER.md`
 - **DIALOGUE-AUDIT** → `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
 - **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
 - **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
 - **POV-VOICE-DRIFT** → `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
 - **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **READER-SIMULATION** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`
+- **READER-SIMULATION** → `_writing-engine/10-READER.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`
 - **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
 - **SCENE-AUDIT** → `_writing-engine/11-FICTION-PLOT-SPINE.md`
 - **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
@@ -203,12 +210,13 @@ chapters (§1).
 - **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
 - **CHARACTER-CONSISTENCY** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
 - **CONTINUITY-CHECK** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
+- **CRAFT-REVIEW** → `_writing-engine/10-READER.md`
 - **DIALOGUE-AUDIT** → `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
 - **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
 - **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
 - **POV-VOICE-DRIFT** → `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
 - **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **READER-SIMULATION** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`
+- **READER-SIMULATION** → `_writing-engine/10-READER.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`
 - **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
 - **SCENE-AUDIT** → `_writing-engine/11-FICTION-PLOT-SPINE.md`
 - **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
@@ -219,4 +227,4 @@ chapters (§1).
 
 ---
 
-_Content hash (sha256, first 16 chars): `645962f14dbe9ccc`_
+_Content hash (sha256, first 16 chars): `d1dad77a2b15a988`_

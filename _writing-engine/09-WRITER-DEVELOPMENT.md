@@ -69,7 +69,7 @@ True. Useful for this section. Doesn't compound across sessions; the writer forg
 
 Same observation. Different work. The first is editing. The second is coaching.
 
-The shift requires both files to exist and to be updated honestly. The AI's job during CRAFT-REVIEW (defined in chapter 10) and during any session where a pattern recurs:
+The shift requires both files to exist and to be updated honestly. The AI's job during CRAFT-REVIEW (defined in chapter 10-READER) and during any session where a pattern recurs:
 
 1. Notice the recurrence
 2. Name the pattern (kept short and concrete, never clinical)
@@ -163,7 +163,7 @@ The module flags candidates. It does NOT silently restructure; it surfaces patte
 
 ### `curse-of-knowledge`
 
-Reads sections looking for places where the writer has assumed knowledge the target reader (per Reader atoms — see chapter 10) doesn't have. Cross-references the Reader atoms' "background" sections to surface mismatches.
+Reads sections looking for places where the writer has assumed knowledge the target reader (per Reader atoms — see chapter 10-READER) doesn't have. Cross-references the Reader atoms' "background" sections to surface mismatches.
 
 The module's output is a list of specific assumptions the writer should examine. Never silent rewrites.
 
@@ -274,13 +274,13 @@ This caution is structurally identical to the research-as-procrastination cautio
 - **Chapter 05 (Voice and Craft)** — cross-references this chapter for the craft modules
 - **Chapter 06 (Research Integration)** — the research-as-procrastination pattern; this chapter's craft-as-procrastination is structurally identical
 - **Chapter 07 (Revision Discipline)** — REVISE passes can invoke craft modules from this chapter
-- **Chapter 10 (Reader and Argument)** — the six new activities defined there include CRAFT-REVIEW; this chapter is the *what*, chapter 10 is the *when*
+- **Chapter 10 (Reader, Argument)** — the development activities defined in 10-READER (READER-SIMULATION, CRAFT-REVIEW) and 10-ARGUMENT (ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, SYNTHESIS-CHECK) include CRAFT-REVIEW; this chapter is the *what*, 10-READER is the *when*
 - **`_meta/FAILURE-MODES.md`** — adds craft-work-as-procrastination, scaffolding-not-fading, skill-scoring-attempted
 
 ## When the writer should engage this chapter
 
 - **Bootstrap** — BOOTSTRAP-NEW-MANUSCRIPT now asks about scaffolding mode and whether to create `_craft-log.md` for this cartridge
 - **After ~5 sessions in a cartridge** — first natural moment to propose creating `_craft-profile.md` if it doesn't exist
-- **Every ~10 sessions** — natural cadence for CRAFT-REVIEW (defined in chapter 10)
+- **Every ~10 sessions** — natural cadence for CRAFT-REVIEW (defined in chapter 10-READER)
 - **End of a cartridge** — final CRAFT-REVIEW; graduate patterns from `_craft-log.md` to `_craft-profile.md`
 - **Start of the next cartridge** — the AI reads `_craft-profile.md` and the writer's accumulated patterns inform the new engagement from session one

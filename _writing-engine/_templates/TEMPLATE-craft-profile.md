@@ -75,7 +75,7 @@ For the AI:
 
 - Read at the start of every session, in every cartridge
 - Reference patterns when offering critique (turn instance into pattern; see chapter 09)
-- Propose updates during CRAFT-REVIEW (chapter 10)
+- Propose updates during CRAFT-REVIEW (chapter 10-READER)
 - Never quantify; always concrete and observational
 - Graduate patterns from per-cartridge `_craft-log.md` to this file when they appear in 3+ cartridges
 

@@ -350,7 +350,7 @@ Needs_Processing: false
 
 ## Reader (non-fiction primary; optional elsewhere)
 
-A modeled audience member: what they bring to the page, what they reward, what they punish. Used by the **READER-SIMULATION** activity (chapter 10). For non-fiction the typical recommended set is three Readers — The Skeptic, The Impatient Generalist, The Domain Expert.
+A modeled audience member: what they bring to the page, what they reward, what they punish. Used by the **READER-SIMULATION** activity (chapter 10-READER). For non-fiction the typical recommended set is three Readers — The Skeptic, The Impatient Generalist, The Domain Expert.
 
 **Frontmatter:**
 
@@ -382,7 +382,7 @@ Needs_Processing: false
 
 **Location:** `Atoms/Readers/`.
 
-See chapter 10 for the READER-SIMULATION activity that uses Reader atoms. Chapter 12 §6 extends READER-SIMULATION with fiction-specific protocol (dramatic-question, page-turn-impulse, emotional-flatline detection).
+See chapter 10-READER for the READER-SIMULATION activity that uses Reader atoms. Chapter 12 §6 extends READER-SIMULATION with fiction-specific protocol (dramatic-question, page-turn-impulse, emotional-flatline detection).
 
 ## Motif (fiction primary; optional for screenplay/play) *(v1.2)*
 
@@ -749,7 +749,7 @@ In addition to the atoms above, every cartridge has a set of **backbone files** 
 | `_state.md` | Single source of truth for current state, today's focus, atom-status snapshot | All cartridges | Template + chapter 03 |
 | `_outline.md` | Container hierarchy (book → chapter → section/scene → beat) | All cartridges | Template + chapter 04 |
 | `_voice-samples.md` | Voice-mode reference passages (only when voice mode is `voice-samples` or `voice-check-on-demand`) | Conditional | Template + chapter 05 |
-| `_argument.md` | Argument backbone — thesis, sub-claims, evidence map, defeaters, honest unknown | **Required for non-fiction and dissertation**; optional for memoir/narrative non-fiction; not applicable to screenplay/play | Template + chapter 10 |
+| `_argument.md` | Argument backbone — thesis, sub-claims, evidence map, defeaters, honest unknown | **Required for non-fiction and dissertation**; optional for memoir/narrative non-fiction; not applicable to screenplay/play | Template + chapter 10-ARGUMENT |
 | `_spine.md` *(v1.2)* | Causal backbone — premise as causal claim, scene-by-scene value-shifts, but/therefore linkage, escalation curve | **Required for fiction, screenplay, play**; recommended for memoir/narrative non-fiction; not applicable to non-fiction/dissertation | Template + chapter 11 |
 | `_continuity.md` *(v1.2)* | World-rule + timeline + information-state (who-knows-what) ledger | **Required for genre fiction with worldbuilding and any plot-driven fiction with secrets**; required for screenplay; recommended for long-form fiction | Template + chapter 12 |
 | `_promises.md` *(v1.2)* | Setup/payoff ledger — promises planted, fired, outstanding, unsetup payoffs, retired | **Required for plot-driven fiction** (mystery, thriller, literary novel with subplot); required for screenplay/play; optional for non-plot literary fiction | Template + chapter 11 |
