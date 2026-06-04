@@ -2,9 +2,7 @@
 
 All notable changes to Long-Form-Writing are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [Unreleased] — feat/core-pack-progressive-disclosure
-
-**Proposed version: 1.5.0** (minor bump; schema_version unchanged at `1.4` because no atom or schema additions). Number is proposed and left for human confirmation in the PR description.
+## [1.5.0] — 2026-06-03
 
 ### Changed — Core/Pack logical split + generated-router progressive disclosure
 
