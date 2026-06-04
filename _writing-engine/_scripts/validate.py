@@ -51,6 +51,19 @@ Checks performed (each emits one line per failure):
  12. timeline-layer       : Timeline atom must declare lfw_timeline_layer in
                             the legal set; character-specific layer must also
                             declare lfw_character (v1.3.2 — chapter 15 §2).
+ 13. load-declared        : every engine chapter file declares a valid
+                            lfw_load block (tier, genres, activities, phase)
+                            with codes from chapter 03's activity set
+                            (v1.5 — feat/core-pack-progressive-disclosure).
+ 14. router-fresh         : regenerate _ROUTER.md in memory from chapter
+                            lfw_load frontmatter and compare to the committed
+                            file; fail if they differ. Correct-by-construction
+                            guarantee (v1.5).
+ 15. session-read-coverage: each session log's lfw_chapters_loaded must
+                            include the chapters the router marks required
+                            for (cartridge-genre, session-activity). Missing
+                            required chapters fails; extra chapters warn.
+                            Unknown activities (META, BOOTSTRAP) skip (v1.5).
 
 The script is intentionally simple and forgiving: it parses YAML frontmatter
 without a YAML library (regex + line-walk), so unusual frontmatter shapes
@@ -58,11 +71,29 @@ may emit false positives. False positives are easier to fix than false
 negatives.
 """
 
+import importlib.util
 import os
 import re
 import sys
 import pathlib
 from collections import defaultdict
+
+
+# ---- Router-driven checks (v1.5; loaded lazily so old cartridges still validate) ----
+
+def _load_build_router():
+    """Import build-router.py as a module (hyphen in filename → use spec_from_file_location).
+    Returns the module or None if unavailable. Stdlib-only."""
+    here = pathlib.Path(__file__).resolve().parent
+    br_path = here / "build-router.py"
+    if not br_path.is_file():
+        return None
+    spec = importlib.util.spec_from_file_location("build_router", br_path)
+    if spec is None or spec.loader is None:
+        return None
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
 
 # ---- Schema knowledge --------------------------------------------------------
 
@@ -123,8 +154,10 @@ def find_cartridges(ov_root: pathlib.Path):
     return [p for p in ov_root.iterdir() if p.is_dir() and is_cartridge(p)]
 
 def parse_frontmatter(text: str) -> dict:
-    """Tiny YAML-ish frontmatter parser. Returns a dict of key→value (strings).
-    Handles simple key: value pairs only. Skips lists and nested structures."""
+    """Tiny YAML-ish frontmatter parser. Stdlib-only — no PyYAML.
+    Handles flat keys, scalar values, [list] inline, multi-line block lists
+    (`key:\\n  - item`), and one-level nested key/value blocks (`key:\\n  child: val`).
+    Returns a dict; list values are returned as Python lists."""
     out = {}
     if not text.startswith("---\n"):
         return out
@@ -132,24 +165,87 @@ def parse_frontmatter(text: str) -> dict:
     if end_idx == -1:
         return out
     fm_text = text[4:end_idx]
-    for line in fm_text.splitlines():
+    lines = fm_text.splitlines()
+
+    def _strip_scalar(v):
+        if isinstance(v, str):
+            if v.startswith('"') and v.endswith('"'):
+                v = v[1:-1]
+            elif v.startswith("'") and v.endswith("'"):
+                v = v[1:-1]
+            v = re.sub(r'\s+#.*$', '', v).strip()
+        return v
+
+    def _parse_inline_value(val):
+        """Parse a scalar OR inline list `[a, b, c]`."""
+        val = val.strip()
+        if val.startswith("[") and val.endswith("]"):
+            inner = val[1:-1].strip()
+            if not inner:
+                return []
+            return [_strip_scalar(x.strip()) for x in inner.split(",")]
+        return _strip_scalar(val)
+
+    i = 0
+    while i < len(lines):
+        line = lines[i]
         if not line.strip() or line.lstrip().startswith("#"):
+            i += 1
             continue
         if line.startswith(" ") or line.startswith("\t"):
-            continue  # nested
+            i += 1
+            continue
         if ":" not in line:
+            i += 1
             continue
         key, _, val = line.partition(":")
         key = key.strip()
         val = val.strip()
-        # strip wrapping quotes
-        if val.startswith('"') and val.endswith('"'):
-            val = val[1:-1]
-        elif val.startswith("'") and val.endswith("'"):
-            val = val[1:-1]
-        # strip inline comments
-        val = re.sub(r'\s+#.*$', '', val)
-        out[key] = val
+        if val:
+            out[key] = _parse_inline_value(val)
+            i += 1
+            continue
+        # Empty value → nested block (list or dict) follows
+        i += 1
+        nested_items = []
+        nested_dict = {}
+        is_list = None  # determined by first non-blank child
+        while i < len(lines):
+            child = lines[i]
+            if not child.strip():
+                i += 1
+                continue
+            if not (child.startswith(" ") or child.startswith("\t")):
+                break
+            stripped = child.strip()
+            if stripped.startswith("- "):
+                if is_list is False:
+                    break  # mixed block; stop
+                is_list = True
+                item_val = stripped[2:].strip()
+                nested_items.append(_strip_scalar(item_val))
+                i += 1
+                continue
+            if stripped == "-":
+                if is_list is False:
+                    break
+                is_list = True
+                nested_items.append("")
+                i += 1
+                continue
+            if ":" in stripped:
+                if is_list is True:
+                    break
+                is_list = False
+                ckey, _, cval = stripped.partition(":")
+                nested_dict[ckey.strip()] = _parse_inline_value(cval)
+                i += 1
+                continue
+            i += 1
+        if is_list:
+            out[key] = nested_items
+        else:
+            out[key] = nested_dict
     return out
 
 def extract_wiki_links(text: str) -> set:
@@ -331,6 +427,149 @@ def check_templates_exist(ov_root: pathlib.Path, atom_types_used: set) -> list:
             issues.append(("template-exists", f"atom_type='{at}' has no TEMPLATE-{at.capitalize()}.md in {templates_dir.relative_to(ov_root)}"))
     return issues
 
+
+def check_load_declared(ov_root: pathlib.Path, build_router) -> list:
+    """Check 13 (v1.5): every engine chapter file declares a valid lfw_load block.
+    Returns issues from build_router.validate_lfw_load for each source."""
+    if build_router is None:
+        return [("load-declared", "build-router.py is unavailable; cannot verify lfw_load declarations")]
+    issues = []
+    sources = build_router.collect_sources()
+    if not sources:
+        issues.append(("load-declared", "no engine sources with lfw_load found"))
+        return issues
+    # Cross-check: every engine .md file must have lfw_load (no silent omissions)
+    engine = ov_root / "_writing-engine"
+    expected = set()
+    for p in sorted(engine.glob("*.md")):
+        if p.name == "_ROUTER.md":
+            continue
+        expected.add(p.relative_to(ov_root).as_posix())
+    for p in sorted((engine / "_meta").glob("*.md")):
+        expected.add(p.relative_to(ov_root).as_posix())
+    declared = {rel for rel, _, _ in sources}
+    missing = expected - declared
+    for m in sorted(missing):
+        issues.append(("load-declared", f"{m}: missing lfw_load frontmatter block"))
+    # Per-source validation
+    for rel, ll, _ in sources:
+        for r, err in build_router.validate_lfw_load(rel, ll):
+            issues.append(("load-declared", f"{r}: {err}"))
+    return issues
+
+
+def check_router_fresh(ov_root: pathlib.Path, build_router) -> list:
+    """Check 14 (v1.5): regenerate the router in memory; fail if the committed
+    _ROUTER.md differs. Stale router becomes a build failure."""
+    if build_router is None:
+        return [("router-fresh", "build-router.py is unavailable; cannot verify _ROUTER.md freshness")]
+    router_path = ov_root / "_writing-engine" / "_ROUTER.md"
+    if not router_path.is_file():
+        return [("router-fresh", "_writing-engine/_ROUTER.md is missing; run build-router.py")]
+    sources = build_router.collect_sources()
+    try:
+        expected = build_router.render_router(sources)
+    except SystemExit as e:
+        return [("router-fresh", f"build-router rejected sources during render: {e}")]
+    actual = router_path.read_text()
+    if expected != actual:
+        return [("router-fresh", "_ROUTER.md is stale; regenerate with `python3 _writing-engine/_scripts/build-router.py`")]
+    return []
+
+
+# Activity codes legal in chapter 03's set (kept here as a fallback if build-router
+# is unavailable; build_router.VALID_ACTIVITIES is the canonical source).
+_SESSION_KNOWN_ACTIVITIES = {
+    "SESSION-START", "OUTLINE", "DRAFT", "REVISE", "RESEARCH-INTEGRATION",
+    "READ-THROUGH", "STUCK-DIAGNOSTIC", "VOICE-CHECK", "WORLDBUILDING", "BETA-PREP",
+    "READER-SIMULATION", "ARGUMENT-AUDIT", "CLAIM-EVIDENCE-CHECK", "STEELMAN",
+    "SYNTHESIS-CHECK", "CRAFT-REVIEW",
+    "SCENE-AUDIT", "CHARACTER-CONSISTENCY", "CONTINUITY-CHECK", "SETUP-PAYOFF-AUDIT",
+    "DIALOGUE-AUDIT", "POV-VOICE-DRIFT", "THEME-CHECK",
+    "WEATHER-CHECK", "MIDDLE-AUDIT",
+}
+
+
+def check_session_read_coverage(cartridge: pathlib.Path, build_router, manifest_genre: str) -> list:
+    """Check 15 (v1.5): for every session log in the cartridge, verify lfw_chapters_loaded
+    contains at least the chapters the router marks required for that (genre, activity).
+    Warn on over-reading. Skip when activity is unknown (META, BOOTSTRAP, etc.)."""
+    issues = []
+    sessions_dir = cartridge / "Sessions"
+    if not sessions_dir.is_dir():
+        return issues
+    if build_router is None:
+        # Cannot compute coverage without router knowledge; skip rather than fail
+        return issues
+    sources = build_router.collect_sources()
+    bootstrap, _, by_genre_activity = build_router.build_dispatch_tables(sources)
+    bootstrap_set = set(bootstrap)
+    # Add the router itself — it's always loaded (the AI consults it)
+    bootstrap_set.add("_writing-engine/_ROUTER.md")
+
+    valid_activities = getattr(build_router, "VALID_ACTIVITIES", _SESSION_KNOWN_ACTIVITIES)
+
+    for session_file in sorted(sessions_dir.glob("*.md")):
+        if session_file.name.startswith("."):
+            continue
+        try:
+            text = session_file.read_text()
+        except Exception as e:
+            issues.append(("session-read-coverage", f"{session_file.relative_to(cartridge)}: cannot read ({e})"))
+            continue
+        fm = parse_frontmatter(text)
+        # Activity field: prefer lfw_activity, fall back to lfw_session_activity
+        activity = fm.get("lfw_activity", "") or fm.get("lfw_session_activity", "")
+        if isinstance(activity, str):
+            activity = activity.strip()
+        rel = session_file.relative_to(cartridge).as_posix()
+        if not activity:
+            issues.append(("session-read-coverage", f"{rel}: missing lfw_activity / lfw_session_activity"))
+            continue
+        # Skip non-standard activities (BOOTSTRAP, META, etc.) — they don't have router dispatch
+        if activity not in valid_activities or activity == "all":
+            # Warn-only: chapters_loaded recommended but not enforceable
+            chapters_loaded = fm.get("lfw_chapters_loaded", None)
+            if chapters_loaded is None:
+                issues.append(("session-read-coverage-warn",
+                               f"{rel}: activity '{activity}' is not a known cadence activity; "
+                               f"lfw_chapters_loaded coverage check skipped (informational)"))
+            continue
+        # Required set: bootstrap + on-demand dispatched for (genre, activity)
+        required = set(bootstrap_set)
+        dispatched = by_genre_activity.get((manifest_genre, activity), [])
+        required |= set(dispatched)
+        # Check lfw_chapters_loaded
+        chapters_loaded = fm.get("lfw_chapters_loaded", None)
+        if chapters_loaded is None:
+            issues.append(("session-read-coverage",
+                           f"{rel}: missing lfw_chapters_loaded (required for activity '{activity}')"))
+            continue
+        if not isinstance(chapters_loaded, list):
+            issues.append(("session-read-coverage",
+                           f"{rel}: lfw_chapters_loaded must be a list, got {type(chapters_loaded).__name__}"))
+            continue
+        loaded_set = set(str(c).strip() for c in chapters_loaded if str(c).strip())
+        missing = required - loaded_set
+        extra = loaded_set - required
+        if missing:
+            issues.append(("session-read-coverage",
+                           f"{rel}: activity '{activity}' under genre '{manifest_genre}' "
+                           f"required chapters not in lfw_chapters_loaded: {sorted(missing)}"))
+        if extra:
+            issues.append(("session-read-coverage-warn",
+                           f"{rel}: activity '{activity}' loaded extra chapters not required by router: {sorted(extra)}"))
+    return issues
+
+
+def manifest_genre(cartridge: pathlib.Path) -> str:
+    """Return the cartridge's lfw_genre from the manifest, or empty string."""
+    mp = cartridge / "_manuscript-manifest.md"
+    if not mp.is_file():
+        return ""
+    fm = parse_frontmatter(mp.read_text())
+    return str(fm.get("lfw_genre", "")).strip()
+
 # ---- Main --------------------------------------------------------------------
 
 def main():
@@ -362,13 +601,40 @@ def main():
     print(f"OV root: {ov_root}")
     print(f"Validating {len(cartridges)} cartridge(s).\n")
 
+    # Load build-router lazily (v1.5 router-driven checks)
+    build_router = _load_build_router()
     total_issues = 0
+    total_warnings = 0
     all_types = set()
+
+    # OV-level router checks: load-declared (check 13) and router-fresh (check 14)
+    print("=== Engine router checks ===")
+    engine_issues = check_load_declared(ov_root, build_router)
+    engine_issues += check_router_fresh(ov_root, build_router)
+    if not engine_issues:
+        print("  (no issues)")
+    else:
+        by_check = defaultdict(list)
+        for severity, msg in engine_issues:
+            by_check[severity].append(msg)
+        for check, msgs in sorted(by_check.items()):
+            label = "warn" if check.endswith("-warn") else "FAIL"
+            print(f"  [{check}] {len(msgs)} issue(s) ({label}):")
+            for m in msgs:
+                print(f"    - {m}")
+            if check.endswith("-warn"):
+                total_warnings += len(msgs)
+            else:
+                total_issues += len(msgs)
+    print()
 
     for cartridge in cartridges:
         print(f"=== {cartridge.name} ===")
         issues, types = check_cartridge(cartridge)
         issues += check_state_references(cartridge)
+        # v1.5: session read-coverage (check 15)
+        c_genre = manifest_genre(cartridge)
+        issues += check_session_read_coverage(cartridge, build_router, c_genre)
         all_types |= types
         if not issues:
             print("  (no issues)")
@@ -378,10 +644,14 @@ def main():
             for severity, msg in issues:
                 by_check[severity].append(msg)
             for check, msgs in sorted(by_check.items()):
-                print(f"  [{check}] {len(msgs)} issue(s):")
+                label = "warn" if check.endswith("-warn") else "FAIL"
+                print(f"  [{check}] {len(msgs)} issue(s) ({label}):")
                 for m in msgs:
                     print(f"    - {m}")
-            total_issues += len(issues)
+                if check.endswith("-warn"):
+                    total_warnings += len(msgs)
+                else:
+                    total_issues += len(msgs)
         print()
 
     # OV-level: template existence per atom-type used
@@ -394,10 +664,13 @@ def main():
         print()
 
     if total_issues == 0:
-        print("ALL CHECKS PASSED")
+        if total_warnings:
+            print(f"ALL CHECKS PASSED ({total_warnings} warning(s))")
+        else:
+            print("ALL CHECKS PASSED")
         sys.exit(0)
     else:
-        print(f"TOTAL ISSUES: {total_issues}")
+        print(f"TOTAL ISSUES: {total_issues}" + (f" (+{total_warnings} warning(s))" if total_warnings else ""))
         sys.exit(1)
 
 if __name__ == "__main__":

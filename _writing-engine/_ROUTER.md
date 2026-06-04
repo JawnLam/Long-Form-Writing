@@ -137,94 +137,140 @@ chapters (§1).
 
 ### dissertation
 
-- **ARGUMENT-AUDIT** → `_writing-engine/10-ARGUMENT.md`
-- **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`
-- **CLAIM-EVIDENCE-CHECK** → `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/10-ARGUMENT.md`
-- **CRAFT-REVIEW** → `_writing-engine/10-READER.md`
-- **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
-- **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
-- **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`
-- **READER-SIMULATION** → `_writing-engine/10-READER.md`
-- **RESEARCH-INTEGRATION** → `_writing-engine/06-RESEARCH-INTEGRATION.md`
-- **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`
-- **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
-- **STEELMAN** → `_writing-engine/10-ARGUMENT.md`
-- **SYNTHESIS-CHECK** → `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/10-ARGUMENT.md`
-- **all** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **ARGUMENT-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-ARGUMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CHARACTER-CONSISTENCY** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CLAIM-EVIDENCE-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-ARGUMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CONTINUITY-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CRAFT-REVIEW** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-READER.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **DIALOGUE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **MIDDLE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **POV-VOICE-DRIFT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **READER-SIMULATION** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-READER.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **RESEARCH-INTEGRATION** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SCENE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/FAILURE-MODES.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
+- **SETUP-PAYOFF-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **STEELMAN** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-ARGUMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **STUCK-DIAGNOSTIC** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SYNTHESIS-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-ARGUMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **THEME-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **VOICE-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **WEATHER-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **WORLDBUILDING** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
 ### fiction
 
-- **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **CHARACTER-CONSISTENCY** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
-- **CONTINUITY-CHECK** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **CRAFT-REVIEW** → `_writing-engine/10-READER.md`
-- **DIALOGUE-AUDIT** → `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
-- **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
-- **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
-- **POV-VOICE-DRIFT** → `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
-- **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **READER-SIMULATION** → `_writing-engine/10-READER.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`
-- **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **SCENE-AUDIT** → `_writing-engine/11-FICTION-PLOT-SPINE.md`
-- **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
-- **SETUP-PAYOFF-AUDIT** → `_writing-engine/11-FICTION-PLOT-SPINE.md`
-- **THEME-CHECK** → `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
-- **WORLDBUILDING** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **all** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **ARGUMENT-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CHARACTER-CONSISTENCY** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CLAIM-EVIDENCE-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CONTINUITY-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CRAFT-REVIEW** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-READER.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **DIALOGUE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **MIDDLE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **POV-VOICE-DRIFT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **READER-SIMULATION** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-READER.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **RESEARCH-INTEGRATION** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SCENE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/FAILURE-MODES.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
+- **SETUP-PAYOFF-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **STEELMAN** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **STUCK-DIAGNOSTIC** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SYNTHESIS-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **THEME-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **VOICE-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **WEATHER-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **WORLDBUILDING** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
 ### non-fiction
 
-- **ARGUMENT-AUDIT** → `_writing-engine/10-ARGUMENT.md`
-- **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`
-- **CLAIM-EVIDENCE-CHECK** → `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/10-ARGUMENT.md`
-- **CRAFT-REVIEW** → `_writing-engine/10-READER.md`
-- **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
-- **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
-- **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`
-- **READER-SIMULATION** → `_writing-engine/10-READER.md`
-- **RESEARCH-INTEGRATION** → `_writing-engine/06-RESEARCH-INTEGRATION.md`
-- **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`
-- **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
-- **STEELMAN** → `_writing-engine/10-ARGUMENT.md`
-- **SYNTHESIS-CHECK** → `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/10-ARGUMENT.md`
-- **all** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **ARGUMENT-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-ARGUMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CHARACTER-CONSISTENCY** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CLAIM-EVIDENCE-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-ARGUMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CONTINUITY-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CRAFT-REVIEW** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-READER.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **DIALOGUE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **MIDDLE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **POV-VOICE-DRIFT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **READER-SIMULATION** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-READER.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **RESEARCH-INTEGRATION** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SCENE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/FAILURE-MODES.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
+- **SETUP-PAYOFF-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **STEELMAN** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-ARGUMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **STUCK-DIAGNOSTIC** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SYNTHESIS-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/06-RESEARCH-INTEGRATION.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-ARGUMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **THEME-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **VOICE-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **WEATHER-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **WORLDBUILDING** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
 ### play
 
-- **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **CHARACTER-CONSISTENCY** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
-- **CONTINUITY-CHECK** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **CRAFT-REVIEW** → `_writing-engine/10-READER.md`
-- **DIALOGUE-AUDIT** → `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
-- **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
-- **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
-- **POV-VOICE-DRIFT** → `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
-- **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **READER-SIMULATION** → `_writing-engine/10-READER.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`
-- **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **SCENE-AUDIT** → `_writing-engine/11-FICTION-PLOT-SPINE.md`
-- **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
-- **SETUP-PAYOFF-AUDIT** → `_writing-engine/11-FICTION-PLOT-SPINE.md`
-- **THEME-CHECK** → `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
-- **WORLDBUILDING** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **all** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **ARGUMENT-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CHARACTER-CONSISTENCY** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CLAIM-EVIDENCE-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CONTINUITY-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CRAFT-REVIEW** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-READER.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **DIALOGUE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **MIDDLE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **POV-VOICE-DRIFT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **READER-SIMULATION** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-READER.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **RESEARCH-INTEGRATION** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SCENE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/FAILURE-MODES.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
+- **SETUP-PAYOFF-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **STEELMAN** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **STUCK-DIAGNOSTIC** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SYNTHESIS-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **THEME-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **VOICE-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **WEATHER-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **WORLDBUILDING** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
 ### screenplay
 
-- **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **CHARACTER-CONSISTENCY** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
-- **CONTINUITY-CHECK** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **CRAFT-REVIEW** → `_writing-engine/10-READER.md`
-- **DIALOGUE-AUDIT** → `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
-- **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`
-- **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
-- **POV-VOICE-DRIFT** → `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`
-- **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **READER-SIMULATION** → `_writing-engine/10-READER.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`
-- **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **SCENE-AUDIT** → `_writing-engine/11-FICTION-PLOT-SPINE.md`
-- **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
-- **SETUP-PAYOFF-AUDIT** → `_writing-engine/11-FICTION-PLOT-SPINE.md`
-- **THEME-CHECK** → `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`
-- **WORLDBUILDING** → `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`
-- **all** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **ARGUMENT-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **BETA-PREP** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CHARACTER-CONSISTENCY** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CLAIM-EVIDENCE-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CONTINUITY-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **CRAFT-REVIEW** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-READER.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **DIALOGUE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **DRAFT** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **MIDDLE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **OUTLINE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **POV-VOICE-DRIFT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **READ-THROUGH** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/08-FINISHING.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **READER-SIMULATION** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/10-READER.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **RESEARCH-INTEGRATION** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **REVISE** → `_writing-engine/04-ATOMS-AND-STRUCTURE.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/07-REVISION-DISCIPLINE.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SCENE-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SESSION-START** → `_writing-engine/01-WHAT-IS-LFW.md`, `_writing-engine/02-GENRE-AND-SCHEMA.md`, `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md`, `_writing-engine/_meta/FAILURE-MODES.md`, `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md`
+- **SETUP-PAYOFF-AUDIT** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/11-FICTION-PLOT-SPINE.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **STEELMAN** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **STUCK-DIAGNOSTIC** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **SYNTHESIS-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **THEME-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **VOICE-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **WEATHER-CHECK** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
+- **WORLDBUILDING** → `_writing-engine/05-VOICE-AND-CRAFT.md`, `_writing-engine/09-WRITER-DEVELOPMENT.md`, `_writing-engine/12-FICTION-CHARACTER-AND-CONTINUITY.md`, `_writing-engine/15-FICTION-PROJECT-ARTIFACTS.md`, `_writing-engine/16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`, `_writing-engine/_meta/FAILURE-MODES.md`
 
 ---
 
-_Content hash (sha256, first 16 chars): `d1dad77a2b15a988`_
+_Content hash (sha256, first 16 chars): `57e9ee7d85d984ba`_

@@ -61,9 +61,10 @@ VALID_ACTIVITIES = {
 
 
 def parse_frontmatter(text):
-    """Minimal YAML-ish parser. Handles flat keys, scalar values, [list] inline,
-    and the `lfw_load:` nested block. Returns a dict.
-    Standard-library only — no PyYAML."""
+    """Minimal YAML-ish parser. Stdlib-only — no PyYAML.
+    Handles flat keys, scalar values, [list] inline, multi-line block lists
+    (`key:\\n  - item`), and one-level nested key/value blocks
+    (`key:\\n  child: val`). Returns a dict."""
     out = {}
     if not text.startswith("---\n"):
         return out
@@ -71,12 +72,29 @@ def parse_frontmatter(text):
     if end == -1:
         return out
     fm_text = text[4:end]
-
     lines = fm_text.splitlines()
+
+    def _strip_scalar(v):
+        if isinstance(v, str):
+            if v.startswith('"') and v.endswith('"'):
+                v = v[1:-1]
+            elif v.startswith("'") and v.endswith("'"):
+                v = v[1:-1]
+            v = re.sub(r"\s+#.*$", "", v).strip()
+        return v
+
+    def _parse_inline_value(val):
+        val = val.strip()
+        if val.startswith("[") and val.endswith("]"):
+            inner = val[1:-1].strip()
+            if not inner:
+                return []
+            return [_strip_scalar(x.strip()) for x in inner.split(",")]
+        return _strip_scalar(val)
+
     i = 0
     while i < len(lines):
         line = lines[i]
-        # Top-level key parse
         if not line or line.lstrip().startswith("#"):
             i += 1
             continue
@@ -89,57 +107,50 @@ def parse_frontmatter(text):
         key, _, val = line.partition(":")
         key = key.strip()
         val = val.strip()
-        # Nested block?
-        if not val:
-            # Read indented child lines until indent goes back
-            nested = {}
+        if val:
+            out[key] = _parse_inline_value(val)
             i += 1
-            while i < len(lines):
-                child = lines[i]
-                if not child.strip():
-                    i += 1
-                    continue
-                if not (child.startswith(" ") or child.startswith("\t")):
-                    break
-                if ":" not in child:
-                    i += 1
-                    continue
-                ckey, _, cval = child.partition(":")
-                ckey = ckey.strip()
-                cval = cval.strip()
-                # Strip wrapping quotes
-                if cval.startswith('"') and cval.endswith('"'):
-                    cval = cval[1:-1]
-                elif cval.startswith("'") and cval.endswith("'"):
-                    cval = cval[1:-1]
-                # Parse [a, b, c] inline list
-                if cval.startswith("[") and cval.endswith("]"):
-                    inner = cval[1:-1].strip()
-                    if not inner:
-                        cval = []
-                    else:
-                        cval = [x.strip().strip('"').strip("'") for x in inner.split(",")]
-                nested[ckey] = cval
+            continue
+        # Empty value → nested block (list or dict) follows
+        i += 1
+        nested_items = []
+        nested_dict = {}
+        is_list = None
+        while i < len(lines):
+            child = lines[i]
+            if not child.strip():
                 i += 1
-            out[key] = nested
-        else:
-            # Strip wrapping quotes
-            if val.startswith('"') and val.endswith('"'):
-                val = val[1:-1]
-            elif val.startswith("'") and val.endswith("'"):
-                val = val[1:-1]
-            # Inline list?
-            if val.startswith("[") and val.endswith("]"):
-                inner = val[1:-1].strip()
-                if not inner:
-                    val = []
-                else:
-                    val = [x.strip().strip('"').strip("'") for x in inner.split(",")]
-            # Strip inline comment
-            if isinstance(val, str):
-                val = re.sub(r"\s+#.*$", "", val)
-            out[key] = val
+                continue
+            if not (child.startswith(" ") or child.startswith("\t")):
+                break
+            stripped = child.strip()
+            if stripped.startswith("- "):
+                if is_list is False:
+                    break
+                is_list = True
+                nested_items.append(_strip_scalar(stripped[2:].strip()))
+                i += 1
+                continue
+            if stripped == "-":
+                if is_list is False:
+                    break
+                is_list = True
+                nested_items.append("")
+                i += 1
+                continue
+            if ":" in stripped:
+                if is_list is True:
+                    break
+                is_list = False
+                ckey, _, cval = stripped.partition(":")
+                nested_dict[ckey.strip()] = _parse_inline_value(cval)
+                i += 1
+                continue
             i += 1
+        if is_list:
+            out[key] = nested_items
+        else:
+            out[key] = nested_dict
 
     return out
 
@@ -195,15 +206,21 @@ def validate_lfw_load(rel_path, ll):
 
 
 def build_dispatch_tables(sources):
-    """Returns (bootstrap_set, by_genre, by_genre_activity) tuples for emission."""
+    """Returns (bootstrap_set, by_genre, by_genre_activity) tuples for emission.
+    "all" in `genres` or `activities` is expanded to the full set. Chapters declared
+    with activities=[all] are dispatched on EVERY known activity for their declared
+    genres — they become effectively-always-loaded via the router."""
     bootstrap = []
-    # by_genre: { genre: [paths] } — pack chapters this genre activates (all activities)
+    # by_genre: { genre: [paths] } — chapters this genre may activate (any activity)
     by_genre = defaultdict(list)
     # by_genre_activity: { (genre, activity): [paths] } — for specific dispatch
     by_genre_activity = defaultdict(list)
 
+    # Full sets used to expand "all"
+    ALL_GENRES = ["fiction", "non-fiction", "dissertation", "screenplay", "play"]
+    ALL_ACTIVITIES = sorted(a for a in VALID_ACTIVITIES if a != "all")
+
     for rel, ll, _ in sources:
-        tier = ll["tier"]
         phase = ll["phase"]
         genres = ll["genres"]
         activities = ll["activities"]
@@ -212,20 +229,19 @@ def build_dispatch_tables(sources):
             bootstrap.append(rel)
             continue
 
-        # Expand genres
-        expanded_genres = (
-            ["fiction", "non-fiction", "dissertation", "screenplay", "play"]
-            if "all" in genres
-            else list(genres)
-        )
+        # Expand "all" in genres
+        expanded_genres = list(ALL_GENRES) if "all" in genres else list(genres)
+        # Expand "all" in activities
+        expanded_activities = list(ALL_ACTIVITIES) if "all" in activities else list(activities)
 
         for g in expanded_genres:
             if rel not in by_genre[g]:
                 by_genre[g].append(rel)
 
         for g in expanded_genres:
-            for a in activities:
-                by_genre_activity[(g, a)].append(rel)
+            for a in expanded_activities:
+                if rel not in by_genre_activity[(g, a)]:
+                    by_genre_activity[(g, a)].append(rel)
 
     return bootstrap, by_genre, by_genre_activity
 
