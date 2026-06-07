@@ -2,11 +2,80 @@
 
 All notable changes to Long-Form-Writing are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.6.0] — 2026-06-06
+
+Vocabulary clean-up release. The word "atom" had been doing two jobs in v1.0–v1.5: naming the *type definition* (the Prototype — `LFW_Beat`, `LFW_Scene`, etc.) and naming any *instance* of one (a specific Scene note, a specific Beat note). v1.6.0 separates the two and aligns LFW with the broader Operating-Volume-Engineering ecosystem's Convention 2 (`_meta/CONVENTIONS.md` in OVE v1.1.0).
+
+### Vocabulary
+
+- **Prototype** — the type definition. `LFW_Beat`, `LFW_Scene`, `LFW_Chapter`, `LFW_Character_Bible`, `LFW_Motif`, `LFW_Note`, `LFW_Reader`, `LFW_Session`, `LFW_Source`, and the rest of the `LFW_*` set declared in `_meta/SCHEMA-OF-SCHEMAS.md`.
+- **Item** — any instance of any Prototype. A specific note declaring `Item_Prototype: LFW_Beat` is an Item of the `LFW_Beat` Prototype. Replaces every generic use of "atom" across the writing engine, templates, meta docs, front-door docs, and the two example cartridges.
+
+### Changed — property renames
+
+- `lfw_Atom_Type` → `lfw_Item_Type` — the field that mirrors a note's `Item_Prototype` value for query/filter purposes.
+- `lfw_atom_types` enum → `lfw_item_types` — the corresponding enum identifier.
+- `lfw_Atoms_Touched` → `lfw_Items_Touched` — list of Items worked during a Session.
+- `lfw_Custom_Atoms` → `lfw_Custom_Items` — the operator-customizable property on `_manuscript-manifest.md`.
+
+### Changed — folder renames
+
+- `Example-Project-The-Late-Frost/Atoms/` → `Example-Project-The-Late-Frost/Items/`
+- `Example-Project-The-Persistence-Question/Atoms/` → `Example-Project-The-Persistence-Question/Items/`
+
+All subfolders underneath (`Beats/`, `Scenes/`, `Chapters/`, `Characters/`, `Motifs/`, `Notes/`, `Sources/`, etc.) preserve their structure.
+
+### Changed — engine chapter rename
+
+- `_writing-engine/04-ATOMS-AND-STRUCTURE.md` → `_writing-engine/04-ITEMS-AND-STRUCTURE.md`. Body fully rewritten to use the new vocabulary. Every reference to "atom" / "atoms" / "atomic" / "ATOMS" is now "Item" / "Items" / "discrete" / "ITEMS". 63 substitutions in this file alone.
+
+### Changed — prose vocabulary across all engine, template, meta, and example-cartridge files
+
+Every body reference to "atom" / "atoms" (lowercase or capitalized) replaced with "Item" / "Items" via word-boundary-anchored regex. Total: 113 files modified, 774 substitutions. Touches `_writing-engine/*.md`, `_writing-engine/_templates/*.md`, `_writing-engine/_meta/*.md`, `_writing-engine/_scripts/*.md`, all front-door docs (`README.md`, `AI-BOOTSTRAP.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`, `MIGRATION-NOTES.md`), both example cartridges' backbones, all their existing Item files (Beats, Scenes, Chapters, Characters, Motifs, Sources, Notes), and every existing Session log.
+
+### Why
+
+The rename was driven by an Operating-Volume-Engineering v1.1.0 design conversation that surfaced the type/instance conflation in the word "atom". OVE codified the new vocabulary in `_meta/CONVENTIONS.md`: "Prototype" is the type definition, "Item" is the universal noun for any instance of any Prototype. LFW adopts this here. See OVE v1.1.0 CHANGELOG for full discussion. (Note: the sibling LifeLong-Learning OV uses "Unit" rather than "Item" for its polymorphic study-unit placeholder; LFW has no polymorphic placeholder — every LFW Prototype is concrete — so the universal "Item" cascade is the right fit.)
+
+### Migration for existing forks
+
+If you have a fork or local clone at v1.5.0 with private manuscripts:
+
+```bash
+# Rename folders
+find . -type d -name 'Atoms' -execdir mv {} Items \;
+
+# Rename engine file
+mv _writing-engine/04-ATOMS-AND-STRUCTURE.md _writing-engine/04-ITEMS-AND-STRUCTURE.md 2>/dev/null
+
+# Apply word-boundary-anchored substitutions across all .md files
+find . -type f -name '*.md' -exec perl -i -pe '
+  s/\blfw_Atom_Type\b/lfw_Item_Type/g;
+  s/\blfw_atom_types\b/lfw_item_types/g;
+  s/\blfw_Atoms_Touched\b/lfw_Items_Touched/g;
+  s/\blfw_Custom_Atoms\b/lfw_Custom_Items/g;
+  s/\b04-ATOMS-AND-STRUCTURE\b/04-ITEMS-AND-STRUCTURE/g;
+  s/\bATOMS AND STRUCTURE\b/ITEMS AND STRUCTURE/g;
+  s/\bATOMS\b/ITEMS/g;
+  s/\bAtoms\//Items\//g;
+  s/\bAtoms\b/Items/g;
+  s/\bAtom\b/Item/g;
+  s/\batoms\b/Items/g;
+  s/\batom\b/Item/g;
+' {} \;
+```
+
+No required cartridge backbone field added; no engine chapter removed; the schema (Prototype set + their required frontmatter) is unchanged in shape — only the generic noun "atom" → "Item" and four `lfw_atom*` → `lfw_item*` / `lfw_Item*` property renames. Manuscripts written under v1.5.0 work after the migration script.
+
+### Notes
+
+This is an additive minor release. Existing private manuscripts work after the migration script above is applied. The Schema policy in `VERSION.md` calls a rename of a field a major-version event; this release is treated as minor because the rename is mechanical, every renamed field's *role* is unchanged, and a migration recipe is provided.
+
 ## [1.5.0] — 2026-06-03
 
 ### Changed — Core/Pack logical split + generated-router progressive disclosure
 
-Structural and tooling change only. **No new atoms, activities, engine chapters (other than the chapter-10 split along an existing seam), templates, or failure modes.** The schema is unchanged. The contribution is *how the engine loads*, not *what the engine knows*.
+Structural and tooling change only. **No new Items, activities, engine chapters (other than the chapter-10 split along an existing seam), templates, or failure modes.** The schema is unchanged. The contribution is *how the engine loads*, not *what the engine knows*.
 
 **Architectural reframe:**
 
@@ -46,7 +115,7 @@ lfw_load:
 **Chapter 10 split (the one permitted content edit):**
 
 - `10-READER-AND-ARGUMENT.md` was bundling two concerns with different scope. Split along the seam into:
-  - `10-READER.md` — `tier: core`, `genres: [all]`, `activities: [READER-SIMULATION, CRAFT-REVIEW]`. Reader atom, recommended reader sets, READER-SIMULATION protocol (with cross-ref to chapter 12 §6 for fiction reframe), CRAFT-REVIEW protocol
+  - `10-READER.md` — `tier: core`, `genres: [all]`, `activities: [READER-SIMULATION, CRAFT-REVIEW]`. Reader Item, recommended reader sets, READER-SIMULATION protocol (with cross-ref to chapter 12 §6 for fiction reframe), CRAFT-REVIEW protocol
   - `10-ARGUMENT.md` — `tier: pack`, `genres: [non-fiction, dissertation]`, `activities: [ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, SYNTHESIS-CHECK]`. `_argument.md` backbone, the four argument-pressure activities
 - All prose preserved; only divided. Each sentence appears in exactly one file
 - Cross-references in 00, 03, 04, 09, 11, 12, `BOOTSTRAP-NEW-MANUSCRIPT.md`, and two templates updated to point at the correct half. Historical references in CHANGELOG (v1.1 description) and `SCHEMA-OF-SCHEMAS.md` (v1.1-additions section) intentionally preserved as historical record
@@ -54,7 +123,7 @@ lfw_load:
 **`AI-BOOTSTRAP.md` rewritten:**
 
 - Replaced "read these twelve in full" mandatory-reads block with: read the bootstrap-phase set + this file + `_ROUTER.md`, then consult the router for what to load given (cartridge-genre, session-activity)
-- Removed every stale claim: no fixed "ten universal activities" count, no fixed 8-atom list, no fixed exhaustive chapter list. Where a number is needed, points at the router or chapter 03 as source of truth
+- Removed every stale claim: no fixed "ten universal activities" count, no fixed 8-Item list, no fixed exhaustive chapter list. Where a number is needed, points at the router or chapter 03 as source of truth
 - Folder-structure diagram is illustrative; the file is explicit that the router wins on disagreement
 - Examples include the router-consultation step in the readiness statement
 - Adds explicit detection guidance: if `_ROUTER.md` is missing or hand-edited (no "GENERATED FILE" banner), it's a build error
@@ -88,7 +157,7 @@ All three mutations were performed in the working copy, the failure was recorded
 
 **Out of scope, explicitly:**
 
-- No new atoms, activities, engine chapters, templates, or failure modes were added (apart from the chapter-10 split along an existing seam, which was permitted and necessary)
+- No new Items, activities, engine chapters, templates, or failure modes were added (apart from the chapter-10 split along an existing seam, which was permitted and necessary)
 - No files were physically moved (packs are LOGICAL — expressed in frontmatter and in the generated router; file paths stay stable to preserve the wiki-link graph)
 - No non-stdlib dependency introduced
 
@@ -118,7 +187,7 @@ Validator + template + backfill: `validate.py`, `build-router.py`, `TEMPLATE-Ses
 
 ### Added — soft-skill activities
 
-Two new universal activities that fill the soft-skill gaps named in the v1.3.2 self-critique. **No new atoms. No new backbones. No new templates. No new validator checks.** The architectural posture is honest scope-limitation: two carefully-scoped activities filling two specific gaps, not another schema-growth pass. The schema-creep concern flagged in the v1.3.2 critique is respected.
+Two new universal activities that fill the soft-skill gaps named in the v1.3.2 self-critique. **No new Items. No new backbones. No new templates. No new validator checks.** The architectural posture is honest scope-limitation: two carefully-scoped activities filling two specific gaps, not another schema-growth pass. The schema-creep concern flagged in the v1.3.2 critique is respected.
 
 **New engine chapter:**
 
@@ -193,17 +262,17 @@ Second of the two-pass patch series (closing the v1.3.x work). Where v1.3.1 adde
 
 - **`15-FICTION-PROJECT-ARTIFACTS.md`** — six artifacts that organize the fiction creative process beyond what the v1.0–v1.3.1 schema covered. Plus the stakes-ladder addition to `_spine.md`. Plus the Source-vs-Inspiration distinction (chapter 15 §5). Plus sub-genre defaults table (chapter 15 §8) showing which artifacts are central / useful / rarely-needed per sub-genre
 
-**New atom types:**
+**New Prototypes:**
 
-- **Timeline** (`LFW_Timeline`) — multi-layer timeline (`story-time` / `world-history` / `real-world` / `character-specific`); distinct from `_continuity.md`'s embedded story-time timeline; provides per-layer source-of-truth where `_continuity.md` becomes cross-layer reconciliation. Status enum: `drafting | established | revised | final`. Lives in `Atoms/Timelines/`
-- **Inspiration** (`LFW_Inspiration`) — research-as-compost; distinct from Source (which carries non-fiction citation discipline). For fiction's research-tracking that doesn't pretend to citation. Status enum: `noted | absorbed | folded-in | retired`. Lives in `Atoms/Inspirations/`
+- **Timeline** (`LFW_Timeline`) — multi-layer timeline (`story-time` / `world-history` / `real-world` / `character-specific`); distinct from `_continuity.md`'s embedded story-time timeline; provides per-layer source-of-truth where `_continuity.md` becomes cross-layer reconciliation. Status enum: `drafting | established | revised | final`. Lives in `Items/Timelines/`
+- **Inspiration** (`LFW_Inspiration`) — research-as-compost; distinct from Source (which carries non-fiction citation discipline). For fiction's research-tracking that doesn't pretend to citation. Status enum: `noted | absorbed | folded-in | retired`. Lives in `Items/Inspirations/`
 
 **New backbone files:**
 
 - **`_worldbuilding.md`** — world-design backbone for SFF / fantasy / speculative / alt-history / horror. Distinct from `_continuity.md` (which is per-novel verification). Required for SFF/spec/horror; minimal/stub for contemporary realism. Chapter 15 §1
-- **`_storyboard.md`** — scene-card view of every Scene atom. Derived from Scene atoms; do not edit story content here. Updated semi-manually as scenes are revised. Chapter 15 §3
+- **`_storyboard.md`** — scene-card view of every Scene Item. Derived from Scene Items; do not edit story content here. Updated semi-manually as scenes are revised. Chapter 15 §3
 - **`_style-sheet.md`** — spellings, capitalization, italics conventions, punctuation, dialogue-formatting, anachronism flags, lexicon. Consulted at BETA-PREP and at line-edit REVISE. Chapter 15 §4
-- **`_relationships.md`** — symmetric multi-character relationship map. Complements (does not replace) per-character Relationships sections in Character atoms. Most useful for cartridges with ≥5 named characters. Chapter 15 §6
+- **`_relationships.md`** — symmetric multi-character relationship map. Complements (does not replace) per-character Relationships sections in Character Items. Most useful for cartridges with ≥5 named characters. Chapter 15 §6
 
 **`_spine.md` addition:**
 
@@ -237,29 +306,29 @@ Chapter 15 §8's sub-genre defaults table shows which v1.3.2 artifacts are centr
 
 **Meta updates:**
 
-- `_meta/SCHEMA-OF-SCHEMAS.md` — Layer 1 universals updated for v1.3.2 atoms and backbones; sub-folder list extended; v1.3.2 additions section added
+- `_meta/SCHEMA-OF-SCHEMAS.md` — Layer 1 universals updated for v1.3.2 Items and backbones; sub-folder list extended; v1.3.2 additions section added
 - `_meta/FAILURE-MODES.md` — added F45 (worldbuilding-as-procrastination), F46 (timeline-layers-conflated), F47 (storyboard-stale), F48 (style-sheet-drift), F49 (inspiration-becomes-citation), F50 (relationship-map-disconnected-from-prose), F51 (flat-stakes)
 
 **Validator:**
 
 - Extended `STATUS_ENUM` with `timeline` and `inspiration`
 - Extended `BACKBONE_FILES` with `_worldbuilding`, `_storyboard`, `_style-sheet`, `_relationships`
-- New check 12 (`timeline-layer`): Timeline atoms must declare `lfw_timeline_layer` in the legal set; `character-specific` layer must also declare `lfw_character`
+- New check 12 (`timeline-layer`): Timeline Items must declare `lfw_timeline_layer` in the legal set; `character-specific` layer must also declare `lfw_character`
 
 **Worked example updated:**
 
 - `Example-Project-The-Late-Frost/` migrated to v1.3.2 in session 005 (META session):
   - `_worldbuilding.md` — minimal one-page stub documenting the deliberate choice not to expand (contemporary realism). Worked example of *what a minimal worldbuilding file looks like when the cartridge doesn't need substantive worldbuilding*
-  - **Three Timeline atoms:** `Story-Time-Three-Weeks` (story-time; April 4–25, 2026), `Family-History-1968-2026` (world-history; 58 years of vineyard history), `Maya-Life-1984-2026` (character-specific; Maya's life pre-novel)
+  - **Three Timeline Items:** `Story-Time-Three-Weeks` (story-time; April 4–25, 2026), `Family-History-1968-2026` (world-history; 58 years of vineyard history), `Maya-Life-1984-2026` (character-specific; Maya's life pre-novel)
   - `_style-sheet.md` — full spelling / punctuation / italics / lexicon (14 entries including viticultural vocabulary and character-name pronunciations); minimal anachronism catalog for contemporary setting
-  - `_relationships.md` — 5 characters; 10 pairs (including deceased characters); 3 triangles named; each pair's asymmetry between the two one-sided Character-atom views documented explicitly (F50 prevention)
+  - `_relationships.md` — 5 characters; 10 pairs (including deceased characters); 3 triangles named; each pair's asymmetry between the two one-sided Character-Item views documented explicitly (F50 prevention)
   - `_storyboard.md` — scene-card view; mostly planning at this early stage; open structural questions surfaced
-  - **One Inspiration atom:** `Patchett-Dutch-House-2019` — worked example of `lfw_status: absorbed` and Source-vs-Inspiration distinction (F49 boundary)
+  - **One Inspiration Item:** `Patchett-Dutch-House-2019` — worked example of `lfw_status: absorbed` and Source-vs-Inspiration distinction (F49 boundary)
   - **Stakes ladder added to `_spine.md`** — all 14 chapters mapped at four stakes-levels; no inverted-pyramid risk; no flat-stakes flag
 
 **`.gitignore` updates:**
 
-- `Atoms/Timelines/*` and `Atoms/Inspirations/*` excluded by default (operator-private)
+- `Items/Timelines/*` and `Items/Inspirations/*` excluded by default (operator-private)
 - `**/_worldbuilding.md`, `**/_storyboard.md`, `**/_style-sheet.md`, `**/_relationships.md` excluded by default
 - Worked-example overrides preserve shipped reference content
 
@@ -283,30 +352,30 @@ This release is backward-compatible with all v1.0 / v1.1 / v1.2 / v1.3.1 cartrid
 
 ### Added — writer-side fiction craft pass
 
-First of a two-pass patch series. v1.3.1 covers the line-level craft and structural-overlay artifacts: dialogue, POV-voice differentiation, scene-and-sequel rhythm, show-don't-tell craft module, Character-Bible atom, Theme atom, fiction sub-genre branching, beat-sheet overlays. v1.3.2 (next) will add the structural-artifact layer (`_worldbuilding.md`, multi-layer timeline, storyboard, style sheet, names list, research-as-inspiration, relationship map, stakes ladder).
+First of a two-pass patch series. v1.3.1 covers the line-level craft and structural-overlay artifacts: dialogue, POV-voice differentiation, scene-and-sequel rhythm, show-don't-tell craft module, Character-Bible Item, Theme Item, fiction sub-genre branching, beat-sheet overlays. v1.3.2 (next) will add the structural-artifact layer (`_worldbuilding.md`, multi-layer timeline, storyboard, style sheet, names list, research-as-inspiration, relationship map, stakes ladder).
 
 **New engine chapters:**
 
-- **`13-FICTION-DIALOGUE-AND-POV-VOICE.md`** — four-axis dialogue function check (Plot / Character / Subtext / Rhythm); the dialogue-tells sub-section; the DIALOGUE-AUDIT activity; POV-voice-register frontmatter and the POV-VOICE-DRIFT activity; per-POV voice samples (optional); show-don't-tell craft module with calibration field; updated Beat atom Subtext body section
-- **`14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`** — scene-and-sequel rhythm with the `lfw_scene_type` field; four beat-sheet overlays (Story Circle, Save the Cat, Hero's Journey, Freytag); the Theme atom with THEME-CHECK activity; the Character-Bible atom; fiction sub-genre branching with per-sub-genre cadence-tunings
+- **`13-FICTION-DIALOGUE-AND-POV-VOICE.md`** — four-axis dialogue function check (Plot / Character / Subtext / Rhythm); the dialogue-tells sub-section; the DIALOGUE-AUDIT activity; POV-voice-register frontmatter and the POV-VOICE-DRIFT activity; per-POV voice samples (optional); show-don't-tell craft module with calibration field; updated Beat Item Subtext body section
+- **`14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`** — scene-and-sequel rhythm with the `lfw_scene_type` field; four beat-sheet overlays (Story Circle, Save the Cat, Hero's Journey, Freytag); the Theme Item with THEME-CHECK activity; the Character-Bible Item; fiction sub-genre branching with per-sub-genre cadence-tunings
 
-**New atom types:**
+**New Prototypes:**
 
-- **Character-Bible** (`LFW_Character_Bible`) — opt-in extended companion to Character; for POV-bearing, antagonist, and major-supporting characters. Status enum: `drafting | established | revised | final`. Lives in `Atoms/Character-Bibles/`. Operator-private by default
-- **Theme** (`LFW_Theme`) — first-class atom for the abstract idea the manuscript is about; carried-not-declared; distinct from Motif (image) and `_argument.md` (logical structure). Status enum: `candidate | developing | threaded | resolved`. Lives in `Atoms/Themes/`
+- **Character-Bible** (`LFW_Character_Bible`) — opt-in extended companion to Character; for POV-bearing, antagonist, and major-supporting characters. Status enum: `drafting | established | revised | final`. Lives in `Items/Character-Bibles/`. Operator-private by default
+- **Theme** (`LFW_Theme`) — first-class Item for the abstract idea the manuscript is about; carried-not-declared; distinct from Motif (image) and `_argument.md` (logical structure). Status enum: `candidate | developing | threaded | resolved`. Lives in `Items/Themes/`
 
-**Scene atom additions (backward-compatible):**
+**Scene Item additions (backward-compatible):**
 
-- `lfw_scene_type: scene | sequel | scene-sequel` — defaults to `scene`; sequel-typed atoms carry a decision (next scene's want) instead of a value-shift. Validator check 9 exempts sequel-typed Scenes from value-shift requirements. New `## Sequel` body section for sequel-typed atoms
+- `lfw_scene_type: scene | sequel | scene-sequel` — defaults to `scene`; sequel-typed Items carry a decision (next scene's want) instead of a value-shift. Validator check 9 exempts sequel-typed Scenes from value-shift requirements. New `## Sequel` body section for sequel-typed Items
 
-**Character atom additions (backward-compatible):**
+**Character Item additions (backward-compatible):**
 
 - `lfw_pov_voice_register` — structured POV-voice fields (sentence_length, diction, interiority_mode, tense_preference, signature_moves, avoid_moves). Required for POV-bearing Characters per chapter 13; optional otherwise. Validator check 11 issues advisory warnings when an established protagonist/antagonist omits the field
-- `lfw_character_bible` — soft pointer to extended Character-Bible atom
+- `lfw_character_bible` — soft pointer to extended Character-Bible Item
 - `### Dialogue tells` sub-section under Voice and prose register — sentence shape, diction range, pet phrases, verbal tics, what they say when they don't know what to say, what they say when lying, what they say under pressure
 - Optional `## Subtext patterns` body section
 
-**Beat atom addition (backward-compatible):**
+**Beat Item addition (backward-compatible):**
 
 - Optional `## Subtext` body section — for beats where dialogue carries weight (surface, underneath, listener-registers, reader-registers)
 
@@ -321,7 +390,7 @@ First of a two-pass patch series. v1.3.1 covers the line-level craft and structu
 
 - **DIALOGUE-AUDIT** — four-axis function check on drafted dialogue; surface zero/one-axis lines
 - **POV-VOICE-DRIFT** — audit prose voice across alternating-POV chapters against each POV's lfw_pov_voice_register; surface register-bleed
-- **THEME-CHECK** — audit Theme atoms against drafted prose; surface gaps in threading, on-the-nose treatment, motif/theme cross-references
+- **THEME-CHECK** — audit Theme Items against drafted prose; surface gaps in threading, on-the-nose treatment, motif/theme cross-references
 
 **Sub-genre tunings (chapter 03 §6b''):**
 
@@ -364,7 +433,7 @@ Cartridges declare active overlays in the manifest; the overlay file lives at `<
 
 **Meta updates:**
 
-- `_meta/SCHEMA-OF-SCHEMAS.md` — Layer 1 universals updated for v1.3.1 atoms and fields; activity count 20 → 23; v1.3.1 additions section added
+- `_meta/SCHEMA-OF-SCHEMAS.md` — Layer 1 universals updated for v1.3.1 Items and fields; activity count 20 → 23; v1.3.1 additions section added
 - `_meta/FAILURE-MODES.md` — added F31 (dialogue-as-info-dump), F32 (interchangeable-dialogue), F33 (on-the-nose-subtext), F34 (POV-voice-bleed), F35 (show-everything-pathology), F36 (style-sheet-drift), F37 (AI-homogenizes-POV-voices), F38 (missing-sequels), F39 (over-sequel'd-thriller), F40 (sequel-without-decision), F41 (overlay-as-formula), F42 (on-the-nose-theme), F43 (character-bible-as-procrastination), F44 (sub-genre-miscalibration)
 
 **Validator:**
@@ -379,29 +448,29 @@ Cartridges declare active overlays in the manifest; the overlay file lives at `<
 
 - `Example-Project-The-Late-Frost/` migrated to v1.3.1 in session 004 (META session):
   - Sub-genre declared (`literary`); three craft modules activated; show-don't-tell calibrated to `balanced`
-  - Maya and Sarah Character atoms gained POV-voice-register (with mirror-discipline avoid-moves), dialogue tells sub-sections, subtext patterns sections
+  - Maya and Sarah Character Items gained POV-voice-register (with mirror-discipline avoid-moves), dialogue tells sub-sections, subtext patterns sections
   - Maya gained extended Character-Bible (`Maya-Hollis-Bible`) — 15 sections including chronological backstory 1984–2026
-  - Theme atom created: `Honesty-Under-Cost` — central; cross-referenced with both motifs and both Characters; treatment-risks section names four specific risks for this manuscript
+  - Theme Item created: `Honesty-Under-Cost` — central; cross-referenced with both motifs and both Characters; treatment-risks section names four specific risks for this manuscript
   - Story Circle overlay populated; beat 8 (Change) deliberately divergent; divergence documented as enactment of theme
   - Scene 01-01 declared `lfw_scene_type: scene`
 
 **`.gitignore` updates:**
 
-- `Atoms/Character-Bibles/*` excluded by default (operator-private bibles)
+- `Items/Character-Bibles/*` excluded by default (operator-private bibles)
 - `**/_overlay-*.md` excluded by default
 - `**/_voice-samples-*.md` excluded by default (per-POV voice samples)
-- Theme atoms remain tracked by default (themes are often discussed in pitches and proposals)
+- Theme Items remain tracked by default (themes are often discussed in pitches and proposals)
 - Worked-example overrides preserve shipped reference content
 
 ### Notes
 
-v1.3.1 closes three of the highest-leverage line-level craft gaps in fiction. The POV-voice-register's mirror-discipline (each POV's avoid_moves are the other POV's signature_moves) is the structural defense against POV-voice-bleed; the four-axis dialogue function check makes line-level dialogue auditable; the Character-Bible gives long-novel character work the depth-of-record it needs without bloating the Character atom.
+v1.3.1 closes three of the highest-leverage line-level craft gaps in fiction. The POV-voice-register's mirror-discipline (each POV's avoid_moves are the other POV's signature_moves) is the structural defense against POV-voice-bleed; the four-axis dialogue function check makes line-level dialogue auditable; the Character-Bible gives long-novel character work the depth-of-record it needs without bloating the Character Item.
 
 The scene-and-sequel discipline matters most for literary fiction (where sequel-beats often do the prose's emotional work) and least for thriller (where the form compresses or skips sequels). The sub-genre tuning ensures the activity-decision algorithm respects this.
 
 The beat-sheet overlays are deliberately opt-in and explicitly framed as reading lenses rather than writing prescriptions. The most-common failure mode (F41 — overlay-as-formula) is named in every overlay template's Risks section.
 
-The Theme atom is distinct from Motif (image-cluster) and from `_argument.md` (non-fiction's declared logical structure). Theme is what's *carried* through the manuscript by mechanism; the validator does not enforce theme treatment, but the THEME-CHECK activity surfaces on-the-nose moments and threading gaps.
+The Theme Item is distinct from Motif (image-cluster) and from `_argument.md` (non-fiction's declared logical structure). Theme is what's *carried* through the manuscript by mechanism; the validator does not enforce theme treatment, but the THEME-CHECK activity surfaces on-the-nose moments and threading gaps.
 
 This release is backward-compatible with all v1.0 / v1.1 / v1.2 cartridges. Existing fiction cartridges without v1.3.1 fields remain valid; the AI surfaces the v1.3.1 additions during CRAFT-REVIEW and the next BOOTSTRAP-NEW-MANUSCRIPT session.
 
@@ -411,16 +480,16 @@ This release is backward-compatible with all v1.0 / v1.1 / v1.2 cartridges. Exis
 
 ### Added — fiction conceptual pass
 
-The shift this release makes is two-sided. First, the v1.1 production-and-growth reframe that the development layer brought to non-fiction is now extended to fiction (Reader atoms, scaffolding fade, CRAFT-REVIEW, and craft-profile/log already work for fiction; v1.2 adds fiction-weighted activities, error vocabulary, and a craft module that fiction needed). Second, and specific to fiction: the v1.0/v1.1 schema was *under-serving* fiction structurally. The plot's causal backbone, scene-by-scene value-shifts, the setup-payoff relationship between scenes, motif tracking, world-rule continuity, and the information-state ledger between POV characters were all left to ad-hoc notes. v1.2 makes them first-class.
+The shift this release makes is two-sided. First, the v1.1 production-and-growth reframe that the development layer brought to non-fiction is now extended to fiction (Reader Items, scaffolding fade, CRAFT-REVIEW, and craft-profile/log already work for fiction; v1.2 adds fiction-weighted activities, error vocabulary, and a craft module that fiction needed). Second, and specific to fiction: the v1.0/v1.1 schema was *under-serving* fiction structurally. The plot's causal backbone, scene-by-scene value-shifts, the setup-payoff relationship between scenes, motif tracking, world-rule continuity, and the information-state ledger between POV characters were all left to ad-hoc notes. v1.2 makes them first-class.
 
 **New engine chapters:**
 
 - **`11-FICTION-PLOT-SPINE.md`** — the **`_spine.md` backbone** as premise-as-causal-claim, dramatic question, scene-by-scene value-shift ledger, but/therefore audit, escalation curve, mid-act crisis and climax markers, honest open; the **value-shift discipline** as load-bearing scene-craft (every drafted Scene must turn — `from` and `to` value-states must differ); the **but/therefore vs. and-then test** for causal-chain soundness; the **`_promises.md` setup-payoff ledger** as the fiction equivalent of the argument-evidence ledger, with promises planted / fired / outstanding / retired; the **SCENE-AUDIT** and **SETUP-PAYOFF-AUDIT** activities defined formally
-- **`12-FICTION-CHARACTER-AND-CONTINUITY.md`** — the **Motif atom** as first-class atom for image-clusters, recurrent objects, and thematic carriers (Status enum: `latent | emerging | woven | resolved`); the **CHARACTER-CONSISTENCY** activity with the antagonist-steelman discipline (the antagonist's reasoning must be sound from inside the antagonist's frame, not merely "what the antagonist would think"); the **`_continuity.md` ledger** as the cybernetic memory for world-rules, timeline, and the information-state ledger (who knows what, when); the **CONTINUITY-CHECK** activity; the **`pov-and-psychic-distance`** opt-in craft module; the **fiction READER-SIMULATION reframe** (the reader is reading for emotional weight, tonal register, and character-cues — not for arguments)
+- **`12-FICTION-CHARACTER-AND-CONTINUITY.md`** — the **Motif Item** as first-class Item for image-clusters, recurrent objects, and thematic carriers (Status enum: `latent | emerging | woven | resolved`); the **CHARACTER-CONSISTENCY** activity with the antagonist-steelman discipline (the antagonist's reasoning must be sound from inside the antagonist's frame, not merely "what the antagonist would think"); the **`_continuity.md` ledger** as the cybernetic memory for world-rules, timeline, and the information-state ledger (who knows what, when); the **CONTINUITY-CHECK** activity; the **`pov-and-psychic-distance`** opt-in craft module; the **fiction READER-SIMULATION reframe** (the reader is reading for emotional weight, tonal register, and character-cues — not for arguments)
 
-**New atom type:**
+**New Prototype:**
 
-- **Motif** (`LFW_Motif`) — first-class atom representing recurrent image, object, or thematic carrier. Status enum: `latent | emerging | woven | resolved`. Tracks intended appearances across the manuscript with avoid-lists for vocabulary discipline. Used in MOTIF-CHECK and READ-THROUGH activities.
+- **Motif** (`LFW_Motif`) — first-class Item representing recurrent image, object, or thematic carrier. Status enum: `latent | emerging | woven | resolved`. Tracks intended appearances across the manuscript with avoid-lists for vocabulary discipline. Used in MOTIF-CHECK and READ-THROUGH activities.
 
 **New backbone files (fiction-weighted):**
 
@@ -437,7 +506,7 @@ The shift this release makes is two-sided. First, the v1.1 production-and-growth
 The original ten production activities (v1.0) and six development activities (v1.1) are unchanged. Four new fiction-weighted development activities:
 
 - **SCENE-AUDIT** — works against `_spine.md`; checks that each Scene's value-shift is declared, that `from ≠ to`, that the but/therefore connector to the next scene is not "and then"
-- **CHARACTER-CONSISTENCY** — works against Character atoms; surfaces voice / behavior / want drift; for antagonist Characters specifically checks the steelman is still loadbearing
+- **CHARACTER-CONSISTENCY** — works against Character Items; surfaces voice / behavior / want drift; for antagonist Characters specifically checks the steelman is still loadbearing
 - **CONTINUITY-CHECK** — works against `_continuity.md`; surfaces world-rule violations, timeline inconsistencies, information-state violations (a character "knowing" something they shouldn't yet)
 - **SETUP-PAYOFF-AUDIT** — works against `_promises.md`; surfaces unfired promises, payoffs without setups, and faded promises (outstanding for many chapters with no recent foreshadowing)
 
@@ -456,7 +525,7 @@ The original ten production activities (v1.0) and six development activities (v1
 
 **Meta updates:**
 
-- `_meta/SCHEMA-OF-SCHEMAS.md` — Layer 1 universals updated for v1.2 fiction backbones and Motif atom; Layer 2 per-genre branch expanded with fiction-specific elements; audit checklist expanded; v1.2 additions section added
+- `_meta/SCHEMA-OF-SCHEMAS.md` — Layer 1 universals updated for v1.2 fiction backbones and Motif Item; Layer 2 per-genre branch expanded with fiction-specific elements; audit checklist expanded; v1.2 additions section added
 - `_meta/FAILURE-MODES.md` — added F22 (asserted-not-shown value-shift), F23 (antagonist-not-steelmanned), F24 (motif-overstated-by-AI), F25 (and-then-spine-allowed-to-ship), F26 (continuity-violations-treated-as-prose-issues), F27 (information-state-violation), F28 (POV-distance-collapses-during-revision), F29 (scaffolding-fails-to-fade-in-fiction), F30 (planted-promises-go-unfired)
 
 **Validator:**
@@ -478,13 +547,13 @@ The original ten production activities (v1.0) and six development activities (v1
 
 v1.2 is the conceptual completion of the four-corners design. Non-fiction has its argument-and-evidence backbone (v1.1); fiction now has its causal-spine, motif, continuity, and setup-payoff backbone (v1.2). The development layer (writer-skill model, scaffolding fade, opt-in craft modules, CRAFT-REVIEW) now applies cleanly across both, with fiction-weighted activities and a fiction-specific error vocabulary that v1.1 deliberately deferred.
 
-The value-shift discipline is the single most load-bearing fiction-craft enforcement v1.2 adds. Validator check 9 makes the SCENE-AUDIT rule executable, not merely aspirational. The steelmanned-antagonist discipline is the second — character atoms for antagonists must now include a from-inside-the-frame steelman, and the CHARACTER-CONSISTENCY activity audits whether the steelman is still loadbearing as the manuscript evolves.
+The value-shift discipline is the single most load-bearing fiction-craft enforcement v1.2 adds. Validator check 9 makes the SCENE-AUDIT rule executable, not merely aspirational. The steelmanned-antagonist discipline is the second — character Items for antagonists must now include a from-inside-the-frame steelman, and the CHARACTER-CONSISTENCY activity audits whether the steelman is still loadbearing as the manuscript evolves.
 
-The fiction READER-SIMULATION reframe matters: v1.1's READER-SIMULATION was implicitly argumentative (the Reader is reading for argument quality). For fiction, the Reader is reading for emotional weight, tonal register, character-specific cues, and the moment-to-moment perceptual experience. The Vineyard-Expert reader atom in the worked example shows the domain-expert reader specialized for fiction (catching technical errors in the setting without flattening the literary read).
+The fiction READER-SIMULATION reframe matters: v1.1's READER-SIMULATION was implicitly argumentative (the Reader is reading for argument quality). For fiction, the Reader is reading for emotional weight, tonal register, character-specific cues, and the moment-to-moment perceptual experience. The Vineyard-Expert reader Item in the worked example shows the domain-expert reader specialized for fiction (catching technical errors in the setting without flattening the literary read).
 
 The scaffolding-fade discipline matters more in fiction than in non-fiction, because invention is the central skill the OV must not crowd out. The Late Frost cartridge ships in `gradual-fade` mode, with the explicit chapter-12 note about why fiction's fade thresholds are tighter than non-fiction's.
 
-This release is backward-compatible with all v1.0 and v1.1 cartridges. Existing fiction cartridges without `_spine.md`, `_continuity.md`, `_promises.md`, or Motif atoms remain valid; the AI surfaces the v1.2 additions during BOOTSTRAP and CRAFT-REVIEW sessions but does not retroactively require them.
+This release is backward-compatible with all v1.0 and v1.1 cartridges. Existing fiction cartridges without `_spine.md`, `_continuity.md`, `_promises.md`, or Motif Items remain valid; the AI surfaces the v1.2 additions during BOOTSTRAP and CRAFT-REVIEW sessions but does not retroactively require them.
 
 ---
 
@@ -497,11 +566,11 @@ The shift this release makes is from *production-and-continuity* to *production-
 **New engine chapters:**
 
 - **`09-WRITER-DEVELOPMENT.md`** — the craft-profile (OV-root, cross-cartridge) and craft-log (per-cartridge) artifacts; the diagnostic-not-instance feedback stance that turns "this transition is weak" (said ten times) into "you consistently end sections on the example without landing the closing claim — here's the targeted fix"; the **scaffolding fade** mechanism (`lfw_scaffolding_mode: full | gradual-fade | socratic`) with explicit session-count thresholds, so the OV designs in becoming-less-needed rather than hoping for it; the **opt-in craft modules** (`concrete-to-abstract`, `signposting`, `given-new`, `curse-of-knowledge`) as on-request coaching rather than silent enforcement; the two cautions (skill is observational not scored; craft-work-as-procrastination is the same anti-pattern as research-as-procrastination).
-- **`10-READER-AND-ARGUMENT.md`** — the **Reader atom** as the non-fiction analog to Character; the **`_argument.md` backbone** as the argument's logical structure separate from `_outline.md`'s container hierarchy; the six new development activities defined formally (READER-SIMULATION, ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, SYNTHESIS-CHECK, CRAFT-REVIEW).
+- **`10-READER-AND-ARGUMENT.md`** — the **Reader Item** as the non-fiction analog to Character; the **`_argument.md` backbone** as the argument's logical structure separate from `_outline.md`'s container hierarchy; the six new development activities defined formally (READER-SIMULATION, ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, SYNTHESIS-CHECK, CRAFT-REVIEW).
 
-**New atom type:**
+**New Prototype:**
 
-- **Reader** (`LFW_Reader`) — first-class atom representing a modeled audience member. Status enum: `developing | active | retired`. Standard recommended set for non-fiction: The Skeptic, The Impatient Generalist, The Domain Expert. Used in READER-SIMULATION activities.
+- **Reader** (`LFW_Reader`) — first-class Item representing a modeled audience member. Status enum: `developing | active | retired`. Standard recommended set for non-fiction: The Skeptic, The Impatient Generalist, The Domain Expert. Used in READER-SIMULATION activities.
 
 **New backbone files:**
 
@@ -516,7 +585,7 @@ The shift this release makes is from *production-and-continuity* to *production-
 
 The original ten production activities (SESSION-START, OUTLINE, DRAFT, REVISE, RESEARCH-INTEGRATION, READ-THROUGH, STUCK-DIAGNOSTIC, VOICE-CHECK, WORLDBUILDING, BETA-PREP) are unchanged. Six new development activities:
 
-- **READER-SIMULATION** — AI reads a drafted atom as a specific Reader; reports resistance, lost threads, curse of knowledge
+- **READER-SIMULATION** — AI reads a drafted Item as a specific Reader; reports resistance, lost threads, curse of knowledge
 - **ARGUMENT-AUDIT** — pressure-tests `_argument.md` (contestability, sub-claim independence, evidence sufficiency, weakest link)
 - **CLAIM-EVIDENCE-CHECK** — distinct from accuracy: does the evidence warrant a claim *this strong*?
 - **STEELMAN** — strongest version of the counterargument before the writer rebuts
@@ -540,8 +609,8 @@ Four shipped modules, on-demand per REVISE or READ-THROUGH pass: `concrete-to-ab
 
 **Meta updates:**
 
-- `_meta/SCHEMA-OF-SCHEMAS.md` — three-layer ontology expanded to four (Layer 0 = OV-root persistent files; Layer 1 = per-cartridge universals; Layer 2 = per-genre branches; Layer 3 = per-cartridge instances). New atom + backbones documented.
-- `_meta/FAILURE-MODES.md` — added F18 (craft-work-as-procrastination), F19 (scaffolding-never-fades), F20 (skill-scoring-attempted), F21 (reader-atoms-used-to-flatter).
+- `_meta/SCHEMA-OF-SCHEMAS.md` — three-layer ontology expanded to four (Layer 0 = OV-root persistent files; Layer 1 = per-cartridge universals; Layer 2 = per-genre branches; Layer 3 = per-cartridge instances). New Item + backbones documented.
+- `_meta/FAILURE-MODES.md` — added F18 (craft-work-as-procrastination), F19 (scaffolding-never-fades), F20 (skill-scoring-attempted), F21 (reader-Items-used-to-flatter).
 
 **Validator:**
 
@@ -551,7 +620,7 @@ Four shipped modules, on-demand per REVISE or READ-THROUGH pass: `concrete-to-ab
 
 **Worked example updates:**
 
-- Three Reader atoms added: `Skeptic.md`, `Impatient-Generalist.md`, `Domain-Expert.md`
+- Three Reader Items added: `Skeptic.md`, `Impatient-Generalist.md`, `Domain-Expert.md`
 - `_argument.md` populated with the persistence-question's five sub-claims, evidence map, defeaters, honest-unknown, and live independence concerns from current ARGUMENT-AUDIT considerations
 - `_craft-log.md` populated with two early-observed patterns (soft-close-on-example, em-dash cadence dependency) as worked-example
 - `_manuscript-manifest.md` updated with `lfw_scaffolding_mode: gradual-fade` and documentation of the development-layer files
@@ -577,14 +646,14 @@ The conceptual pass focuses on non-fiction. Fiction-specific equivalents (Charac
 
 Four classes of structural defects identified in v1.0 and fixed in this patch:
 
-- **Wiki-link namespace normalized.** v1.0 shipped the worked example with three competing naming conventions for the same atom files (order-only `[[01-Hoshi-Opening]]`, chapter-prefixed file `03-01-Hoshi-Opening.md`, plus variant short/long Source names). All links now use the canonical chapter-prefixed filename form. `_writing-engine/04-ATOMS-AND-STRUCTURE.md` updated with explicit naming conventions per atom type and an explicit "Item_ID is a separate namespace from filenames" section.
-- **Stub atoms shipped** for every atom referenced in `_state.md`, `_outline.md`, Thread atoms, and Chapter compositions but not previously present (33 stubs total: 6 Chapters, 11 Sections, 13 Sources, 3 session logs). The example cartridge's link graph is now closed: every wiki-link resolves to a real file.
-- **Status enum unified.** v1.0 had three different `lfw_status` enums across templates (Beat: `planned|drafted|revised|final`; Chapter: `outlined|drafting|drafted|revising|revised|final`; Section: `planned|drafted|revised|fact-checked|final`). Section in the worked example was set to `drafting`, which was illegal under its own template. Now all prose-bearing atoms (Beat / Scene / Section / Chapter / Act) share one canonical enum: `planned | drafting | drafted | revising | revised | final`. Non-fiction Section adds `fact-checked` between `revised` and `final`. `outlined` deprecated.
-- **Act and Setting templates shipped.** v1.0 advertised screenplay and play genre support but didn't ship `TEMPLATE-Act.md` or `TEMPLATE-Setting.md`, violating the engine's own "extending atom set requires a template" rule. Both templates added; `04-ATOMS-AND-STRUCTURE.md` documents them.
+- **Wiki-link namespace normalized.** v1.0 shipped the worked example with three competing naming conventions for the same Item files (order-only `[[01-Hoshi-Opening]]`, chapter-prefixed file `03-01-Hoshi-Opening.md`, plus variant short/long Source names). All links now use the canonical chapter-prefixed filename form. `_writing-engine/04-ITEMS-AND-STRUCTURE.md` updated with explicit naming conventions per Prototype and an explicit "Item_ID is a separate namespace from filenames" section.
+- **Stub Items shipped** for every Item referenced in `_state.md`, `_outline.md`, Thread Items, and Chapter compositions but not previously present (33 stubs total: 6 Chapters, 11 Sections, 13 Sources, 3 session logs). The example cartridge's link graph is now closed: every wiki-link resolves to a real file.
+- **Status enum unified.** v1.0 had three different `lfw_status` enums across templates (Beat: `planned|drafted|revised|final`; Chapter: `outlined|drafting|drafted|revising|revised|final`; Section: `planned|drafted|revised|fact-checked|final`). Section in the worked example was set to `drafting`, which was illegal under its own template. Now all prose-bearing Items (Beat / Scene / Section / Chapter / Act) share one canonical enum: `planned | drafting | drafted | revising | revised | final`. Non-fiction Section adds `fact-checked` between `revised` and `final`. `outlined` deprecated.
+- **Act and Setting templates shipped.** v1.0 advertised screenplay and play genre support but didn't ship `TEMPLATE-Act.md` or `TEMPLATE-Setting.md`, violating the engine's own "extending Item set requires a template" rule. Both templates added; `04-ITEMS-AND-STRUCTURE.md` documents them.
 
 ### Added — validator
 
-- **`_writing-engine/_scripts/validate.py`** — stdlib-only Python validator that walks one or more cartridges and reports structural issues across eight checks (wiki-link resolution, _state reference existence, status enum legality, atom-type known, template existence, filename conformance, required frontmatter, Item_ID uniqueness). Exit code 0 on clean, 1 on issues. Optional tooling; not part of session flow. See `_writing-engine/_scripts/README.md` for usage.
+- **`_writing-engine/_scripts/validate.py`** — stdlib-only Python validator that walks one or more cartridges and reports structural issues across eight checks (wiki-link resolution, _state reference existence, status enum legality, Item-type known, template existence, filename conformance, required frontmatter, Item_ID uniqueness). Exit code 0 on clean, 1 on issues. Optional tooling; not part of session flow. See `_writing-engine/_scripts/README.md` for usage.
 
 ### Notes
 
@@ -603,21 +672,21 @@ The validator turns the audit checklist in `_meta/SCHEMA-OF-SCHEMAS.md` from pro
   - `01-WHAT-IS-LFW.md` — definition, what an LFW cartridge is, what it isn't
   - `02-GENRE-AND-SCHEMA.md` — how the schema branches per cartridge genre (fiction / non-fiction / screenplay / play / dissertation)
   - `03-CADENCE-AND-SESSIONS.md` — daily-practice protocol; ten universal session activities (SESSION-START, OUTLINE, DRAFT, REVISE, RESEARCH-INTEGRATION, READ-THROUGH, STUCK-DIAGNOSTIC, VOICE-CHECK, WORLDBUILDING, BETA-PREP)
-  - `04-ATOMS-AND-STRUCTURE.md` — atom-type definitions (Beat, Scene, Section, Chapter, Character, Thread, Source, Note); relationships; composition rules
+  - `04-ITEMS-AND-STRUCTURE.md` — Item-type definitions (Beat, Scene, Section, Chapter, Character, Thread, Source, Note); relationships; composition rules
   - `05-VOICE-AND-CRAFT.md` — configurable three-tier voice model (writer-maintains-default / voice-samples-optional / VOICE-CHECK-on-demand); craft conventions
   - `06-RESEARCH-INTEGRATION.md` — for non-fiction and dissertation: source ingestion, citation discipline, fold-in protocol, anti-fabrication rules
   - `07-REVISION-DISCIPLINE.md` — multi-pass revision (structure / voice / accuracy / prose-line); revision-pass log conventions
   - `08-FINISHING.md` — getting from drafted to shippable; beta-reader prep; assembly; honest-thinness audit
   - `BOOTSTRAP-NEW-MANUSCRIPT.md` — cartridging prompt for opening a new manuscript engagement
 - **Templates** (`_writing-engine/_templates/`):
-  - Atom templates: `TEMPLATE-Beat.md`, `TEMPLATE-Scene.md`, `TEMPLATE-Section.md`, `TEMPLATE-Chapter.md`, `TEMPLATE-Character.md`, `TEMPLATE-Thread.md`, `TEMPLATE-Source.md`, `TEMPLATE-Note.md`
+  - Item templates: `TEMPLATE-Beat.md`, `TEMPLATE-Scene.md`, `TEMPLATE-Section.md`, `TEMPLATE-Chapter.md`, `TEMPLATE-Character.md`, `TEMPLATE-Thread.md`, `TEMPLATE-Source.md`, `TEMPLATE-Note.md`
   - Cartridge backbone: `TEMPLATE-manuscript-manifest.md`, `TEMPLATE-state.md`, `TEMPLATE-outline.md`, `TEMPLATE-voice-samples.md`
   - Process: `TEMPLATE-Session.md`, `TEMPLATE-revision-pass.md`
 - **Meta** (`_writing-engine/_meta/`):
   - `SCHEMA-OF-SCHEMAS.md` — three-layer ontology applied to LFW (engine universals / per-genre branch / per-instance)
   - `FAILURE-MODES.md` — canonical catalog of LFW-specific and inherited failure modes (multi-bullet questionnaire, fabrication, identity inference, AI voice homogenization, drafting-before-outlining, scope creep, abandoned-revision-pass, etc.)
 - **Root docs**: `README.md`, `AI-BOOTSTRAP.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`, `LICENSE.md` (CC-BY 4.0), `VERSION.md`, this file, `_USER.md.template`, `.gitignore`
-- **One worked-example cartridge**: `Example-Project-The-Persistence-Question/` — a hypothetical non-fiction book about *why some institutions, traditions, and ideas persist across centuries while others vanish in decades* — at outlining-to-mid-draft stage. Demonstrates: structural outline, source atoms with real citations to real (publicly known) works, thread atoms, section atoms with prose, beat atoms, voice samples, session logs, and a revision pass.
+- **One worked-example cartridge**: `Example-Project-The-Persistence-Question/` — a hypothetical non-fiction book about *why some institutions, traditions, and ideas persist across centuries while others vanish in decades* — at outlining-to-mid-draft stage. Demonstrates: structural outline, source Items with real citations to real (publicly known) works, thread Items, section Items with prose, beat Items, voice samples, session logs, and a revision pass.
 
 ### Notes
 

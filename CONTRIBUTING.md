@@ -1,6 +1,6 @@
 # Contributing to Long-Form-Writing
 
-LFW ships at v1.0.0 with a stable atom schema and engine file structure. This document describes when a contribution is in-scope at v1.x, when it requires a major version bump, and how to propose either.
+LFW ships at v1.0.0 with a stable Item schema and engine file structure. This document describes when a contribution is in-scope at v1.x, when it requires a major version bump, and how to propose either.
 
 For day-to-day operation, see `OPERATOR-GUIDE.md`. For release history, see `CHANGELOG.md`.
 
@@ -14,19 +14,19 @@ The following contributions do **not** require a major version bump:
 |-----------------------------------------------------------------------------|-------------------------------------------------------------------------------|
 | New worked-example cartridge for a different genre / project type           | `Example-Project-<Name>/` at the root, paralleling the shipped example        |
 | New entry in the failure-modes catalog                                       | `_writing-engine/_meta/FAILURE-MODES.md`                                       |
-| New atom subtype for an under-covered genre                                  | `_writing-engine/_templates/TEMPLATE-<Subtype>.md` + section in `02-GENRE-AND-SCHEMA.md` |
+| New Item subtype for an under-covered genre                                  | `_writing-engine/_templates/TEMPLATE-<Subtype>.md` + section in `02-GENRE-AND-SCHEMA.md` |
 | Clarification, correction, or expansion in any engine file (00–08, BOOTSTRAP) | Edit in place; minor version bump                                            |
 | Documentation fix (README, INSTALL, OPERATOR-GUIDE, this file)              | Edit in place                                                                  |
-| New optional field on an atom prototype (additive only)                     | Update `_meta/SCHEMA-OF-SCHEMAS.md` + the template + minor version bump        |
+| New optional field on an Item prototype (additive only)                     | Update `_meta/SCHEMA-OF-SCHEMAS.md` + the template + minor version bump        |
 | New session activity beyond the universal ten                                | Document in `03-CADENCE-AND-SESSIONS.md` with trigger conditions; minor bump  |
 
 ## 2. What requires a major version bump (v2.0)
 
 Any change that breaks existing cartridges:
 
-- Adding a **required** field to a cartridge backbone file or atom prototype
-- Renaming or removing an atom type
-- Changing the cartridge folder convention (e.g., renaming `Atoms/`, `Sessions/`, `Revision-Passes/`)
+- Adding a **required** field to a cartridge backbone file or Item prototype
+- Renaming or removing an Prototype
+- Changing the cartridge folder convention (e.g., renaming `Items/`, `Sessions/`, `Revision-Passes/`)
 - Restructuring the engine such that v1 cartridges can't be read
 - Changing the universal activity set in a way that breaks existing session logs
 
@@ -36,7 +36,7 @@ Major bumps require: documented migration path, scripted or manual migration ste
 
 - **Hardcoded references to a specific manuscript in `_writing-engine/`.** The engine is subject-agnostic. Manuscript-specific guidance lives in cartridges, not the engine.
 - **Personal data in shipped files.** No real names, emails, paths, or project references. Use placeholders.
-- **Genre-collapsing.** The schema explicitly accommodates fiction / non-fiction / screenplay / play / dissertation. Don't propose collapsing two genres into one — they have genuinely different atom needs.
+- **Genre-collapsing.** The schema explicitly accommodates fiction / non-fiction / screenplay / play / dissertation. Don't propose collapsing two genres into one — they have genuinely different Item needs.
 - **AI-platform-specific code.** Markdown only.
 
 ## 4. How to propose a change
@@ -71,8 +71,8 @@ When authoring docs at the root (README, INSTALL, OPERATOR-GUIDE, this file): ex
 
 LFW v1.0 covers five long-form genres. If you want to propose explicit support for an additional genre (e.g., poetry collections, graphic novels, comic-book scripts, RPG adventure modules, long-form journalism), that's an in-scope minor-version contribution. The pattern:
 
-1. Add a `## Genre — <name>` section to `02-GENRE-AND-SCHEMA.md` covering what atoms emphasize, what conventions apply
-2. If the genre needs new atom subtypes, propose them per §1
+1. Add a `## Genre — <name>` section to `02-GENRE-AND-SCHEMA.md` covering what Items emphasize, what conventions apply
+2. If the genre needs new Item subtypes, propose them per §1
 3. Update `BOOTSTRAP-NEW-MANUSCRIPT.md` to include the genre in its CQ asking the writer
 4. Add a worked-example cartridge if you can (very useful for adopters)
 

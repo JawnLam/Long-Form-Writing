@@ -35,7 +35,7 @@ The manuscript is "drafted" in every section, "revised" in most, with the remain
 
 Polishing tightens the last 10%. Activities:
 
-- Final prose-line work on remaining atoms
+- Final prose-line work on remaining Items
 - Front-matter and back-matter (acknowledgments, bibliography, dedication, etc.)
 - Page-count / word-count discipline (cutting filler if over; adding texture if under)
 - Final consistency checks (character details, spelling of names, formatting)
@@ -50,7 +50,7 @@ The audit reads:
 
 - The full outline
 - Every chapter at high level
-- Every Thread / Character atom
+- Every Thread / Character Item
 - The revision-pass logs
 
 The audit produces:
@@ -84,11 +84,11 @@ A good beta brief saves the writer from the unhelpful "I liked it" responses and
 
 ### An assembly check
 
-Pull the prose from all Section/Scene atoms into a single read-through document for the beta reader. Verify:
+Pull the prose from all Section/Scene Items into a single read-through document for the beta reader. Verify:
 
-- All atoms in their final order
+- All Items in their final order
 - No placeholder text or `*To be drafted*` markers slipped through
-- All citations resolve to Source atoms
+- All citations resolve to Source Items
 - Front-matter and back-matter present
 
 ### A bug-report channel for the writer
@@ -124,7 +124,7 @@ When beta responses come in:
    - **Direct contradictions** (reader A wants more X; reader B wants less): writer judgment
    - **Things the writer disagrees with**: defensible to ignore but note why
 3. Open a new revision round to address the universal hits
-4. Update Thread/Character atoms with any beta-surfaced gaps
+4. Update Thread/Character Items with any beta-surfaced gaps
 5. Run another honest-thinness audit before final
 
 ## The "final" stage
@@ -132,14 +132,14 @@ When beta responses come in:
 When the writer decides the manuscript is done:
 
 - Lifecycle stage: `final`
-- All atoms have `lfw_status: final`
+- All Items have `lfw_status: final`
 - The manuscript can be assembled for distribution
 
 Assembly is straightforward: walk the outline order, pull prose from each Section/Scene in order, concatenate.
 
 ## Output formats
 
-LFW v1.0 doesn't ship export tooling. The manuscript lives as markdown atoms; assembly produces a single markdown file. Conversion to other formats (PDF, EPUB, DOCX, screenplay format like Fountain or FDX, dissertation LaTeX) happens outside the OV.
+LFW v1.0 doesn't ship export tooling. The manuscript lives as markdown Items; assembly produces a single markdown file. Conversion to other formats (PDF, EPUB, DOCX, screenplay format like Fountain or FDX, dissertation LaTeX) happens outside the OV.
 
 Recommended tools (out of scope, just pointers):
 
@@ -158,7 +158,7 @@ After shipping, the cartridge becomes a record. The writer:
 - Can mine it for material for the next project
 - Can use it as a worked example for their own future LFW cartridges
 
-The cartridge folder can be moved to an `_Archived/` directory or kept in place. The atoms have value as a record of what the writer learned about their own process.
+The cartridge folder can be moved to an `_Archived/` directory or kept in place. The Items have value as a record of what the writer learned about their own process.
 
 ## When a manuscript doesn't finish
 
@@ -169,7 +169,7 @@ Some projects don't ship. The writer:
 - Moves the cartridge to `_Archived/`
 - Does NOT delete
 
-Abandoned cartridges have real value: they capture what the writer was working on, what shape the project took, what blocked it. Future projects often reuse atoms (Characters, Threads, Sources) from abandoned cartridges.
+Abandoned cartridges have real value: they capture what the writer was working on, what shape the project took, what blocked it. Future projects often reuse Items (Characters, Threads, Sources) from abandoned cartridges.
 
 The OV does not judge abandonment. Most serious writers have multiple abandoned projects. They're part of the work.
 

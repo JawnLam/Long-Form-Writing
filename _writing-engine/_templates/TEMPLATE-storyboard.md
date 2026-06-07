@@ -10,7 +10,7 @@ Date_Modified:
 
 # <Manuscript Title> — Storyboard
 
-> **Scene-card view of every Scene atom. The whole manuscript's shape at a glance. Derived from Scene atoms — do not edit story content here; always go through the Scene atom. Updated semi-manually as scenes are revised. Stale storyboards are worse than no storyboard (F47).**
+> **Scene-card view of every Scene Item. The whole manuscript's shape at a glance. Derived from Scene Items — do not edit story content here; always go through the Scene Item. Updated semi-manually as scenes are revised. Stale storyboards are worse than no storyboard (F47).**
 
 ## Last updated
 

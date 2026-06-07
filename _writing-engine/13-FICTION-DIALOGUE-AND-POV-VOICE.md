@@ -21,7 +21,7 @@ lfw_load:
 - **Show-don't-tell** — the most universally important craft module fiction needed; v1.2 named it as an error vocabulary item but didn't ship the module
 - **Two new activities** — DIALOGUE-AUDIT and POV-VOICE-DRIFT
 - **Per-POV voice samples** — optional `<Cartridge>/_voice-samples-{pov-slug}.md` backbone files for cartridges with multi-POV register-differentiation work
-- **One updated Character field** — `lfw_pov_voice_register` for POV-bearing Character atoms
+- **One updated Character field** — `lfw_pov_voice_register` for POV-bearing Character Items
 
 ## §1 — Dialogue craft
 
@@ -44,7 +44,7 @@ A well-crafted scene of dialogue has most lines scoring on 2+ axes. Lines that s
 
 Each major character has a set of characteristic speech-markers — verbal tics, sentence-shape preferences, vocabulary range, the way they handle interruption, what they say when they don't know what to say. These are the **dialogue tells**.
 
-Character atoms in v1.0 had a Voice and prose register section; v1.3.1 formalizes a sub-section explicitly for dialogue:
+Character Items in v1.0 had a Voice and prose register section; v1.3.1 formalizes a sub-section explicitly for dialogue:
 
 ```markdown
 ## Voice and prose register
@@ -62,13 +62,13 @@ Character atoms in v1.0 had a Voice and prose register section; v1.3.1 formalize
 - **What they say under pressure:** *(register collapse or register escalation; word-count change)*
 ```
 
-Maya's Character atom in The Late Frost has *"all right"* as a sentence-mode at moments of decision, *"I see"* as a placeholder when she doesn't yet see. Sarah's atom has *"okay"* as a one-word agreement that means *I have heard you and have not yet agreed*. Both characters' dialogue should be testable against their tells in DIALOGUE-AUDIT.
+Maya's Character Item in The Late Frost has *"all right"* as a sentence-mode at moments of decision, *"I see"* as a placeholder when she doesn't yet see. Sarah's Item has *"okay"* as a one-word agreement that means *I have heard you and have not yet agreed*. Both characters' dialogue should be testable against their tells in DIALOGUE-AUDIT.
 
 ### Subtext: the gap between line and meaning
 
 Subtext is the central craft of dialogue in literary fiction and the load-bearing technique in mystery, thriller, and romance. The character is saying X; what they mean is Y. The reader registers the gap and is held by it.
 
-Beat atoms in v1.3.1 may include an optional Subtext field for beats where dialogue carries the load:
+Beat Items in v1.3.1 may include an optional Subtext field for beats where dialogue carries the load:
 
 ```markdown
 ## Subtext *(v1.3.1, optional)*
@@ -79,7 +79,7 @@ Beat atoms in v1.3.1 may include an optional Subtext field for beats where dialo
 - **What the reader registers:** *(reader's awareness; may differ from listener's)*
 ```
 
-The Beat atom's subtext field is the per-beat receipt for the writer's intentionality. Not every beat needs one. Beats where dialogue is doing critical work — confrontation, seduction, manipulation, evasion, half-confession — should.
+The Beat Item's subtext field is the per-beat receipt for the writer's intentionality. Not every beat needs one. Beats where dialogue is doing critical work — confrontation, seduction, manipulation, evasion, half-confession — should.
 
 ### Dialogue formatting conventions (style sheet anchor)
 
@@ -98,10 +98,10 @@ State the choices once; honor them. Drift on dialogue formatting is a small prob
 
 In a multi-POV novel, the prose voice — not just the dialogue — should differ across POVs. The reader should be able to identify which POV they are inside by the second sentence of a chapter. If they cannot, the POV is doing less than its name promises.
 
-v1.2's Character atom captured voice in narrative interiority. v1.3.1 adds a frontmatter field that makes the POV-register *queryable*:
+v1.2's Character Item captured voice in narrative interiority. v1.3.1 adds a frontmatter field that makes the POV-register *queryable*:
 
 ```yaml
-lfw_pov_voice_register:        # v1.3.1 — required for POV-bearing Character atoms
+lfw_pov_voice_register:        # v1.3.1 — required for POV-bearing Character Items
   sentence_length: ""          # "short" / "long" / "cadenced" / "fragmentary" / "varied"
   diction: ""                  # "plain" / "mixed" / "formal" / "register-shifting"
   interiority_mode: ""         # "observational" / "ruminating" / "kinetic" / "associative"
@@ -120,7 +120,7 @@ Sarah: `sentence_length: cadenced-slightly-longer`; `diction: visual-kinetic`; `
 
 Triggering conditions:
 
-- Two or more POV-bearing Character atoms exist with `lfw_pov_voice_register` populated
+- Two or more POV-bearing Character Items exist with `lfw_pov_voice_register` populated
 - ≥3 chapters have been drafted in *each* POV
 - ≥8 sessions have passed since the last POV-VOICE-DRIFT
 
@@ -131,7 +131,7 @@ Procedure:
 3. Surface specific drift instances with line numbers / quoted phrases
 4. Propose targeted revision — never silently rewrite
 
-Output: drift report in the session log; line-level flags added to affected Scene atoms' Open Notes; updated `_state.md` open thread.
+Output: drift report in the session log; line-level flags added to affected Scene Items' Open Notes; updated `_state.md` open thread.
 
 ### Per-POV voice samples (optional)
 
@@ -168,11 +168,11 @@ Procedure:
 5. Cross-check against the speaking Character's dialogue tells — does the line sound like *that* character speaking, or like a generic character?
 6. Cross-check against the Scene's value-shift (§ chapter 11) — do the dialogue lines participate in the turn, or are they parked outside it?
 
-Output: per-line flags in the Scene atom's Open Notes; revision recommendations; pattern observation logged to `_craft-log.md` if the same diagnostic recurs across multiple audits.
+Output: per-line flags in the Scene Item's Open Notes; revision recommendations; pattern observation logged to `_craft-log.md` if the same diagnostic recurs across multiple audits.
 
 ### Cross-referencing with subtext-bearing Beats
 
-When a Beat atom carries the v1.3.1 Subtext field, DIALOGUE-AUDIT reads it. The audit then asks: does the surface dialogue plausibly carry the declared subtext? Could a real reader, with the available cues, register the gap between line and meaning?
+When a Beat Item carries the v1.3.1 Subtext field, DIALOGUE-AUDIT reads it. The audit then asks: does the surface dialogue plausibly carry the declared subtext? Could a real reader, with the available cues, register the gap between line and meaning?
 
 If the subtext is declared but the surface dialogue doesn't carry it — the writer has *intended* meaning that hasn't *landed* — the audit flags that as a craft gap, not a planning gap. The fix is at the prose layer, not the outline layer.
 
@@ -220,9 +220,9 @@ lfw_show_dont_tell_calibration:
 
 In `telling-narrator-as-voice` mode the module flags only the most egregious asserted-not-shown moments in scene-level interiority and skips routine narrative summary. The standing position protects voice from being homogenized by a module the writer never asked for.
 
-## §5 — Updated Character atom (v1.3.1)
+## §5 — Updated Character Item (v1.3.1)
 
-Existing Character atoms remain valid. v1.3.1 adds three optional sections / fields:
+Existing Character Items remain valid. v1.3.1 adds three optional sections / fields:
 
 ```yaml
 ---
@@ -234,7 +234,7 @@ lfw_pov_voice_register:           # v1.3.1 — only for POV-bearing Characters
   tense_preference: ""
   signature_moves: []
   avoid_moves: []
-lfw_character_bible: ""           # v1.3.1 — wiki-link to extended Character-Bible atom if present
+lfw_character_bible: ""           # v1.3.1 — wiki-link to extended Character-Bible Item if present
 ---
 
 ## Dialogue tells *(v1.3.1, sub-section under Voice and prose register)*
@@ -246,11 +246,11 @@ lfw_character_bible: ""           # v1.3.1 — wiki-link to extended Character-B
 *If this character habitually says-other-than-meant — what's the pattern? When do they speak plainly? When do they speak around?*
 ```
 
-The `lfw_character_bible` link is a soft pointer to the extended Character-Bible atom (chapter 14 §3); not required, populated when the bible is created.
+The `lfw_character_bible` link is a soft pointer to the extended Character-Bible Item (chapter 14 §3); not required, populated when the bible is created.
 
-## §6 — Updated Beat atom (v1.3.1)
+## §6 — Updated Beat Item (v1.3.1)
 
-Existing Beat atoms remain valid. v1.3.1 adds one optional body section:
+Existing Beat Items remain valid. v1.3.1 adds one optional body section:
 
 ```markdown
 ## Subtext *(v1.3.1, optional — for beats where dialogue carries weight)*
@@ -280,7 +280,7 @@ See `_meta/FAILURE-MODES.md` for full entries.
 Add to chapter 03 §6b':
 
 - **If** a Scene with ≥10 dialogue lines is `drafted` AND hasn't been DIALOGUE-AUDIT'd → propose **DIALOGUE-AUDIT**
-- **If** two POV-bearing Character atoms exist with `lfw_pov_voice_register` populated AND ≥3 chapters drafted in each AND ≥8 sessions since last POV-VOICE-DRIFT → propose **POV-VOICE-DRIFT**
+- **If** two POV-bearing Character Items exist with `lfw_pov_voice_register` populated AND ≥3 chapters drafted in each AND ≥8 sessions since last POV-VOICE-DRIFT → propose **POV-VOICE-DRIFT**
 - **If** the writer signals "the dialogue is flat" or "the POVs sound alike" → propose the corresponding activity even outside cadence thresholds
 
 ## §9 — What this chapter is not

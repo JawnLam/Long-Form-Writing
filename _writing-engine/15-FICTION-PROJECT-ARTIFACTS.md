@@ -17,11 +17,11 @@ lfw_load:
 ## What this chapter adds
 
 - **`_worldbuilding.md`** — backbone for SFF / fantasy / speculative / alt-history / horror projects requiring deep system-building (magic, technology, cosmology, cultures, languages, political structures)
-- **Timeline atom** — multi-layer (story-time / world-history / real-world / character-specific); distinct from `_continuity.md`'s single embedded timeline
-- **`_storyboard.md`** — scene-card view; auto-summarized compact representation of every Scene atom
+- **Timeline Item** — multi-layer (story-time / world-history / real-world / character-specific); distinct from `_continuity.md`'s single embedded timeline
+- **`_storyboard.md`** — scene-card view; auto-summarized compact representation of every Scene Item
 - **`_style-sheet.md`** — spellings, capitalization, italics conventions, punctuation, dialogue-formatting, anachronism flags; lexicon as sub-section
-- **Inspiration atom** — research-as-compost; distinct from Source (which is non-fic folded-in citations); fiction's research-tracking that doesn't pretend to citation-discipline
-- **`_relationships.md`** — symmetric multi-character relationship map; complements (does not replace) per-character Relationships sections in Character atoms
+- **Inspiration Item** — research-as-compost; distinct from Source (which is non-fic folded-in citations); fiction's research-tracking that doesn't pretend to citation-discipline
+- **`_relationships.md`** — symmetric multi-character relationship map; complements (does not replace) per-character Relationships sections in Character Items
 - **Stakes-ladder section** added to `_spine.md` — explicit tracking of stakes-level (personal / relational / societal / existential) across the manuscript
 - **No new activities.** The artifacts feed existing activities (READ-THROUGH, CHARACTER-CONSISTENCY, CONTINUITY-CHECK, BETA-PREP, REVISE)
 
@@ -75,7 +75,7 @@ The template ships at `_writing-engine/_templates/TEMPLATE-worldbuilding.md`. Bo
 ## Religions / belief systems
 
 ## History (deep)
-*The centuries / millennia of backstory. May reference Timeline atoms (§2).*
+*The centuries / millennia of backstory. May reference Timeline Items (§2).*
 
 ## Open questions
 *Worldbuilding gaps the writer is leaving deliberately or hasn't filled yet.*
@@ -91,15 +91,15 @@ The template ships at `_writing-engine/_templates/TEMPLATE-worldbuilding.md`. Bo
 
 `_worldbuilding.md` is operator-private by default (gitignored in writers' own work; included in shipped worked examples via the `!Example-Project-*` override). Worldbuilding is often closer to the writer than the manuscript itself.
 
-## §2 — Multi-layer Timeline atom
+## §2 — Multi-layer Timeline Item
 
-`_continuity.md` carries a single embedded timeline — the novel's story-time. For projects with deeper temporal structure, v1.3.2 adds the **Timeline atom** as a first-class atom that captures one temporal layer per file.
+`_continuity.md` carries a single embedded timeline — the novel's story-time. For projects with deeper temporal structure, v1.3.2 adds the **Timeline Item** as a first-class Item that captures one temporal layer per file.
 
 ### Layers
 
-- **`story-time`** — the events of the novel itself, in story-time order. Equivalent to `_continuity.md`'s embedded timeline; for simple cartridges, the embedded one is sufficient. The atom form is useful when story-time becomes complex (multiple POV chronologies, non-linear structure, frame stories)
+- **`story-time`** — the events of the novel itself, in story-time order. Equivalent to `_continuity.md`'s embedded timeline; for simple cartridges, the embedded one is sufficient. The Item form is useful when story-time becomes complex (multiple POV chronologies, non-linear structure, frame stories)
 - **`world-history`** — backstory of the world preceding the novel. For SFF this may span centuries or millennia. For literary fiction it may span a family's generations
-- **`real-world`** — for historical fiction, alt-history, or fiction anchored to verifiable real-world events. Cross-references with Source atoms
+- **`real-world`** — for historical fiction, alt-history, or fiction anchored to verifiable real-world events. Cross-references with Source Items
 - **`character-specific`** — per-character life-arc; one Timeline per major character whose life-trajectory matters to the prose. Often paired with Character-Bible's chronological backstory section
 
 ### Frontmatter
@@ -113,7 +113,7 @@ lfw_manuscript: ""
 lfw_atom_type: timeline
 lfw_status: drafting | established | revised | final
 lfw_timeline_layer: story-time | world-history | real-world | character-specific
-lfw_character: ""    # only for character-specific layer; wikilink to Character atom
+lfw_character: ""    # only for character-specific layer; wikilink to Character Item
 lfw_scope: ""        # e.g., "1968-2026", "Day 1-Day 22", "1800 BCE - 1500 BCE"
 Date_Added:
 Date_Modified:
@@ -123,11 +123,11 @@ Needs_Processing: false
 
 ### Body
 
-A chronological table of events. Each event: date (or relative time), what happened, related Scene/Chapter/atom wikilinks. Optional sections for granular sub-periods.
+A chronological table of events. Each event: date (or relative time), what happened, related Scene/Chapter/Item wikilinks. Optional sections for granular sub-periods.
 
 ### Cross-reference with `_continuity.md`
 
-`_continuity.md` becomes the *cross-layer reconciliation* document. When a Scene draws on multiple timelines (e.g., a character's memory of a world-history event), `_continuity.md` is where the timing is reconciled. Timeline atoms are the *source-of-truth per layer*; `_continuity.md` is the *consistency-check across layers*.
+`_continuity.md` becomes the *cross-layer reconciliation* document. When a Scene draws on multiple timelines (e.g., a character's memory of a world-history event), `_continuity.md` is where the timing is reconciled. Timeline Items are the *source-of-truth per layer*; `_continuity.md` is the *consistency-check across layers*.
 
 ### Status enum
 
@@ -138,12 +138,12 @@ A chronological table of events. Each event: date (or relative time), what happe
 | `revised` | Timeline has been updated after CONTINUITY-CHECK surfaced drift |
 | `final` | Manuscript drafted; timeline reconciled |
 
-### When to add Timeline atoms
+### When to add Timeline Items
 
 - **`character-specific`** when a Character-Bible's chronological backstory grows beyond a section and needs its own file
 - **`world-history`** for SFF / fantasy / historical with substantial pre-novel backstory
 - **`real-world`** for historical fiction
-- **`story-time` as atom** for non-linear novels (Cloud Atlas, Lincoln in the Bardo, novels with frame stories)
+- **`story-time` as Item** for non-linear novels (Cloud Atlas, Lincoln in the Bardo, novels with frame stories)
 
 ## §3 — `_storyboard.md` backbone
 
@@ -151,7 +151,7 @@ A scene-card view. The conceit (borrowed from Scrivener's corkboard and from fil
 
 ### Structure
 
-Generated semi-manually; can be updated by hand or by a session activity that auto-summarizes from Scene atoms. Per chapter, a list of scene-cards:
+Generated semi-manually; can be updated by hand or by a session activity that auto-summarizes from Scene Items. Per chapter, a list of scene-cards:
 
 ```markdown
 ## Chapter 03 — The First Cold Night
@@ -173,7 +173,7 @@ Generated semi-manually; can be updated by hand or by a session activity that au
 ### Discipline
 
 - **Storyboard goes stale fast.** F47 (added in this chapter). If a session ends with new/changed Scenes but the storyboard isn't updated, the storyboard becomes worse-than-useless within a week
-- **Storyboard is derivative.** The Scene atoms are the source of truth; the storyboard summarizes. Never edit story content via the storyboard — always go through the Scene atom
+- **Storyboard is derivative.** The Scene Items are the source of truth; the storyboard summarizes. Never edit story content via the storyboard — always go through the Scene Item
 
 ### Operator-private
 
@@ -245,13 +245,13 @@ For fantasy / SFF with substantial invented vocabulary, the lexicon may grow int
 
 The style sheet is operator-private by default. It may eventually be shared with copy editors and proofreaders during production; that's an export-and-send action, not a publication.
 
-## §5 — Inspiration atom
+## §5 — Inspiration Item
 
-Source atoms (v1.0) carry the citation discipline for non-fiction. They include `lfw_status: identified | ingested | folded-in | superseded` and feed RESEARCH-INTEGRATION sessions. They are designed to *be cited*.
+Source Items (v1.0) carry the citation discipline for non-fiction. They include `lfw_status: identified | ingested | folded-in | superseded` and feed RESEARCH-INTEGRATION sessions. They are designed to *be cited*.
 
 Fiction has a different research relationship. A novelist may read 30 books about Sonoma viticulture and never cite any of them. The reading shapes the prose; the books are not sources in the non-fiction sense. They are *compost.*
 
-The Inspiration atom is fiction's research-tracking — what the writer has absorbed without committing to cite.
+The Inspiration Item is fiction's research-tracking — what the writer has absorbed without committing to cite.
 
 ### Frontmatter
 
@@ -289,7 +289,7 @@ Needs_Processing: false
 - `retired` — turned out not to be relevant; archived
 
 ## Where it surfaces (if folded-in)
-*Wiki-links to Scene atoms where the inspiration has landed.*
+*Wiki-links to Scene Items where the inspiration has landed.*
 
 ## Notes
 ```
@@ -304,15 +304,15 @@ Needs_Processing: false
 | Used in | Non-fiction / dissertation | Fiction primarily |
 | Anti-fabrication discipline? | Strict (chapter 06 cardinal rules) | n/a — the writing IS the fabrication |
 
-A non-fic memoir might use both: Source atoms for cited research, Inspiration atoms for unstoried influence.
+A non-fic memoir might use both: Source Items for cited research, Inspiration Items for unstoried influence.
 
 ### Failure mode
 
-- **F49 — Inspiration becomes citation.** Writer treats Inspiration atoms with Source-discipline rigor; or treats Source atoms with Inspiration-compost looseness. Each discipline is wrong-shaped for the other artifact
+- **F49 — Inspiration becomes citation.** Writer treats Inspiration Items with Source-discipline rigor; or treats Source Items with Inspiration-compost looseness. Each discipline is wrong-shaped for the other artifact
 
 ## §6 — `_relationships.md` backbone
 
-Character atoms have a Relationships section that captures each character's view of their relationships *one-sidedly*. For novels with five or more named characters, the asymmetric one-sided view becomes hard to audit. v1.3.2 adds `_relationships.md` as the symmetric multi-character map.
+Character Items have a Relationships section that captures each character's view of their relationships *one-sidedly*. For novels with five or more named characters, the asymmetric one-sided view becomes hard to audit. v1.3.2 adds `_relationships.md` as the symmetric multi-character map.
 
 ### Structure
 
@@ -348,7 +348,7 @@ Character atoms have a Relationships section that captures each character's view
 
 - Five or more named characters with named relationships
 - A novel where relational tension is the central engine (most literary fiction)
-- During READ-THROUGH for cross-checking that the Character atoms' one-sided views are consistent symmetrically
+- During READ-THROUGH for cross-checking that the Character Items' one-sided views are consistent symmetrically
 
 ### Discipline
 
@@ -397,10 +397,10 @@ The escalation curve names the highest-pressure moments (mid-act crisis, climax)
 These artifacts are read **on demand** based on activity:
 
 - **`_worldbuilding.md`** — required reading for any WORLDBUILDING or CONTINUITY-CHECK on SFF/speculative/historical cartridges
-- **Timeline atoms** — read by CONTINUITY-CHECK; read by CHARACTER-CONSISTENCY for character-specific Timelines
+- **Timeline Items** — read by CONTINUITY-CHECK; read by CHARACTER-CONSISTENCY for character-specific Timelines
 - **`_storyboard.md`** — read at READ-THROUGH; usually only consulted at book-scale
 - **`_style-sheet.md`** — read at BETA-PREP and at line-edit REVISE pass
-- **Inspiration atoms** — read when the writer references one; otherwise not loaded
+- **Inspiration Items** — read when the writer references one; otherwise not loaded
 - **`_relationships.md`** — read by CHARACTER-CONSISTENCY; read at READ-THROUGH
 - **Stakes-ladder (in `_spine.md`)** — read by SCENE-AUDIT, READ-THROUGH, BETA-PREP
 
@@ -432,24 +432,24 @@ See `_meta/FAILURE-MODES.md` for full entries.
 - **F46 — Timeline layers conflated.** Story-time, world-history, and character-specific events tracked in a single timeline document; layers contaminate; events drift to wrong layer
 - **F47 — Storyboard stale.** Storyboard not updated after scene revisions; produces false picture; worse than no storyboard
 - **F48 — Style-sheet drift.** Spelling, capitalization, italics conventions drift across chapters; reads as inattention
-- **F49 — Inspiration becomes citation.** Inspiration atoms treated with Source-discipline rigor (or vice versa); each discipline wrong-shaped for the other artifact
+- **F49 — Inspiration becomes citation.** Inspiration Items treated with Source-discipline rigor (or vice versa); each discipline wrong-shaped for the other artifact
 - **F50 — Relationship map disconnected from prose.** Map is diligent; prose ignores it; CHARACTER-CONSISTENCY catches the gap
 - **F51 — Flat stakes.** Stakes operate at the same level across the manuscript; nothing escalates; the stakes-ladder makes this visible
 
 ## §10 — How this chapter interacts with the rest of the engine
 
 - **Chapter 03** — no new activities, but READ-THROUGH, CONTINUITY-CHECK, CHARACTER-CONSISTENCY, and BETA-PREP all gain new artifacts to consult
-- **Chapter 04** — Timeline and Inspiration atom types added; six new backbone files documented
+- **Chapter 04** — Timeline and Inspiration Prototypes added; six new backbone files documented
 - **Chapter 09** — F45 (worldbuilding-as-procrastination) added to the procrastination-pattern family
 - **Chapter 11** — `_spine.md` template gains Stakes-ladder section
-- **Chapter 12** — `_continuity.md` becomes cross-layer reconciliation when Timeline atoms exist
+- **Chapter 12** — `_continuity.md` becomes cross-layer reconciliation when Timeline Items exist
 - **Chapter 13** — `_style-sheet.md`'s dialogue-formatting section cross-references chapter 13 §1
 - **Chapter 14** — sub-genre cues in §5 reference v1.3.2 artifacts
 - **`_meta/FAILURE-MODES.md`** — F45–F51 added
 
 ## §11 — Read-order placement
 
-This chapter is **read on demand** based on the artifact being created or consulted. Recommended at BOOTSTRAP for any cartridge in `sff`, `speculative`, or `historical` sub-genres (worldbuilding and timeline are usually load-bearing). Required reading before creating any of the six new backbone files or before working with Timeline / Inspiration atoms.
+This chapter is **read on demand** based on the artifact being created or consulted. Recommended at BOOTSTRAP for any cartridge in `sff`, `speculative`, or `historical` sub-genres (worldbuilding and timeline are usually load-bearing). Required reading before creating any of the six new backbone files or before working with Timeline / Inspiration Items.
 
 ## §12 — What v1.3.2 does NOT add
 
@@ -458,4 +458,4 @@ The two-pass series (v1.3.1 + v1.3.2) is complete. Notable choices about what wa
 - **Beat-sheet for ensemble novels (multi-protagonist).** Save the Cat / Story Circle / Hero's Journey assume a single protagonist. Multi-protagonist structures (Cloud Atlas, Olive Kitteridge) need different overlays. Deferred; possibly v1.4
 - **Visual storyboard (image / drawing).** v1.3.2's storyboard is text-only. Visual storyboarding belongs in a different tool (Scrivener, Miro, paper); v1.3.2's text storyboard is the AI-readable equivalent
 - **Per-POV style sheet.** A single style sheet per cartridge is sufficient for most projects. Multi-POV with substantially different dialogue conventions per POV (e.g., epistolary novels with multiple letter-writers) may need per-POV style sheets; treated as a custom-extension if needed
-- **Theme atom for non-fiction.** v1.3.1's Theme atom is fiction-primary. Non-fiction memoir / narrative non-fiction may use it; v1.3.2 does not formalize a non-fiction Theme discipline (which would partially duplicate `_argument.md`'s machinery)
+- **Theme Item for non-fiction.** v1.3.1's Theme Item is fiction-primary. Non-fiction memoir / narrative non-fiction may use it; v1.3.2 does not formalize a non-fiction Theme discipline (which would partially duplicate `_argument.md`'s machinery)

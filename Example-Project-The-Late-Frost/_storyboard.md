@@ -10,7 +10,7 @@ Date_Modified: 2026-06-03
 
 # The Late Frost — Storyboard
 
-> **Scene-card view. Derived from Scene atoms; do not edit story content here. Update at session-end when Scenes are created or revised.**
+> **Scene-card view. Derived from Scene Items; do not edit story content here. Update at session-end when Scenes are created or revised.**
 
 ## Last updated
 
@@ -89,7 +89,7 @@ Date_Modified: 2026-06-03
 - [ ] Brief epilogue or no? (Lean: no; the form's grammar wants the open close)
 - [ ] Chapter 10 fight subject: father directly, or Hector-wages displacement? (Deferred per [[_outline]])
 - [ ] Hector compensation reveal timing: Chapter 4 (Sarah learns) and Chapter 10 (Maya learns)? Or earlier? (Deferred)
-- [ ] Should `lfw_scene_type: sequel` atoms appear formally? The Chapter 3 second scene (Maya sees letter has moved) could be the first sequel-typed atom (decision: deferred until Chapter 3 outline)
+- [ ] Should `lfw_scene_type: sequel` Items appear formally? The Chapter 3 second scene (Maya sees letter has moved) could be the first sequel-typed Item (decision: deferred until Chapter 3 outline)
 
 ## Audit notes from last READ-THROUGH
 

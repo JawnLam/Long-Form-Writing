@@ -70,7 +70,7 @@ lfw_promises_version: 1
 For the AI:
 
 - Read at session start when activity is SETUP-PAYOFF-AUDIT, READ-THROUGH, or BETA-PREP
-- Cross-reference with `prefigures` relations in Scene atoms — every `prefigures` should appear here as a promise; every promise should have a corresponding `prefigures`
+- Cross-reference with `prefigures` relations in Scene Items — every `prefigures` should appear here as a promise; every promise should have a corresponding `prefigures`
 - Update when a new scene plants a setup or fires a payoff
 - Surface unfired or unearned promises during audits; don't silently rewrite
 

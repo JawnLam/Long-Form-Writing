@@ -50,7 +50,7 @@ Needs_Processing: false
 
 ## Beats
 
-*Ordered list of beats in this scene. Wiki-links to Beat atoms.*
+*Ordered list of beats in this scene. Wiki-links to Beat Items.*
 
 1. [[Beat-slug-1]]
 2. [[Beat-slug-2]]

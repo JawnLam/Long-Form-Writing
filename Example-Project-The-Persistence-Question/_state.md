@@ -51,7 +51,7 @@ Beats needed for Section 3.1:
 
 (Chapter 2 is currently over target — needs structural revision pass to cut, scheduled after Chapter 3 first-draft.)
 
-## Atom Status Snapshot
+## Item Status Snapshot
 
 ### Chapters
 
@@ -92,7 +92,7 @@ Beats needed for Section 3.1:
 
 ### Characters
 
-*Non-fiction cartridge — Character atoms not used. Named individuals (e.g., Hoshi family generations) are referenced inline in Section atoms.*
+*Non-fiction cartridge — Character Items not used. Named individuals (e.g., Hoshi family generations) are referenced inline in Section Items.*
 
 ### Readers (3 active — new in v1.1)
 
@@ -106,7 +106,7 @@ READER-SIMULATION sessions: none yet run (the activity is new in v1.1; planned f
 
 ### Sources
 
-12 ingested sources. See `Atoms/Sources/` for full list. Most-cited:
+12 ingested sources. See `Items/Sources/` for full list. Most-cited:
 
 - [[Beard-SPQR-2015]] — for Roman case
 - [[Tainter-Collapse-1988]] — counter-image of the argument + methodological grounding
@@ -115,7 +115,7 @@ READER-SIMULATION sessions: none yet run (the activity is new in v1.1; planned f
 
 ### Notes (recent)
 
-8 unplaced notes; 5 placed. See `Atoms/Notes/`.
+8 unplaced notes; 5 placed. See `Items/Notes/`.
 
 ## Open Threads (to address next session)
 
@@ -123,7 +123,7 @@ READER-SIMULATION sessions: none yet run (the activity is new in v1.1; planned f
 - [ ] Decide whether the Hoshi Ryokan opening scene should be in present tense (immediate) or past tense (historical-distance) — voice consideration
 - [ ] Verify Hoshi family founding-year claim (currently 718 AD) against primary sources before drafting prose
 - [ ] Chapter 2 is over target word count — schedule structural revision pass after Chapter 3 first-draft complete
-- [ ] **NEW (v1.1):** First READER-SIMULATION on Chapter 2 (drafted) using all three Reader atoms; planned for after Chapter 3 first-draft completes
+- [ ] **NEW (v1.1):** First READER-SIMULATION on Chapter 2 (drafted) using all three Reader Items; planned for after Chapter 3 first-draft completes
 - [ ] **NEW (v1.1):** First ARGUMENT-AUDIT on `_argument.md` v2 — particularly pressure-test the independence concerns flagged for Sub-claims 1+4 and the weakest-link assessment for Sub-claim 4
 - [ ] **NEW (v1.1):** Confirm proposed practice focus "landing-the-closing-claim" with writer at next CRAFT-REVIEW
 - [ ] **NEW (v1.1):** Propose creating `_craft-profile.md` at OV root once a second cartridge exists OR end of Chapter 3 first-draft, whichever comes first

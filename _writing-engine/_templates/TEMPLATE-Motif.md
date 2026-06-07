@@ -21,7 +21,7 @@ Needs_Processing: false
 
 ## Where it appears
 
-*Wiki-links to Scene atoms where this motif surfaces, with a one-line note on what it does in each appearance.*
+*Wiki-links to Scene Items where this motif surfaces, with a one-line note on what it does in each appearance.*
 
 - [[Scene-filename]] — what the motif does here
 

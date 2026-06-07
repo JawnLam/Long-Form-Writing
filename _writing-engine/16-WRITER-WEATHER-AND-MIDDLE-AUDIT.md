@@ -36,7 +36,7 @@ Before specifying WEATHER-CHECK, the chapter must be clear about what the activi
 
 **It is not generic empathy.** Phrases like "that sounds hard" and "I hear you" treat the writer as a generalized person to be soothed. The writer is a specific adult doing specific difficult work; the diagnostic should be that specific.
 
-**What it is:** an activity that helps the writer *name* the affective state with precision, *distinguish* it from adjacent technical states (stuck, procrastinating, blocked), *triage* it (does it affect today, this week, the project), and *identify* the smallest reasonable next move. The next move may be: take a day off. It may be: write 100 words and stop. It may be: re-read a Reader atom to recover the why. It may be: nothing — name it, log it, continue.
+**What it is:** an activity that helps the writer *name* the affective state with precision, *distinguish* it from adjacent technical states (stuck, procrastinating, blocked), *triage* it (does it affect today, this week, the project), and *identify* the smallest reasonable next move. The next move may be: take a day off. It may be: write 100 words and stop. It may be: re-read a Reader Item to recover the why. It may be: nothing — name it, log it, continue.
 
 **Escalation discipline.** When the writer's report signals severe distress (suicidal ideation, clinical depression presenting acutely, signs of abuse, substance-use crisis), the AI states clearly and immediately that the OV is not the right response, names that external support is appropriate, and does not attempt the structural diagnostic. This boundary is non-negotiable.
 
@@ -93,7 +93,7 @@ The writer answers. The triage informs the next step.
 Per the triage:
 
 - **Today-state:** the next move is often *the session you were going to do today, briefly, then stop early.* Sometimes it is: today off; nothing.
-- **This-week-state:** the next move may be re-pacing — lower the session target, shift to lower-load activities (READ-THROUGH instead of DRAFT), re-read a Reader atom for grounding
+- **This-week-state:** the next move may be re-pacing — lower the session target, shift to lower-load activities (READ-THROUGH instead of DRAFT), re-read a Reader Item for grounding
 - **This-month-state:** the next move is usually re-pacing at a cadence level. The writer reduces session count or shifts to a different activity-mix for several weeks
 - **This-project-state:** the next move is a larger conversation that may include re-examining the manifest's "why this manuscript, why now" — sometimes the answer is the book has lost its why and needs to be re-found; sometimes the answer is the book is fine and the writer needs to be away from it for a defined period
 
@@ -174,7 +174,7 @@ For cartridges with very long arcs (multi-book series with 200,000+ word entries
 
 ### Protocol — seven questions
 
-The activity walks the seven questions below. Each question is asked, the writer answers, the AI surfaces structural evidence from the cartridge's atoms and backbones.
+The activity walks the seven questions below. Each question is asked, the writer answers, the AI surfaces structural evidence from the cartridge's Items and backbones.
 
 #### Question 1 — Spine integrity
 
@@ -189,7 +189,7 @@ The activity walks the seven questions below. Each question is asked, the writer
 
 *Does the protagonist still want what they wanted? If their want has shifted, is the shift earned or has it been forgotten?*
 
-- AI reads the protagonist's Character atom (`## Want / Need / Wound`)
+- AI reads the protagonist's Character Item (`## Want / Need / Wound`)
 - AI samples recent scenes for evidence of the want still pushing behavior
 - Surface: is the protagonist's want operative as fuel in the prose, or has it faded into setting/atmosphere?
 - **F56 — Want-forgotten** is the catch
@@ -315,7 +315,7 @@ See `_meta/FAILURE-MODES.md` for full entries.
 - **Chapter 03 (Cadence and Sessions)** — adds WEATHER-CHECK and MIDDLE-AUDIT to the activity table (now 25 activities total)
 - **Chapter 09 (Writer Development)** — WEATHER-CHECK and the existing anti-procrastination flags (F11 / F18 / F43 / F45) together cover the soft-skill space the development layer was missing
 - **Chapter 11 (Fiction Plot Spine)** — MIDDLE-AUDIT's Question 1 cross-references the spine directly; the stakes-ladder (chapter 15 §7) is checked in Question 3
-- **Chapter 12 (Fiction Character and Continuity)** — MIDDLE-AUDIT's Question 2 (want integrity) cross-references Character atoms
+- **Chapter 12 (Fiction Character and Continuity)** — MIDDLE-AUDIT's Question 2 (want integrity) cross-references Character Items
 - **`_meta/FAILURE-MODES.md`** — adds F52–F60
 
 ## §6 — Read-order placement

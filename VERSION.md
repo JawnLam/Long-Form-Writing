@@ -1,16 +1,16 @@
 ---
-lfw_version: "1.5.0"
-schema_version: "1.4"
+lfw_version: "1.6.0"
+schema_version: "1.5"
 schema_status: "STABLE"
-release_date: 2026-06-03
-release_phase: "Minor release — Core/Pack logical split + generated-router progressive disclosure; structural and tooling change only; zero new schema-level capability"
+release_date: 2026-06-06
+release_phase: "Minor release — vocabulary clean-up; atom → Item across engine and example cartridges; no new schema capability"
 ---
 
 # Long-Form-Writing — Version
 
 This is Long-Form-Writing **v1.4.0** — minor release adding two soft-skill activities that fill the gaps the production / development / structural-artifact layers of v1.0–v1.3.2 did not touch. **WEATHER-CHECK** names and triages the writer's affective state (dread, doubt, grief, despair, boredom, burnout, overwhelm) — acknowledgment + diagnostic, NOT therapy or motivation. **MIDDLE-AUDIT** is a specific seven-question structural audit run at the midpoint of the manuscript, the place where most fiction projects die.
 
-**v1.4.0 deliberately adds zero new atoms, zero new backbones, zero new templates, and zero new validator checks.** It is the first release in the v1.x series whose architectural posture is honest scope-limitation: two carefully-scoped activities filling two specific gaps, not another schema-growth pass. The schema-creep concern noted in the v1.3.2 self-critique is respected.
+**v1.4.0 deliberately adds zero new Items, zero new backbones, zero new templates, and zero new validator checks.** It is the first release in the v1.x series whose architectural posture is honest scope-limitation: two carefully-scoped activities filling two specific gaps, not another schema-growth pass. The schema-creep concern noted in the v1.3.2 self-critique is respected.
 
 ## Version identifiers
 
@@ -18,7 +18,7 @@ This is Long-Form-Writing **v1.4.0** — minor release adding two soft-skill act
 |-------------------------|---------------|------------------------------------------------------------------------|
 | **Artifact category**   | Operating volume | See [Operating-Volume-Engineering](https://github.com/JawnLam/Operating-Volume-Engineering) for the category definition |
 | **Software**            | v1.4.0        | Minor release — soft-skill activity pass; zero schema growth           |
-| **Schema**              | v1.4          | STABLE — no atom or backbone additions; activity set expands 23 → 25  |
+| **Schema**              | v1.4          | STABLE — no Item or backbone additions; activity set expands 23 → 25  |
 | **Writing engine**      | v1.4.0        | 16 chapters now (00–08 unchanged; 09–10 from v1.1; 11–12 from v1.2; 13–14 from v1.3.1; 15 from v1.3.2; 16 added v1.4.0) |
 | **Templates**           | v1.4.0        | Unchanged from v1.3.2 (28 templates)                                   |
 | **Worked examples**     | v1.4.0        | Two cartridges: Persistence-Question (non-fiction); Late-Frost (fiction; gained session 006 demonstrating WEATHER-CHECK in action) |
@@ -26,7 +26,7 @@ This is Long-Form-Writing **v1.4.0** — minor release adding two soft-skill act
 
 ## Schema policy
 
-The atom prototypes are stable at v1.3 (no changes in v1.4.0):
+The Item prototypes are stable at v1.3 (no changes in v1.4.0):
 
 - v1.0 stable: `LFW_Manuscript_Manifest`, `LFW_State`, `LFW_Beat`, `LFW_Scene`, `LFW_Section`, `LFW_Chapter`, `LFW_Character`, `LFW_Thread`, `LFW_Source`, `LFW_Note`, `LFW_Session`, `LFW_Revision_Pass`, `LFW_Voice_Sample`
 - v1.1 added: `LFW_Reader`, `LFW_Argument`, `LFW_Craft_Log`, `LFW_Craft_Profile`
@@ -41,7 +41,7 @@ v1.4.0's contribution is at the activity layer only.
 
 - **Writing engine** in `_writing-engine/`:
   - Sixteen core operating files (`00–08` production; `09–10` development v1.1; `11–12` fiction-craft foundation v1.2; `13–14` fiction-craft writer-side v1.3.1; `15` fiction-structural-artifacts v1.3.2; `16` soft-skill activities v1.4.0) plus `BOOTSTRAP-NEW-MANUSCRIPT.md`
-  - Twenty-eight atom-type, cartridge-backbone, and overlay templates (unchanged from v1.3.2)
+  - Twenty-eight Item-type, cartridge-backbone, and overlay templates (unchanged from v1.3.2)
   - Schema-of-schemas + failure-modes catalog in `_meta/` (extended for v1.4.0 with F52–F60 covering the soft-skill failure modes; schema_version field added to both meta files)
   - Validator unchanged
 - **Root docs**: `README`, `AI-BOOTSTRAP`, `INSTALL`, `OPERATOR-GUIDE`, `CONTRIBUTING`, `LICENSE` (CC-BY 4.0), `VERSION`, `CHANGELOG`

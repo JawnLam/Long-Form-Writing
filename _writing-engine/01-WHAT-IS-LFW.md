@@ -26,7 +26,7 @@ A cartridge is one specific manuscript-in-progress. Each cartridge contains:
 - Its lifecycle state (outlining → drafting → revising → polishing → finishing)
 - Its structural outline
 - Optional voice samples (if the writer wants the AI to attempt voice matching)
-- All the atoms (Beats, Scenes-or-Sections, Chapters, Characters-or-Threads, Sources, Notes)
+- All the Items (Beats, Scenes-or-Sections, Chapters, Characters-or-Threads, Sources, Notes)
 - Session logs from every writing session
 - Revision pass logs
 
@@ -38,13 +38,13 @@ A writer might have one cartridge active (one manuscript) or many (a novel, a no
 
 Each manuscript declares a genre — fiction / non-fiction / screenplay / play / dissertation — and the schema branches:
 
-- **Fiction:** Scenes contain prose; Chapters compose Scenes; Characters are first-class atoms; Sources are optional (for research-informed fiction).
+- **Fiction:** Scenes contain prose; Chapters compose Scenes; Characters are first-class Items; Sources are optional (for research-informed fiction).
 - **Non-fiction:** Sections contain prose; Chapters compose Sections; Threads (recurring topics/arguments) replace Characters; Sources are central.
-- **Screenplay:** Scenes are the primary atom; Acts compose Scenes; Characters are first-class; the structural conventions of screenwriting (slug lines, action lines, dialogue) apply at the atom level.
+- **Screenplay:** Scenes are the primary Item; Acts compose Scenes; Characters are first-class; the structural conventions of screenwriting (slug lines, action lines, dialogue) apply at the Item level.
 - **Play:** Like screenplay but stage-specific (acts, scenes, settings, characters, stage directions).
 - **Dissertation:** Sections contain prose; Chapters compose Sections; Threads (arguments) and Sources (heavy citation) dominate.
 
-The same engine drives all five. The atoms adapt.
+The same engine drives all five. The Items adapt.
 
 ### 2. Daily-practice cadence
 
@@ -58,13 +58,13 @@ By default, the AI **does not attempt to match the writer's voice**. It helps wi
 
 Optional tier 2: the writer drops voice samples in `_voice-samples.md`. The AI references them during DRAFT and REVISE.
 
-Optional tier 3: a dedicated VOICE-CHECK activity that does a focused voice-consistency pass on specific atoms.
+Optional tier 3: a dedicated VOICE-CHECK activity that does a focused voice-consistency pass on specific Items.
 
 Tier 1 is the default because **AI homogenization of voice is the most damaging failure mode in writing OVs**. The writer who wants more AI involvement opts in explicitly.
 
-### 4. Atoms as building blocks
+### 4. Items as building blocks
 
-Manuscripts are composed of atoms. The atom shape varies by genre, but the principle is constant:
+Manuscripts are composed of Items. The Item shape varies by genre, but the principle is constant:
 
 - **Beat** — the smallest dramatic or rhetorical move. A turn of phrase. A moment. A claim.
 - **Scene / Section** — composed of beats. The prose lives here.
@@ -73,7 +73,7 @@ Manuscripts are composed of atoms. The atom shape varies by genre, but the princ
 - **Source** — external material (books, papers, interviews) that informs the work. Heavier for non-fiction; sometimes used for fiction research.
 - **Note** — unplaced fragment, future inclusion, idea not yet located.
 
-Atoms reference each other (a Scene appears-in a Chapter; a Section cites a Source; a Beat instantiates a Character moment). The graph of references is the structure.
+Items reference each other (a Scene appears-in a Chapter; a Section cites a Source; a Beat instantiates a Character moment). The graph of references is the structure.
 
 ### 5. Multi-pass revision discipline
 

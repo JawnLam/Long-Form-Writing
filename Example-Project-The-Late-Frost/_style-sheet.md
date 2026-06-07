@@ -16,7 +16,7 @@ Date_Modified: 2026-06-03
 
 Close-third POV alternating Maya / Sarah by chapter. Present tense throughout. Plain sentences for the sister-dialogue; more layered for narrative interiority. Resist Hadley-influenced narrative distance; closer than that.
 
-Per [[Maya-Hollis]] and [[Sarah-Hollis]]'s `lfw_pov_voice_register` fields, each POV's signature_moves and avoid_moves discipline carries this. The style sheet does not duplicate those — see the Character atoms.
+Per [[Maya-Hollis]] and [[Sarah-Hollis]]'s `lfw_pov_voice_register` fields, each POV's signature_moves and avoid_moves discipline carries this. The style sheet does not duplicate those — see the Character Items.
 
 ## Spelling
 

@@ -33,7 +33,7 @@ This shapes everything below.
 3. PROPOSE a session activity with rationale
 4. WAIT for writer confirmation or override
 5. EXECUTE the activity
-6. CAPTURE atom updates, prose drafted, decisions made
+6. CAPTURE Item updates, prose drafted, decisions made
 7. WRITE the session log
 8. UPDATE _state.md with today's progress + tomorrow's seed
 ```
@@ -51,10 +51,10 @@ Ten **production** activities (this chapter) plus thirteen **development** activ
 | **SESSION-START** | Re-orient after a gap; set today's focus | First session of the week, or returning after >3 days; writer signals re-entry |
 | **OUTLINE** | Structural design at any scale | New cartridge in outlining stage; a section/scene lacks beats; structural revision needed |
 | **DRAFT** | Generate new prose | Section/scene has beats; writer has momentum; previous session ended with explicit DRAFT-this-next |
-| **REVISE** | Pass over existing prose | A specific atom is in `drafted` state; revision pass is current and not abandoned |
+| **REVISE** | Pass over existing prose | A specific Item is in `drafted` state; revision pass is current and not abandoned |
 | **RESEARCH-INTEGRATION** | Fold sources into the manuscript | Non-fiction/dissertation; unintegrated sources exist; section needs source backing |
 | **READ-THROUGH** | Higher-scale assessment than line-edit | Chapter is fully drafted; before a revision pass starts; before BETA-PREP |
-| **STUCK-DIAGNOSTIC** | Structured diagnosis when blocked | Writer says "I'm stuck"; same atom has been touched 3+ sessions without progress |
+| **STUCK-DIAGNOSTIC** | Structured diagnosis when blocked | Writer says "I'm stuck"; same Item has been touched 3+ sessions without progress |
 | **VOICE-CHECK** | Voice-consistency pass | Voice mode is enabled AND a section has been drafted AND voice samples are recent |
 | **WORLDBUILDING** | Fiction-specific setting work | Fiction cartridge; writer flagged worldbuilding gap; new setting element is referenced in scenes |
 | **BETA-PREP** | Final pass before sending to beta readers | Manuscript is in `polishing` stage; writer signals readiness to send |
@@ -63,7 +63,7 @@ Ten **production** activities (this chapter) plus thirteen **development** activ
 
 | Code | Activity | Right default when |
 |------|----------|---------------------|
-| **READER-SIMULATION** | Read a drafted section as a specific Reader atom; non-fiction: resistance/lost-thread/curse-of-knowledge; fiction: dramatic-question/page-turn/sympathy/emotional-flatline (see chapter 12 §6) | Section is drafted; ≥1 Reader atom is active; the section hasn't been simulated yet |
+| **READER-SIMULATION** | Read a drafted section as a specific Reader Item; non-fiction: resistance/lost-thread/curse-of-knowledge; fiction: dramatic-question/page-turn/sympathy/emotional-flatline (see chapter 12 §6) | Section is drafted; ≥1 Reader Item is active; the section hasn't been simulated yet |
 | **ARGUMENT-AUDIT** | Pressure-test `_argument.md` — contestability, sub-claim independence, evidence sufficiency, weakest link | `_argument.md` exists and has changed; new chapter touches new sub-claims; ≥8 sessions since last audit |
 | **CLAIM-EVIDENCE-CHECK** | Test whether prose claims are stronger or weaker than the cited sources actually warrant | Section is drafted with cited Sources; before accuracy revision pass |
 | **STEELMAN** | Build the strongest version of a counterargument before the writer rebuts it | A Thread's counter-evidence section has un-steelmanned entries; writer is preparing to rebut |
@@ -75,7 +75,7 @@ Ten **production** activities (this chapter) plus thirteen **development** activ
 | Code | Activity | Right default when |
 |------|----------|---------------------|
 | **SCENE-AUDIT** | Value-shift diagnostic: whose want drives this scene, what's the conflict, what's different at the end vs. beginning (the load-bearing fiction craft test) | Scene is drafted; value-shift fields unpopulated or identical; 3+ scenes drafted without a SCENE-AUDIT |
-| **CHARACTER-CONSISTENCY** | Does the prose deliver the Character atom's stated want, voice, and arc? + antagonist-steelman for antagonist atoms; reads Character-Bible if present *(v1.3.1)* | Character is `established` and has appeared in 3+ Scenes since last check; antagonist hasn't been steelmanned |
+| **CHARACTER-CONSISTENCY** | Does the prose deliver the Character Item's stated want, voice, and arc? + antagonist-steelman for antagonist Items; reads Character-Bible if present *(v1.3.1)* | Character is `established` and has appeared in 3+ Scenes since last check; antagonist hasn't been steelmanned |
 | **CONTINUITY-CHECK** | Verify drafted prose against `_continuity.md`: world-rules, timeline, information-state (who-knows-what) | New scene references continuity items; 10+ scenes since last check; before READ-THROUGH |
 | **SETUP-PAYOFF-AUDIT** | Audit `_promises.md` against drafted manuscript: outstanding/unfired promises, unearned/unsetup payoffs | 10+ scenes drafted since last audit; before READ-THROUGH; before BETA-PREP |
 
@@ -84,8 +84,8 @@ Ten **production** activities (this chapter) plus thirteen **development** activ
 | Code | Activity | Right default when |
 |------|----------|---------------------|
 | **DIALOGUE-AUDIT** | Four-axis function check on drafted dialogue (plot / character / subtext / rhythm); surface zero- or one-axis lines | Scene with ≥10 dialogue lines is `drafted`; ≥5 dialogue-heavy scenes drafted without a DIALOGUE-AUDIT; writer signals "dialogue feels flat"; before BETA-PREP on a critical dialogue scene |
-| **POV-VOICE-DRIFT** | Audit prose voice across alternating-POV chapters against each POV's `lfw_pov_voice_register`; surface register-bleed | 2+ POV-bearing Character atoms with `lfw_pov_voice_register` populated; ≥3 chapters drafted in each; ≥8 sessions since last drift check |
-| **THEME-CHECK** | Audit Theme atoms against drafted prose; surface gaps in threading, on-the-nose treatment, motif/theme cross-references | ≥1 Theme atom is `developing` or `threaded`; ≥5 scenes drafted since last check; ≥10 sessions since last THEME-CHECK; before READ-THROUGH |
+| **POV-VOICE-DRIFT** | Audit prose voice across alternating-POV chapters against each POV's `lfw_pov_voice_register`; surface register-bleed | 2+ POV-bearing Character Items with `lfw_pov_voice_register` populated; ≥3 chapters drafted in each; ≥8 sessions since last drift check |
+| **THEME-CHECK** | Audit Theme Items against drafted prose; surface gaps in threading, on-the-nose treatment, motif/theme cross-references | ≥1 Theme Item is `developing` or `threaded`; ≥5 scenes drafted since last check; ≥10 sessions since last THEME-CHECK; before READ-THROUGH |
 
 ### Soft-skill activities (defined in chapter 16; v1.4.0)
 
@@ -101,12 +101,12 @@ Evaluate in order. First condition that fires determines the default proposal.
 ### Step 1 — Hard overrides
 
 - **If** the writer explicitly named the activity for this session → execute that
-- **If** the writer named a specific atom or section → propose the appropriate activity for that atom's state (DRAFT if no prose; REVISE if drafted; OUTLINE if no beats)
+- **If** the writer named a specific Item or section → propose the appropriate activity for that Item's state (DRAFT if no prose; REVISE if drafted; OUTLINE if no beats)
 
 ### Step 2 — Stuck signal AND affective-weather signal
 
 - **If** the writer says "stuck" or "blocked" → propose **STUCK-DIAGNOSTIC**
-- **If** the most recent atoms in `_state.md` show repeated revisions with no advancement → propose **STUCK-DIAGNOSTIC**
+- **If** the most recent Items in `_state.md` show repeated revisions with no advancement → propose **STUCK-DIAGNOSTIC**
 - **If** the writer says "dread" / "grieving" / "hate this book" / "doubt" / "burned out" / "overwhelmed" / "don't know why I'm doing this" / "want to quit" → propose **WEATHER-CHECK** (v1.4.0; chapter 16)
 - **If** the writer has not opened the manuscript in ≥2 weeks without an explicit pre-stated hiatus → propose **WEATHER-CHECK**
 - **If** a structural signal *and* an affective signal both fire → propose **WEATHER-CHECK first** (5–15 min), then the structural activity (chapter 16 §3 — order matters; addressing affective state first protects the structural diagnostic from being received as confirmation of despair)
@@ -122,7 +122,7 @@ Evaluate in order. First condition that fires determines the default proposal.
 - **If** lifecycle stage = `outlining` → propose **OUTLINE** at the appropriate scale
 - **If** lifecycle stage = `drafting` AND today's focus has beats → propose **DRAFT** on today's focus
 - **If** lifecycle stage = `drafting` AND today's focus lacks beats → propose **OUTLINE** on today's focus
-- **If** lifecycle stage = `revising` AND current revision pass has unfinished atoms → propose **REVISE**
+- **If** lifecycle stage = `revising` AND current revision pass has unfinished Items → propose **REVISE**
 - **If** lifecycle stage = `polishing` → propose **READ-THROUGH** if not done recently, else **BETA-PREP** if checklist complete
 - **If** lifecycle stage = `fact-checking` (non-fiction) → propose accuracy pass (REVISE in accuracy mode)
 
@@ -135,7 +135,7 @@ Evaluate in order. First condition that fires determines the default proposal.
 ### Step 6 — Genre-specific defaults
 
 - **Fiction:** if worldbuilding has gaps flagged in `_state.md` → propose **WORLDBUILDING**
-- **Dissertation:** if a citation in a Section atom is incomplete → propose RESEARCH-INTEGRATION (citation completion mode)
+- **Dissertation:** if a citation in a Section Item is incomplete → propose RESEARCH-INTEGRATION (citation completion mode)
 
 ### Step 6b — Development activities (non-fiction emphasis)
 
@@ -143,7 +143,7 @@ For non-fiction and dissertation cartridges, evaluate these in addition to the p
 
 - **If** the writer signals stuck on the argument (not the prose) → propose **ARGUMENT-AUDIT**
 - **If** `_argument.md` has changed since the last ARGUMENT-AUDIT AND ≥8 sessions have passed → propose **ARGUMENT-AUDIT**
-- **If** Section is `drafted` AND active Reader atoms haven't simulated it → propose **READER-SIMULATION** (after the writer's drafting momentum is acknowledged)
+- **If** Section is `drafted` AND active Reader Items haven't simulated it → propose **READER-SIMULATION** (after the writer's drafting momentum is acknowledged)
 - **If** Section is `drafted` AND has cited Sources AND hasn't been claim-evidence-checked → propose **CLAIM-EVIDENCE-CHECK** before accuracy pass
 - **If** a Thread has un-steelmanned counter-evidence AND the writer is about to draft the rebuttal → propose **STEELMAN** first
 - **If** Section has 3+ cited Sources AND high source-to-prose ratio → propose **SYNTHESIS-CHECK**
@@ -162,9 +162,9 @@ For fiction, screenplay, and play cartridges, evaluate these. Same triggering po
 - **If** the writer signals "the plot feels slack" or "I don't know why this chapter happens" → propose checking the spine; if the spine reads mostly *and then*, propose **SCENE-AUDIT** across the affected chapter
 - **If** a fiction worldbuilding gap is flagged → propose **WORLDBUILDING** (generative); after the session, propose **CONTINUITY-CHECK** to verify drafted scenes against new rules
 - **If** a Scene with ≥10 dialogue lines is `drafted` AND hasn't been DIALOGUE-AUDIT'd → propose **DIALOGUE-AUDIT** *(v1.3.1)*
-- **If** ≥2 POV-bearing Character atoms exist with `lfw_pov_voice_register` populated AND ≥3 chapters drafted in each AND ≥8 sessions since last POV-VOICE-DRIFT → propose **POV-VOICE-DRIFT** *(v1.3.1)*
+- **If** ≥2 POV-bearing Character Items exist with `lfw_pov_voice_register` populated AND ≥3 chapters drafted in each AND ≥8 sessions since last POV-VOICE-DRIFT → propose **POV-VOICE-DRIFT** *(v1.3.1)*
 - **If** the writer signals "the dialogue is flat" or "the POVs sound alike" → propose the corresponding craft activity (DIALOGUE-AUDIT or POV-VOICE-DRIFT) even outside cadence thresholds *(v1.3.1)*
-- **If** ≥1 Theme atom is `developing` or `threaded` AND ≥5 scenes drafted since last check AND ≥10 sessions since last THEME-CHECK → propose **THEME-CHECK** *(v1.3.1)*
+- **If** ≥1 Theme Item is `developing` or `threaded` AND ≥5 scenes drafted since last check AND ≥10 sessions since last THEME-CHECK → propose **THEME-CHECK** *(v1.3.1)*
 
 ### Step 6b''' — Middle-of-manuscript heads-up and MIDDLE-AUDIT *(v1.4.0)*
 
@@ -205,7 +205,7 @@ Present the proposal:
 
 ```
 Proposed activity: <CODE> — <plain-English description>
-Focus: <specific atom or scope>
+Focus: <specific Item or scope>
 Rationale: <which conditions fired>
 Alternative: <next-priority activity>
 Your call.
@@ -240,9 +240,9 @@ The AI's job in OUTLINE: ask questions, surface options, identify gaps, propose 
 
 ### DRAFT
 
-Generate new prose for a specific atom (usually a Section or Scene). Preconditions:
+Generate new prose for a specific Item (usually a Section or Scene). Preconditions:
 
-- The atom has beats (the writer has done OUTLINE on it)
+- The Item has beats (the writer has done OUTLINE on it)
 - The writer has chosen DRAFT explicitly or it's the appropriate default
 
 Voice-mode handling:
@@ -269,7 +269,7 @@ In a prose-line pass: the AI may suggest line-level changes (only if explicitly 
 
 Non-fiction and dissertation cartridges. See chapter 06 for the full protocol.
 
-Short version: take a Source atom that's been ingested and fold its content into the relevant Section atoms. The fold-in protocol prevents:
+Short version: take a Source Item that's been ingested and fold its content into the relevant Section Items. The fold-in protocol prevents:
 
 - Source quotes appearing verbatim without attribution (plagiarism)
 - The writer's voice being lost in long quoted passages
@@ -301,7 +301,7 @@ Reads voice samples + recently drafted prose + flags inconsistencies. Output: vo
 
 ### WORLDBUILDING
 
-Fiction/speculative cartridges. Setting, magic systems, alternate-history rules, fictional cultures. The AI's job: ask the questions the worldbuilding doesn't yet answer; capture answers in dedicated atoms; flag contradictions across atoms.
+Fiction/speculative cartridges. Setting, magic systems, alternate-history rules, fictional cultures. The AI's job: ask the questions the worldbuilding doesn't yet answer; capture answers in dedicated Items; flag contradictions across Items.
 
 ### BETA-PREP
 
@@ -330,7 +330,7 @@ After every session, overwrite `_state.md` with:
 
 - Lifecycle stage (if it changed)
 - Today's focus → moved to "Last completed" + tomorrow's focus seeded
-- Atom status table updated for atoms touched
+- Item status table updated for Items touched
 - Word counts updated (per chapter / section / total)
 - Open Threads (close any addressed, add new)
 - Stuck flags (set or cleared)
@@ -341,9 +341,9 @@ Before ending any session, confirm:
 
 - [ ] Session log written
 - [ ] `_state.md` updated
-- [ ] Atom files touched have been saved
+- [ ] Item files touched have been saved
 - [ ] Tomorrow's focus is seeded
 - [ ] If a revision pass was active, the revision-pass log has been updated
-- [ ] If sources were folded in, the relevant Section atoms reference them properly
+- [ ] If sources were folded in, the relevant Section Items reference them properly
 
 If any is no, the session is not complete.

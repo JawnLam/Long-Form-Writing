@@ -20,7 +20,7 @@ A non-fiction failure mode that is not structural and not stylistic — it's ups
 
 **The argument and the structure quietly diverge.** The container hierarchy (book → chapter → section → beat) is one thing; the *argument* (thesis → sub-claims → evidence → defeaters) is another. A section that's interesting but advances no claim is a structural success and an argumentative failure. A thesis that isn't contestable is a writing project disguised as a book.
 
-Chapter 04 (Atoms and Structure) gave us containers. This chapter gives us *the argument as an artifact the AI can pressure-test.*
+Chapter 04 (Items and Structure) gave us containers. This chapter gives us *the argument as an artifact the AI can pressure-test.*
 
 ## Part one — Argument as a backbone
 
@@ -37,7 +37,7 @@ A book whose outline and argument are tightly aligned is structurally sound. A b
 
 1. **Thesis** — the book's central claim, stated as a falsifiable sentence. Not "this book is about X"; the actual claim. Includes the falsification condition: what evidence or argument would force the writer to retract.
 2. **Sub-claims** — the 3–7 claims the thesis decomposes into. Each is a sentence the writer is willing to defend.
-3. **Evidence map** — for each sub-claim, the Sources, cases, or reasoning that supports it. Cross-references to Source atoms.
+3. **Evidence map** — for each sub-claim, the Sources, cases, or reasoning that supports it. Cross-references to Source Items.
 4. **Independence check** — explicit assessment of whether the sub-claims are genuinely independent or whether some collapse into others. This is the place the example's own "is condition four the weakest" question lives.
 5. **Defeaters** — for each sub-claim, what would change the writer's mind. The strongest version of the counterargument. Cross-references to Sources that complicate, where they exist.
 6. **The honest unknown** — what the writer doesn't know, what the framework can't predict, what's still genuinely contested. The book's epistemic humility, made explicit.
@@ -66,7 +66,7 @@ A book whose outline and argument are tightly aligned is structurally sound. A b
 **Protocol:**
 
 1. AI reads `_argument.md` in full
-2. AI reads any Thread atoms (cross-cartridge thread tracking)
+2. AI reads any Thread Items (cross-cartridge thread tracking)
 3. AI tests, in order:
    - **Contestability** — is the thesis a claim a reasonable person could disagree with? A non-falsifiable thesis is not a thesis; it's a stance.
    - **Sub-claim independence** — do the sub-claims actually decompose into separate pieces, or do two of them collapse?
@@ -85,13 +85,13 @@ A book whose outline and argument are tightly aligned is structurally sound. A b
 **Trigger conditions:**
 
 - Section is in `drafted` status
-- Section cites Source atoms (or makes claims that should cite Source atoms)
+- Section cites Source Items (or makes claims that should cite Source Items)
 - Before accuracy revision pass (it's a different question)
 
 **Protocol:**
 
 1. AI reads the target Section
-2. AI reads every Source atom cited
+2. AI reads every Source Item cited
 3. For each load-bearing claim in the prose:
    - Identify what the claim is asserting
    - Identify what the cited source actually supports
@@ -112,13 +112,13 @@ A book whose outline and argument are tightly aligned is structurally sound. A b
 **Trigger conditions:**
 
 - Writer is preparing to rebut a counterargument
-- A Thread atom's `## Sources that complicate or contradict it` section has entries that haven't been steelmanned
+- A Thread Item's `## Sources that complicate or contradict it` section has entries that haven't been steelmanned
 - Writer flags STEELMAN explicitly
 
 **Protocol:**
 
 1. AI loads the relevant Thread or Section
-2. AI loads the counter-Source atoms
+2. AI loads the counter-Source Items
 3. AI constructs the strongest version of the counterargument:
    - State the counter-claim as charitably and forcefully as possible
    - Cite the counter-evidence at its strongest
@@ -135,7 +135,7 @@ A book whose outline and argument are tightly aligned is structurally sound. A b
 **Trigger conditions:**
 
 - Section is in `drafted` status
-- Section cites 3+ Source atoms
+- Section cites 3+ Source Items
 - Section hasn't been synthesis-checked
 
 **Protocol:**
@@ -157,7 +157,7 @@ A book whose outline and argument are tightly aligned is structurally sound. A b
 ## How this chapter interacts with the rest of the engine
 
 - **Chapter 03 (Cadence and Sessions)** — ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, and SYNTHESIS-CHECK are entries in the universal activity table
-- **Chapter 04 (Atoms and Structure)** — `_argument.md` and `_craft-log.md` are added as cartridge backbone files
+- **Chapter 04 (Items and Structure)** — `_argument.md` and `_craft-log.md` are added as cartridge backbone files
 - **Chapter 06 (Research Integration)** — CLAIM-EVIDENCE-CHECK, STEELMAN, and SYNTHESIS-CHECK extend the research discipline beyond getting sources in; chapter 06 + this chapter together are the full research-and-argument toolkit
 - **Chapter 07 (Revision Discipline)** — claim-evidence and synthesis findings feed into revision passes
 - **Chapter 10 (Reader)** — the companion core chapter for audience modeling; READER-SIMULATION often runs alongside these argument-pressure activities for non-fiction cartridges

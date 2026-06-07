@@ -37,8 +37,8 @@ Needs_Processing: false
 
 ## Connects
 
-- **Follows from:** *(beat or atom)*
-- **Leads to:** *(beat or atom)*
+- **Follows from:** *(beat or Item)*
+- **Leads to:** *(beat or Item)*
 
 ## Notes
 

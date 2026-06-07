@@ -15,7 +15,7 @@ lfw_pov_voice_register:    # v1.3.1 — required for POV-bearing Characters; opt
   tense_preference: ""     # "scene-tense" | "tense-slippage-into-memory" | "strict-scene-tense"
   signature_moves: []      # 2-4 prose patterns marking this POV
   avoid_moves: []          # patterns the OTHER POV uses that this POV must not
-lfw_character_bible: ""    # v1.3.1 — wikilink to extended Character-Bible atom, if present
+lfw_character_bible: ""    # v1.3.1 — wikilink to extended Character-Bible Item, if present
 Date_Added:
 Date_Modified:
 Needs_Processing: false
@@ -61,7 +61,7 @@ Needs_Processing: false
 
 ## Scenes Present
 
-*Wiki-links to scenes they appear in. Auto-populates from Scene atoms' `lfw_characters_present`.*
+*Wiki-links to scenes they appear in. Auto-populates from Scene Items' `lfw_characters_present`.*
 
 ## Open Questions
 

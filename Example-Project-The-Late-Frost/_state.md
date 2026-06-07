@@ -43,7 +43,7 @@ Scene 1 is drafted (1,800 words). Value-shift is declared (ignorant-of-debt → 
 | Chapter 2 | 0 | ~8,500 |
 | Chapter 3+ | 0 | ~58,000 |
 
-## Atom Status Snapshot
+## Item Status Snapshot
 
 ### Chapters
 
@@ -141,7 +141,7 @@ Scene 1 is drafted (1,800 words). Value-shift is declared (ignorant-of-debt → 
 ## Recent Sessions
 
 - [[2026-06-03_006_WEATHER-CHECK]] — WEATHER-CHECK (v1.4.0) on commitment-dread for Beat 5; triaged as today-state; next session opens with DRAFT on Beat 5
-- [[2026-06-03_005_v1.3.2-UPDATE]] — META session; cartridge migrated to v1.3.2; minimal _worldbuilding stub; 3 Timeline atoms (story-time, world-history, character-specific); _style-sheet, _relationships, _storyboard backbones; Patchett Inspiration; stakes-ladder added to spine
+- [[2026-06-03_005_v1.3.2-UPDATE]] — META session; cartridge migrated to v1.3.2; minimal _worldbuilding stub; 3 Timeline Items (story-time, world-history, character-specific); _style-sheet, _relationships, _storyboard backbones; Patchett Inspiration; stakes-ladder added to spine
 - [[2026-06-03_004_v1.3.1-UPDATE]] — META session; cartridge migrated to v1.3.1; sub-genre declared; POV-voice-registers populated; Maya bible drafted; Honesty-Under-Cost theme created; Story Circle overlay populated
 - [[2026-06-02_003_DRAFT]] — Scene 1 Beats 1–4 drafted (1,800 words); Beat 4 flagged for revision
 - [[2026-06-02_002_OUTLINE]] — Chapter 1 and Chapter 2 outlined at scene level; spine v1 drafted
@@ -157,13 +157,13 @@ Scene 1 is drafted (1,800 words). Value-shift is declared (ignorant-of-debt → 
 - [x] Outline at chapter level complete
 - [x] Outline at scene level for Chapter 1 complete
 - [x] POV-voice-registers populated for both POV-bearing Characters *(v1.3.1)*
-- [x] First Theme atom created *(v1.3.1)*
+- [x] First Theme Item created *(v1.3.1)*
 - [x] Story Circle overlay mapped *(v1.3.1)*
 - [x] Stakes ladder mapped in _spine.md *(v1.3.2)*
 - [x] _style-sheet established *(v1.3.2)*
 - [x] _relationships map established *(v1.3.2)*
 - [x] _storyboard initialized *(v1.3.2)*
-- [x] Three Timeline atoms (story-time + world-history + character-specific) *(v1.3.2)*
+- [x] Three Timeline Items (story-time + world-history + character-specific) *(v1.3.2)*
 - [ ] Chapter 1 first-draft — 1 of ~5 scenes drafted
 - [ ] First SCENE-AUDIT formal pass on Chapter 1 Scenes
 - [ ] First DIALOGUE-AUDIT — not yet triggerable (Scene 1 has < 10 dialogue lines)

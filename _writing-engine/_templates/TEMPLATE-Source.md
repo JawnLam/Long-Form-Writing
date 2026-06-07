@@ -36,7 +36,7 @@ Needs_Processing: false
 
 ## How to integrate
 
-*Which sections this informs and how. Wiki-links to the relevant Section atoms.*
+*Which sections this informs and how. Wiki-links to the relevant Section Items.*
 
 - [[Section-slug]] — this source supports the claim that...
 

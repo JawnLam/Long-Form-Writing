@@ -7,7 +7,7 @@ lfw_atom_type: theme
 lfw_status: candidate         # candidate | developing | threaded | resolved
 lfw_priority: ""              # "central" | "secondary" | "incidental"
 lfw_appears_in_scenes: []
-lfw_related_motifs: []        # wikilinks to Motif atoms
+lfw_related_motifs: []        # wikilinks to Motif Items
 lfw_related_characters: []    # wikilinks to Characters who embody or test this theme
 Date_Added:
 Date_Modified:

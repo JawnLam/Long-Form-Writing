@@ -34,7 +34,7 @@ Date_Modified:
 ## Italics
 
 - **Foreign words:** *(yes / no; first-instance only or always)*
-- **Inner dialogue:** *(italics / no marker / scare-quote — cross-reference Beat atom subtext discipline, chapter 13 §1)*
+- **Inner dialogue:** *(italics / no marker / scare-quote — cross-reference Beat Item subtext discipline, chapter 13 §1)*
 - **Emphasis:** *(italics / nothing / em-dash)*
 - **Titles:** *(of books, films, ships, vehicles)*
 - **Sound effects (if any)**

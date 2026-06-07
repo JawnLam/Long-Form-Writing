@@ -185,19 +185,19 @@ lfw_load:
 
 **Prevention:** Chapter 09's "skill model is observational, not scored" caution. The craft-profile template has no numeric fields.
 
-## F21 — Reader atoms used to flatter the writer
+## F21 — Reader Items used to flatter the writer
 
-**Trigger:** Writer creates Reader atoms whose "what they reward" sections are tightly aligned with the writer's existing voice and the "what they punish" sections are empty or perfunctory. READER-SIMULATION sessions then produce only positive reports.
+**Trigger:** Writer creates Reader Items whose "what they reward" sections are tightly aligned with the writer's existing voice and the "what they punish" sections are empty or perfunctory. READER-SIMULATION sessions then produce only positive reports.
 
 **Why it matters:** The Reader's value is that they're *not* the writer. A Reader who agrees with everything the writer wrote is a mirror, not a reader. The Skeptic exists precisely to resist; if she resists nothing, she's malfunctioning.
 
-**Fix:** During Reader-atom creation (cartridging or whenever a new Reader is added), the AI tests the Reader against the writer's existing drafted prose: does this Reader actually push back somewhere? If no, the Reader is incompletely modeled. Revise the Reader's "where they resist" section.
+**Fix:** During Reader-Item creation (cartridging or whenever a new Reader is added), the AI tests the Reader against the writer's existing drafted prose: does this Reader actually push back somewhere? If no, the Reader is incompletely modeled. Revise the Reader's "where they resist" section.
 
 **Prevention:** READER-SIMULATION reports must surface at least one resistance point or one curse-of-knowledge instance, or the AI flags that the Reader may be misconfigured.
 
 ## F22 — Scene doesn't turn *(v1.2 — fiction)*
 
-**Trigger:** A Scene atom is at `drafted` status. Its `lfw_value_shift_from` and `lfw_value_shift_to` fields are identical (or both empty). The scene has setting, stakes, and stated purpose but nothing changes — the character ends where they began.
+**Trigger:** A Scene Item is at `drafted` status. Its `lfw_value_shift_from` and `lfw_value_shift_to` fields are identical (or both empty). The scene has setting, stakes, and stated purpose but nothing changes — the character ends where they began.
 
 **Why it matters:** No-turn scenes are the single most common structural flaw in fiction drafts. A novel where most scenes don't turn reads as sequence rather than story, regardless of how interesting each scene is in isolation.
 
@@ -217,11 +217,11 @@ lfw_load:
 
 ## F24 — Character bible disconnected from the prose *(v1.2 — fiction)*
 
-**Trigger:** A Character atom has a developed arc, voice, and relationships. The drafted scenes featuring the character don't deliver the stated want, drift away from the stated voice, or claim arc changes the prose doesn't dramatize.
+**Trigger:** A Character Item has a developed arc, voice, and relationships. The drafted scenes featuring the character don't deliver the stated want, drift away from the stated voice, or claim arc changes the prose doesn't dramatize.
 
-**Why it matters:** A novel can have gorgeous Character atoms and flat characters in the actual chapters. The writer reads the atom, feels the character is well-developed, then writes scenes that don't bear that development out. The reader experiences flatness.
+**Why it matters:** A novel can have gorgeous Character Items and flat characters in the actual chapters. The writer reads the Item, feels the character is well-developed, then writes scenes that don't bear that development out. The reader experiences flatness.
 
-**Fix:** Run CHARACTER-CONSISTENCY (chapter 12 §1). Either the Character atom needs updating or the prose needs revising. The AI surfaces; the writer judges which side is right.
+**Fix:** Run CHARACTER-CONSISTENCY (chapter 12 §1). Either the Character Item needs updating or the prose needs revising. The AI surfaces; the writer judges which side is right.
 
 **Prevention:** CHARACTER-CONSISTENCY triggers when a Character is `established` and has appeared in 3+ Scenes since the last check.
 
@@ -237,7 +237,7 @@ lfw_load:
 
 ## F26 — Antagonist weak, unflagged *(v1.2 — fiction)*
 
-**Trigger:** The antagonist's want is flimsier than the protagonist's; opposition is plot-mechanical rather than character-driven; the antagonist's atom has weak content (or doesn't exist).
+**Trigger:** The antagonist's want is flimsier than the protagonist's; opposition is plot-mechanical rather than character-driven; the antagonist's Item has weak content (or doesn't exist).
 
 **Why it matters:** Weak opposition is the most reliable cause of weak fiction. A protagonist whose obstacles aren't legitimate-from-the-antagonist's-frame produces a story without genuine tension.
 
@@ -247,13 +247,13 @@ lfw_load:
 
 ## F27 — Motif stated, not woven *(v1.2 — fiction)*
 
-**Trigger:** A Motif atom exists with developed body sections; its `## Where it appears` lists only 1–2 scenes across a 60,000+ word manuscript. The motif is declared but not built.
+**Trigger:** A Motif Item exists with developed body sections; its `## Where it appears` lists only 1–2 scenes across a 60,000+ word manuscript. The motif is declared but not built.
 
 **Why it matters:** Theme that's stated is a lecture; theme that's woven is craft. A motif that appears twice in a novel is a recurring detail, not a motif.
 
 **Fix:** Surface during CRAFT-REVIEW or READ-THROUGH. Writer either weaves the motif into more scenes or retires it.
 
-**Prevention:** Motif atoms with `lfw_status: woven` but fewer than ~4 scene appearances get flagged. The writer's `## Risk of over-use` self-awareness is the other guardrail.
+**Prevention:** Motif Items with `lfw_status: woven` but fewer than ~4 scene appearances get flagged. The writer's `## Risk of over-use` self-awareness is the other guardrail.
 
 ## F28 — Continuity drift *(v1.2 — fiction)*
 
@@ -297,23 +297,23 @@ lfw_load:
 
 ## F32 — Interchangeable dialogue *(v1.3.1 — fiction)*
 
-**Trigger:** Lines that score zero on the Character axis — any character could say them. The Character atom's dialogue tells (chapter 13 §1) are not internalized in the prose.
+**Trigger:** Lines that score zero on the Character axis — any character could say them. The Character Item's dialogue tells (chapter 13 §1) are not internalized in the prose.
 
 **Why it matters:** Reader cannot identify who is speaking without the dialogue tags; characters reduce to plot-functions; the novel feels populated by interchangeable mouthpieces.
 
-**Fix:** Re-read the Character atom's dialogue-tells section before revising. Rewrite the lines in question with the speaker's specific tells.
+**Fix:** Re-read the Character Item's dialogue-tells section before revising. Rewrite the lines in question with the speaker's specific tells.
 
-**Prevention:** DIALOGUE-AUDIT cross-references each line against the speaking Character's dialogue tells. Character atoms with thin dialogue-tells sections are themselves a flag.
+**Prevention:** DIALOGUE-AUDIT cross-references each line against the speaking Character's dialogue tells. Character Items with thin dialogue-tells sections are themselves a flag.
 
 ## F33 — On-the-nose subtext *(v1.3.1 — fiction)*
 
-**Trigger:** Characters explain their feelings; the gap between surface and meaning collapses; declared subtext (in Beat atom) is spelled out in the prose.
+**Trigger:** Characters explain their feelings; the gap between surface and meaning collapses; declared subtext (in Beat Item) is spelled out in the prose.
 
 **Why it matters:** Reader has nothing to do. The pleasure of dialogue-craft is registering the gap between line and meaning; collapsing the gap removes that pleasure and the work that subtext does to characterize.
 
 **Fix:** Identify the line carrying the on-the-nose moment. Rewrite so the meaning is implied by what the character *doesn't* say, or by an action-beat, or by a non-sequitur.
 
-**Prevention:** Beat atoms with a Subtext body section (chapter 13 §1) make the gap auditable. DIALOGUE-AUDIT flags surface dialogue that doesn't carry declared subtext.
+**Prevention:** Beat Items with a Subtext body section (chapter 13 §1) make the gap auditable. DIALOGUE-AUDIT flags surface dialogue that doesn't carry declared subtext.
 
 ## F34 — POV-voice bleed *(v1.3.1 — fiction)*
 
@@ -321,9 +321,9 @@ lfw_load:
 
 **Why it matters:** The whole point of alternating POV is the perceptual experience of being inside different consciousnesses. Register-bleed flattens this into single-voice narration with POV-labels.
 
-**Fix:** POV-VOICE-DRIFT activity (chapter 13 §2) surfaces specific drift instances. Per-POV revision with the Character atom's `lfw_pov_voice_register` open as a reference.
+**Fix:** POV-VOICE-DRIFT activity (chapter 13 §2) surfaces specific drift instances. Per-POV revision with the Character Item's `lfw_pov_voice_register` open as a reference.
 
-**Prevention:** `lfw_pov_voice_register` populated for every POV-bearing Character atom; POV-VOICE-DRIFT every ~8 sessions for multi-POV cartridges; optional per-POV voice samples.
+**Prevention:** `lfw_pov_voice_register` populated for every POV-bearing Character Item; POV-VOICE-DRIFT every ~8 sessions for multi-POV cartridges; optional per-POV voice samples.
 
 ## F35 — Show-everything pathology *(v1.3.1 — fiction)*
 
@@ -377,7 +377,7 @@ lfw_load:
 
 ## F40 — Sequel without decision *(v1.3.1 — fiction)*
 
-**Trigger:** A `lfw_scene_type: sequel` atom that processes the prior scene's outcome but produces no decision (no new want for the next scene). The chain breaks.
+**Trigger:** A `lfw_scene_type: sequel` Item that processes the prior scene's outcome but produces no decision (no new want for the next scene). The chain breaks.
 
 **Why it matters:** The sequel's job is to produce the next scene's want. Sequels that only react and dwell leave the reader without forward motion.
 
@@ -403,7 +403,7 @@ lfw_load:
 
 **Fix:** Identify the on-the-nose statement(s). Rewrite to carry the theme by mechanism (character choice, motif recurrence, dramatic question) rather than by declaration.
 
-**Prevention:** THEME-CHECK activity (chapter 14 §4); Theme atom's "What it must NOT do" section.
+**Prevention:** THEME-CHECK activity (chapter 14 §4); Theme Item's "What it must NOT do" section.
 
 ## F43 — Character-bible as procrastination *(v1.3.1 — fiction)*
 
@@ -439,9 +439,9 @@ lfw_load:
 
 **Trigger:** Story-time, world-history, and character-specific events tracked in a single timeline document; layers contaminate; events drift to wrong layer; reconciliation becomes impossible.
 
-**Why it matters:** The whole point of multi-layer Timeline atoms is layer-isolation so each layer can be the source-of-truth for its scope. Conflation collapses the structural advantage.
+**Why it matters:** The whole point of multi-layer Timeline Items is layer-isolation so each layer can be the source-of-truth for its scope. Conflation collapses the structural advantage.
 
-**Fix:** Split the conflated timeline into per-layer Timeline atoms. Reconcile in `_continuity.md`.
+**Fix:** Split the conflated timeline into per-layer Timeline Items. Reconcile in `_continuity.md`.
 
 **Prevention:** Validator check 12 requires `lfw_timeline_layer` to be declared; chapter 15 §2 documents the layer discipline.
 
@@ -451,9 +451,9 @@ lfw_load:
 
 **Why it matters:** A stale storyboard misleads the writer about the manuscript's shape. Decisions made on stale data are decisions made on lies.
 
-**Fix:** Update the storyboard from current Scene atoms. Mark stale state explicitly (date the file).
+**Fix:** Update the storyboard from current Scene Items. Mark stale state explicitly (date the file).
 
-**Prevention:** Update the storyboard at session-end whenever a Scene atom was created or substantially revised. Do not let staleness exceed two sessions.
+**Prevention:** Update the storyboard at session-end whenever a Scene Item was created or substantially revised. Do not let staleness exceed two sessions.
 
 ## F48 — Style-sheet drift *(v1.3.2 — fiction)*
 
@@ -467,11 +467,11 @@ lfw_load:
 
 ## F49 — Inspiration becomes citation *(v1.3.2 — fiction)*
 
-**Trigger:** Writer treats Inspiration atoms with Source-discipline rigor (full citations, quote-tracking, fold-in protocol); OR treats Source atoms with Inspiration-compost looseness (no citation, no fact-check).
+**Trigger:** Writer treats Inspiration Items with Source-discipline rigor (full citations, quote-tracking, fold-in protocol); OR treats Source Items with Inspiration-compost looseness (no citation, no fact-check).
 
 **Why it matters:** Each discipline is wrong-shaped for the other artifact. Source's discipline guards against non-fiction fabrication (F2); Inspiration's looseness allows fiction's research to remain compost. Confusing them either bloats the fiction process with non-fiction overhead or strips the non-fiction process of its anti-fabrication discipline.
 
-**Fix:** Re-classify atoms per their actual function — to-be-cited (Source) vs to-be-absorbed (Inspiration).
+**Fix:** Re-classify Items per their actual function — to-be-cited (Source) vs to-be-absorbed (Inspiration).
 
 **Prevention:** Chapter 15 §5's Source-vs-Inspiration distinction; BOOTSTRAP guidance on which to use.
 
@@ -537,11 +537,11 @@ lfw_load:
 
 ## F56 — Want forgotten *(v1.4.0 — fiction)*
 
-**Trigger:** Detected by MIDDLE-AUDIT Question 2. The protagonist's want has faded from the prose. The Character atom's `## Want / Need / Wound` section declares one want; the recent scenes don't show it operating as fuel for behavior.
+**Trigger:** Detected by MIDDLE-AUDIT Question 2. The protagonist's want has faded from the prose. The Character Item's `## Want / Need / Wound` section declares one want; the recent scenes don't show it operating as fuel for behavior.
 
 **Why it matters:** The protagonist's want is the engine of forward motion in fiction. A protagonist without active want becomes a passenger in their own novel. Middle-of-book sag is most often caused by this specific failure.
 
-**Fix:** Re-engage the want at the per-scene level going forward. CHARACTER-CONSISTENCY audit on the specific Character. Possibly revise the Character atom if the want has *legitimately* evolved (sometimes it has — the writer's understanding of the character may be ahead of the atom).
+**Fix:** Re-engage the want at the per-scene level going forward. CHARACTER-CONSISTENCY audit on the specific Character. Possibly revise the Character Item if the want has *legitimately* evolved (sometimes it has — the writer's understanding of the character may be ahead of the Item).
 
 **Prevention:** CHARACTER-CONSISTENCY cadence catches early drift; MIDDLE-AUDIT catches the systemic case.
 

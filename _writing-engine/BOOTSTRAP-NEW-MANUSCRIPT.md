@@ -22,7 +22,7 @@ A complete cartridge inside the `Long-Form-Writing/` folder for the new manuscri
 2. `_state.md` — initial lifecycle stage and today's focus
 3. `_outline.md` — initial structural outline (can be very rough at first)
 4. `_voice-samples.md` — if the writer opts into voice-samples mode
-5. Empty-but-ready `Atoms/` subfolders for the genre's atom types
+5. Empty-but-ready `Items/` subfolders for the genre's Prototypes
 6. `Sessions/` and `Revision-Passes/` folders ready for use
 7. A bootstrap session log (Session 000) documenting setup
 
@@ -34,7 +34,7 @@ Read these files in order:
 2. `01-WHAT-IS-LFW.md`
 3. `02-GENRE-AND-SCHEMA.md`
 4. `03-CADENCE-AND-SESSIONS.md`
-5. `04-ATOMS-AND-STRUCTURE.md`
+5. `04-ITEMS-AND-STRUCTURE.md`
 6. `05-VOICE-AND-CRAFT.md`
 7. `06-RESEARCH-INTEGRATION.md` (if non-fiction or dissertation)
 8. All files in `_templates/`
@@ -52,7 +52,7 @@ State it in one sentence. The shape matters: "a novel" is too broad; "a 75,000-w
 
 ### CQ2 — Genre?
 
-Which of fiction / non-fiction / screenplay / play / dissertation, or hybrid? If hybrid (memoir, narrative non-fiction, autofiction), pick the closest match and we'll override atom types as needed.
+Which of fiction / non-fiction / screenplay / play / dissertation, or hybrid? If hybrid (memoir, narrative non-fiction, autofiction), pick the closest match and we'll override Prototypes as needed.
 
 ### CQ3 — Target length?
 
@@ -88,9 +88,9 @@ Chicago / MLA / APA / Harvard / custom?
 
 ### CQ11 — Reader modeling (non-fiction emphasis)
 
-Who's the manuscript actually for? Get specific — name two or three reader archetypes the writer wants to satisfy. For non-fiction, the standard set is The Skeptic, The Impatient Generalist, The Domain Expert; the writer can adopt these, modify them, or define their own. These will become Reader atoms in the cartridge (see chapter 10-READER) and the AI will use them in READER-SIMULATION activities.
+Who's the manuscript actually for? Get specific — name two or three reader archetypes the writer wants to satisfy. For non-fiction, the standard set is The Skeptic, The Impatient Generalist, The Domain Expert; the writer can adopt these, modify them, or define their own. These will become Reader Items in the cartridge (see chapter 10-READER) and the AI will use them in READER-SIMULATION activities.
 
-For fiction / screenplay / play, Reader atoms are optional but useful. For dissertation, Readers are usually the committee + future researchers in the field.
+For fiction / screenplay / play, Reader Items are optional but useful. For dissertation, Readers are usually the committee + future researchers in the field.
 
 ### CQ12 — Argument articulation (non-fiction / dissertation only)
 
@@ -117,7 +117,7 @@ Does the writer already have a `_craft-profile.md` at the OV root (from prior ca
 **For fiction cartridges only. Skip if non-fiction/dissertation.**
 
 - **Spine** (`_spine.md`) — required for fiction. The writer's first articulation of the dramatic question (a yes/no or which question the manuscript answers at the climax) and the premise as a causal claim. First articulation is provisional; ARGUMENT-AUDIT's fiction equivalent (SCENE-AUDIT walked across the spine) will pressure-test.
-- **Motifs** — what 2–4 recurring sub-surface elements does the writer want to track deliberately (image systems, recurring objects, thematic patterns)? These become Motif atoms.
+- **Motifs** — what 2–4 recurring sub-surface elements does the writer want to track deliberately (image systems, recurring objects, thematic patterns)? These become Motif Items.
 - **Promises** (`_promises.md`) — required for plot-driven fiction. Initially populated as the writer outlines; setups planted in early chapters are recorded so SETUP-PAYOFF-AUDIT can track them.
 - **Continuity** (`_continuity.md`) — required for genre fiction with worldbuilding and any plot with secrets. The writer's initial world-rules, timeline, and information-state ledger.
 - **Scaffolding mode reminder** — fiction cartridges should typically default to `gradual-fade` or `socratic` (CQ13), not `full`. Invention is the central fiction skill the OV must not crowd out.
@@ -146,12 +146,12 @@ Avoid spaces; use hyphens. Avoid the word "Example" unless you're literally buil
 
 Use `_templates/TEMPLATE-manuscript-manifest.md`. Fill in from CQ1–CQ11.
 
-### Step 3 — Create the atom folders
+### Step 3 — Create the Item folders
 
 Based on genre (see `02-GENRE-AND-SCHEMA.md`):
 
 ```
-<Cartridge>/Atoms/
+<Cartridge>/Items/
 ├── Beats/
 ├── Scenes/         (fiction / screenplay / play)
 ├── Sections/       (non-fiction / dissertation)
@@ -189,7 +189,7 @@ If the writer opted for writer-maintains mode (default), skip this file. Don't c
 
 ### Step 7 — Empty subfolders
 
-Add `.gitkeep` to `Sessions/`, `Revision-Passes/`, and any empty atom folders so they survive transport.
+Add `.gitkeep` to `Sessions/`, `Revision-Passes/`, and any empty Item folders so they survive transport.
 
 ### Step 8 — Write the bootstrap session log
 
@@ -201,7 +201,7 @@ Summarize:
 
 - Manuscript name and genre
 - Outline shape (book-level)
-- Atom folders created
+- Item folders created
 - Voice mode active
 - What Session 001 will be (typically OUTLINE on the book-level structure)
 
@@ -217,7 +217,7 @@ Before considering cartridging complete:
 - [ ] `_state.md` initialized
 - [ ] `_outline.md` exists (even if mostly placeholder)
 - [ ] Voice samples file present if voice mode requires it
-- [ ] All required atom folders created
+- [ ] All required Item folders created
 - [ ] `Sessions/` and `Revision-Passes/` exist
 - [ ] Bootstrap session log written
 - [ ] Summary shown to writer
