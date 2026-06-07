@@ -3,7 +3,7 @@ Item_Prototype: LFW_Section
 Item_ID: "03-04-hoshi-through-the-framework"
 Title: "Section 3.4: Hoshi Through The Framework"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: section
+lfw_item_type: section
 lfw_status: planned
 lfw_parent: "[[Chapter-03-Family-Business-Persistence]]"
 lfw_order_in_parent: 4

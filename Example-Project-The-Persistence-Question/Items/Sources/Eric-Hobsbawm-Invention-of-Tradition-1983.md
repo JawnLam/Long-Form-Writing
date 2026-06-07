@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "hobsbawm-invention-of-tradition-1983"
 Title: "The Invention of Tradition"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: book
 lfw_authors:
   - "Eric Hobsbawm"

@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "schein-organizational-culture-and-leadership-2010"
 Title: "Organizational Culture and Leadership"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: book
 lfw_authors:
   - "Edgar H. Schein"

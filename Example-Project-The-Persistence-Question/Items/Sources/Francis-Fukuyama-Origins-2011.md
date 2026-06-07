@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "fukuyama-origins-2011"
 Title: "The Origins of Political Order: From Prehuman Times to the French Revolution"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: book
 lfw_authors:
   - "Francis Fukuyama"

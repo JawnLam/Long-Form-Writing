@@ -3,7 +3,7 @@ Item_Prototype: LFW_Chapter
 Item_ID: "ch07-integration"
 Title: "Chapter 7: Integration"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: chapter
+lfw_item_type: chapter
 lfw_status: planned
 lfw_parent: ""
 lfw_order_in_parent: 7

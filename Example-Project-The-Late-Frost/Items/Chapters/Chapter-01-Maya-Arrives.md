@@ -3,7 +3,7 @@ Item_Prototype: LFW_Chapter
 Item_ID: "chapter-01-maya-arrives"
 Title: "Chapter 1 — Maya Arrives at the Vineyard"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: chapter
+lfw_item_type: chapter
 lfw_status: drafting
 lfw_parent: ""
 lfw_order_in_parent: 1

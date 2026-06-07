@@ -3,7 +3,7 @@ Item_Prototype: LFW_Reader
 Item_ID: "literary-fiction-reader"
 Title: "Reader — Literary Fiction Reader"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: reader
+lfw_item_type: reader
 lfw_status: active
 lfw_reader_type: target-genre-reader
 lfw_priority: primary

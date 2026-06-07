@@ -3,7 +3,7 @@ Item_Prototype: LFW_Chapter
 Item_ID: "ch05-constitutional-republics"
 Title: "Chapter 5: Constitutional Republics — The United States Case"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: chapter
+lfw_item_type: chapter
 lfw_status: planned
 lfw_parent: ""
 lfw_order_in_parent: 5

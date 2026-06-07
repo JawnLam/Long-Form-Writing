@@ -3,7 +3,7 @@ Item_Prototype: LFW_Character_Bible
 Item_ID: "<character-slug>-bible"
 Title: "<Character Name> — Bible"
 lfw_manuscript: ""
-lfw_atom_type: character-bible
+lfw_item_type: character-bible
 lfw_status: drafting            # drafting | established | revised | final
 lfw_character: ""               # wiki-link back to Character Item (e.g. [[Maya-Hollis]])
 Date_Added:

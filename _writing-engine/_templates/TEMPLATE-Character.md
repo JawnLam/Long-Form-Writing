@@ -3,7 +3,7 @@ Item_Prototype: LFW_Character
 Item_ID: "<slug>"
 Title: "<Character Full Name>"
 lfw_manuscript: ""
-lfw_atom_type: character
+lfw_item_type: character
 lfw_role: ""    # protagonist | antagonist | major-supporting | minor | speaking | non-speaking
 lfw_first_appearance: ""    # wikilink to scene
 lfw_scenes_present: []

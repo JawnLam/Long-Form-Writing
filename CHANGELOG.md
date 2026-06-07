@@ -2,6 +2,53 @@
 
 All notable changes to Long-Form-Writing are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.0] — 2026-06-06
+
+Adopts Operating-Volume-Engineering Convention 6 (every OV ships its own `_Prototypes/` folder for portability). Completes the lowercase-form of v1.6.0's atom → Item rename in templates and Item files. No new engine capability; the contribution is **portability** — anyone cloning this repo without the operator's vault Infrastructure now gets the full Prototype definitions out of the box.
+
+### Added — `_Prototypes/` folder with 36 LFW Prototype definitions
+
+A new top-level folder, `_Prototypes/`, contains one Markdown file per LFW Prototype in the namespace. Each file is structured per OVE's `TEMPLATE-Prototype.md` (Purpose, Required frontmatter, Body structure, Naming, Example Item, Relationships, Notes). The 36 files:
+
+- **Already in vault** (9, from v1.16.0; verbatim mirrors of `~/Obsidian/.../_Infrastructure For All Vaults/_Prototypes/LFW_*.md`): `LFW_Beat`, `LFW_Chapter`, `LFW_Character_Bible`, `LFW_Motif`, `LFW_Note`, `LFW_Reader`, `LFW_Scene`, `LFW_Session`, `LFW_Source`.
+- **Authored new** (27 — declared in shipping templates but never previously written as standalone Prototype definitions anywhere): `LFW_Act`, `LFW_Argument`, `LFW_Character`, `LFW_Continuity`, `LFW_Craft_Log`, `LFW_Craft_Profile`, `LFW_Inspiration`, `LFW_Manuscript_Manifest`, `LFW_Outline`, `LFW_Overlay_Freytag`, `LFW_Overlay_Heros_Journey`, `LFW_Overlay_Save_The_Cat`, `LFW_Overlay_Story_Circle`, `LFW_Promises`, `LFW_Relationships`, `LFW_Revision_Pass`, `LFW_Section`, `LFW_Setting`, `LFW_Spine`, `LFW_State`, `LFW_Storyboard`, `LFW_Style_Sheet`, `LFW_Theme`, `LFW_Thread`, `LFW_Timeline`, `LFW_Voice_Samples`, `LFW_Worldbuilding`.
+
+Each authored Prototype definition was drawn from authoritative sources: the corresponding `_writing-engine/_templates/TEMPLATE-*.md` for frontmatter and body structure; the relevant engine chapter (chapters 04, 07, 09–16) for purpose, relationships, and notes; the existing example cartridges for concrete Example Items. No fabrication; nothing invented from outside the documented LFW system.
+
+### Changed — completed v1.6.0's lowercase-form rename
+
+v1.6.0's `atom → Item` substitution targeted Title_Snake_Case identifiers (`lfw_Atom_Type → lfw_Item_Type`) but missed the lowercase form (`lfw_atom_type → lfw_item_type`) that LFW templates and shipped example Items actually use. v1.7.0 closes that gap with a word-boundary-anchored substitution across the repo:
+
+- `lfw_atom_type` → `lfw_item_type` (~100 Item files in both example projects)
+- `lfw_atom_types` → `lfw_item_types`
+- `lfw_atoms_touched` → `lfw_items_touched`
+- `lfw_custom_atoms` → `lfw_custom_items`
+
+Total: 101 files modified, 121 substitutions. CHANGELOG preserved historical references in the v1.6.0 migration recipe.
+
+### Vault-Infrastructure dependency
+
+The operator-side `Master_Schema.yaml` v1.20.0 (shipping in parallel with this release) adds the 36 `LFW_*` prototype declarations to the central prototypes block — the v1.16.0 changelog claimed 9 of these had been added but the entries were never written; v1.20.0 closes that gap and adds 27 more. Operators with the vault Infrastructure get the centralized declarations automatically; operators without it use this repo's local `_Prototypes/` folder as the canonical source per OVE Convention 6.
+
+### Migration for existing forks
+
+If you have a fork at v1.6.0 with private manuscripts, the lowercase-form completion requires this script:
+
+```bash
+find . -type f -name '*.md' ! -path './CHANGELOG.md' -exec perl -i -pe '
+  s/\blfw_atom_type\b/lfw_item_type/g;
+  s/\blfw_atom_types\b/lfw_item_types/g;
+  s/\blfw_atoms_touched\b/lfw_items_touched/g;
+  s/\blfw_custom_atoms\b/lfw_custom_items/g;
+' {} \;
+```
+
+The `_Prototypes/` folder is additive; pull this release to receive it. No backbone fields added; no engine chapters removed.
+
+### Notes
+
+This is an additive minor release. The `_Prototypes/` adoption is OVE Convention 6 conformance work, not a schema change. The lowercase-form rename completes v1.6.0's intent. Existing private manuscripts continue to work; the lowercase migration script above is the only operator action required.
+
 ## [1.6.0] — 2026-06-06
 
 Vocabulary clean-up release. The word "atom" had been doing two jobs in v1.0–v1.5: naming the *type definition* (the Prototype — `LFW_Beat`, `LFW_Scene`, etc.) and naming any *instance* of one (a specific Scene note, a specific Beat note). v1.6.0 separates the two and aligns LFW with the broader Operating-Volume-Engineering ecosystem's Convention 2 (`_meta/CONVENTIONS.md` in OVE v1.1.0).

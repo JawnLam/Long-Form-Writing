@@ -3,7 +3,7 @@ Item_Prototype: LFW_Reader
 Item_ID: "skeptic"
 Title: "The Skeptic"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: reader
+lfw_item_type: reader
 lfw_status: active
 lfw_priority: primary
 Date_Added: 2026-06-02

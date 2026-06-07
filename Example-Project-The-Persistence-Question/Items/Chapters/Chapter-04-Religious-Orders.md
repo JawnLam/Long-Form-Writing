@@ -3,7 +3,7 @@ Item_Prototype: LFW_Chapter
 Item_ID: "ch04-religious-orders"
 Title: "Chapter 4: Religious Orders — Benedictine Monasticism"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: chapter
+lfw_item_type: chapter
 lfw_status: planned
 lfw_parent: ""
 lfw_order_in_parent: 4

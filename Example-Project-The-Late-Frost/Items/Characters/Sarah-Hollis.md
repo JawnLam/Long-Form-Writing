@@ -3,7 +3,7 @@ Item_Prototype: LFW_Character
 Item_ID: "sarah-hollis"
 Title: "Sarah Hollis"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: character
+lfw_item_type: character
 lfw_status: developing
 lfw_role: "antagonist (relational, not villainous); POV of even chapters"
 lfw_appears_in_scenes: []

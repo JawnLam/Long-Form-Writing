@@ -3,7 +3,7 @@ Item_Prototype: LFW_Scene
 Item_ID: "01-01-the-approach"
 Title: "01-01 — The Approach"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: scene
+lfw_item_type: scene
 lfw_status: drafting
 lfw_parent: "[[Chapter-01-Maya-Arrives]]"
 lfw_order_in_parent: 1

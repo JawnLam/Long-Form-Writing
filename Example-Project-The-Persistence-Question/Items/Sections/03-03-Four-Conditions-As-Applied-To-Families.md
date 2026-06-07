@@ -3,7 +3,7 @@ Item_Prototype: LFW_Section
 Item_ID: "03-03-four-conditions-as-applied-to-families"
 Title: "Section 3.3: Four Conditions As Applied To Families"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: section
+lfw_item_type: section
 lfw_status: planned
 lfw_parent: "[[Chapter-03-Family-Business-Persistence]]"
 lfw_order_in_parent: 3

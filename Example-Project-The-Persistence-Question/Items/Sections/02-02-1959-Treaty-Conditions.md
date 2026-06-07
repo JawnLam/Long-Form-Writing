@@ -3,7 +3,7 @@ Item_Prototype: LFW_Section
 Item_ID: "02-02-1959-treaty-conditions"
 Title: "Section 2.2: The 1959 Treaty Conditions"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: section
+lfw_item_type: section
 lfw_status: planned
 lfw_parent: "[[Chapter-02-The-Antarctic-Treaty]]"
 lfw_order_in_parent: 2

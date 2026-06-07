@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "<slug>"
 Title: "<Source Title>"
 lfw_manuscript: ""
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: ""    # book | paper | article | interview | dataset | primary-document | video | other
 lfw_authors: []
 lfw_year:

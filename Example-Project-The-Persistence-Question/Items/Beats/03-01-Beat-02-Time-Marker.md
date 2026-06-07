@@ -3,7 +3,7 @@ Item_Prototype: LFW_Beat
 Item_ID: "03-01-beat-02-time-marker"
 Title: "Beat 2: Time Marker — 718 AD"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: beat
+lfw_item_type: beat
 lfw_status: drafted
 lfw_parent: "[[03-01-Hoshi-Opening]]"
 lfw_order_in_parent: 2

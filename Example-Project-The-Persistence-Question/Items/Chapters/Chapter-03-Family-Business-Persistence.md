@@ -3,7 +3,7 @@ Item_Prototype: LFW_Chapter
 Item_ID: "ch03-family-business"
 Title: "Chapter 3: Family-Business Persistence — The Hoshi Ryokan Case"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: chapter
+lfw_item_type: chapter
 lfw_status: drafting
 lfw_parent: ""
 lfw_order_in_parent: 3

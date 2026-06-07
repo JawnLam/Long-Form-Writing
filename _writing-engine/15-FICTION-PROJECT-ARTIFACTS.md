@@ -110,7 +110,7 @@ Item_Prototype: LFW_Timeline
 Item_ID: ""
 Title: ""
 lfw_manuscript: ""
-lfw_atom_type: timeline
+lfw_item_type: timeline
 lfw_status: drafting | established | revised | final
 lfw_timeline_layer: story-time | world-history | real-world | character-specific
 lfw_character: ""    # only for character-specific layer; wikilink to Character Item
@@ -261,7 +261,7 @@ Item_Prototype: LFW_Inspiration
 Item_ID: ""
 Title: ""
 lfw_manuscript: ""
-lfw_atom_type: inspiration
+lfw_item_type: inspiration
 lfw_status: noted | absorbed | folded-in | retired
 lfw_kind: book | article | film | conversation | observation | image | podcast | other
 lfw_for: ""    # what aspect of the manuscript this informs (setting, character, voice, theme, mood)

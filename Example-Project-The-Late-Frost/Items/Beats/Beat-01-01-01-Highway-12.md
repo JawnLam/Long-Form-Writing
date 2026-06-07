@@ -3,7 +3,7 @@ Item_Prototype: LFW_Beat
 Item_ID: "beat-01-01-01-highway-12"
 Title: "Beat 01-01-01 — Highway 12"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: beat
+lfw_item_type: beat
 lfw_status: drafted
 lfw_parent: "[[01-01-The-Approach]]"
 lfw_order_in_parent: 1

@@ -3,7 +3,7 @@ Item_Prototype: LFW_Thread
 Item_ID: "distributed-legitimacy"
 Title: "Distributed Legitimacy"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: thread
+lfw_item_type: thread
 lfw_kind: argument
 lfw_status: active
 lfw_sections_engaged:

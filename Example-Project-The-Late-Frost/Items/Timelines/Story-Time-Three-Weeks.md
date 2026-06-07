@@ -3,7 +3,7 @@ Item_Prototype: LFW_Timeline
 Item_ID: "story-time-three-weeks"
 Title: "Story-Time — Three Weeks of Frost-Watch (April 4–25, 2026)"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: timeline
+lfw_item_type: timeline
 lfw_status: established
 lfw_timeline_layer: story-time
 lfw_character: ""

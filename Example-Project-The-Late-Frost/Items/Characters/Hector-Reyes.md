@@ -3,7 +3,7 @@ Item_Prototype: LFW_Character
 Item_ID: "hector-reyes"
 Title: "Hector Reyes"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: character
+lfw_item_type: character
 lfw_status: developing
 lfw_role: "vineyard manager; supporting character; first appears Chapter 2"
 lfw_appears_in_scenes: []

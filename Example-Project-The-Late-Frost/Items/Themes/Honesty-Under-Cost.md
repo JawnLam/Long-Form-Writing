@@ -3,7 +3,7 @@ Item_Prototype: LFW_Theme
 Item_ID: "honesty-under-cost"
 Title: "Theme — Honesty Under Cost"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: theme
+lfw_item_type: theme
 lfw_status: developing
 lfw_priority: central
 lfw_appears_in_scenes: ["[[01-01-The-Approach]]"]

@@ -13,7 +13,7 @@ lfw_voice_mode: voice-samples
 lfw_citation_style: chicago-notes-bibliography
 lfw_writer_name: "<USER_NAME placeholder — this is a worked example, not a real attributed work>"
 lfw_bootstrapped: 2026-06-02
-lfw_custom_atoms: []
+lfw_custom_items: []
 lfw_scaffolding_mode: gradual-fade
 lfw_scaffolding_thresholds:
   full_through_session: 10

@@ -3,7 +3,7 @@ Item_Prototype: LFW_Motif
 Item_ID: "the-late-frost"
 Title: "Motif — The Late Frost"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: motif
+lfw_item_type: motif
 lfw_status: emerging
 lfw_priority: primary
 lfw_first_appearance: "[[01-01-The-Approach]]"

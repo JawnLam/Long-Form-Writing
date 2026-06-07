@@ -9,7 +9,7 @@ lfw_manuscript: "<manuscript-slug>"
 lfw_session_number:
 lfw_activity: ""    # one of the 25 activities defined in chapter 03 (consult _ROUTER.md for the canonical set); META / BOOTSTRAP / etc. are tolerated but skip session-read-coverage
 lfw_duration_minutes:
-lfw_atoms_touched: []
+lfw_items_touched: []
 lfw_words_written: 0
 lfw_words_revised: 0
 lfw_quality_gates_passed: false

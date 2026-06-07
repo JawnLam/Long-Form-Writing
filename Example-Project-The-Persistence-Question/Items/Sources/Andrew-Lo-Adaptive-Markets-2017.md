@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "lo-adaptive-markets-2017"
 Title: "Adaptive Markets: Financial Evolution at the Speed of Thought"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: book
 lfw_authors:
   - "Andrew W. Lo"

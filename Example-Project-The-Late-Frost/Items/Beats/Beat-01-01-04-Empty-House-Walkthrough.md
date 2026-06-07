@@ -3,7 +3,7 @@ Item_Prototype: LFW_Beat
 Item_ID: "beat-01-01-04-empty-house-walkthrough"
 Title: "Beat 01-01-04 — Empty House Walkthrough"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: beat
+lfw_item_type: beat
 lfw_status: drafting
 lfw_parent: "[[01-01-The-Approach]]"
 lfw_order_in_parent: 4

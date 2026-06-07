@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "douglas-how-institutions-think-1986"
 Title: "How Institutions Think"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: book
 lfw_authors:
   - "Mary Douglas"

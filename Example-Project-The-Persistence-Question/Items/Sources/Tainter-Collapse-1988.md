@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "tainter-collapse-1988"
 Title: "The Collapse of Complex Societies"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: book
 lfw_authors:
   - "Joseph A. Tainter"

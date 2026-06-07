@@ -3,7 +3,7 @@ Item_Prototype: LFW_Motif
 Item_ID: "<lowercase-kebab-slug>"
 Title: "<Motif name>"
 lfw_manuscript: ""
-lfw_atom_type: motif
+lfw_item_type: motif
 lfw_kind: thematic-pattern    # image-system | recurring-object | thematic-pattern | gesture | symbol | sound
 lfw_status: latent            # latent | emerging | woven | resolved
 lfw_priority: secondary       # primary | secondary

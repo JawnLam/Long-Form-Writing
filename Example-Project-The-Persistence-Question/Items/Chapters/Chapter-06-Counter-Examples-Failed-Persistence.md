@@ -3,7 +3,7 @@ Item_Prototype: LFW_Chapter
 Item_ID: "ch06-counter-examples"
 Title: "Chapter 6: Counter-Examples — Failed and Anomalous Persistence"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: chapter
+lfw_item_type: chapter
 lfw_status: planned
 lfw_parent: ""
 lfw_order_in_parent: 6
