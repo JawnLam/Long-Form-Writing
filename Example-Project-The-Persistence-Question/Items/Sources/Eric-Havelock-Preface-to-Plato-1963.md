@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "havelock-preface-to-plato-1963"
 Title: "Preface to Plato"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: book
 lfw_authors:
   - "Eric A. Havelock"

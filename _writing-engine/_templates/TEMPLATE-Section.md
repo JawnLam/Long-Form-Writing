@@ -3,7 +3,7 @@ Item_Prototype: LFW_Section
 Item_ID: "<slug>"
 Title: "<Section title>"
 lfw_manuscript: ""
-lfw_atom_type: section
+lfw_item_type: section
 lfw_status: planned    # planned | drafting | drafted | revising | revised | fact-checked | final
 lfw_parent: ""         # wikilink to Chapter
 lfw_order_in_parent:

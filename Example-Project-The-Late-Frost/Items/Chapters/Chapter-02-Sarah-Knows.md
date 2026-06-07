@@ -3,7 +3,7 @@ Item_Prototype: LFW_Chapter
 Item_ID: "chapter-02-sarah-knows"
 Title: "Chapter 2 — Sarah Knows"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: chapter
+lfw_item_type: chapter
 lfw_status: planned
 lfw_parent: ""
 lfw_order_in_parent: 2

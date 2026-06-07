@@ -171,7 +171,7 @@ When in doubt, the AI proposes the genre-default approach but accepts writer ove
 If a writer working in a covered genre finds the Item set insufficient (e.g., a screenwriter wants a separate `Beat-Sheet` Item for the master beat sheet), add it per-cartridge in the manifest:
 
 ```yaml
-lfw_custom_atoms:
+lfw_custom_items:
   - beat-sheet
 ```
 

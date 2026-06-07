@@ -3,7 +3,7 @@ Item_Prototype: LFW_Setting
 Item_ID: "<lowercase-kebab-slug>"
 Title: "<Setting Name>"
 lfw_manuscript: ""
-lfw_atom_type: setting
+lfw_item_type: setting
 lfw_status: sketched    # sketched | defined | final
 lfw_period: ""          # historical or narrative period
 lfw_location: ""        # location (literal or fictional)

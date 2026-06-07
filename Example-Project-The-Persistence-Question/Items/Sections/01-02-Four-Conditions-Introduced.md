@@ -3,7 +3,7 @@ Item_Prototype: LFW_Section
 Item_ID: "01-02-four-conditions-introduced"
 Title: "Section 1.2: The Four Conditions, Introduced"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: section
+lfw_item_type: section
 lfw_status: planned
 lfw_parent: "[[Chapter-01-Introduction]]"
 lfw_order_in_parent: 2

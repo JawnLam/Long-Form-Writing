@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "hoshi-ryokan-records"
 Title: "Hoshi Ryokan Family Records (collected primary sources)"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: primary-document
 lfw_authors:
   - "Hoshi family (collective)"

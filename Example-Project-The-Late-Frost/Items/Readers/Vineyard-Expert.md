@@ -3,7 +3,7 @@ Item_Prototype: LFW_Reader
 Item_ID: "vineyard-expert"
 Title: "Reader — Vineyard Expert"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: reader
+lfw_item_type: reader
 lfw_status: active
 lfw_reader_type: domain-expert
 lfw_priority: secondary

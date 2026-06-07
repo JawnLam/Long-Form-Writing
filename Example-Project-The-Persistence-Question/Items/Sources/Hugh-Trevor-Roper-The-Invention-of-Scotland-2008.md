@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "trevor-roper-invention-of-scotland-2008"
 Title: "The Invention of Scotland: Myth and History"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: book
 lfw_authors:
   - "Hugh Trevor-Roper"

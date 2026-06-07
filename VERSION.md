@@ -1,9 +1,9 @@
 ---
-lfw_version: "1.6.0"
-schema_version: "1.5"
+lfw_version: "1.7.0"
+schema_version: "1.6"
 schema_status: "STABLE"
 release_date: 2026-06-06
-release_phase: "Minor release — vocabulary clean-up; atom → Item across engine and example cartridges; no new schema capability"
+release_phase: "Minor release — Convention 6 adoption; _Prototypes/ folder ships 36 LFW_*.md Prototype definitions; completes the lowercase-form of v1.6.0's atom → Item rename in templates"
 ---
 
 # Long-Form-Writing — Version

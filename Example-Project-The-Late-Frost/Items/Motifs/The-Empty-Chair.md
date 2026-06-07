@@ -3,7 +3,7 @@ Item_Prototype: LFW_Motif
 Item_ID: "the-empty-chair"
 Title: "Motif — The Empty Chair"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: motif
+lfw_item_type: motif
 lfw_status: latent
 lfw_priority: secondary
 lfw_first_appearance: "[[01-01-The-Approach]] Beat 4 (per pending SCENE-AUDIT)"

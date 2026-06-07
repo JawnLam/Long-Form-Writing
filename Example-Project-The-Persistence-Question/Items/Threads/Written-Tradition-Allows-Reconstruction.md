@@ -3,7 +3,7 @@ Item_Prototype: LFW_Thread
 Item_ID: "written-tradition-allows-reconstruction"
 Title: "Written Tradition That Allows Reconstruction After Loss"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: thread
+lfw_item_type: thread
 lfw_kind: argument
 lfw_status: active
 lfw_sections_engaged:

@@ -3,7 +3,7 @@ Item_Prototype: LFW_Theme
 Item_ID: "<theme-slug>"
 Title: "Theme — <Name>"
 lfw_manuscript: ""
-lfw_atom_type: theme
+lfw_item_type: theme
 lfw_status: candidate         # candidate | developing | threaded | resolved
 lfw_priority: ""              # "central" | "secondary" | "incidental"
 lfw_appears_in_scenes: []

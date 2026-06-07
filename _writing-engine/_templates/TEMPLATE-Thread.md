@@ -3,7 +3,7 @@ Item_Prototype: LFW_Thread
 Item_ID: "<slug>"
 Title: "<Thread name>"
 lfw_manuscript: ""
-lfw_atom_type: thread
+lfw_item_type: thread
 lfw_kind: ""    # argument | counter-argument | framing | concept | recurring-example | methodology
 lfw_status: emerging    # emerging | active | concluded
 lfw_sections_engaged: []

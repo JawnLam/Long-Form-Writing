@@ -3,7 +3,7 @@ Item_Prototype: LFW_Character_Bible
 Item_ID: "maya-hollis-bible"
 Title: "Maya Hollis — Bible"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: character-bible
+lfw_item_type: character-bible
 lfw_status: drafting
 lfw_character: "[[Maya-Hollis]]"
 Date_Added: 2026-06-03

@@ -3,7 +3,7 @@ Item_Prototype: LFW_Inspiration
 Item_ID: "patchett-dutch-house-2019"
 Title: "Ann Patchett — The Dutch House (2019)"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: inspiration
+lfw_item_type: inspiration
 lfw_status: absorbed
 lfw_kind: book
 lfw_for: "inheritance + sibling structure; close-third POV with retrospective frame"

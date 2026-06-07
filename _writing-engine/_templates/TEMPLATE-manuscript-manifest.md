@@ -14,7 +14,7 @@ lfw_voice_mode: writer-maintains   # writer-maintains | voice-samples | voice-ch
 lfw_citation_style: ""  # chicago-notes-bibliography | chicago-author-date | mla | apa | harvard | custom | (blank for fiction)
 lfw_writer_name: ""     # operator-confirmed; never inferred
 lfw_bootstrapped: <YYYY-MM-DD>
-lfw_custom_atoms: []
+lfw_custom_items: []
 lfw_active_overlays: []           # v1.3.1, optional: ["story-circle"] | ["save-the-cat"] | ["heros-journey"] | ["freytag"]
 lfw_active_craft_modules: []      # v1.3.1, optional: ["show-dont-tell", "dialogue-and-subtext", "pov-and-psychic-distance", "concrete-to-abstract", "signposting", "given-new", "curse-of-knowledge"]
 lfw_show_dont_tell_calibration:   # v1.3.1, optional; only if show-dont-tell is active

@@ -3,7 +3,7 @@ Item_Prototype: LFW_Note
 Item_ID: "<slug>"
 Title: "<short label>"
 lfw_manuscript: ""
-lfw_atom_type: note
+lfw_item_type: note
 lfw_kind: ""    # idea | fragment | dialogue | observation | research-lead | structural-thought
 lfw_status: unplaced    # unplaced | placed | discarded
 lfw_placed_at: ""    # wikilink to Section or Scene (if placed)

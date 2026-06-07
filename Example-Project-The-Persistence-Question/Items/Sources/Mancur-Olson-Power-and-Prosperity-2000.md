@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "olson-power-and-prosperity-2000"
 Title: "Power and Prosperity: Outgrowing Communist and Capitalist Dictatorships"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: book
 lfw_authors:
   - "Mancur Olson"

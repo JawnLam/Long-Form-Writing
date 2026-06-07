@@ -3,7 +3,7 @@ Item_Prototype: LFW_Chapter
 Item_ID: "ch01-introduction"
 Title: "Chapter 1: The Question"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: chapter
+lfw_item_type: chapter
 lfw_status: drafted
 lfw_parent: ""
 lfw_order_in_parent: 1

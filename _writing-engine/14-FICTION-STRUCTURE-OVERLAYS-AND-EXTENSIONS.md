@@ -146,7 +146,7 @@ Item_Prototype: LFW_Character_Bible
 Item_ID: ""
 Title: ""
 lfw_manuscript: ""
-lfw_atom_type: character-bible
+lfw_item_type: character-bible
 lfw_status: drafting       # drafting | established | revised | final
 lfw_character: ""          # wiki-link back to the Character Item
 Date_Added:
@@ -263,7 +263,7 @@ Item_Prototype: LFW_Theme
 Item_ID: ""
 Title: ""
 lfw_manuscript: ""
-lfw_atom_type: theme
+lfw_item_type: theme
 lfw_status: candidate    # candidate | developing | threaded | resolved
 lfw_priority: ""         # "central" / "secondary" / "incidental"
 lfw_appears_in_scenes: []

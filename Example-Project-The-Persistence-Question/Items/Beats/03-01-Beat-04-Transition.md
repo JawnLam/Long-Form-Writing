@@ -3,7 +3,7 @@ Item_Prototype: LFW_Beat
 Item_ID: "03-01-beat-04-transition"
 Title: "Beat 4: Transition — Setting Up the Statistical Question"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: beat
+lfw_item_type: beat
 lfw_status: planned
 lfw_parent: "[[03-01-Hoshi-Opening]]"
 lfw_order_in_parent: 4

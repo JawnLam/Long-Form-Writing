@@ -14,7 +14,7 @@ lfw_voice_mode: writer-maintains
 lfw_citation_style: ""
 lfw_writer_name: "<USER_NAME placeholder — worked-example cartridge, not a real attributed work>"
 lfw_bootstrapped: 2026-06-02
-lfw_custom_atoms: []
+lfw_custom_items: []
 lfw_scaffolding_mode: gradual-fade
 lfw_scaffolding_thresholds:
   full_through_session: 10

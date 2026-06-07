@@ -3,7 +3,7 @@ Item_Prototype: LFW_Timeline
 Item_ID: "family-history-1968-2026"
 Title: "Family History — The Hollis Vineyard (1968–2026)"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: timeline
+lfw_item_type: timeline
 lfw_status: established
 lfw_timeline_layer: world-history
 lfw_character: ""

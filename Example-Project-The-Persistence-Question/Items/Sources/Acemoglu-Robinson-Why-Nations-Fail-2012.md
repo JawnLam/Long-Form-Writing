@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "acemoglu-robinson-why-nations-fail-2012"
 Title: "Why Nations Fail: The Origins of Power, Prosperity, and Poverty"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: book
 lfw_authors:
   - "Daron Acemoglu"

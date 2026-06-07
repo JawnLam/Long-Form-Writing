@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "west-scale-2017"
 Title: "Scale: The Universal Laws of Growth, Innovation, Sustainability, and the Pace of Life"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: book
 lfw_authors:
   - "Geoffrey West"

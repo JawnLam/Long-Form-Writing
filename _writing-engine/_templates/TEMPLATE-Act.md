@@ -3,7 +3,7 @@ Item_Prototype: LFW_Act
 Item_ID: "<lowercase-kebab-slug>"
 Title: "Act <N>: <Title>"
 lfw_manuscript: ""
-lfw_atom_type: act
+lfw_item_type: act
 lfw_status: planned    # planned | drafting | drafted | revising | revised | final
 lfw_order_in_parent:
 lfw_purpose: ""        # one sentence: what this act does in the larger work

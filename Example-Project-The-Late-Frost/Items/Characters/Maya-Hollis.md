@@ -3,7 +3,7 @@ Item_Prototype: LFW_Character
 Item_ID: "maya-hollis"
 Title: "Maya Hollis"
 lfw_manuscript: "the-late-frost"
-lfw_atom_type: character
+lfw_item_type: character
 lfw_status: developing
 lfw_role: "protagonist; POV of odd chapters"
 lfw_appears_in_scenes: ["[[01-01-The-Approach]]"]

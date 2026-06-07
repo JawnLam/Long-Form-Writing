@@ -3,7 +3,7 @@ Item_Prototype: LFW_Inspiration
 Item_ID: "<slug>"
 Title: "<Inspiration title>"
 lfw_manuscript: ""
-lfw_atom_type: inspiration
+lfw_item_type: inspiration
 lfw_status: noted           # noted | absorbed | folded-in | retired
 lfw_kind: ""                # book | article | film | conversation | observation | image | podcast | other
 lfw_for: ""                 # what aspect of the manuscript this informs (setting, character, voice, theme, mood)

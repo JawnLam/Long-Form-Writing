@@ -3,7 +3,7 @@ Item_Prototype: LFW_Timeline
 Item_ID: "<slug>"
 Title: "<Timeline name>"
 lfw_manuscript: ""
-lfw_atom_type: timeline
+lfw_item_type: timeline
 lfw_status: drafting           # drafting | established | revised | final
 lfw_timeline_layer: story-time # story-time | world-history | real-world | character-specific
 lfw_character: ""              # only for character-specific layer; wikilink to Character Item

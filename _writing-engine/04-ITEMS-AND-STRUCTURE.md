@@ -133,7 +133,7 @@ Item_Prototype: LFW_Beat
 Item_ID: "<lowercase-kebab-slug>"
 Title: "<short descriptive name>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: beat
+lfw_item_type: beat
 lfw_status: planned   # planned | drafting | drafted | revising | revised | final
 lfw_parent: "[[<chapter-prefixed-section-or-scene-filename>]]"
 lfw_order_in_parent: <int>     # 1, 2, 3, ... within the parent scene/section
@@ -169,7 +169,7 @@ Item_Prototype: LFW_Scene
 Item_ID: "<lowercase-kebab-slug>"
 Title: "<descriptive title>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: scene
+lfw_item_type: scene
 lfw_status: planned   # planned | drafting | drafted | revising | revised | final
 lfw_parent: "[[<chapter-or-act-filename>]]"
 lfw_order_in_parent: <int>
@@ -215,7 +215,7 @@ Item_Prototype: LFW_Section
 Item_ID: "<lowercase-kebab-slug>"
 Title: "<section title>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: section
+lfw_item_type: section
 lfw_status: planned   # planned | drafting | drafted | revising | revised | fact-checked | final
 lfw_parent: "[[<chapter-filename>]]"
 lfw_order_in_parent: <int>
@@ -256,7 +256,7 @@ Item_Prototype: LFW_Chapter
 Item_ID: "<lowercase-kebab-slug>"
 Title: "<chapter title>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: chapter
+lfw_item_type: chapter
 lfw_status: planned   # planned | drafting | drafted | revising | revised | final
 lfw_parent: "[[<part-filename>]]"   # optional; some books have no parts
 lfw_order_in_parent: <int>
@@ -292,7 +292,7 @@ Item_Prototype: LFW_Act
 Item_ID: "<lowercase-kebab-slug>"
 Title: "Act <N>: <title>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: act
+lfw_item_type: act
 lfw_status: planned   # planned | drafting | drafted | revising | revised | final
 lfw_order_in_parent: <int>
 lfw_purpose: "<one sentence: what this act does in the larger work>"
@@ -326,7 +326,7 @@ Item_Prototype: LFW_Setting
 Item_ID: "<lowercase-kebab-slug>"
 Title: "<Setting name>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: setting
+lfw_item_type: setting
 lfw_status: sketched   # sketched | defined | final
 lfw_period: "<historical/narrative period>"
 lfw_location: "<location>"
@@ -359,7 +359,7 @@ Item_Prototype: LFW_Reader
 Item_ID: "<lowercase-kebab-slug>"
 Title: "<Reader name — short, descriptive>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: reader
+lfw_item_type: reader
 lfw_status: developing   # developing | active | retired
 lfw_priority: primary    # primary | secondary | tertiary
 Date_Added:
@@ -395,7 +395,7 @@ Item_Prototype: LFW_Motif
 Item_ID: "<lowercase-kebab-slug>"
 Title: "<Motif name>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: motif
+lfw_item_type: motif
 lfw_kind: image-system | recurring-object | thematic-pattern | gesture | symbol | sound
 lfw_status: latent | emerging | woven | resolved
 lfw_priority: primary | secondary
@@ -431,7 +431,7 @@ Item_Prototype: LFW_Character
 Item_ID: "<slug>"
 Title: "<character full name>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: character
+lfw_item_type: character
 lfw_role: protagonist | antagonist | major-supporting | minor | speaking | non-speaking
 lfw_first_appearance: "[[Scene-slug]]"
 lfw_scenes_present: []
@@ -479,7 +479,7 @@ Item_Prototype: LFW_Character_Bible
 Item_ID: "<character-slug>-bible"
 Title: "<Character Name> — Bible"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: character-bible
+lfw_item_type: character-bible
 lfw_status: drafting | established | revised | final
 lfw_character: "[[<Character-filename>]]"
 Date_Added:
@@ -510,7 +510,7 @@ Item_Prototype: LFW_Theme
 Item_ID: "<theme-slug>"
 Title: "Theme — <Name>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: theme
+lfw_item_type: theme
 lfw_status: candidate | developing | threaded | resolved
 lfw_priority: central | secondary | incidental
 lfw_appears_in_scenes: []
@@ -549,7 +549,7 @@ Item_Prototype: LFW_Timeline
 Item_ID: "<slug>"
 Title: "<Timeline name>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: timeline
+lfw_item_type: timeline
 lfw_status: drafting | established | revised | final
 lfw_timeline_layer: story-time | world-history | real-world | character-specific
 lfw_character: "[[Character-filename]]"   # only for character-specific layer
@@ -585,7 +585,7 @@ Item_Prototype: LFW_Inspiration
 Item_ID: "<slug>"
 Title: "<Inspiration title>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: inspiration
+lfw_item_type: inspiration
 lfw_status: noted | absorbed | folded-in | retired
 lfw_kind: book | article | film | conversation | observation | image | podcast | other
 lfw_for: "<setting | character | voice | theme | mood | other>"
@@ -620,7 +620,7 @@ Item_Prototype: LFW_Thread
 Item_ID: "<slug>"
 Title: "<thread name>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: thread
+lfw_item_type: thread
 lfw_kind: argument | counter-argument | framing | concept | recurring-example | methodology
 lfw_status: emerging | active | concluded
 lfw_sections_engaged: []
@@ -654,7 +654,7 @@ Item_Prototype: LFW_Source
 Item_ID: "<slug>"
 Title: "<source title>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: book | paper | article | interview | dataset | primary-document | video | other
 lfw_authors: []
 lfw_year: <year>
@@ -692,7 +692,7 @@ Item_Prototype: LFW_Note
 Item_ID: "<slug>"
 Title: "<short label>"
 lfw_manuscript: <manuscript-slug>
-lfw_atom_type: note
+lfw_item_type: note
 lfw_kind: idea | fragment | dialogue | observation | research-lead | structural-thought
 lfw_status: unplaced | placed | discarded
 lfw_placed_at: "[[Section-or-Scene]]"   # if placed
@@ -741,7 +741,7 @@ Used in Item frontmatter and body wiki-links:
 
 ## Cartridge backbone files (not Items)
 
-In addition to the Items above, every cartridge has a set of **backbone files** — structural markdown files at the cartridge root that organize the Items and capture state, outline, argument, and development context. They are not Items (no `lfw_atom_type` field) but they have their own prototypes and are first-class engine artifacts.
+In addition to the Items above, every cartridge has a set of **backbone files** — structural markdown files at the cartridge root that organize the Items and capture state, outline, argument, and development context. They are not Items (no `lfw_item_type` field) but they have their own prototypes and are first-class engine artifacts.
 
 | File | Purpose | Required in | Defined in |
 |------|---------|-------------|------------|
@@ -795,7 +795,7 @@ Extending the Item set requires:
 
 1. A real need (a recurring concept that doesn't fit any existing Prototype)
 2. A template in `_writing-engine/_templates/` for the new Item
-3. A note in the cartridge's `_manuscript-manifest.md` under `lfw_custom_atoms`
+3. A note in the cartridge's `_manuscript-manifest.md` under `lfw_custom_items`
 4. Consistent application (don't have the new Item only in one cartridge if the engine should know about it)
 
 See `CONTRIBUTING.md` §1 for the in-scope contribution pattern.

@@ -3,7 +3,7 @@ Item_Prototype: LFW_Source
 Item_ID: "cornell-beginnings-of-rome-1995"
 Title: "The Beginnings of Rome: Italy and Rome from the Bronze Age to the Punic Wars (c. 1000–264 BC)"
 lfw_manuscript: "the-persistence-question"
-lfw_atom_type: source
+lfw_item_type: source
 lfw_source_kind: book
 lfw_authors:
   - "T. J. Cornell"
