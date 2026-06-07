@@ -124,6 +124,119 @@ It happens. Some manuscripts don't finish. To archive a cartridge cleanly:
 
 Don't delete. The Items, the partial draft, the research — keep them. Future-you may return.
 
+## 8. Engine vs your work — the four content zones (OVE Convention 8)
+
+Your installed LFW folder has four content zones. Knowing which is which prevents the operator-pulls-and-loses-work failure mode.
+
+### Engine Zone — release-owned; updated by `git pull`
+
+The files that LFW's release ships:
+
+- Front-door docs: `README.md`, `AI-BOOTSTRAP.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`, `LICENSE.md`, `VERSION.md`, `CHANGELOG.md`, `MIGRATION-NOTES.md`
+- `_writing-engine/` — engine chapters, templates, meta, scripts
+- `_Prototypes/` — LFW's own Prototype definitions
+- `_USER.md.template` — the template, not the populated `_USER.md`
+- `.gitignore` — engine-zone file
+
+**Do not edit Engine Zone files directly.** Updates from `git pull` overwrite them. Customizations belong in Operator-Extension Zone cartridges or in per-cartridge configuration (`_manuscript-manifest.md`, `_style-sheet.md`, `_argument.md`, `_spine.md`).
+
+### Operator-Private Zone — gitignored; never tracked
+
+The `.gitignore` excludes:
+
+- Your operator profile (`_USER.md`), cross-cartridge craft profile (`_craft-profile.md`)
+- Per-cartridge state (`**/_state.md`), session logs (`**/Sessions/*.md`), revision passes (`**/Revision-Passes/*.md`)
+- Operator-private working artifacts: voice samples, craft logs, argument backbones, spine, continuity, promises, overlays, worldbuilding, storyboard, style sheet, relationships
+- Operator-private Items: character bibles, timelines, inspirations (under each cartridge's `Items/Character-Bibles/`, `Items/Timelines/`, `Items/Inspirations/`)
+
+These never get pushed and never get touched by `git pull`. The `!Example-Project-*/**` override re-includes the worked examples (Shipped Examples Zone).
+
+### Operator-Extension Zone — your manuscript cartridges; survives `git pull`
+
+This is where your work lives. Every manuscript you bootstrap through LFW becomes a folder at the LFW root.
+
+`<Cartridge>/` folders that aren't named `Example-Project-*` are not in LFW's release, so `git pull` never touches them. They're yours.
+
+### Shipped Examples Zone — release-owned; updated by `git pull`
+
+The two worked-example cartridges that demonstrate LFW:
+
+- `Example-Project-The-Late-Frost/` — literary fiction
+- `Example-Project-The-Persistence-Question/` — non-fiction
+
+**Do not edit Shipped Examples directly.** If you want to riff on an example, copy it into an Extension Zone cartridge (`cp -r Example-Project-The-Late-Frost My-Novel-In-Progress`) and customize there.
+
+## 9. Updates and troubleshooting
+
+The canonical update workflow lives in `INSTALL.md § 8`. Common scenarios:
+
+### Clean fast-forward (no local engine modifications)
+
+```bash
+cd ~/Operating-Volumes/Long-Form-Writing-v<your-major>.<minor>
+git fetch origin
+git log --oneline HEAD..origin/main          # what's incoming
+git pull --ff-only origin main
+```
+
+### Fast-forward fails because you have local engine modifications
+
+```bash
+git status                                    # see what's modified
+git stash push --include-untracked -m "pre-update state"
+git pull --ff-only origin main
+git stash pop                                 # may produce conflicts on engine files you edited
+```
+
+If `git stash pop` reports conflicts, the conflict is between *your local edit* of an engine file and *the upstream release's version*. You almost always want the upstream version (engine evolution generally improves what's there):
+
+```bash
+git checkout --theirs <conflicting-file>
+git add <conflicting-file>
+# OR — abandon your local edits entirely:
+git checkout origin/main -- <conflicting-file>
+```
+
+If your local edit was load-bearing, copy it to a side file before checkout, then reconcile.
+
+### Update lost a file you cared about
+
+`git pull` only updates tracked paths. If a file disappeared, either: (a) the release explicitly removed it (the `CHANGELOG.md` will say so), or (b) it was a gitignored file you forgot was ignored. For (a), the file is recoverable via `git log --all --oneline -- <path>`. For (b), check whether the file matched a `.gitignore` pattern.
+
+### Major.minor folder transition
+
+When the release notes say to rename your folder:
+
+```bash
+cd ~/Operating-Volumes/
+mv Long-Form-Writing-v<old> Long-Form-Writing-v<new>
+cd Long-Form-Writing-v<new>
+git status   # should show clean
+```
+
+The folder rename doesn't affect git; the rename is for your filesystem clarity.
+
+### Contributing back upstream
+
+To contribute back (open a PR against the upstream LFW), re-enable push to *your own fork* (never to upstream):
+
+```bash
+# Replace with your fork's URL
+git remote set-url --push origin https://github.com/<your-username>/Long-Form-Writing.git
+
+# Make a branch, commit, push to your fork, open a PR on GitHub
+git checkout -b my-contribution
+# ... your changes ...
+git commit -m "..."
+git push origin my-contribution
+```
+
+When you're done contributing, re-disable push to protect your private manuscript work going forward:
+
+```bash
+git remote set-url --push origin DISABLED_TO_PREVENT_ACCIDENTAL_PUSH_OF_PERSONAL_WORK
+```
+
 ## Version
 
-This operator guide ships with Long-Form-Writing v1.0.0.
+This operator guide ships with Long-Form-Writing v1.7.1.

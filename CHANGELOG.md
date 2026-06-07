@@ -2,6 +2,55 @@
 
 All notable changes to Long-Form-Writing are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.7.1] — 2026-06-06
+
+Patch release adopting OVE Conventions 7 (install-and-update pattern) and 8 (engine vs operator-content boundary). Also fixes a bug in v1.7.0: the `.gitignore` patterns still referenced the old `Atoms/` folder name (renamed to `Items/` in v1.6.0).
+
+### Fixed — `.gitignore` patterns now match the post-v1.6.0 folder structure
+
+v1.6.0 renamed `Atoms/` to `Items/` across the repo, but `.gitignore` was missed. As a result, operator-private artifacts that should have been excluded from tracking — character bibles, timelines, inspirations — were tracked by default since v1.6.0.
+
+- `**/Atoms/Character-Bibles/*.md` → `**/Items/Character-Bibles/*.md`
+- `**/Atoms/Timelines/*.md` → `**/Items/Timelines/*.md`
+- `**/Atoms/Inspirations/*.md` → `**/Items/Inspirations/*.md`
+
+Inline comments added to flag the rename history. Operators of v1.6.0 or v1.7.0 with private character bibles in their working copies should check whether those files got tracked by accident; if so, untrack with `git rm --cached <file>` then re-commit.
+
+### Added — OVE Convention 7 (install-and-update pattern)
+
+`INSTALL.md` rewritten with:
+
+- **§ 1** — canonical git-clone-with-push-disabled install snippet. Concrete URL: `https://github.com/JawnLam/Long-Form-Writing.git`. Folder convention: `Long-Form-Writing-v<major>.<minor>`.
+- **§ 1a** — alternative no-git install (download ZIP, manual copy).
+- **§ 8 — Updating** — `git fetch` + `git log --oneline HEAD..origin/main` + `git pull --ff-only`, with stash-pop fallback for when local engine edits would conflict.
+- Major.minor folder transition snippet (`mv Long-Form-Writing-v1.7 Long-Form-Writing-v1.8`).
+
+`OPERATOR-GUIDE.md` gains:
+
+- **§ 9 — Updates and troubleshooting** — clean fast-forward, stash-pop conflict resolution (`git checkout --theirs`), recovery for lost files, major.minor folder transitions, contributing back upstream (re-enable push to your fork; never to upstream).
+
+### Added — OVE Convention 8 (engine vs operator-content boundary)
+
+`CONTRIBUTING.md` gains:
+
+- **§ 7 — Content zones** — declares the four zones with concrete path patterns:
+  - **Engine Zone** — front-door docs, `_writing-engine/`, `_Prototypes/`, `_USER.md.template`, `.gitignore`
+  - **Operator-Private Zone** — `_USER.md`, `_craft-profile.md`, per-cartridge state/sessions/revision-passes, voice samples, craft logs, argument/spine/continuity/promises backbones, overlays, worldbuilding/storyboard/style-sheet/relationships, operator-private Items (character-bibles, timelines, inspirations)
+  - **Operator-Extension Zone** — operator's own manuscript cartridges parallel to `Example-Project-*`
+  - **Shipped Examples Zone** — `Example-Project-The-Late-Frost/`, `Example-Project-The-Persistence-Question/`
+
+`OPERATOR-GUIDE.md` gains:
+
+- **§ 8 — Engine vs your work** — plain-English explanation of the four-zone boundary, with concrete file/folder examples per zone.
+
+### Notes
+
+This is a patch release: no engine prose changed beyond the documentation additions; no schema change; no Prototype changes; no `_Prototypes/` content moved.
+
+The `.gitignore` fix is the only behavioral change. Operators on v1.7.0 with private character-bible / timeline / inspiration content should audit whether those files got tracked since v1.6.0 (likely yes if they did `git add .` since then) and untrack as needed.
+
+This release is part of an OVE-coordinated multi-OV cycle: OVE v1.2.0 codifies Conventions 7 and 8; LFW v1.7.1 retrofits them here; LLL v1.3.0 and SOLVE-eX v2.1.2 retrofit them in parallel.
+
 ## [1.7.0] — 2026-06-06
 
 Adopts Operating-Volume-Engineering Convention 6 (every OV ships its own `_Prototypes/` folder for portability). Completes the lowercase-form of v1.6.0's atom → Item rename in templates and Item files. No new engine capability; the contribution is **portability** — anyone cloning this repo without the operator's vault Infrastructure now gets the full Prototype definitions out of the box.
