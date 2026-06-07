@@ -1,9 +1,9 @@
 ---
-lfw_version: "1.7.1"
+lfw_version: "1.7.2"
 schema_version: "1.6"
 schema_status: "STABLE"
-release_date: 2026-06-06
-release_phase: "Patch release — fixes stale .gitignore Atoms→Items patterns missed in v1.7.0; adopts OVE Conventions 7 (install-and-update pattern) and 8 (engine vs operator boundary)"
+release_date: 2026-06-07
+release_phase: "Patch release — adds UPDATE-PROMPT.md (OVE Convention 7's fourth required artifact); copy-pasteable AI prompt that walks the operator through routine updates"
 ---
 
 # Long-Form-Writing — Version
