@@ -56,13 +56,15 @@ _craft-profile.md
 **/_promises.md
 
 # v1.3.1 operator-private artifacts
-**/Atoms/Character-Bibles/*.md
+# (Folder renamed Atoms/ → Items/ in v1.6.0; patterns updated in v1.7.1.)
+**/Items/Character-Bibles/*.md
 **/_overlay-*.md
 **/_voice-samples-*.md
 
 # v1.3.2 operator-private artifacts
-**/Atoms/Timelines/*.md
-**/Atoms/Inspirations/*.md
+# (Folder renamed Atoms/ → Items/ in v1.6.0; patterns updated in v1.7.1.)
+**/Items/Timelines/*.md
+**/Items/Inspirations/*.md
 **/_worldbuilding.md
 **/_storyboard.md
 **/_style-sheet.md

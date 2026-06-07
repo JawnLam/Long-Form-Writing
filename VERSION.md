@@ -1,9 +1,9 @@
 ---
-lfw_version: "1.7.0"
+lfw_version: "1.7.1"
 schema_version: "1.6"
 schema_status: "STABLE"
 release_date: 2026-06-06
-release_phase: "Minor release — Convention 6 adoption; _Prototypes/ folder ships 36 LFW_*.md Prototype definitions; completes the lowercase-form of v1.6.0's atom → Item rename in templates"
+release_phase: "Patch release — fixes stale .gitignore Atoms→Items patterns missed in v1.7.0; adopts OVE Conventions 7 (install-and-update pattern) and 8 (engine vs operator boundary)"
 ---
 
 # Long-Form-Writing — Version

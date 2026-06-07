@@ -76,7 +76,66 @@ LFW v1.0 covers five long-form genres. If you want to propose explicit support f
 3. Update `BOOTSTRAP-NEW-MANUSCRIPT.md` to include the genre in its CQ asking the writer
 4. Add a worked-example cartridge if you can (very useful for adopters)
 
-## 7. Sharing cartridges
+## 7. Content zones (OVE Convention 8)
+
+Every file in this repo belongs to one of four zones. Knowing which zone a file is in tells you whether the release owns it (the engine) or the operator owns it.
+
+### Engine Zone — release-owned; updated by `git pull`
+
+| Path pattern | Notes |
+|--------------|-------|
+| `README.md`, `AI-BOOTSTRAP.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`, `LICENSE.md`, `VERSION.md`, `CHANGELOG.md`, `MIGRATION-NOTES.md` | Front-door docs |
+| `_writing-engine/**` | Engine chapters, templates, meta, scripts (router-generation) |
+| `_Prototypes/**` | OVE Convention 6 — LFW's own Prototype definitions |
+| `_USER.md.template` | Template only; the populated `_USER.md` is operator-private |
+| `.gitignore` | Engine-zone file; its patterns define the Operator-Private patterns below |
+
+**Engine Zone files do not get hand-edited by operators.** Customizations belong in the Operator-Extension Zone (your own manuscript cartridges) or in per-cartridge configuration (`_manuscript-manifest.md`, `_style-sheet.md`, etc.).
+
+### Operator-Private Zone — gitignored; never tracked
+
+| Pattern | Why |
+|---------|-----|
+| `_USER.md` | Operator profile; identity, communication preferences, personal context (F3) |
+| `_craft-profile.md` | Cross-cartridge writer-skill memory (Layer 0; chapter 09) |
+| `**/_state.md` | Per-cartridge state; operator's live working state |
+| `**/Sessions/*.md` | Per-cartridge session logs; verbatim AI/operator conversation |
+| `**/Revision-Passes/*.md` | Per-cartridge revision-pass history |
+| `**/_voice-samples.md`, `**/_voice-samples-*.md` | Operator-private voice calibration |
+| `**/_craft-log.md` | Per-cartridge pattern observations |
+| `**/_argument.md` | Per-cartridge argument backbone (non-fiction) |
+| `**/_spine.md`, `**/_continuity.md`, `**/_promises.md` | Fiction backbones (v1.2) |
+| `**/_overlay-*.md` | Beat-sheet overlays (v1.3.1) |
+| `**/_worldbuilding.md`, `**/_storyboard.md`, `**/_style-sheet.md`, `**/_relationships.md` | Fiction structural artifacts (v1.3.2) |
+| `**/Items/Character-Bibles/*.md` | Operator-private character bibles (v1.3.1) |
+| `**/Items/Timelines/*.md` | Operator-private timelines (v1.3.2) |
+| `**/Items/Inspirations/*.md` | Operator-private inspirations (v1.3.2) |
+| `.DS_Store`, `.obsidian/`, IDE caches | Filesystem-noise |
+
+These patterns are in `.gitignore`. The override `!Example-Project-*/**` re-includes the worked example cartridges so they remain tracked (Shipped Examples Zone).
+
+If you want to track your own manuscript despite the default ignore, see `INSTALL.md § 3a` (or equivalent — edit `.gitignore` to remove the cartridge-content exclusions before your first commit on your own work).
+
+### Operator-Extension Zone — operator-created; survives `git pull`
+
+The OV is designed to be extended at the OV root by adding new manuscript cartridge folders parallel to the shipped examples.
+
+| Pattern | Notes |
+|---------|-------|
+| `<Cartridge>/` at the LFW root (anything other than `Example-Project-*`) | Your own manuscript cartridges; not in the release; untracked unless you `git add -f` (or remove the cartridge-content `.gitignore` exclusions before commit) |
+
+`git pull` never touches Operator-Extension folders because they aren't in the release tree.
+
+### Shipped Examples Zone — release-owned; updated by `git pull`
+
+| Path | Notes |
+|------|-------|
+| `Example-Project-The-Late-Frost/` | Worked example: literary fiction |
+| `Example-Project-The-Persistence-Question/` | Worked example: non-fiction |
+
+**Shipped Examples are reference implementations.** If you want to riff on one, copy it into an Operator-Extension Zone cartridge (`cp -r Example-Project-The-Late-Frost My-Novel-In-Progress`) and customize there.
+
+## 8. Sharing cartridges
 
 A worked-example cartridge is a complete `<Cartridge>/` folder. To share as a contribution:
 
@@ -86,4 +145,4 @@ A worked-example cartridge is a complete `<Cartridge>/` folder. To share as a co
 
 ## Version
 
-This contribution guide ships with Long-Form-Writing v1.0.0.
+This contribution guide ships with Long-Form-Writing v1.7.1.
