@@ -24,8 +24,8 @@ lfw_genre: fiction | non-fiction | screenplay | play | dissertation
 
 This is the load-bearing setting. It determines:
 
-- Which atom types are first-class in the cartridge
-- Which optional atoms apply
+- Which Prototypes are first-class in the cartridge
+- Which optional Items apply
 - What `_outline.md` looks like
 - Which session activities apply (e.g., WORLDBUILDING is fiction-only)
 - What "done" looks like
@@ -34,10 +34,10 @@ Genre is locked at cartridge bootstrap. Changing genre mid-cartridge is a major 
 
 ## Genre branch — Fiction
 
-**Atoms emphasized:**
+**Items emphasized:**
 
 - **Scene** (primary) — the unit of dramatic action; prose lives here
-- **Character** (primary) — recurring participants; first-class atoms with their own files
+- **Character** (primary) — recurring participants; first-class Items with their own files
 - **Character-Bible** *(v1.3.1, opt-in)* — extended companion to Character for POV-bearing, antagonist, and major-supporting characters
 - **Motif** *(v1.2)* — image-cluster / recurring-object / thematic carrier
 - **Theme** *(v1.3.1)* — abstract idea the manuscript is about, carried not declared
@@ -68,7 +68,7 @@ Sub-genre tunes the activity-decision algorithm's defaults (chapter 03 §6b'): c
 
 ## Genre branch — Non-fiction
 
-**Atoms emphasized:**
+**Items emphasized:**
 
 - **Section** (primary) — the unit of argument or narrative; prose lives here
 - **Thread** (primary) — recurring topics, arguments, framing devices that span sections
@@ -82,16 +82,16 @@ Sub-genre tunes the activity-decision algorithm's defaults (chapter 03 §6b'): c
 
 **Lifecycle stages:** research → outlining → drafting → revising → fact-checking → polishing → shipped
 
-**Genre-specific notes:** RESEARCH-INTEGRATION is a heavily-used activity. Source atoms carry the citation discipline (chapter 06).
+**Genre-specific notes:** RESEARCH-INTEGRATION is a heavily-used activity. Source Items carry the citation discipline (chapter 06).
 
 **"Done" looks like:** A complete manuscript with verified citations, fact-checked claims, and a clear argumentative or narrative arc that a serious reader can follow.
 
 ## Genre branch — Screenplay
 
-**Atoms emphasized:**
+**Items emphasized:**
 
 - **Scene** (primary) — the screenplay unit; prose follows screenwriting conventions (slug lines, action lines, dialogue)
-- **Character** (primary) — speaking roles + named non-speaking; first-class atoms
+- **Character** (primary) — speaking roles + named non-speaking; first-class Items
 - **Beat** (high) — within Scenes, the dramatic moves; screenwriting traditionally tracks beats explicitly
 - **Act** (high, replaces Chapter) — composes Scenes; usually three or five acts
 - **Note** (medium) — alt versions, deleted scenes, dialogue fragments
@@ -101,32 +101,32 @@ Sub-genre tunes the activity-decision algorithm's defaults (chapter 03 §6b'): c
 
 **Lifecycle stages:** treatment → outlining → drafting → revising → polishing → shipped
 
-**Genre-specific conventions:** Page-count discipline matters (1 page ≈ 1 minute of screen time). Format conventions (Final Draft, Fountain) are external to LFW but the atoms accommodate them.
+**Genre-specific conventions:** Page-count discipline matters (1 page ≈ 1 minute of screen time). Format conventions (Final Draft, Fountain) are external to LFW but the Items accommodate them.
 
 **"Done" looks like:** A complete screenplay ready to send to a producer, manager, agent, or contest.
 
 ## Genre branch — Play
 
-**Atoms emphasized:**
+**Items emphasized:**
 
 - **Scene** (primary)
 - **Character** (primary) — speaking roles; first-class
 - **Act** (high) — composes Scenes
 - **Beat** (high) — dramatic moves within Scenes
-- **Setting** (custom atom for plays) — locations and stage requirements; may be a custom atom type per the cartridge
+- **Setting** (custom Item for plays) — locations and stage requirements; may be a custom Prototype per the cartridge
 - **Note** (medium) — alt versions, dramaturgical notes
 
 **Outline structure:** Play → Act → Scene → Beat.
 
 **Lifecycle stages:** treatment → outlining → drafting → revising → workshop-revising → polishing → shipped
 
-**Genre-specific conventions:** Stage directions live with the prose (in Scene atoms). Production considerations (cast size, set complexity) live in the manuscript manifest.
+**Genre-specific conventions:** Stage directions live with the prose (in Scene Items). Production considerations (cast size, set complexity) live in the manuscript manifest.
 
 **"Done" looks like:** A complete play script ready for submission to theaters, workshops, contests, or self-production.
 
 ## Genre branch — Dissertation / academic
 
-**Atoms emphasized:**
+**Items emphasized:**
 
 - **Section** (primary)
 - **Thread** (primary) — arguments, sub-arguments, methodological threads
@@ -147,7 +147,7 @@ Sub-genre tunes the activity-decision algorithm's defaults (chapter 03 §6b'): c
 
 When loading a cartridge, the AI reads `_manuscript-manifest.md` for the `lfw_genre` field, then comes back to this chapter to know:
 
-- Which atom types to expect and create
+- Which Prototypes to expect and create
 - Which lifecycle stage labels are valid
 - Which session activities to consider in the activity-decision algorithm
 - What "done" looks like for THIS manuscript
@@ -156,19 +156,19 @@ When in doubt, the AI proposes the genre-default approach but accepts writer ove
 
 ## Edge cases
 
-**Hybrid genres** (memoir, narrative non-fiction, autofiction): pick the genre whose schema is the closest fit and override specific atoms. E.g., a memoir typically uses `genre: non-fiction` but adds Character atoms for named individuals.
+**Hybrid genres** (memoir, narrative non-fiction, autofiction): pick the genre whose schema is the closest fit and override specific Items. E.g., a memoir typically uses `genre: non-fiction` but adds Character Items for named individuals.
 
 **Multi-book series:** each book is its own cartridge. A shared `series-bible.md` at the LFW root can carry cross-book reference material if needed (out of scope for the engine; a writer convention).
 
-**Anthology / short-story collection:** each story is a cartridge; the collection is a parent folder. The "Chapter" atom in each cartridge maps to the story. Not a strong fit; consider whether LFW is the right form (a smaller artifact might serve better).
+**Anthology / short-story collection:** each story is a cartridge; the collection is a parent folder. The "Chapter" Item in each cartridge maps to the story. Not a strong fit; consider whether LFW is the right form (a smaller artifact might serve better).
 
-**Translation work:** out of scope for v1.0. A future v1.x extension could add a `translation` genre with Source atoms for the original text and special handling for matched prose.
+**Translation work:** out of scope for v1.0. A future v1.x extension could add a `translation` genre with Source Items for the original text and special handling for matched prose.
 
-**Poetry collections:** out of scope for v1.0. Per-poem atom shape doesn't fit cleanly. Possible v1.x extension.
+**Poetry collections:** out of scope for v1.0. Per-poem Item shape doesn't fit cleanly. Possible v1.x extension.
 
 ## When to extend the schema
 
-If a writer working in a covered genre finds the atom set insufficient (e.g., a screenwriter wants a separate `Beat-Sheet` atom for the master beat sheet), add it per-cartridge in the manifest:
+If a writer working in a covered genre finds the Item set insufficient (e.g., a screenwriter wants a separate `Beat-Sheet` Item for the master beat sheet), add it per-cartridge in the manifest:
 
 ```yaml
 lfw_custom_atoms:

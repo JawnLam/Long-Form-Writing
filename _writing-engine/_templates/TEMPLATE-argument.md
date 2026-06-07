@@ -40,7 +40,7 @@ lfw_argument_version: 1
 
 ## Evidence map
 
-*For each sub-claim, the Sources, cases, and reasoning that support it. Cross-references to Source atoms.*
+*For each sub-claim, the Sources, cases, and reasoning that support it. Cross-references to Source Items.*
 
 ### Sub-claim 1 — evidence
 

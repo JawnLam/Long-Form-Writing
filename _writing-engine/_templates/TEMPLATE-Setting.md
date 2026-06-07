@@ -7,7 +7,7 @@ lfw_atom_type: setting
 lfw_status: sketched    # sketched | defined | final
 lfw_period: ""          # historical or narrative period
 lfw_location: ""        # location (literal or fictional)
-lfw_scenes_using: []    # auto-populates from Scene atoms
+lfw_scenes_using: []    # auto-populates from Scene Items
 Date_Added:
 Date_Modified:
 Needs_Processing: false
@@ -31,7 +31,7 @@ Set pieces, sightlines, entrances and exits, lighting requirements, sound, anyth
 
 ## Scenes using this setting
 
-*Wiki-links to Scene atoms set here. Often auto-populated from Scene atoms' `lfw_setting` field.*
+*Wiki-links to Scene Items set here. Often auto-populated from Scene Items' `lfw_setting` field.*
 
 - [[Scene-filename]]
 

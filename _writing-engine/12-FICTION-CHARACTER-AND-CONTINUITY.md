@@ -12,13 +12,13 @@ lfw_load:
 
 # 12 — FICTION CHARACTER AND CONTINUITY
 
-> **Chapter 11 covered fiction's causal spine and the setup/payoff ledger. This chapter covers the three remaining fiction-specific gaps the engine had: the Character atom that never gets checked against the prose, the absence of a Thread analog for theme/motif, and the WORLDBUILDING activity that was generative but never verified itself against the draft. Plus the POV/psychic-distance craft module — the largest teachable fiction skill the engine ignored.**
+> **Chapter 11 covered fiction's causal spine and the setup/payoff ledger. This chapter covers the three remaining fiction-specific gaps the engine had: the Character Item that never gets checked against the prose, the absence of a Thread analog for theme/motif, and the WORLDBUILDING activity that was generative but never verified itself against the draft. Plus the POV/psychic-distance craft module — the largest teachable fiction skill the engine ignored.**
 
 ## Why this chapter exists
 
 Three persistent fiction failure modes the engine couldn't see:
 
-1. **The Character bible doesn't reach the page.** A character has a gorgeous arc in their atom file and a flat one in the chapters. Voice on the page contradicts the voice declared in the atom. The stated want never operates as fuel in any scene. The arc is asserted ("she finally understood") rather than earned (shown to the reader through the steps that produced the change).
+1. **The Character bible doesn't reach the page.** A character has a gorgeous arc in their Item file and a flat one in the chapters. Voice on the page contradicts the voice declared in the Item. The stated want never operates as fuel in any scene. The arc is asserted ("she finally understood") rather than earned (shown to the reader through the steps that produced the change).
 2. **Theme and motif live in the writer's head, accidentally on the page.** Non-fiction got Thread to track recurring arguments; fiction got nothing equivalent for image systems, recurring objects, thematic patterns. Theme that's stated is a lecture; theme that's woven is craft. You can only weave deliberately what you can see.
 3. **Worldbuilding is fun and generative; continuity is hard and ignored.** WORLDBUILDING in v1.0 was a generative activity — invent a world. The actually-difficult fiction work is verifying that scene 31 doesn't contradict the magic rule established in scene 4, that timelines hold across hundreds of pages, and (load-bearing for any plot with secrets, which is most plots) that the who-knows-what state is consistent.
 
@@ -30,14 +30,14 @@ This chapter adds the artifacts and activities for all three. Plus the POV/psych
 
 A diagnostic that reads drafted prose for a specific Character and tests four questions:
 
-1. **Want delivery** — does the want stated in the Character atom's `## Arc` section operate as fuel in the prose? If the Character atom says "Maya wants her sister's recognition," does that want push behavior visibly in the scenes Maya appears in?
+1. **Want delivery** — does the want stated in the Character Item's `## Arc` section operate as fuel in the prose? If the Character Item says "Maya wants her sister's recognition," does that want push behavior visibly in the scenes Maya appears in?
 2. **Voice consistency** — does the dialogue and POV-prose for this Character match the voice declared in `## Voice and Manner`? Or has voice drifted across chapters (often unconsciously — voice drift is the most common fiction-craft regression after head-hopping).
 3. **Arc earned or asserted** — when the prose claims a character change ("she finally understood," "he stopped fighting it"), are the steps that produce the change shown in the prose, or is the change declared without dramatization?
 4. **Antagonist steelman** — for antagonists specifically: is the antagonist's want as strong and as legitimate-feeling as the protagonist's? A weak antagonist (one whose want is flimsy, whose opposition is plot-mechanical rather than character-driven) is the most reliable cause of weak fiction.
 
 ### Trigger conditions
 
-- A Character atom is at `established` status
+- A Character Item is at `established` status
 - The Character has appeared in 3+ drafted Scenes
 - CHARACTER-CONSISTENCY hasn't been run on this Character since the last batch of Scenes were drafted
 - Writer flags CHARACTER-CONSISTENCY explicitly
@@ -45,8 +45,8 @@ A diagnostic that reads drafted prose for a specific Character and tests four qu
 
 ### Protocol
 
-1. AI reads the target Character atom in full
-2. AI reads every Scene atom where the Character has `lfw_characters_present` (or appears in body)
+1. AI reads the target Character Item in full
+2. AI reads every Scene Item where the Character has `lfw_characters_present` (or appears in body)
 3. AI reads the surrounding Chapter context
 4. AI tests:
    - Want delivery — quote evidence from the prose; note absences
@@ -62,33 +62,33 @@ A diagnostic that reads drafted prose for a specific Character and tests four qu
 
 ### Discipline
 
-The AI does NOT rewrite character dialogue or interiority to "fix" inconsistencies. The Character atom may be the thing that's wrong (sometimes the writer's understanding of the character has evolved past the atom and the atom needs updating; sometimes the drafted prose is more honest than the planned atom). The AI surfaces; the writer judges which side is right.
+The AI does NOT rewrite character dialogue or interiority to "fix" inconsistencies. The Character Item may be the thing that's wrong (sometimes the writer's understanding of the character has evolved past the Item and the Item needs updating; sometimes the drafted prose is more honest than the planned Item). The AI surfaces; the writer judges which side is right.
 
 ### Failure modes this catches
 
-**F24 — character-bible-disconnected-from-prose.** The atom and the prose drift apart silently.
+**F24 — character-bible-disconnected-from-prose.** The Item and the prose drift apart silently.
 
 **F25 — arc-asserted-not-earned.** The novel claims a change the prose hasn't dramatized.
 
 **F26 — antagonist-weak-unflagged.** The protagonist's opposition is mechanical rather than character-driven, and the writer hasn't surfaced the problem.
 
-### When Character-Bible atoms are present *(v1.3.1)*
+### When Character-Bible Items are present *(v1.3.1)*
 
-If the Character atom has `lfw_character_bible` populated and the Bible atom exists, CHARACTER-CONSISTENCY reads the Bible in full as part of the activity. The audit then can:
+If the Character Item has `lfw_character_bible` populated and the Bible Item exists, CHARACTER-CONSISTENCY reads the Bible in full as part of the activity. The audit then can:
 
-- Test the prose against the Bible's deep backstory, contradictions, and arc-across-manuscript (not just against the Character atom's surface)
+- Test the prose against the Bible's deep backstory, contradictions, and arc-across-manuscript (not just against the Character Item's surface)
 - Surface drift between Bible and prose (e.g., a habit declared in the Bible that hasn't surfaced in any drafted scene, suggesting the prose is forgetting the character)
-- Surface drift between Character atom and Bible (the Character atom may be ahead of the Bible, or vice versa)
+- Surface drift between Character Item and Bible (the Character Item may be ahead of the Bible, or vice versa)
 
-The Character-Bible's structure and discipline are defined in chapter 14 §3. CHARACTER-CONSISTENCY is the primary consumer of the Bible — most other activities read only the Character atom's surface.
+The Character-Bible's structure and discipline are defined in chapter 14 §3. CHARACTER-CONSISTENCY is the primary consumer of the Bible — most other activities read only the Character Item's surface.
 
-## Part two — Motif atom: fiction's Thread analog
+## Part two — Motif Item: fiction's Thread analog
 
 ### What it is
 
-A Motif is fiction's first-class atom for tracking a recurring sub-surface element — a theme, an image system, a recurring object, a repeating gesture, an idea that surfaces across scenes and chapters. It is the structural equivalent of non-fiction's Thread atom.
+A Motif is fiction's first-class Item for tracking a recurring sub-surface element — a theme, an image system, a recurring object, a repeating gesture, an idea that surfaces across scenes and chapters. It is the structural equivalent of non-fiction's Thread Item.
 
-Non-fiction's recurring argumentative through-lines have somewhere to live (Threads). Fiction's recurring thematic through-lines (until this release) had nowhere, so they stayed accidental. The Motif atom changes that.
+Non-fiction's recurring argumentative through-lines have somewhere to live (Threads). Fiction's recurring thematic through-lines (until this release) had nowhere, so they stayed accidental. The Motif Item changes that.
 
 ### Frontmatter
 
@@ -111,7 +111,7 @@ Needs_Processing: false
 
 1. `# <Motif name>`
 2. `## What this motif is` — what the recurring element is and what it carries (image, idea, association). Brief — one or two paragraphs.
-3. `## Where it appears` — wiki-links to Scene atoms where this motif surfaces, with a one-line note on what it does in that scene
+3. `## Where it appears` — wiki-links to Scene Items where this motif surfaces, with a one-line note on what it does in that scene
 4. `## What it builds toward` — does the motif accumulate meaning across appearances, or does it just repeat? If accumulating, what's the trajectory?
 5. `## Risk of over-use` — does the motif risk becoming heavy-handed if it appears too often, or in too obvious a context? The writer's own awareness of where the line is.
 6. `## Notes` — anything else (sources of the motif in the writer's reading; alternate versions considered; whether it's deliberate or emerged)
@@ -119,7 +119,7 @@ Needs_Processing: false
 ### Naming and location
 
 - **Naming:** `<Motif-Name>.md`. E.g., `Cold-as-Inheritance.md`, `Vine-and-Blood.md`, `The-Empty-Chair.md`.
-- **Location:** `Atoms/Motifs/`.
+- **Location:** `Items/Motifs/`.
 
 ### Status lifecycle
 
@@ -132,7 +132,7 @@ Needs_Processing: false
 
 Most novels have 2–5 motifs operating across the manuscript. Fewer is usually fine. More than 7 tends to dilute — readers can hold maybe five recurring sub-surface elements before the motif system becomes noise.
 
-The writer can decide which patterns are deliberate motifs and which are background. The Motif atom is opt-in; an undocumented recurring image is just a recurring image, not a Motif.
+The writer can decide which patterns are deliberate motifs and which are background. The Motif Item is opt-in; an undocumented recurring image is just a recurring image, not a Motif.
 
 ### Failure mode this catches
 
@@ -206,7 +206,7 @@ The AI does NOT silently revise prose to fix continuity. Continuity is the write
 
 WORLDBUILDING remains the engine's generative activity for fiction worldbuilding work: creating settings, magic systems, alternate-history rules, fictional cultures. It is **not duplicated** by CONTINUITY-CHECK — the two are complementary:
 
-- **WORLDBUILDING** generates new world elements; populates Setting atoms and the world-rules section of `_continuity.md`
+- **WORLDBUILDING** generates new world elements; populates Setting Items and the world-rules section of `_continuity.md`
 - **CONTINUITY-CHECK** verifies drafted prose against the world elements WORLDBUILDING populated
 
 A typical fiction cartridge will have WORLDBUILDING sessions early (when the world is being built) and CONTINUITY-CHECK sessions throughout the drafting phase (as scenes accumulate against the established world).
@@ -226,7 +226,7 @@ The READER-SIMULATION activity defined in chapter 10-READER was framed around no
 
 ### Fiction reader-want/fear/hope tracking
 
-For fiction READER-SIMULATION, the Reader atom takes on an additional dimension: the **reader's want/fear/hope through the manuscript**. What does the reader want to happen? What do they fear? What do they hope for? These shift across the manuscript as the story unfolds.
+For fiction READER-SIMULATION, the Reader Item takes on an additional dimension: the **reader's want/fear/hope through the manuscript**. What does the reader want to happen? What do they fear? What do they hope for? These shift across the manuscript as the story unfolds.
 
 The AI can track the reader's want/fear/hope as a line through the manuscript and simulate where that line goes flat (emotional flatline) or where it dips (loss of stakes) or where it builds (good tension). The flatline is the killer — fiction that doesn't track the reader's emotional state cannot diagnose it.
 
@@ -234,8 +234,8 @@ The AI can track the reader's want/fear/hope as a line through the manuscript an
 
 When running READER-SIMULATION on a fiction cartridge:
 
-1. AI reads the Reader atom (as always)
-2. AI reads the Reader atom's `## Want/fear/hope at this point` section (fiction-specific, added by the writer for fiction-priority Readers)
+1. AI reads the Reader Item (as always)
+2. AI reads the Reader Item's `## Want/fear/hope at this point` section (fiction-specific, added by the writer for fiction-priority Readers)
 3. AI reads the target Scene/Chapter
 4. AI tests the four fiction-specific questions above
 5. AI produces a fiction-flavored report: dramatic-question status, page-turn-impulse map, sympathy/interest level, emotional-flatline locations
@@ -257,7 +257,7 @@ When invoked on a REVISE or READ-THROUGH pass:
 
 ### How it works
 
-Same as other craft modules (chapter 09): on-demand, invoked by the writer for a specific REVISE or READ-THROUGH pass. The AI scans the target atoms and produces a list of candidates. Writer decides which to revise.
+Same as other craft modules (chapter 09): on-demand, invoked by the writer for a specific REVISE or READ-THROUGH pass. The AI scans the target Items and produces a list of candidates. Writer decides which to revise.
 
 The module is opt-in because filter-word density and psychic-distance choices are voice-load-bearing. A writer whose voice depends on careful filter-word use should not have them silently flagged on every drafted section. They surface only when the writer asks.
 
@@ -287,7 +287,7 @@ Each pattern, when observed 3+ times, becomes a craft-log entry per the chapter-
 
 This chapter assumes plot-driven, character-driven fiction. Form variations:
 
-- **Literary fiction without conventional plot** — CHARACTER-CONSISTENCY applies; CONTINUITY-CHECK applies (timeline, who-knows-what); Motif atoms are likely heavily used; SETUP-PAYOFF-AUDIT may be lighter
+- **Literary fiction without conventional plot** — CHARACTER-CONSISTENCY applies; CONTINUITY-CHECK applies (timeline, who-knows-what); Motif Items are likely heavily used; SETUP-PAYOFF-AUDIT may be lighter
 - **Genre fiction** — every part of this chapter applies more rigorously; readers in genre fiction punish unfulfilled promises and inconsistent characters more
 - **Experimental fiction** — Character may apply or not depending on the form; the writer judges
 - **Short stories / flash** — usually too short for this chapter's machinery to earn its keep; the form contains its own discipline
@@ -295,7 +295,7 @@ This chapter assumes plot-driven, character-driven fiction. Form variations:
 ## How this chapter interacts with the rest of the engine
 
 - **Chapter 03 (Cadence and Sessions)** — adds CHARACTER-CONSISTENCY and CONTINUITY-CHECK to the activity table (4 new fiction activities total with chapter 11's contributions; 20 universal activities)
-- **Chapter 04 (Atoms and Structure)** — Motif documented as a new first-class atom; `_continuity.md` added to backbone files
+- **Chapter 04 (Items and Structure)** — Motif documented as a new first-class Item; `_continuity.md` added to backbone files
 - **Chapter 05 (Voice and Craft)** — POV craft module cross-referenced
 - **Chapter 06 (Research Integration)** — generally not applicable to fiction; some research-informed fiction uses Sources
 - **Chapter 07 (Revision Discipline)** — CHARACTER-CONSISTENCY and CONTINUITY-CHECK findings feed into revision passes

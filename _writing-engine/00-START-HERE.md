@@ -56,7 +56,7 @@ Execute in order. Do not skip. Do not reorder.
 8. **`{ROOT}/_craft-profile.md`** at the LFW root, if present — the cross-cartridge writer-skill memory; load-bearing if it exists
 9. **`{ROOT}/_USER.md`** at the LFW root, if present
 10. **`<Cartridge>/_manuscript-manifest.md`** — what this manuscript is; includes scaffolding mode
-11. **`<Cartridge>/_state.md`** — current lifecycle stage, today's focus, atom status
+11. **`<Cartridge>/_state.md`** — current lifecycle stage, today's focus, Item status
 12. **`<Cartridge>/_outline.md`** — structural plan
 13. **`<Cartridge>/_argument.md`** — argument backbone, if present (required for non-fiction/dissertation)
 14. **`<Cartridge>/_spine.md`** — causal backbone, if present (required for fiction/screenplay/play; v1.2)
@@ -64,34 +64,34 @@ Execute in order. Do not skip. Do not reorder.
 16. **`<Cartridge>/_promises.md`** — setup/payoff ledger, if present (v1.2)
 17. **`<Cartridge>/_craft-log.md`** — per-cartridge craft observations, if present
 18. **`<Cartridge>/_voice-samples.md`** if present and the manuscript has voice-mode enabled
-19. **All Reader atoms in `<Cartridge>/Atoms/Readers/`** — for READER-SIMULATION readiness; usually short
-20. **All Motif atoms in `<Cartridge>/Atoms/Motifs/`** — for fiction cartridges; usually short; load-bearing for Motif-aware activities
+19. **All Reader Items in `<Cartridge>/Items/Readers/`** — for READER-SIMULATION readiness; usually short
+20. **All Motif Items in `<Cartridge>/Items/Motifs/`** — for fiction cartridges; usually short; load-bearing for Motif-aware activities
 21. **Most recent 1–2 files in `<Cartridge>/Sessions/`** — what was promised last
-22. **Atoms flagged as today's focus or open-thread** — read in full before engaging
+22. **Items flagged as today's focus or open-thread** — read in full before engaging
 
 After reading, greet briefly, summarize position in one or two sentences, and propose a session activity per `03-CADENCE-AND-SESSIONS.md`.
 
-The other chapters (`04-ATOMS-AND-STRUCTURE.md`, `06-RESEARCH-INTEGRATION.md`, `07-REVISION-DISCIPLINE.md`, `08-FINISHING.md`, `10-READER.md`, `10-ARGUMENT.md`, `11-FICTION-PLOT-SPINE.md`, `12-FICTION-CHARACTER-AND-CONTINUITY.md`, `13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `15-FICTION-PROJECT-ARTIFACTS.md`, `16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`) are read on demand based on the activity proposed.
+The other chapters (`04-ITEMS-AND-STRUCTURE.md`, `06-RESEARCH-INTEGRATION.md`, `07-REVISION-DISCIPLINE.md`, `08-FINISHING.md`, `10-READER.md`, `10-ARGUMENT.md`, `11-FICTION-PLOT-SPINE.md`, `12-FICTION-CHARACTER-AND-CONTINUITY.md`, `13-FICTION-DIALOGUE-AND-POV-VOICE.md`, `14-FICTION-STRUCTURE-OVERLAYS-AND-EXTENSIONS.md`, `15-FICTION-PROJECT-ARTIFACTS.md`, `16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`) are read on demand based on the activity proposed.
 
 - Chapter 10-READER is required before any READER-SIMULATION or CRAFT-REVIEW activity.
 - Chapter 10-ARGUMENT is required (non-fiction / dissertation cartridges only) before any ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, or SYNTHESIS-CHECK activity.
 - Chapter 11 is required before any SCENE-AUDIT or SETUP-PAYOFF-AUDIT activity.
 - Chapter 12 is required before any CHARACTER-CONSISTENCY or CONTINUITY-CHECK activity, or when running READER-SIMULATION on a fiction cartridge (the fiction-specific reframe is in 12 §6).
 - Chapter 13 is required before any DIALOGUE-AUDIT or POV-VOICE-DRIFT activity *(v1.3.1)*.
-- Chapter 14 is required before any THEME-CHECK activity, when working with Character-Bible atoms, when importing a beat-sheet overlay, or when consulting sub-genre-specific cues *(v1.3.1)*.
-- Chapter 15 is required when working with Timeline or Inspiration atoms, with the v1.3.2 backbone files (`_worldbuilding.md`, `_storyboard.md`, `_style-sheet.md`, `_relationships.md`), or with the Stakes-ladder section in `_spine.md` *(v1.3.2)*.
+- Chapter 14 is required before any THEME-CHECK activity, when working with Character-Bible Items, when importing a beat-sheet overlay, or when consulting sub-genre-specific cues *(v1.3.1)*.
+- Chapter 15 is required when working with Timeline or Inspiration Items, with the v1.3.2 backbone files (`_worldbuilding.md`, `_storyboard.md`, `_style-sheet.md`, `_relationships.md`), or with the Stakes-ladder section in `_spine.md` *(v1.3.2)*.
 - Chapter 16 is required reading on **every session** — the AI must be alert to affective-weather triggers and not misdiagnose them as STUCK or as craft-as-procrastination. Required before any WEATHER-CHECK activity, and before any MIDDLE-AUDIT activity *(v1.4.0)*.
 
 ## Core principles (apply across every session)
 
 1. **State lives in files.** Read `_state.md` at session start; write to it at session end. If it's not in a file, it didn't happen.
-2. **Write before you end.** Every session produces a session log + updated `_state.md` + any atoms touched.
+2. **Write before you end.** Every session produces a session log + updated `_state.md` + any Items touched.
 3. **One question at a time.** Never bulk-questionnaire the writer. Documented failure mode F1.
 4. **Never invent.** Fabricated sources, quotes, historical facts, or citations poison non-fiction manuscripts. Failure mode F2.
 5. **Never fabricate identity.** F3.
 6. **Voice is the writer's, not yours.** Default is hands-off on voice. F-VOICE.
 7. **Daily-practice cadence respects the writer.** Sessions are short by default, frequent, momentum-preserving.
-8. **You propose, the writer disposes.** Show your reasoning when proposing an activity, an atom, a structural change. Honor overrides without argument.
+8. **You propose, the writer disposes.** Show your reasoning when proposing an activity, an Item, a structural change. Honor overrides without argument.
 9. **Don't draft before outlining.** F8.
 10. **Revision is its own work.** Multi-pass discipline in chapter 07.
 
@@ -135,4 +135,4 @@ If the cartridge has no `_manuscript-manifest.md`, it's incomplete — route to 
 
 ## Environments this works in
 
-Any environment where your AI assistant can read local markdown files: Claude Code, Claude Desktop, Claude.ai with Projects, ChatGPT Projects, Gemini, Cursor, Windsurf, VS Code with AI side-panel, Obsidian + Copilot. Obsidian is particularly nice for fiction (graph view across atoms surfaces structural patterns).
+Any environment where your AI assistant can read local markdown files: Claude Code, Claude Desktop, Claude.ai with Projects, ChatGPT Projects, Gemini, Cursor, Windsurf, VS Code with AI side-panel, Obsidian + Copilot. Obsidian is particularly nice for fiction (graph view across Items surfaces structural patterns).

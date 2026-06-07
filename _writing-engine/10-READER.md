@@ -20,13 +20,13 @@ One of the most common failure modes across genres is upstream of structure and 
 
 **The reader evaporates.** The manuscript manifest asks "who is this for" once at bootstrap, and then the audience model disappears. The writer drifts; the prose drifts; what felt clear at the breakfast-table-conversation level becomes opaque to anyone who isn't already in the writer's head. Curse of knowledge is one specific form; there are others.
 
-Chapter 04 (Atoms and Structure) gave us containers. This chapter gives us *the reader as an entity the AI can model.*
+Chapter 04 (Items and Structure) gave us containers. This chapter gives us *the reader as an entity the AI can model.*
 
-## Part one — Reader as a first-class atom
+## Part one — Reader as a first-class Item
 
-### The Reader atom
+### The Reader Item
 
-A Reader is a modeled audience member: what they bring to the page, what they're patient with, what they reward, what they punish. The AI uses Reader atoms in the **READER-SIMULATION** activity (below) to read drafted sections *as that reader* and report where the reader resists, gets lost, or hits the curse of knowledge.
+A Reader is a modeled audience member: what they bring to the page, what they're patient with, what they reward, what they punish. The AI uses Reader Items in the **READER-SIMULATION** activity (below) to read drafted sections *as that reader* and report where the reader resists, gets lost, or hits the curse of knowledge.
 
 ### Frontmatter
 
@@ -57,11 +57,11 @@ Needs_Processing: false
 ### Naming and location
 
 - **Naming:** `<Reader-Slug>.md`. E.g., `Skeptic.md`, `Impatient-Generalist.md`, `Domain-Expert.md`. Or named after a real reader-archetype: `The-Atlantic-Reader.md`.
-- **Location:** `Atoms/Readers/` within the cartridge.
+- **Location:** `Items/Readers/` within the cartridge.
 
 ### Recommended reader set for non-fiction cartridges
 
-Most non-fiction manuscripts benefit from 2–4 Reader atoms covering distinct vantages. The standard set:
+Most non-fiction manuscripts benefit from 2–4 Reader Items covering distinct vantages. The standard set:
 
 - **The Skeptic** — predisposed to disbelieve. Tests every claim. Resists strong assertions without evidence. The reader who keeps the writer honest.
 - **The Impatient Generalist** — predisposed to lose interest if the payoff isn't visible. Tests pacing and structural clarity. Resists slow sections, missing signposts, sections that exist for completeness rather than argument.
@@ -75,22 +75,22 @@ These three together cover the most common failure modes. Add others as the proj
 - **active** — Reader is in use; READER-SIMULATION sessions invoke them
 - **retired** — Reader was used but is no longer relevant to remaining chapters (e.g., a politically-suspicious reader for a chapter that's been cut)
 
-## Part two — Activities that consume Reader atoms
+## Part two — Activities that consume Reader Items
 
 ### READER-SIMULATION
 
-**What it is:** The AI reads a specific atom (Section or Scene or Chapter, depending on scope) *as a specific Reader atom* and reports where that reader resists, where they get lost, where they hit curse of knowledge, where they disengage.
+**What it is:** The AI reads a specific Item (Section or Scene or Chapter, depending on scope) *as a specific Reader Item* and reports where that reader resists, where they get lost, where they hit curse of knowledge, where they disengage.
 
 **Trigger conditions:**
 
 - Section or chapter is in `drafted` status
-- At least one Reader atom is in `active` status
-- READER-SIMULATION hasn't been run on this atom yet (or has been run only with one Reader and the others are due)
+- At least one Reader Item is in `active` status
+- READER-SIMULATION hasn't been run on this Item yet (or has been run only with one Reader and the others are due)
 
 **Protocol:**
 
-1. AI loads the named Reader atom
-2. AI loads the target atom (Section/Scene/Chapter)
+1. AI loads the named Reader Item
+2. AI loads the target Item (Section/Scene/Chapter)
 3. AI loads the manifest (to know voice mode, declared audience)
 4. AI reads the target *as* the Reader — internally maintaining the Reader's background, patience, knowledge gaps
 5. AI produces a report:
@@ -135,7 +135,7 @@ These three together cover the most common failure modes. Add others as the proj
 ## How this chapter interacts with the rest of the engine
 
 - **Chapter 03 (Cadence and Sessions)** — READER-SIMULATION and CRAFT-REVIEW are entries in the universal activity table
-- **Chapter 04 (Atoms and Structure)** — Reader is added as a first-class atom
+- **Chapter 04 (Items and Structure)** — Reader is added as a first-class Item
 - **Chapter 09 (Writer Development)** — defines the craft-profile and craft-log artifacts that CRAFT-REVIEW uses; this chapter is when, that chapter is what
 - **Chapter 10 (Argument)** — the companion non-fiction-pack chapter; READER-SIMULATION often runs alongside argument-pressure activities for non-fiction cartridges
 - **Chapter 12 (Fiction Character and Continuity)** — §6 extends READER-SIMULATION with fiction-specific protocol
@@ -143,7 +143,7 @@ These three together cover the most common failure modes. Add others as the proj
 
 ## When Reader activities don't apply
 
-- **Fiction without identifiable audience target** — Reader atoms may be lightly used; READER-SIMULATION still applies (a beta reader of literary fiction is doing READER-SIMULATION informally) but the set may be smaller
-- **Screenplay / play** — READER-SIMULATION applies (audiences vary; a play for repertory theater has different readers than one for Broadway); the Reader atoms may model audience archetypes rather than individual reader-archetypes
+- **Fiction without identifiable audience target** — Reader Items may be lightly used; READER-SIMULATION still applies (a beta reader of literary fiction is doing READER-SIMULATION informally) but the set may be smaller
+- **Screenplay / play** — READER-SIMULATION applies (audiences vary; a play for repertory theater has different readers than one for Broadway); the Reader Items may model audience archetypes rather than individual reader-archetypes
 
 The activity table in chapter 03 is the source of truth for which activities are universal vs. genre-conditional.

@@ -65,9 +65,9 @@ Literary-fiction readers. Comparable to *The Vanishing Half* (Bennett), *The Dut
 
 - Premise crystallized over the past two months
 - Outline at v2; scene-list complete for Chapter 1 and Chapter 2
-- Two Character atoms: protagonist (Maya) and antagonist-role sister (Sarah)
-- Two Reader atoms: a literary-fiction reader and a domain expert (winemaking)
-- Two Motif atoms: the late frost itself; the empty chair at the table
+- Two Character Items: protagonist (Maya) and antagonist-role sister (Sarah)
+- Two Reader Items: a literary-fiction reader and a domain expert (winemaking)
+- Two Motif Items: the late frost itself; the empty chair at the table
 - _spine.md drafted at v1: dramatic question articulated; premise as causal claim
 - _continuity.md initialized: world-rules (vineyard mechanics), timeline (the three-week frost-watch period), information-state ledger (who knows about the debts)
 - _promises.md initialized: 2 promises planted (the frost-warning forecast; the unopened letter from father's lawyer)
@@ -124,9 +124,9 @@ This cartridge uses the v1.2 fiction development-layer artifacts:
 - **`_continuity.md`** — world-rules (vineyard mechanics), timeline (three-week frost-watch), information-state ledger (who knows about the debts).
 - **`_promises.md`** — two promises currently planted; both outstanding.
 - **`_craft-log.md`** — will be populated as patterns are observed; empty at session 3.
-- **Reader atoms** — two: [[Literary-Fiction-Reader]], [[Vineyard-Expert]].
-- **Motif atoms** — two: [[The-Late-Frost]], [[The-Empty-Chair]].
-- **Character atoms** — two: [[Maya-Hollis]] (protagonist), [[Sarah-Hollis]] (antagonist-role sister; the steelmanned-antagonist discipline applies even though she's not a villain — see [[Sarah-Hollis]] for the steelman).
+- **Reader Items** — two: [[Literary-Fiction-Reader]], [[Vineyard-Expert]].
+- **Motif Items** — two: [[The-Late-Frost]], [[The-Empty-Chair]].
+- **Character Items** — two: [[Maya-Hollis]] (protagonist), [[Sarah-Hollis]] (antagonist-role sister; the steelmanned-antagonist discipline applies even though she's not a villain — see [[Sarah-Hollis]] for the steelman).
 
 The OV-root `_craft-profile.md` is not yet created (this is the writer's first fiction cartridge after the prior non-fiction project). Proposed creation point: after the first CRAFT-REVIEW in this cartridge has accumulated 3+ patterns.
 

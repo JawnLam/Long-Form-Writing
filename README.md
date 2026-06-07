@@ -3,7 +3,7 @@
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
 [![Version](https://img.shields.io/badge/version-v1.0.0-blue.svg)](VERSION.md)
 
-Long-Form-Writing is an **[operating volume](https://github.com/JawnLam/Operating-Volume-Engineering)** for AI-orchestrated sustained writing — book-length non-fiction, novels, screenplays, dissertations, plays, and other multi-month-to-multi-year projects. Pick a manuscript you've always wanted to finish. Point any capable AI at this folder, tell it to read `AI-BOOTSTRAP.md`, and it will help you carry the project across hundreds of daily writing sessions — keeping outline, atoms, drafts, and revision state in plain markdown files so you own your work.
+Long-Form-Writing is an **[operating volume](https://github.com/JawnLam/Operating-Volume-Engineering)** for AI-orchestrated sustained writing — book-length non-fiction, novels, screenplays, dissertations, plays, and other multi-month-to-multi-year projects. Pick a manuscript you've always wanted to finish. Point any capable AI at this folder, tell it to read `AI-BOOTSTRAP.md`, and it will help you carry the project across hundreds of daily writing sessions — keeping outline, Items, drafts, and revision state in plain markdown files so you own your work.
 
 > **What's an operating volume?** A self-contained markdown corpus an AI loads to orchestrate a particular kind of long-running, stateful work — the slot in the AI lexicon between a Custom GPT / Project and an AI harness. Substrate-agnostic (Claude, GPT, Gemini, etc.), stateful (files on disk are the memory), forkable. See **[Operating-Volume-Engineering](https://github.com/JawnLam/Operating-Volume-Engineering)** for the discipline. Long-Form-Writing is one of four operating volumes by the same author, alongside **[SOLVE-eX](https://github.com/JawnLam/SOLVE-eX)** (decision-making), **[LifeLong-Learning](https://github.com/JawnLam/LifeLong-Learning)** (self-directed study), and **Operating-Volume-Engineering** itself (the propagator).
 
@@ -35,13 +35,13 @@ The default tone is peer-level, direct, substantive critique. The system treats 
 
 ## The five things this OV is built around
 
-1. **Genre-branching cartridges.** Every manuscript declares a genre — fiction, non-fiction, screenplay, dissertation, play. The schema adapts: a fiction cartridge gets Character atoms; a non-fiction cartridge gets Thread atoms; a dissertation gets Source-heavy atoms. One engine, six adapted shapes.
+1. **Genre-branching cartridges.** Every manuscript declares a genre — fiction, non-fiction, screenplay, dissertation, play. The schema adapts: a fiction cartridge gets Character Items; a non-fiction cartridge gets Thread Items; a dissertation gets Source-heavy Items. One engine, six adapted shapes.
 
 2. **Daily-practice cadence.** Sessions are designed to fit a writer's actual rhythm: 15 minutes on a stuck scene, 90 minutes of drafting, an hour-long revision pass. The session protocol accommodates short-and-frequent over long-and-rare. Momentum is structural, not heroic.
 
 3. **Configurable voice model.** The default is *the writer maintains their own voice; the engine helps with structure, research, and revision logistics*. Optional: drop voice samples into the cartridge so the AI can match your style during DRAFT/REVISE. Optional: run a dedicated VOICE-CHECK activity. You decide how much help you want.
 
-4. **Atoms as building blocks.** Manuscripts are composed of Beats (smallest), Scenes/Sections (the prose lives here), Chapters (compositions), Characters/Threads (recurring), Sources (research), Notes (unplaced fragments). The atom shape comes from your genre.
+4. **Items as building blocks.** Manuscripts are composed of Beats (smallest), Scenes/Sections (the prose lives here), Chapters (compositions), Characters/Threads (recurring), Sources (research), Notes (unplaced fragments). The Item shape comes from your genre.
 
 5. **Multi-pass revision discipline.** Revising is its own work, not a degraded form of drafting. The OV has explicit passes — structural, voice, accuracy, prose-line — and a revision-pass log that captures what each pass changed and why.
 
@@ -71,7 +71,7 @@ For setup details, see [`INSTALL.md`](INSTALL.md). For day-to-day operation and 
 
 - **AI assistant** — any model capable of reading markdown and parsing YAML frontmatter (Claude Sonnet/Opus class, GPT-4 class and above, Gemini 2.x and above)
 - **OS** — Mac, Windows, or Linux
-- **Editor** — Obsidian works very well for this OV (the graph view across atoms is useful for fiction); also fine in VS Code, Cursor, Windsurf, Zed, plain text editors with AI integration
+- **Editor** — Obsidian works very well for this OV (the graph view across Items is useful for fiction); also fine in VS Code, Cursor, Windsurf, Zed, plain text editors with AI integration
 - **Python / network / runtime dependencies** — none
 
 ## Folder structure
@@ -87,11 +87,11 @@ For setup details, see [`INSTALL.md`](INSTALL.md). For day-to-day operation and 
 | `LICENSE.md`                               | CC-BY 4.0                                                               |
 | `_USER.md.template`                        | Optional user-profile template                                          |
 | `_writing-engine/`                         | The subject-agnostic writing operating manual                           |
-| `_writing-engine/_templates/`              | Templates for every atom type + cartridge backbone files                |
+| `_writing-engine/_templates/`              | Templates for every Prototype + cartridge backbone files                |
 | `_writing-engine/_meta/`                   | Schema-of-schemas + the failure-modes catalog                           |
 | `Example-Project-The-Persistence-Question/` | Worked example: a hypothetical non-fiction book at outlining-to-mid-draft stage |
 
-Each cartridge contains: `_manuscript-manifest.md`, `_state.md`, `_outline.md`, optional `_voice-samples.md`, `Atoms/` (Beats / Sections-or-Scenes / Chapters / Threads-or-Characters / Sources / Notes), `Sessions/`, `Revision-Passes/`.
+Each cartridge contains: `_manuscript-manifest.md`, `_state.md`, `_outline.md`, optional `_voice-samples.md`, `Items/` (Beats / Sections-or-Scenes / Chapters / Threads-or-Characters / Sources / Notes), `Sessions/`, `Revision-Passes/`.
 
 ## License
 

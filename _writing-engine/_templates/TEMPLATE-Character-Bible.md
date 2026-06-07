@@ -5,7 +5,7 @@ Title: "<Character Name> — Bible"
 lfw_manuscript: ""
 lfw_atom_type: character-bible
 lfw_status: drafting            # drafting | established | revised | final
-lfw_character: ""               # wiki-link back to Character atom (e.g. [[Maya-Hollis]])
+lfw_character: ""               # wiki-link back to Character Item (e.g. [[Maya-Hollis]])
 Date_Added:
 Date_Modified:
 Needs_Processing: false
@@ -13,7 +13,7 @@ Needs_Processing: false
 
 # <Character Name> — Bible
 
-> **The deep companion to the Character atom. Created on-demand for POV-bearing characters, antagonists, and primary supporting roles with substantial arcs. Most secondary characters never get one. Read in full only by CHARACTER-CONSISTENCY activity; otherwise read on-demand.**
+> **The deep companion to the Character Item. Created on-demand for POV-bearing characters, antagonists, and primary supporting roles with substantial arcs. Most secondary characters never get one. Read in full only by CHARACTER-CONSISTENCY activity; otherwise read on-demand.**
 
 ## At-a-glance
 
@@ -58,7 +58,7 @@ Needs_Processing: false
 
 ## Wounds (deep)
 
-*The injuries that shape them. The want/need/wound triad in the Character atom names ONE wound; the bible names all of them, including the ones that don't surface in this manuscript but inform the character's responses.*
+*The injuries that shape them. The want/need/wound triad in the Character Item names ONE wound; the bible names all of them, including the ones that don't surface in this manuscript but inform the character's responses.*
 
 - **Wound 1:**
 - **Wound 2:**
@@ -76,7 +76,7 @@ Needs_Processing: false
 
 ## Arc across this manuscript
 
-*Where they start, what changes, where they end. Beat-by-beat if useful. Cross-reference with the Character atom's "what's changing" section.*
+*Where they start, what changes, where they end. Beat-by-beat if useful. Cross-reference with the Character Item's "what's changing" section.*
 
 ## Relationships (per-relationship)
 
@@ -91,7 +91,7 @@ Needs_Processing: false
 
 ## Voice (extended — chapter 13 cross-reference)
 
-*Building on the Character atom's voice-and-prose-register and dialogue-tells sections (chapter 13). Items here are ADDITIONAL to what's in the Character atom, not duplicative.*
+*Building on the Character Item's voice-and-prose-register and dialogue-tells sections (chapter 13). Items here are ADDITIONAL to what's in the Character Item, not duplicative.*
 
 - **Pet phrases not yet appearing in scenes** *(things the writer is reserving for the right moment)*
 - **Verbal register at different ages** *(if the manuscript includes flashback or memory)*
@@ -109,4 +109,4 @@ Needs_Processing: false
 
 ## Audit notes
 
-*CHARACTER-CONSISTENCY findings, updates after drift was surfaced, cross-references to Scene atoms where bible content is being honored or violated.*
+*CHARACTER-CONSISTENCY findings, updates after drift was surfaced, cross-references to Scene Items where bible content is being honored or violated.*

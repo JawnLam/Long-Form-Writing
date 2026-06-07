@@ -10,11 +10,11 @@ Date_Modified:
 
 # <Manuscript Title> — Relationship Map
 
-> **Symmetric multi-character relationship map. Complements (does not replace) the per-character Relationships sections in Character atoms. Most useful for novels with five or more named characters. Read at CHARACTER-CONSISTENCY and at READ-THROUGH.**
+> **Symmetric multi-character relationship map. Complements (does not replace) the per-character Relationships sections in Character Items. Most useful for novels with five or more named characters. Read at CHARACTER-CONSISTENCY and at READ-THROUGH.**
 
 ## Cast
 
-*Roster of named characters whose relationships are mapped here. Wiki-links to Character atoms.*
+*Roster of named characters whose relationships are mapped here. Wiki-links to Character Items.*
 
 - [[Character-1]]
 - [[Character-2]]
@@ -40,7 +40,7 @@ Date_Modified:
 - **Current state at manuscript opening:**
 - **Evolution arc across the manuscript:**
 - **Subtext:** *(what's unspoken between them)*
-- **Asymmetry:** *(how do their one-sided views in their respective Character atoms differ? Is the asymmetry intentional? — if drift, flag for CHARACTER-CONSISTENCY)*
+- **Asymmetry:** *(how do their one-sided views in their respective Character Items differ? Is the asymmetry intentional? — if drift, flag for CHARACTER-CONSISTENCY)*
 
 ### s2 — [[Character-1]] ↔ [[Character-3]]
 

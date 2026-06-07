@@ -20,13 +20,13 @@ Needs_Processing: false
 
 ## Where it appears
 
-*Wiki-links to Section atoms that engage this thread, in book order.*
+*Wiki-links to Section Items that engage this thread, in book order.*
 
 - [[Section-slug]]
 
 ## Sources that support it
 
-*Wiki-links to Source atoms.*
+*Wiki-links to Source Items.*
 
 - [[Source-slug]]
 

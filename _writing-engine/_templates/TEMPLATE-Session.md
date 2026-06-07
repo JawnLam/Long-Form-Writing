@@ -30,9 +30,9 @@ lfw_chapters_loaded: []    # v1.5: engine chapter paths loaded for this session.
 
 *Narrative of the session. What was outlined, drafted, revised, integrated, diagnosed.*
 
-## Atoms Touched
+## Items Touched
 
-| Atom | Type | Status before | Status after | Words before | Words after |
+| Item | Type | Status before | Status after | Words before | Words after |
 |------|------|---------------|--------------|--------------|-------------|
 |      |      |               |              |              |             |
 
@@ -53,7 +53,7 @@ lfw_chapters_loaded: []    # v1.5: engine chapter paths loaded for this session.
 
 - [ ] Session log written (this file)
 - [ ] `_state.md` updated
-- [ ] Atom files touched have been saved
+- [ ] Item files touched have been saved
 - [ ] Tomorrow's focus is seeded in `_state.md`
 - [ ] Revision-pass log updated (if a revision pass was active)
 - [ ] Sources properly referenced (if a Section was drafted with source backing)

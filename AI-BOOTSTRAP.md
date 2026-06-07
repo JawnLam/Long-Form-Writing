@@ -37,11 +37,11 @@ Read in full:
 
 **Do not preload other engine chapters.** They are loaded on-demand per the router's dispatch tables, based on cartridge genre and the proposed session activity. A non-fiction cartridge never loads the fiction pack; a fiction cartridge never loads chapter 06 or 10-ARGUMENT.
 
-The router is a generated file (built by `_writing-engine/_scripts/build-router.py` from each chapter's `lfw_load` frontmatter). It is the **single source of truth** for "what to load when." Any count of activities, atoms, or chapters quoted in your reasoning should come from the router or from chapter 03 — not from a hard-coded list, because hard-coded lists rot.
+The router is a generated file (built by `_writing-engine/_scripts/build-router.py` from each chapter's `lfw_load` frontmatter). It is the **single source of truth** for "what to load when." Any count of activities, Items, or chapters quoted in your reasoning should come from the router or from chapter 03 — not from a hard-coded list, because hard-coded lists rot.
 
 ### 2. Mandatory environment checks
 
-- **Folder writability.** Verify you can write to `{ROOT}/<Cartridge>/Sessions/`, `<Cartridge>/_state.md`, the atom folders, and `<Cartridge>/Drafts/` (if present). If read-only, declare **sandbox mode** and keep state inline.
+- **Folder writability.** Verify you can write to `{ROOT}/<Cartridge>/Sessions/`, `<Cartridge>/_state.md`, the Item folders, and `<Cartridge>/Drafts/` (if present). If read-only, declare **sandbox mode** and keep state inline.
 - **Existing cartridges.** List subfolders at `{ROOT}/` (excluding `_writing-engine/` and dot/underscore-prefixed). Each is a manuscript-in-progress.
 - **Worked examples.** The cartridges `Example-Project-The-Persistence-Question/` (non-fiction) and `Example-Project-The-Late-Frost/` (fiction) ship as references. Treat them as illustrative, not the user's active project.
 
@@ -49,7 +49,7 @@ The router is a generated file (built by `_writing-engine/_scripts/build-router.
 
 - **If the user named an existing cartridge OR wants to continue one** → execute the session-start protocol from `_writing-engine/00-START-HERE.md`:
   1. Read the cartridge's `_manuscript-manifest.md` to determine its genre (and, for fiction, sub-genre)
-  2. Read `_state.md`, `_outline.md`, recent sessions, and any atoms flagged as today's focus
+  2. Read `_state.md`, `_outline.md`, recent sessions, and any Items flagged as today's focus
   3. Propose a session activity per `03-CADENCE-AND-SESSIONS.md`'s decision algorithm
   4. Consult `_ROUTER.md` for `(genre, activity)` → load only the dispatched chapters, plus the bootstrap-phase set already loaded
 - **If the user wants to start a NEW manuscript** → load `_writing-engine/BOOTSTRAP-NEW-MANUSCRIPT.md` (the router dispatches it on `SESSION-START` for any genre). Begin with one clarifying question, conversationally.
@@ -100,13 +100,13 @@ The router (`_writing-engine/_ROUTER.md`) is the source of truth for what to loa
 These come from the writing engine in full (the bootstrap-phase chapters load them). The short version:
 
 1. **State lives in files.** Read `_state.md` at session start; write to it at session end. If it's not in a file, it didn't happen.
-2. **Write before you end.** Every session produces a session log + updated `_state.md` + any atoms touched.
+2. **Write before you end.** Every session produces a session log + updated `_state.md` + any Items touched.
 3. **One question at a time.** Never bulk-questionnaire the user. Documented failure mode in `_meta/FAILURE-MODES.md`.
 4. **Never invent.** If you're uncertain about a fact, source, citation, or historical detail (especially for non-fiction or research-heavy work), say so. Fabrication poisons the manuscript.
 5. **Never fabricate identity.** Don't infer the user's name from username strings or file paths. Use placeholders until they tell you.
 6. **Voice is the writer's, not yours.** Default is hands-off on voice. Only attempt to match voice if the writer has voice samples and has explicitly opted in.
 7. **Daily-practice cadence respects the writer.** Sessions are short by default, frequent, and momentum-preserving. The writer carries the project across many sessions; you carry the context.
-8. **You propose, the writer disposes.** Show your reasoning when proposing an activity, an atom, a structural change. Honor overrides without argument.
+8. **You propose, the writer disposes.** Show your reasoning when proposing an activity, an Item, a structural change. Honor overrides without argument.
 9. **Drafting before outlining is a failure mode.** Don't generate prose for a section that doesn't have a beat-level plan.
 10. **Revision is its own work, not a degraded form of drafting.** Multi-pass discipline lives in chapter 07.
 
@@ -114,7 +114,7 @@ These come from the writing engine in full (the bootstrap-phase chapters load th
 
 - About what this OV does → load chapter 01 (dispatched on SESSION-START)
 - About session flow → chapter 03 is in your bootstrap-phase read
-- About atom design → load chapter 04 (dispatched on OUTLINE, DRAFT, REVISE, READ-THROUGH, BETA-PREP)
+- About Item design → load chapter 04 (dispatched on OUTLINE, DRAFT, REVISE, READ-THROUGH, BETA-PREP)
 - About voice handling → load chapter 05 (dispatched on every activity for every genre — effectively always available via router)
 - About worked examples → `Example-Project-The-Persistence-Question/` (non-fiction) or `Example-Project-The-Late-Frost/` (fiction)
 - About *what to load when* → `_ROUTER.md`, always

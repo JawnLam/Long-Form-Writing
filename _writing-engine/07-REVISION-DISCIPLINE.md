@@ -95,7 +95,7 @@ This pass often results in significant cutting and re-drafting. That's expected.
 **What to look for:**
 
 - Every factual claim — is it sourced or common knowledge?
-- Every citation — does it match a Source atom? Is the source actually in the bibliography?
+- Every citation — does it match a Source Item? Is the source actually in the bibliography?
 - Every quotation — verbatim? Page number correct?
 - Every name, date, place — spelled correctly? Year correct?
 - Every statistic or data claim — source verified?
@@ -104,9 +104,9 @@ This pass often results in significant cutting and re-drafting. That's expected.
 
 This pass typically requires going slowly with the sources at hand. The AI helps by:
 
-- Listing every claim and matching it to the relevant Source atom
+- Listing every claim and matching it to the relevant Source Item
 - Flagging claims with no source
-- Flagging citations that don't match an existing Source atom (might be a typo or might be fabrication — verify both ways)
+- Flagging citations that don't match an existing Source Item (might be a typo or might be fabrication — verify both ways)
 - Surfacing quotes the writer asked to flag for verification
 
 **Output:**
@@ -139,7 +139,7 @@ This pass is the writer's most. The AI may flag candidates only if explicitly in
 **Output:**
 
 - A polished manuscript at the prose-line level
-- Atoms updated with revised prose
+- Items updated with revised prose
 - Final word counts
 
 ## The revision-pass log
@@ -157,7 +157,7 @@ Use `TEMPLATE-revision-pass.md`. The log captures:
 - **Pass kind** (structural / voice / accuracy / prose-line / custom)
 - **Scope** (which chapters/sections this pass covered)
 - **Started / completed** dates
-- **Atoms touched** with before/after status
+- **Items touched** with before/after status
 - **Major changes** (cuts, reorderings, new sections, etc.)
 - **Decisions made** (with rationale)
 - **Open threads** carried forward to the next pass

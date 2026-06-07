@@ -10,12 +10,12 @@ If you're setting up for the first time, read [`INSTALL.md`](INSTALL.md) first.
 
 A writing session has eight phases. The AI runs through all of them; you only experience the parts where you talk and write.
 
-1. **READ** — AI reads the writing engine, your `_USER.md` (if present), the active cartridge's `_manuscript-manifest.md`, `_state.md`, `_outline.md`, recent session logs, and any atoms flagged as today's focus.
+1. **READ** — AI reads the writing engine, your `_USER.md` (if present), the active cartridge's `_manuscript-manifest.md`, `_state.md`, `_outline.md`, recent session logs, and any Items flagged as today's focus.
 2. **DIAGNOSE** — AI inspects state for hard overrides, today's focus, overdue revision passes, stuck flags.
 3. **PROPOSE** — AI proposes an activity (SESSION-START / OUTLINE / DRAFT / REVISE / RESEARCH-INTEGRATION / READ-THROUGH / STUCK-DIAGNOSTIC / VOICE-CHECK / WORLDBUILDING / BETA-PREP) with rationale.
 4. **WAIT** — AI waits for your confirmation or override.
 5. **EXECUTE** — the actual writing happens here.
-6. **CAPTURE** — AI records atom updates, prose drafted, revision changes, decisions made.
+6. **CAPTURE** — AI records Item updates, prose drafted, revision changes, decisions made.
 7. **WRITE session log** — new file in `<Cartridge>/Sessions/`.
 8. **UPDATE `_state.md`** — overwritten with new state; today's focus rolls forward to tomorrow's seed.
 
@@ -27,7 +27,7 @@ If a session ends without phases 6–8, the session is incomplete. Tell the AI t
 
 - **Lifecycle stage** — outlining / drafting / revising / polishing / shipped
 - **Today's focus** — what's queued for today's session
-- **Atom status table** — every Section / Scene with draft state (not-started / drafted / revised-pass-1 / final)
+- **Item status table** — every Section / Scene with draft state (not-started / drafted / revised-pass-1 / final)
 - **Revision pass progress** — current pass, what's left to revise
 - **Word counts** — by chapter / section / total
 - **Open Threads** — what next session is supposed to address
@@ -65,7 +65,7 @@ If a session ends without phases 6–8, the session is incomplete. Tell the AI t
 
 **Fix:** Stop immediately and verify. If fabricated, say *"That citation is wrong. Remove it from the section. From now on, if you're not sure a source exists, say so."* This is failure mode F2.
 
-**Prevention:** For non-fiction and dissertation work, the engine has a RESEARCH-INTEGRATION protocol (chapter 06) with explicit anti-fabrication discipline. Use it. Don't draft research-heavy prose without sources already ingested into Source atoms.
+**Prevention:** For non-fiction and dissertation work, the engine has a RESEARCH-INTEGRATION protocol (chapter 06) with explicit anti-fabrication discipline. Use it. Don't draft research-heavy prose without sources already ingested into Source Items.
 
 ### AI uses a guessed name for you
 
@@ -77,7 +77,7 @@ If a session ends without phases 6–8, the session is incomplete. Tell the AI t
 
 **Symptom:** AI can't read your state, or state contradicts the session logs.
 
-**Fix:** Open the most recent session log in `<Cartridge>/Sessions/`. Reconstruct `_state.md` from it using `_writing-engine/_templates/TEMPLATE-state.md`. If multiple sessions back are unrecoverable, walk the atom status fields directly to rebuild.
+**Fix:** Open the most recent session log in `<Cartridge>/Sessions/`. Reconstruct `_state.md` from it using `_writing-engine/_templates/TEMPLATE-state.md`. If multiple sessions back are unrecoverable, walk the Item status fields directly to rebuild.
 
 ### You've revised the same section three times and it's still not right
 
@@ -97,7 +97,7 @@ If a session ends without phases 6–8, the session is incomplete. Tell the AI t
 
 A long-form manuscript can drift across months. Periodic checks:
 
-- **Every ~10 sessions:** ask the AI to do a **state-audit** pass — does the outline still match the chapters being drafted? Any atoms drifting?
+- **Every ~10 sessions:** ask the AI to do a **state-audit** pass — does the outline still match the chapters being drafted? Any Items drifting?
 - **At end of first draft:** ask the AI for an **honest-thinness audit** — where is the manuscript thin? What needs more research, more revision, more cutting?
 - **Before each major revision pass:** run a **READ-THROUGH** at the appropriate scale before line-by-line work.
 - **Before sending to beta readers:** run a **BETA-PREP** activity. Last chance to catch big problems.
@@ -122,7 +122,7 @@ It happens. Some manuscripts don't finish. To archive a cartridge cleanly:
 - Add a final session log explaining why
 - Move the cartridge folder to an `_Archived/` directory at the LFW root (or wherever you want)
 
-Don't delete. The atoms, the partial draft, the research — keep them. Future-you may return.
+Don't delete. The Items, the partial draft, the research — keep them. Future-you may return.
 
 ## Version
 

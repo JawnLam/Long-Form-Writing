@@ -43,7 +43,7 @@ lfw_word_count_target: 0
 | Chapter 2 |  |  |
 | ... |  |  |
 
-## Atom Status Snapshot
+## Item Status Snapshot
 
 Status values: `planned` | `drafted` | `revised` | `final`
 
@@ -54,12 +54,12 @@ Status values: `planned` | `drafted` | `revised` | `final`
 
 ### Sections / Scenes
 
-| Atom | Type | Status | Word count | Last touched |
+| Item | Type | Status | Word count | Last touched |
 |------|------|--------|------------|--------------|
 
 ### Characters / Threads / Sources
 
-*Lists per atom type. Status field per atom type.*
+*Lists per Prototype. Status field per Prototype.*
 
 ## Open Threads (to address next session)
 
@@ -75,7 +75,7 @@ Status values: `planned` | `drafted` | `revised` | `final`
 
 - **Current pass:** none
 - **Current round:** 0
-- **Atoms remaining in current pass:** —
+- **Items remaining in current pass:** —
 
 ## Recent Sessions
 

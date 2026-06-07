@@ -20,7 +20,7 @@ This chapter is read on demand when:
 
 - Cartridge genre is `non-fiction` or `dissertation`
 - The current activity is RESEARCH-INTEGRATION
-- A Section atom needs source backing
+- A Section Item needs source backing
 - The writer asks "how should I handle this source?"
 
 For fiction or screenplay cartridges that incidentally use research (historical, biographical), the principles apply but the volume is much lighter.
@@ -55,20 +55,20 @@ If the AI is uncertain whether a source supports a claim, it says so rather than
 
 ### Rule 4: Source ingestion comes before source citation
 
-Before a source can be cited in prose, it must exist as a Source atom in the cartridge with at least these fields populated:
+Before a source can be cited in prose, it must exist as a Source Item in the cartridge with at least these fields populated:
 
 - Full citation
 - Why it matters here (relevance to the manuscript)
 - Key claims / passages (what to cite)
 - How to integrate (which sections this informs)
 
-If the writer wants to cite a source that isn't yet an atom, the AI proposes RESEARCH-INTEGRATION first: create the atom, then come back to drafting.
+If the writer wants to cite a source that isn't yet an Item, the AI proposes RESEARCH-INTEGRATION first: create the Item, then come back to drafting.
 
 ## The source ingestion protocol
 
 When the writer adds a new source to a non-fiction or dissertation cartridge:
 
-### Step 1: Create the Source atom
+### Step 1: Create the Source Item
 
 Use `TEMPLATE-Source.md`. Populate the frontmatter (author, year, publication, etc.) and the body sections.
 
@@ -82,9 +82,9 @@ The source exists in the cartridge with enough context to be cited safely.
 
 ### Step 3: Identify which Sections it informs
 
-Update the Source atom's "How to integrate" section: list the Sections (with wiki-links) where this source will be cited.
+Update the Source Item's "How to integrate" section: list the Sections (with wiki-links) where this source will be cited.
 
-Cross-reference: in the relevant Section atoms, add the Source to `lfw_sources_cited` and to the body's "Sources Used" section.
+Cross-reference: in the relevant Section Items, add the Source to `lfw_sources_cited` and to the body's "Sources Used" section.
 
 ### Step 4: Fold in
 
@@ -94,13 +94,13 @@ In a subsequent DRAFT or REVISE session on the target Section, the source is now
 2. **Choose the citation form** — quote, paraphrase, summarize, allusion
 3. **Maintain the writer's voice** — the cited source informs the claim; it doesn't take over the prose
 4. **Add the citation** in the manuscript's declared style (`lfw_citation_style`)
-5. **Set `lfw_status: folded-in`** on the Source atom
+5. **Set `lfw_status: folded-in`** on the Source Item
 
 ### Step 5: Cross-check after drafting
 
 Periodically (typically at the end of a revision pass or before BETA-PREP), run an accuracy pass that:
 
-- Verifies every citation in the manuscript matches a Source atom
+- Verifies every citation in the manuscript matches a Source Item
 - Verifies every claim attributed to a source actually appears in that source
 - Flags sources cited only once that might be over-relied-on
 - Flags sources with `lfw_status: superseded` (the writer should update or remove them)
@@ -122,7 +122,7 @@ The AI applies the declared style consistently. It does not silently switch styl
 
 A subtle ethical question. The AI's position:
 
-- **Surface counter-evidence honestly.** If the writer's Thread says "X" and a Source says "not X," the AI flags this in the relevant Thread atom's "Sources that complicate or contradict it" section.
+- **Surface counter-evidence honestly.** If the writer's Thread says "X" and a Source says "not X," the AI flags this in the relevant Thread Item's "Sources that complicate or contradict it" section.
 - **Don't bury counter-evidence to make the argument cleaner.** The honest manuscript engages counter-evidence.
 - **Don't pretend the writer's argument is unassailable.** Even in advocacy non-fiction, the strongest version of the argument addresses the strongest version of the counter-argument.
 
@@ -152,10 +152,10 @@ The line between "informed by a source" and "lifted from a source" is:
 
 For history, religious studies, classics, literary criticism, etc., primary sources (texts being analyzed rather than just cited) get special treatment:
 
-- Create dedicated Source atoms with `lfw_source_kind: primary-document`
+- Create dedicated Source Items with `lfw_source_kind: primary-document`
 - Quote more liberally than for secondary sources (primary-source analysis often requires extended quotation)
 - Note translation provenance if the original is in another language
-- Track edition/translation choices in the Source atom
+- Track edition/translation choices in the Source Item
 
 ## Dissertation-specific notes
 
@@ -169,7 +169,7 @@ For dissertations:
 
 ## Anti-pattern: research as procrastination
 
-A common failure: a writer in `outlining` or `drafting` stage spends every session in RESEARCH-INTEGRATION, accumulating sources without ever drafting. Six months later, hundreds of source atoms, no manuscript.
+A common failure: a writer in `outlining` or `drafting` stage spends every session in RESEARCH-INTEGRATION, accumulating sources without ever drafting. Six months later, hundreds of source Items, no manuscript.
 
 The AI watches for this:
 

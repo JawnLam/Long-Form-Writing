@@ -10,15 +10,15 @@ Date_Modified: 2026-06-03
 
 # The Late Frost — Relationship Map
 
-> **Five named characters. Ten pairs (including deceased characters whose relationships still shape the prose). The symmetric view that complements the one-sided Relationships sections in each Character atom. Read at CHARACTER-CONSISTENCY and at READ-THROUGH.**
+> **Five named characters. Ten pairs (including deceased characters whose relationships still shape the prose). The symmetric view that complements the one-sided Relationships sections in each Character Item. Read at CHARACTER-CONSISTENCY and at READ-THROUGH.**
 
 ## Cast
 
 - [[Maya-Hollis]] — protagonist, POV of odd chapters
 - [[Sarah-Hollis]] — antagonist (relational), POV of even chapters
 - [[Hector-Reyes]] — vineyard manager
-- **Daniel Hollis** — father, deceased 2025 (no Character atom; lives in [[Family-History-1968-2026]] and in references from other Characters)
-- **Helen Marks Hollis** — mother, deceased 1998 (no Character atom; same)
+- **Daniel Hollis** — father, deceased 2025 (no Character Item; lives in [[Family-History-1968-2026]] and in references from other Characters)
+- **Helen Marks Hollis** — mother, deceased 1998 (no Character Item; same)
 
 ## All-pairs matrix
 
@@ -76,7 +76,7 @@ Date_Modified: 2026-06-03
 - **Current state:** closer than Maya is to Hector; Sarah speaks more Spanish; Sarah is aware Hector has been carrying things for the family
 - **Evolution:** Sarah may learn from Hector about his unpaid wages in Chapter 4 (decision deferred). The information-state ledger in [[_continuity]] tracks this
 - **Subtext:** Hector and Sarah share the silence-keeping pattern Sarah inherited from Daniel. They recognize each other as silence-keepers
-- **Asymmetry:** Sarah's [[Sarah-Hollis]] atom notes Hector "knew Sarah was at the vineyard the summer before Daniel died" as an information-state fact. Hector's frame on the relationship may surface in Chapter 8 or 10 conversations
+- **Asymmetry:** Sarah's [[Sarah-Hollis]] Item notes Hector "knew Sarah was at the vineyard the summer before Daniel died" as an information-state fact. Hector's frame on the relationship may surface in Chapter 8 or 10 conversations
 
 ### s6 — Sarah ↔ Daniel † (father, deceased)
 

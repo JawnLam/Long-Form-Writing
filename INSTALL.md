@@ -7,7 +7,7 @@ Once you have this folder on disk, the only things you need to use it are an AI 
 Copy the entire `Long-Form-Writing/` folder to local disk in a location your AI assistant can read. Common choices:
 
 - **Cloud-synced folder** (Dropbox, iCloud, OneDrive, Google Drive) — convenient for cross-device writing
-- **Obsidian vault** — recommended for fiction (the graph view across atoms is useful when you have characters appearing in scenes appearing in chapters)
+- **Obsidian vault** — recommended for fiction (the graph view across Items is useful when you have characters appearing in scenes appearing in chapters)
 - **Project folder in a code editor** (VS Code, Cursor, Windsurf, JetBrains) — convenient for in-editor AI agents
 - **Plain local folder** — works for any AI environment that supports file attachments
 
@@ -68,7 +68,7 @@ Once a cartridge is set up, the typical writing day looks like:
 2. **AI proposes today's activity** based on `_state.md` (what's flagged as today's focus, what's been promised, what's overdue).
 3. **You confirm or override.** "I want to draft Section 3.2 today" overrides anything the AI proposed.
 4. **Work the session.** 15 minutes, 90 minutes, whatever fits today.
-5. **Close out.** The AI writes a session log, updates `_state.md`, captures any new atoms.
+5. **Close out.** The AI writes a session log, updates `_state.md`, captures any new Items.
 
 Some days you write. Some days you outline. Some days you revise. Some days you're stuck and run a STUCK-DIAGNOSTIC. The protocol accommodates all of these.
 
@@ -76,9 +76,9 @@ Some days you write. Some days you outline. Some days you revise. Some days you'
 
 A complete cartridge produces, by the time you're done:
 
-- A finished manuscript (assembled from Section/Scene atoms)
+- A finished manuscript (assembled from Section/Scene Items)
 - A complete structural outline (`_outline.md` final form)
-- A library of atoms — beats, scenes/sections, chapters, characters/threads, sources, notes
+- A library of Items — beats, scenes/sections, chapters, characters/threads, sources, notes
 - Session logs covering the full arc of the project
 - Revision pass logs (what each pass changed and why)
 - An honest assessment of what's still thin (the AI's job is to surface this before you ship)

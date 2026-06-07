@@ -18,13 +18,13 @@
 | `01-WHAT-IS-LFW.md` | core | [all] | [SESSION-START] | on-demand | Orientation; loaded at session-start only |
 | `02-GENRE-AND-SCHEMA.md` | core | [all] | [SESSION-START] | on-demand | Genre-branching reference; rare consult after bootstrap |
 | `03-CADENCE-AND-SESSIONS.md` | core | [all] | [all] | bootstrap | Activity decision algorithm; required every session |
-| `04-ATOMS-AND-STRUCTURE.md` | core | [all] | [OUTLINE, DRAFT, REVISE, READ-THROUGH, BETA-PREP] | on-demand | Atom schema reference for prose-touching activities |
+| `04-ITEMS-AND-STRUCTURE.md` | core | [all] | [OUTLINE, DRAFT, REVISE, READ-THROUGH, BETA-PREP] | on-demand | Item schema reference for prose-touching activities |
 | `05-VOICE-AND-CRAFT.md` | core | [all] | [all] | on-demand | Existing 00 spec: "read on every session" — dispatched on every activity via router |
 | `06-RESEARCH-INTEGRATION.md` | pack | [non-fiction, dissertation] | [RESEARCH-INTEGRATION, CLAIM-EVIDENCE-CHECK, SYNTHESIS-CHECK] | on-demand | Source citation discipline; non-fic only |
 | `07-REVISION-DISCIPLINE.md` | core | [all] | [REVISE, READ-THROUGH, BETA-PREP] | on-demand | Multi-pass revision protocol |
 | `08-FINISHING.md` | core | [all] | [BETA-PREP, READ-THROUGH] | on-demand | Late-stage polish + assembly |
 | `09-WRITER-DEVELOPMENT.md` | core | [all] | [all] | on-demand | Existing 00 spec: "read on every session" via router dispatch |
-| `10-READER.md` *(after split)* | core | [all] | [READER-SIMULATION, CRAFT-REVIEW] | on-demand | Reader atom + audience modeling; serves every genre |
+| `10-READER.md` *(after split)* | core | [all] | [READER-SIMULATION, CRAFT-REVIEW] | on-demand | Reader Item + audience modeling; serves every genre |
 | `10-ARGUMENT.md` *(after split)* | pack | [non-fiction, dissertation] | [ARGUMENT-AUDIT, CLAIM-EVIDENCE-CHECK, STEELMAN, SYNTHESIS-CHECK] | on-demand | Argument backbone + four non-fic activities |
 | `11-FICTION-PLOT-SPINE.md` | pack | [fiction, screenplay, play] | [SCENE-AUDIT, SETUP-PAYOFF-AUDIT, OUTLINE, READ-THROUGH] | on-demand | Spine + promises |
 | `12-FICTION-CHARACTER-AND-CONTINUITY.md` | pack | [fiction, screenplay, play] | [CHARACTER-CONSISTENCY, CONTINUITY-CHECK, WORLDBUILDING, READER-SIMULATION] | on-demand | Includes fiction READER-SIMULATION reframe (§6) |
@@ -41,9 +41,9 @@
 | `_meta/FAILURE-MODES.md` | core | [all] | [all] | on-demand | Existing 00 spec: "read on every session" |
 | `_meta/SCHEMA-OF-SCHEMAS.md` | core | [all] | [SESSION-START] | on-demand | Meta-ontology reference |
 
-## Atom → pack assignment
+## Item → pack assignment
 
-| Atom prototype | tier | Notes |
+| Item prototype | tier | Notes |
 |----------------|------|-------|
 | `LFW_Beat`, `LFW_Chapter`, `LFW_Note`, `LFW_Reader`, `LFW_Craft_Log`, `LFW_Craft_Profile`, `LFW_Manuscript_Manifest`, `LFW_State`, `LFW_Outline`, `LFW_Session`, `LFW_Revision_Pass` | core | Universal across all genres |
 | `LFW_Section`, `LFW_Thread`, `LFW_Source`, `LFW_Argument` | non-fic pack | |
@@ -108,7 +108,7 @@ TOTAL ISSUES: 1 (+4 warning(s))
 
 ### Teeth test (b) — wiki-link-resolves fails on dangling reference
 
-**Mutation:** appended `<!-- teeth-test dangling: [[Definitely-Not-A-Real-Atom-99999]] -->` to `Example-Project-The-Late-Frost/_outline.md`.
+**Mutation:** appended `<!-- teeth-test dangling: [[Definitely-Not-A-Real-Item-99999]] -->` to `Example-Project-The-Late-Frost/_outline.md`.
 
 **Validator output (relevant lines):**
 
@@ -154,7 +154,7 @@ Passes on the current router. Combined with `router-fresh`, isolation is correct
 - Rewritten: `AI-BOOTSTRAP.md` reading-list section
 - Updated: `TEMPLATE-Session.md` (gains `lfw_chapters_loaded`)
 - Backfilled: 7 example session logs with `lfw_chapters_loaded`
-- No new atoms, activities, chapters, templates, or failure modes
+- No new Items, activities, chapters, templates, or failure modes
 - No files physically moved
 - Stdlib-only preserved (no new runtime dependencies)
 - Both example cartridges pass with the new checks active

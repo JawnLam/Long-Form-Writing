@@ -12,14 +12,14 @@ lfw_load:
 
 # 14 — FICTION: STRUCTURE OVERLAYS AND EXTENSIONS
 
-> **Scene-and-sequel rhythm, beat-sheet overlays, Theme as first-class atom, Character-Bible as extended atom, fiction sub-genre branching cues. The structural-overlay layer that sits between v1.2's foundational spine/motif/continuity and the writer's specific shaping of a manuscript.**
+> **Scene-and-sequel rhythm, beat-sheet overlays, Theme as first-class Item, Character-Bible as extended Item, fiction sub-genre branching cues. The structural-overlay layer that sits between v1.2's foundational spine/motif/continuity and the writer's specific shaping of a manuscript.**
 
 ## What this chapter adds
 
 - **Scene-and-sequel rhythm** — Swain's reactive-beat structure that lives between value-shifting scenes; the new `lfw_scene_type` field
 - **Beat-sheet overlays** — opt-in plot-structure templates (Story Circle, Save the Cat, Hero's Journey, Freytag) that overlay onto `_spine.md` without replacing it
-- **Theme atom** — first-class atom for thematic argument, distinct from Motif (image) and from `_argument.md` (which is non-fiction's logical backbone)
-- **Character-Bible atom** — the deep companion to the Character atom for novels where character work is load-bearing; includes full backstory, family tree, contradictions, secrets
+- **Theme Item** — first-class Item for thematic argument, distinct from Motif (image) and from `_argument.md` (which is non-fiction's logical backbone)
+- **Character-Bible Item** — the deep companion to the Character Item for novels where character work is load-bearing; includes full backstory, family tree, contradictions, secrets
 - **Fiction sub-genre branching** — `lfw_fiction_subgenre` field with sub-genre-specific cues for literary / thriller / mystery / romance / SFF / speculative
 - **One new activity** — THEME-CHECK
 - **No new universal activities** — beat-sheet overlays piggyback on existing SCENE-AUDIT and READ-THROUGH
@@ -38,19 +38,19 @@ The full novel reads as: *scene → sequel → scene → sequel → scene...* wi
 
 ### The new field
 
-The Scene atom gains an optional frontmatter field:
+The Scene Item gains an optional frontmatter field:
 
 ```yaml
 lfw_scene_type: ""    # v1.3.1 — "scene" (value-shifting, default) | "sequel" (reactive-processing) | "scene-sequel" (compound)
 ```
 
-Most atoms remain `scene` (or unset, equivalent to scene). Atoms explicitly tagged `sequel` are *not* required to declare a value-shift in the v1.2 sense; their job is processing a prior turn, not turning. The validator (chapter 13's check 9) skips value-shift requirements on `sequel`-typed atoms.
+Most Items remain `scene` (or unset, equivalent to scene). Items explicitly tagged `sequel` are *not* required to declare a value-shift in the v1.2 sense; their job is processing a prior turn, not turning. The validator (chapter 13's check 9) skips value-shift requirements on `sequel`-typed Items.
 
-A `scene-sequel` compound atom is a Scene that contains both a turn *and* its reactive processing within the same unit — common in literary fiction where the writer compresses for prose-economy.
+A `scene-sequel` compound Item is a Scene that contains both a turn *and* its reactive processing within the same unit — common in literary fiction where the writer compresses for prose-economy.
 
 ### The new body sections
 
-When `lfw_scene_type: sequel`, the atom uses the **Sequel body** instead of the **Value-shift body**:
+When `lfw_scene_type: sequel`, the Item uses the **Sequel body** instead of the **Value-shift body**:
 
 ```markdown
 ## Sequel *(v1.3.1 — for lfw_scene_type: sequel)*
@@ -62,7 +62,7 @@ When `lfw_scene_type: sequel`, the atom uses the **Sequel body** instead of the 
 - **Carry-forward connector to next scene:** *(the decision IS the next scene's want — explicit linkage)*
 ```
 
-For `scene-sequel` compound atoms, both the Value-shift body and the Sequel body appear in the atom.
+For `scene-sequel` compound Items, both the Value-shift body and the Sequel body appear in the Item.
 
 ### Spine ledger update
 
@@ -82,7 +82,7 @@ Thrillers and commercial fiction often compress sequels into a paragraph or skip
 
 - **F38 — Missing sequels in literary fiction.** Every scene is a turn; no reactive beats; reader has no room to feel the turns. Reads as relentless.
 - **F39 — Over-sequel'd thriller.** Every action scene is followed by extended interiority; pacing collapses; the form's grammar is violated.
-- **F40 — Sequel without decision.** Sequel atom that processes the prior scene but doesn't produce a new want for the next scene; the chain breaks.
+- **F40 — Sequel without decision.** Sequel Item that processes the prior scene but doesn't produce a new want for the next scene; the chain breaks.
 
 ## §2 — Beat-sheet overlays
 
@@ -97,7 +97,7 @@ Beat-sheets are pre-existing structural templates (Story Circle, Save the Cat, H
 | **Hero's Journey** | Joseph Campbell / Christopher Vogler | Mythic / fantasy / quest structures | 12 beats |
 | **Freytag's Pyramid** | Gustav Freytag | Classical / tragic / dramatic structures | 5 beats |
 
-Each ships as a template (`_writing-engine/_templates/TEMPLATE-overlay-{name}.md`). The writer copies the template into the cartridge as a backbone-like file (`<Cartridge>/_overlay-{name}.md`) and fills in which Scene atoms occupy each beat-position.
+Each ships as a template (`_writing-engine/_templates/TEMPLATE-overlay-{name}.md`). The writer copies the template into the cartridge as a backbone-like file (`<Cartridge>/_overlay-{name}.md`) and fills in which Scene Items occupy each beat-position.
 
 ### How overlays interact with `_spine.md`
 
@@ -121,9 +121,9 @@ The overlay is a *reading lens*, not a *writing prescription*. The most common f
 
 Literary fiction frequently diverges from any named overlay deliberately. The opt-in nature of overlays protects the writer from formula-creep.
 
-## §3 — Character-Bible atom (new)
+## §3 — Character-Bible Item (new)
 
-The Character atom (v1.0, expanded v1.2 + v1.3.1) captures function, want/need/wound, voice, dialogue tells, behavioral consistency. For most characters this is sufficient. For protagonists, antagonists, and primary supporting characters in a long novel, the writer often needs more — a deep companion document where backstory, family history, contradictions, secrets, evolving arc, sensory specifics, and the connective tissue of a life all live.
+The Character Item (v1.0, expanded v1.2 + v1.3.1) captures function, want/need/wound, voice, dialogue tells, behavioral consistency. For most characters this is sufficient. For protagonists, antagonists, and primary supporting characters in a long novel, the writer often needs more — a deep companion document where backstory, family history, contradictions, secrets, evolving arc, sensory specifics, and the connective tissue of a life all live.
 
 ### When to create a bible
 
@@ -136,7 +136,7 @@ Bibles are **opt-in.** Most secondary characters never get one. A novel with two
 
 ### Structure
 
-The Character-Bible atom is a separate file linked from the Character atom (via `lfw_character_bible:` field added in chapter 13). Lives in `<Cartridge>/Atoms/Character-Bibles/<Slug>.md`.
+The Character-Bible Item is a separate file linked from the Character Item (via `lfw_character_bible:` field added in chapter 13). Lives in `<Cartridge>/Items/Character-Bibles/<Slug>.md`.
 
 Frontmatter:
 
@@ -148,7 +148,7 @@ Title: ""
 lfw_manuscript: ""
 lfw_atom_type: character-bible
 lfw_status: drafting       # drafting | established | revised | final
-lfw_character: ""          # wiki-link back to the Character atom
+lfw_character: ""          # wiki-link back to the Character Item
 Date_Added:
 Date_Modified:
 Needs_Processing: false
@@ -197,7 +197,7 @@ Body sections (all optional; populate as the manuscript demands):
 
 ## Wounds (deep)
 
-*The injuries that shape them. Often multiple; the want/need/wound triad in the Character atom names one; the bible names all.*
+*The injuries that shape them. Often multiple; the want/need/wound triad in the Character Item names one; the bible names all.*
 
 ## Secrets
 
@@ -221,7 +221,7 @@ For each significant other character:
 
 ## Voice (extended)
 
-*Building on the Character atom's voice-and-prose-register section: pet phrases that ONLY appear in this bible (not in scenes — yet); the verbal register at different ages; the way their voice shifts under stress, intoxication, grief.*
+*Building on the Character Item's voice-and-prose-register section: pet phrases that ONLY appear in this bible (not in scenes — yet); the verbal register at different ages; the way their voice shifts under stress, intoxication, grief.*
 
 ## Sensory signatures
 
@@ -243,17 +243,17 @@ For each significant other character:
 
 ### Read-order placement
 
-When present, Character-Bible atoms are read **on demand**, not at session-start. They are too long to load by default. CHARACTER-CONSISTENCY activity reads them in full. POV-VOICE-DRIFT may read the voice section. Other activities read the at-a-glance summary.
+When present, Character-Bible Items are read **on demand**, not at session-start. They are too long to load by default. CHARACTER-CONSISTENCY activity reads them in full. POV-VOICE-DRIFT may read the voice section. Other activities read the at-a-glance summary.
 
 ### Operator-private by default
 
 Character bibles are operator-private (gitignored in the writer's own copies; included in shipped worked examples via the `!Example-Project-*` override). Many writers prefer to keep deep character work private even when sharing the manuscript or OV.
 
-## §4 — Theme atom (new)
+## §4 — Theme Item (new)
 
 Theme is the abstract idea the manuscript is *about* — distinct from premise (the situation) and from motif (the recurrent image). *Inheritance, honesty under cost, the way grief reorganizes a relationship, the limits of knowing another person* — these are themes. They are what the novel *means*, when meaning is asked.
 
-v1.2's `_spine.md` carried thematic implication but didn't name it. v1.3.1 adds the Theme atom so the manuscript's themes are first-class, queryable, and auditable for treatment-without-on-the-noseness.
+v1.2's `_spine.md` carried thematic implication but didn't name it. v1.3.1 adds the Theme Item so the manuscript's themes are first-class, queryable, and auditable for treatment-without-on-the-noseness.
 
 ### Frontmatter
 
@@ -267,7 +267,7 @@ lfw_atom_type: theme
 lfw_status: candidate    # candidate | developing | threaded | resolved
 lfw_priority: ""         # "central" / "secondary" / "incidental"
 lfw_appears_in_scenes: []
-lfw_related_motifs: []   # wiki-links to Motif atoms that carry this theme
+lfw_related_motifs: []   # wiki-links to Motif Items that carry this theme
 lfw_related_characters: []  # wiki-links to Characters who embody or test this theme
 Date_Added:
 Date_Modified:
@@ -322,18 +322,18 @@ Needs_Processing: false
 
 ### THEME-CHECK activity (new in v1.3.1)
 
-Audits Theme atoms against drafted prose.
+Audits Theme Items against drafted prose.
 
 Triggering conditions:
 
-- ≥1 Theme atom exists at `developing` or `threaded` status
-- ≥5 scenes have been drafted since the theme atom was created or last checked
+- ≥1 Theme Item exists at `developing` or `threaded` status
+- ≥5 scenes have been drafted since the theme Item was created or last checked
 - ≥10 sessions since last THEME-CHECK
 - Before READ-THROUGH
 
 Procedure:
 
-1. Read all Theme atoms
+1. Read all Theme Items
 2. Cross-reference with each scene drafted since last check
 3. Surface scenes where the theme appears (per `appears_in_scenes`) — is it carried by mechanism, not statement?
 4. Surface scenes where the theme *should* appear but doesn't — gaps in the threading
@@ -370,7 +370,7 @@ Each sub-genre comes with a small note in this chapter (below) describing the st
 #### Literary
 
 - Sequel-beats often the prose's emotional center; tag explicitly
-- Theme work is high-priority (Theme atoms expected)
+- Theme work is high-priority (Theme Items expected)
 - READER-SIMULATION leans on prose-experience and emotional weight, less on plot-tension
 - Beat-sheet overlays optional and often declined
 - Motif weave often central
@@ -402,7 +402,7 @@ Each sub-genre comes with a small note in this chapter (below) describing the st
 #### SFF (Science Fiction / Fantasy)
 
 - `_worldbuilding.md` backbone load-bearing (v1.3.2)
-- Setting atom usage expanded — multiple settings, multiple cultures
+- Setting Item usage expanded — multiple settings, multiple cultures
 - Magic / technology rules tracked rigorously in `_continuity.md` world-rules
 - Hero's Journey overlay often relevant
 - WORLDBUILDING activity high-priority and frequent
@@ -417,7 +417,7 @@ Each sub-genre comes with a small note in this chapter (below) describing the st
 #### Historical
 
 - Real-world timeline becomes a Continuity layer (v1.3.2's multi-layer timeline)
-- Source atoms repurposed for historical research (non-fic Source atom valid for fiction's research)
+- Source Items repurposed for historical research (non-fic Source Item valid for fiction's research)
 - Anachronism risk monitored
 - Character bibles often span longer backstories
 
@@ -425,7 +425,7 @@ Each sub-genre comes with a small note in this chapter (below) describing the st
 
 - Promises and payoffs run on dread-accumulation arcs
 - Subtext discipline applies (the unspoken thing in the room)
-- Setting atoms often carry atmospheric weight
+- Setting Items often carry atmospheric weight
 - Theme often interrogates safety, knowledge, and what is endurable
 
 #### YA
@@ -457,12 +457,12 @@ The sub-genre field is also surfaced to READER-SIMULATION so the simulated reade
 
 Add to chapter 03 §6b':
 
-- **If** ≥1 Theme atom is `developing` or `threaded` AND ≥5 scenes drafted since last check AND ≥10 sessions since last THEME-CHECK → propose **THEME-CHECK**
+- **If** ≥1 Theme Item is `developing` or `threaded` AND ≥5 scenes drafted since last check AND ≥10 sessions since last THEME-CHECK → propose **THEME-CHECK**
 - **If** `lfw_active_overlays` declares an overlay AND ≥10 scenes drafted AND no overlay-shape-fit assessment in recent sessions → suggest READ-THROUGH with overlay-shape-fit sub-mode
 - **If** sub-genre tunings apply (per §5 above) → adjust cadence thresholds for relevant activities
 
 ## §8 — Read-order placement
 
-Required reading before THEME-CHECK or when working with Character-Bible atoms. Recommended at BOOTSTRAP for any fiction cartridge — the sub-genre field is best populated at the start, and the theme work is best framed early even if the Theme atom is `candidate` initially.
+Required reading before THEME-CHECK or when working with Character-Bible Items. Recommended at BOOTSTRAP for any fiction cartridge — the sub-genre field is best populated at the start, and the theme work is best framed early even if the Theme Item is `candidate` initially.
 
 The beat-sheet overlay templates are read on-demand when the writer chooses to import one.

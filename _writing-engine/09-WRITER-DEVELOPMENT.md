@@ -163,7 +163,7 @@ The module flags candidates. It does NOT silently restructure; it surfaces patte
 
 ### `curse-of-knowledge`
 
-Reads sections looking for places where the writer has assumed knowledge the target reader (per Reader atoms — see chapter 10-READER) doesn't have. Cross-references the Reader atoms' "background" sections to surface mismatches.
+Reads sections looking for places where the writer has assumed knowledge the target reader (per Reader Items — see chapter 10-READER) doesn't have. Cross-references the Reader Items' "background" sections to surface mismatches.
 
 The module's output is a list of specific assumptions the writer should examine. Never silent rewrites.
 
@@ -185,7 +185,7 @@ Specified in chapter 13 §1. Surfaces in REVISE and READ-THROUGH passes:
 - Lines that score on only one of the four dialogue function axes (plot / character / subtext / rhythm)
 - Stretches of 4+ consecutive lines scoring on the same single axis (information-dump cluster; character-demonstration cluster)
 - Dialogue that doesn't sound like the speaking character per their dialogue-tells
-- Declared subtext (on the Beat atom) that the surface dialogue doesn't carry
+- Declared subtext (on the Beat Item) that the surface dialogue doesn't carry
 
 Different from the DIALOGUE-AUDIT activity (which is a full-scene audit); the module is a scene-running quick check during revision.
 
@@ -207,7 +207,7 @@ In a REVISE or READ-THROUGH session:
 
 > *"Run REVISE on Section 03-04 with the `concrete-to-abstract` and `signposting` modules active."*
 
-The AI loads the modules' diagnostics, applies them to the named atoms, and produces a focused report. Standard REVISE machinery (revision-pass log, etc.) still applies.
+The AI loads the modules' diagnostics, applies them to the named Items, and produces a focused report. Standard REVISE machinery (revision-pass log, etc.) still applies.
 
 ### Extending modules
 
@@ -228,7 +228,7 @@ The craft-log discipline (above) names patterns observed in the writer's prose. 
 - **and-then-not-but-therefore** — recurring causal-chain slack between scenes
 - **arc-asserted-not-earned** — the prose claims a character change it doesn't dramatize
 - **antagonist-mechanical** — recurring weak-antagonist patterns
-- **motif-stated-not-woven** — themes named in atom files; only one or two appearances in 80,000 words
+- **motif-stated-not-woven** — themes named in Item files; only one or two appearances in 80,000 words
 - **continuity-slip** — world-rule or information-state drift
 - **filter-word-density** — recurring pane-of-glass patterns
 - **head-hop-within-scene** — unintentional POV switches inside scenes

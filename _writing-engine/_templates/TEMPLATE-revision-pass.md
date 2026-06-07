@@ -23,17 +23,17 @@ lfw_completed: null
 
 ## Scope
 
-*Which atoms, chapters, sections this pass covers.*
+*Which Items, chapters, sections this pass covers.*
 
 ## Method
 
-*How the pass is being conducted — read order, what's being checked atom-by-atom, what tools.*
+*How the pass is being conducted — read order, what's being checked Item-by-Item, what tools.*
 
-## Atoms Touched
+## Items Touched
 
-*Updated as the pass progresses. Atom-by-atom log.*
+*Updated as the pass progresses. Item-by-Item log.*
 
-| Atom | Status before | Status after | Changes summary |
+| Item | Status before | Status after | Changes summary |
 |------|---------------|--------------|-----------------|
 |      |               |              |                 |
 
@@ -47,7 +47,7 @@ lfw_completed: null
 
 **Why:**
 
-**Atoms affected:**
+**Items affected:**
 
 ---
 
@@ -69,6 +69,6 @@ lfw_completed: null
 
 **Word-count delta:**
 
-**Atoms moved from `drafted` → `revised`:**
+**Items moved from `drafted` → `revised`:**
 
-**Atoms still requiring attention before final:**
+**Items still requiring attention before final:**

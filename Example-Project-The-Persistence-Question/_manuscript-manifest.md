@@ -53,8 +53,8 @@ Educated general readers. People who read trade non-fiction across history, soci
 ## Current state at bootstrap (2026-06-02)
 
 - Premise crystallized over the past six months in informal conversations and short essays
-- Two practice essays drafted (in `Atoms/Notes/`) that test parts of the argument
-- Source library partially curated (~12 Source atoms ingested; ~30 more identified)
+- Two practice essays drafted (in `Items/Notes/`) that test parts of the argument
+- Source library partially curated (~12 Source Items ingested; ~30 more identified)
 - Book-level outline at v3 (the current version in `_outline.md`)
 - Chapter 1 (Introduction) at first-draft stage
 - Chapter 2 (The Antarctic Treaty case study) at first-draft stage; about 60% complete
@@ -105,7 +105,7 @@ The writer is in `voice-samples` mode. Voice samples are in `_voice-samples.md`.
 
 - The writer values the AI as a structural and research partner, not a co-author. Voice samples are calibration, not invitation to draft prose unattended.
 - When the writer asks "draft this section," the expected output is structural scaffold + key beats + suggested passages the writer will revise heavily — not finished prose.
-- For controversial cases (long-lived authoritarian regimes especially), the AI should surface counter-evidence and the strongest version of the counter-argument in the relevant Thread atom or in `_argument.md`'s `## Defeaters` section.
+- For controversial cases (long-lived authoritarian regimes especially), the AI should surface counter-evidence and the strongest version of the counter-argument in the relevant Thread Item or in `_argument.md`'s `## Defeaters` section.
 
 ## Development-layer files in this cartridge
 
@@ -113,7 +113,7 @@ This cartridge uses the v1.1 development-layer artifacts:
 
 - **`_argument.md`** — the manuscript's argument backbone (thesis, sub-claims, evidence map, defeaters, honest unknown). Pressure-tested during ARGUMENT-AUDIT sessions. Currently at v2.
 - **`_craft-log.md`** — per-cartridge writer-pattern record. Updated during sessions when patterns are observed; reviewed during CRAFT-REVIEW.
-- **Reader atoms** — three primary Readers: [[Skeptic]], [[Impatient-Generalist]], [[Domain-Expert]]. Used in READER-SIMULATION activities.
+- **Reader Items** — three primary Readers: [[Skeptic]], [[Impatient-Generalist]], [[Domain-Expert]]. Used in READER-SIMULATION activities.
 
 The OV-root `_craft-profile.md` is not yet created (this is the writer's first cartridge). Proposed creation point: end of Chapter 3 first-draft, when there will be enough material to start populating it.
 

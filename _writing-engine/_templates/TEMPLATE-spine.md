@@ -26,7 +26,7 @@ lfw_spine_version: 1
 
 ## Scene-by-scene value-shifts
 
-*The spine's primary content. For each Scene, the value-state at the start and at the end. A scene with from-state = to-state has not turned (F22). v1.3.1: Type column captures scene-vs-sequel; sequel-typed atoms carry a decision (the next scene's want) rather than a value-shift.*
+*The spine's primary content. For each Scene, the value-state at the start and at the end. A scene with from-state = to-state has not turned (F22). v1.3.1: Type column captures scene-vs-sequel; sequel-typed Items carry a decision (the next scene's want) rather than a value-shift.*
 
 | # | Scene | Type | POV | From → To (scenes) / Decision (sequels) | But/Therefore connector to next |
 |---|-------|------|-----|-----------------------------------------|---------------------------------|

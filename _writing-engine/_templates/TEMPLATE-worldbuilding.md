@@ -93,7 +93,7 @@ Date_Modified:
 
 ## History (deep)
 
-*The centuries / millennia of backstory. If extensive, may reference Timeline atoms with `lfw_timeline_layer: world-history`.*
+*The centuries / millennia of backstory. If extensive, may reference Timeline Items with `lfw_timeline_layer: world-history`.*
 
 ## Open questions
 

@@ -34,12 +34,12 @@ python3 _writing-engine/_scripts/validate.py /path/to/my-manuscript-cartridge
 | Check name | What it catches |
 |---|---|
 | `wiki-link-resolves` | `[[Foo]]` in any .md file that doesn't resolve to a real file basename |
-| `state-atom-exists` | Wiki-links in `_state.md` that point to non-existent files |
-| `status-legal` | `lfw_status` values that aren't legal for the atom's `lfw_atom_type` |
-| `atom-type-known` | `lfw_atom_type` values that aren't one of the known ten |
-| `template-exists` | Atom types used in the cartridge that have no corresponding `TEMPLATE-<Type>.md` |
-| `filename-conforms` | Filenames that don't match the naming pattern declared in `04-ATOMS-AND-STRUCTURE.md` (chapter-prefixed sections/scenes/beats, `Chapter-NN-<title>` for chapters, etc.) |
-| `required-frontmatter` | Atoms missing `Item_Prototype`, `Item_ID`, or `Title` |
+| `state-Item-exists` | Wiki-links in `_state.md` that point to non-existent files |
+| `status-legal` | `lfw_status` values that aren't legal for the Item's `lfw_atom_type` |
+| `Item-type-known` | `lfw_atom_type` values that aren't one of the known ten |
+| `template-exists` | Prototypes used in the cartridge that have no corresponding `TEMPLATE-<Type>.md` |
+| `filename-conforms` | Filenames that don't match the naming pattern declared in `04-ITEMS-AND-STRUCTURE.md` (chapter-prefixed sections/scenes/beats, `Chapter-NN-<title>` for chapters, etc.) |
+| `required-frontmatter` | Items missing `Item_Prototype`, `Item_ID`, or `Title` |
 | `unique-item-id` | `Item_ID` collisions across the cartridge |
 
 ## When to run

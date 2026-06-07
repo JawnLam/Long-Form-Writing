@@ -25,7 +25,7 @@ Needs_Processing: false
 
 ## Beats
 
-*Ordered list of beats in this section. Wiki-links to Beat atoms.*
+*Ordered list of beats in this section. Wiki-links to Beat Items.*
 
 1. [[Beat-slug-1]]
 2. [[Beat-slug-2]]
@@ -36,13 +36,13 @@ Needs_Processing: false
 
 ## Sources Used
 
-*Wiki-links to Source atoms cited in this section.*
+*Wiki-links to Source Items cited in this section.*
 
 - [[Source-slug]]
 
 ## Threads Engaged
 
-*Wiki-links to Thread atoms.*
+*Wiki-links to Thread Items.*
 
 - [[Thread-slug]]
 

@@ -22,7 +22,7 @@ Three of the most common failure modes in fiction drafts are not stylistic and n
 2. **The causal chain is and-then, not but-therefore.** Scene 4 happens. Then scene 5 happens. Then scene 6. Each scene may be interesting; together they're a sequence, not a plot. The reader's question "why did this happen *because* of what just happened" has no answer.
 3. **Setups go unfired. Payoffs come unearned.** A gun introduced in chapter 2 disappears; a reveal in chapter 18 has no foundation in chapter 5. Both happen because no one's tracking promises across hundreds of sessions — which is the whole reason a stateful OV exists.
 
-v1.0–v1.1 had container structure (`_outline.md`) but no causal structure. Scene atoms could capture "purpose" but not "turn." The Source relation vocabulary already contained `prefigures` and `parallels` — the literal bones of setup-and-payoff — but nothing in the engine used them as a discipline.
+v1.0–v1.1 had container structure (`_outline.md`) but no causal structure. Scene Items could capture "purpose" but not "turn." The Source relation vocabulary already contained `prefigures` and `parallels` — the literal bones of setup-and-payoff — but nothing in the engine used them as a discipline.
 
 This chapter introduces the artifacts and activities that close all three gaps.
 
@@ -42,7 +42,7 @@ A novel whose outline and spine align is structurally sound. A novel where the o
 
 1. **Premise as causal claim** — what's the *because* that makes this story have to happen? Not "a story about X" but "*because* [protagonist] [wants/fears X], *and because* [obstacle], the story must unfold." The premise as the root of the causal tree.
 2. **The dramatic question** — what question does the entire manuscript answer? Stated as a yes/no or which/whether question that won't be settled until the climax. *Will she leave him? Will the city survive? Can the sisters reconcile?* The reader's reason to keep turning pages.
-3. **Scene-by-scene value-shifts** — for each Scene atom, the state at the start and the state at the end. The list is the spine's primary content; if a scene's row reads "uncertain → uncertain," that scene doesn't turn and the spine has surfaced it.
+3. **Scene-by-scene value-shifts** — for each Scene Item, the state at the start and the state at the end. The list is the spine's primary content; if a scene's row reads "uncertain → uncertain," that scene doesn't turn and the spine has surfaced it.
 4. **Cause→effect linkage between scenes** — for each scene-to-scene transition, the connector word: `but`, `therefore`, or (the warning sign) `and then`. A spine dominated by "and then" is not yet a plot.
 5. **Escalation curve** — are the stakes actually rising scene by scene, or repeating at the same altitude? A novel where chapter 12 has the same emotional pressure as chapter 4 is flat, regardless of how interesting each individual chapter is.
 6. **The mid-act crisis and the climax** — explicit identification of the manuscript's two highest-pressure moments and what value-shift each delivers.
@@ -67,7 +67,7 @@ A good periodic check (during ARGUMENT-AUDIT or its fiction equivalent — see S
 
 ### What it is
 
-A diagnostic activity that examines a drafted Scene atom and tests three questions:
+A diagnostic activity that examines a drafted Scene Item and tests three questions:
 
 1. **Whose want drives this scene?** — every scene needs a protagonist *for that scene* (often but not always the manuscript's overall protagonist) with a clear want operating in this scene. If no one wants anything, the scene has no fuel.
 2. **What's the conflict?** — what stands between the want and its satisfaction within this scene? External obstacle, internal hesitation, opposing character, time pressure, secret. If there's no conflict, the scene is exposition wearing a scene's clothes.
@@ -77,14 +77,14 @@ The third question is the load-bearing one. It's the most teachable fiction skil
 
 ### Trigger conditions
 
-- A Scene atom is in `drafted` status
+- A Scene Item is in `drafted` status
 - The Scene's `lfw_value_shift_from` and `lfw_value_shift_to` fields are not yet populated, OR they're populated but identical (no turn declared)
 - 3+ consecutive scenes have been drafted without a SCENE-AUDIT on any of them
 - The writer flags SCENE-AUDIT explicitly
 
 ### Protocol
 
-1. AI reads the target Scene atom in full
+1. AI reads the target Scene Item in full
 2. AI reads the relevant `_spine.md` entry for this scene
 3. AI reads the Scene's parent Chapter for surrounding context
 4. AI applies the three tests:
@@ -132,7 +132,7 @@ The OV's stateful nature makes promise-tracking possible across hundreds of sess
 
 ### How the `prefigures` relation feeds the ledger
 
-In an atom's frontmatter or body, the `prefigures` relation between two atoms (Scene A prefigures Scene B) is the canonical way to declare a promise. The ledger consolidates these declarations into the central view. The validator can check (in a future v1.x): every `prefigures` link has an entry in `_promises.md`; every entry in `_promises.md` has a `prefigures` link in the relevant atoms.
+In an Item's frontmatter or body, the `prefigures` relation between two Items (Scene A prefigures Scene B) is the canonical way to declare a promise. The ledger consolidates these declarations into the central view. The validator can check (in a future v1.x): every `prefigures` link has an entry in `_promises.md`; every entry in `_promises.md` has a `prefigures` link in the relevant Items.
 
 ## Part four — SETUP-PAYOFF-AUDIT activity
 
@@ -150,7 +150,7 @@ A periodic audit of `_promises.md` against the drafted manuscript. Surfaces unfi
 ### Protocol
 
 1. AI reads `_promises.md` in full
-2. AI reads the relevant Scene/Chapter atoms covered by current promises
+2. AI reads the relevant Scene/Chapter Items covered by current promises
 3. AI tests:
    - **Outstanding promises**: for each, is there a planted-foreshadow trail in the recent draft that the reader can connect when the payoff lands? Or has the promise faded?
    - **Recently fired promises**: for each, is the payoff earned by the setup, or does it feel unearned in execution?
@@ -191,13 +191,13 @@ A novel may have a few "and then" transitions (a time skip; a pure mood scene; a
 ## Part six — how this chapter interacts with the rest of the engine
 
 - **Chapter 03 (Cadence and Sessions)** — adds SCENE-AUDIT and SETUP-PAYOFF-AUDIT to the activity table (now 23 activities total as of v1.3.1)
-- **Chapter 04 (Atoms and Structure)** — Scene template updated with `lfw_value_shift_from` and `lfw_value_shift_to` frontmatter fields; the three new backbone files (`_spine.md`, `_continuity.md`, `_promises.md`) documented in the Cartridge backbone files section. *(v1.3.1: Scene also gains `lfw_scene_type` field for scene-vs-sequel distinction — see chapter 14 §1.)*
+- **Chapter 04 (Items and Structure)** — Scene template updated with `lfw_value_shift_from` and `lfw_value_shift_to` frontmatter fields; the three new backbone files (`_spine.md`, `_continuity.md`, `_promises.md`) documented in the Cartridge backbone files section. *(v1.3.1: Scene also gains `lfw_scene_type` field for scene-vs-sequel distinction — see chapter 14 §1.)*
 - **Chapter 07 (Revision Discipline)** — SCENE-AUDIT findings feed into structural and prose-line revision passes
 - **Chapter 09 (Writer Development)** — fiction-specific error vocabulary added to the craft-log discipline (scene-doesn't-turn, telling-not-showing, flat-antagonist, head-hopping, filter words, arc-asserted-not-earned)
 - **Chapters 10-READER and 10-ARGUMENT** — non-fiction's analogs; fiction's chapter 11 is structured to parallel their organization
 - **Chapter 12 (Fiction Character and Continuity)** — sister chapter; together with this chapter forms the fiction-craft-foundation layer (v1.2)
 - **Chapter 13 (Fiction Dialogue and POV-Voice)** *(v1.3.1)* — line-level craft inside the Scene
-- **Chapter 14 (Fiction Structure Overlays and Extensions)** *(v1.3.1)* — scene-and-sequel rhythm extends this chapter's value-shift discipline; Theme atom, beat-sheet overlays, Character-Bible
+- **Chapter 14 (Fiction Structure Overlays and Extensions)** *(v1.3.1)* — scene-and-sequel rhythm extends this chapter's value-shift discipline; Theme Item, beat-sheet overlays, Character-Bible
 - **`_meta/FAILURE-MODES.md`** — adds F22 (scene-doesn't-turn), F23 (promise-unfired-or-unearned); v1.3.1 adds F38–F40 (missing-sequels, over-sequel'd, sequel-without-decision)
 
 ## When the discipline applies and when it relaxes

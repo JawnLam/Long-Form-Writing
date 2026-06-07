@@ -132,7 +132,7 @@ These are hard rules:
 - **In REVISE:** surfaces structural issues, voice inconsistency (if mode permits), accuracy issues (non-fiction), and prose-line suggestions (only when invited)
 - **In READ-THROUGH:** identifies macro-scale problems
 - **In VOICE-CHECK** (if mode permits): focused voice-consistency report
-- **In WORLDBUILDING** (fiction): builds out setting atoms, flags contradictions
+- **In WORLDBUILDING** (fiction): builds out setting Items, flags contradictions
 - **In RESEARCH-INTEGRATION** (non-fiction): folds sources into prose without homogenizing voice
 
 ## When the writer wants more AI involvement

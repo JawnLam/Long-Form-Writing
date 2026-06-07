@@ -43,6 +43,6 @@ Needs_Processing: false
 
 ---
 
-> **For the AI conducting READER-SIMULATION:** when you read a target atom as this Reader, you internally maintain this Reader's background, patience, and resistance profile. You don't argue with the writer about whether the Reader is right; you report what this Reader experiences. Stay in the Reader's head; report what's there.
+> **For the AI conducting READER-SIMULATION:** when you read a target Item as this Reader, you internally maintain this Reader's background, patience, and resistance profile. You don't argue with the writer about whether the Reader is right; you report what this Reader experiences. Stay in the Reader's head; report what's there.
 >
 > If you find that the Reader resists nothing and rewards everything in a drafted section, the Reader is likely under-modeled (see failure mode F21). Surface this; don't suppress it.
