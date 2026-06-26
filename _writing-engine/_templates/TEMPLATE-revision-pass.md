@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Revision_Pass
+type: LFW_Revision_Pass
 Item_ID: "<manuscript-slug>-pass-<NN>"
-Title: "<Manuscript Title> — Revision Pass <NN> — <Kind>"
+title: "<Manuscript Title> — Revision Pass <NN> — <Kind>"
 Date_Added:
 Date_Modified:
 Needs_Processing: false

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Source
+type: LFW_Source
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "olson-power-and-prosperity-2000"
-Title: "Power and Prosperity: Outgrowing Communist and Capitalist Dictatorships"
+title: "Power and Prosperity: Outgrowing Communist and Capitalist Dictatorships"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: source
 lfw_source_kind: book

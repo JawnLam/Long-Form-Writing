@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Thread
+type: LFW_Thread
+timestamp: "2026-05-31T00:00:00Z"
 Item_ID: "written-tradition-allows-reconstruction"
-Title: "Written Tradition That Allows Reconstruction After Loss"
+title: "Written Tradition That Allows Reconstruction After Loss"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: thread
 lfw_kind: argument

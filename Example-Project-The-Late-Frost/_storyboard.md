@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Storyboard
+type: LFW_Storyboard
+timestamp: "2026-06-03T00:00:00Z"
 Item_ID: "the-late-frost-storyboard"
-Title: "The Late Frost — Storyboard"
+title: "The Late Frost — Storyboard"
 lfw_manuscript: "the-late-frost"
 lfw_storyboard_version: 1
 Date_Added: 2026-06-03

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Thread
+type: LFW_Thread
+timestamp: "2026-05-31T00:00:00Z"
 Item_ID: "selection-pressure-hostile-but-not-lethal"
-Title: "Selection Pressure That's Hostile But Not Lethal"
+title: "Selection Pressure That's Hostile But Not Lethal"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: thread
 lfw_kind: argument

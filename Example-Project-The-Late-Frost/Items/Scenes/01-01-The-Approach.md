@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Scene
+type: LFW_Scene
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "01-01-the-approach"
-Title: "01-01 — The Approach"
+title: "01-01 — The Approach"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: scene
 lfw_status: drafting

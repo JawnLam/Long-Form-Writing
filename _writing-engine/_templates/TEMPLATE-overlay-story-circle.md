@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Overlay_Story_Circle
+type: LFW_Overlay_Story_Circle
 Item_ID: "<manuscript-slug>-overlay-story-circle"
-Title: "<Manuscript Title> — Story Circle Overlay"
+title: "<Manuscript Title> — Story Circle Overlay"
 lfw_manuscript: ""
 lfw_overlay_type: story-circle
 lfw_overlay_version: 1

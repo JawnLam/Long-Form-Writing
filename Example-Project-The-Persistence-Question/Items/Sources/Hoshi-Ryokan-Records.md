@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Source
+type: LFW_Source
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "hoshi-ryokan-records"
-Title: "Hoshi Ryokan Family Records (collected primary sources)"
+title: "Hoshi Ryokan Family Records (collected primary sources)"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: source
 lfw_source_kind: primary-document

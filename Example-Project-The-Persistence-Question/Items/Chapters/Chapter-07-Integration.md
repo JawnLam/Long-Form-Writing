@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Chapter
+type: LFW_Chapter
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "ch07-integration"
-Title: "Chapter 7: Integration"
+title: "Chapter 7: Integration"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: chapter
 lfw_status: planned

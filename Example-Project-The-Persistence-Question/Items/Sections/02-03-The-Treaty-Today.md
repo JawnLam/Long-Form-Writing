@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Section
+type: LFW_Section
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "02-03-the-treaty-today"
-Title: "Section 2.3: The Treaty Today"
+title: "Section 2.3: The Treaty Today"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: section
 lfw_status: planned

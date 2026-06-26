@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Motif
+type: LFW_Motif
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "the-late-frost"
-Title: "Motif — The Late Frost"
+title: "Motif — The Late Frost"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: motif
 lfw_status: emerging

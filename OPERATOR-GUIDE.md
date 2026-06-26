@@ -134,7 +134,7 @@ The files that LFW's release ships:
 
 - Front-door docs: `README.md`, `AI-BOOTSTRAP.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`, `LICENSE.md`, `VERSION.md`, `CHANGELOG.md`, `MIGRATION-NOTES.md`
 - `_writing-engine/` — engine chapters, templates, meta, scripts
-- `_Prototypes/` — LFW's own Prototype definitions
+- `_types/` — LFW's own Prototype definitions
 - `_USER.md.template` — the template, not the populated `_USER.md`
 - `.gitignore` — engine-zone file
 

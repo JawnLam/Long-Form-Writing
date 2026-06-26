@@ -2,6 +2,10 @@
 
 All notable changes to Long-Form-Writing are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.0] — 2026-06-26
+
+Google OKF v0.1 conformance (coordinated with vault Master_Schema v1.23.0 + OVE v2.4.0). Universal Core renamed to OKF field names (Item_Prototype→type, Title→title, Tags→tags; added timestamp from Date_Modified, optional description/resource). Convention-6 folder _Prototypes/ → _types/. Date_Modified kept, time-synced with timestamp. Hugo excluded.
+
 ## [1.7.2] — 2026-06-07
 
 Patch release adding `UPDATE-PROMPT.md` at the LFW root — the fourth required artifact under OVE Convention 7 (added in OVE v1.2.1).
@@ -65,7 +69,7 @@ Inline comments added to flag the rename history. Operators of v1.6.0 or v1.7.0 
 `CONTRIBUTING.md` gains:
 
 - **§ 7 — Content zones** — declares the four zones with concrete path patterns:
-  - **Engine Zone** — front-door docs, `_writing-engine/`, `_Prototypes/`, `_USER.md.template`, `.gitignore`
+  - **Engine Zone** — front-door docs, `_writing-engine/`, `_types/`, `_USER.md.template`, `.gitignore`
   - **Operator-Private Zone** — `_USER.md`, `_craft-profile.md`, per-cartridge state/sessions/revision-passes, voice samples, craft logs, argument/spine/continuity/promises backbones, overlays, worldbuilding/storyboard/style-sheet/relationships, operator-private Items (character-bibles, timelines, inspirations)
   - **Operator-Extension Zone** — operator's own manuscript cartridges parallel to `Example-Project-*`
   - **Shipped Examples Zone** — `Example-Project-The-Late-Frost/`, `Example-Project-The-Persistence-Question/`
@@ -76,7 +80,7 @@ Inline comments added to flag the rename history. Operators of v1.6.0 or v1.7.0 
 
 ### Notes
 
-This is a patch release: no engine prose changed beyond the documentation additions; no schema change; no Prototype changes; no `_Prototypes/` content moved.
+This is a patch release: no engine prose changed beyond the documentation additions; no schema change; no Prototype changes; no `_types/` content moved.
 
 The `.gitignore` fix is the only behavioral change. Operators on v1.7.0 with private character-bible / timeline / inspiration content should audit whether those files got tracked since v1.6.0 (likely yes if they did `git add .` since then) and untrack as needed.
 
@@ -84,13 +88,13 @@ This release is part of an OVE-coordinated multi-OV cycle: OVE v1.2.0 codifies C
 
 ## [1.7.0] — 2026-06-06
 
-Adopts Operating-Volume-Engineering Convention 6 (every OV ships its own `_Prototypes/` folder for portability). Completes the lowercase-form of v1.6.0's atom → Item rename in templates and Item files. No new engine capability; the contribution is **portability** — anyone cloning this repo without the operator's vault Infrastructure now gets the full Prototype definitions out of the box.
+Adopts Operating-Volume-Engineering Convention 6 (every OV ships its own `_types/` folder for portability). Completes the lowercase-form of v1.6.0's atom → Item rename in templates and Item files. No new engine capability; the contribution is **portability** — anyone cloning this repo without the operator's vault Infrastructure now gets the full Prototype definitions out of the box.
 
-### Added — `_Prototypes/` folder with 36 LFW Prototype definitions
+### Added — `_types/` folder with 36 LFW Prototype definitions
 
-A new top-level folder, `_Prototypes/`, contains one Markdown file per LFW Prototype in the namespace. Each file is structured per OVE's `TEMPLATE-Prototype.md` (Purpose, Required frontmatter, Body structure, Naming, Example Item, Relationships, Notes). The 36 files:
+A new top-level folder, `_types/`, contains one Markdown file per LFW Prototype in the namespace. Each file is structured per OVE's `TEMPLATE-Prototype.md` (Purpose, Required frontmatter, Body structure, Naming, Example Item, Relationships, Notes). The 36 files:
 
-- **Already in vault** (9, from v1.16.0; verbatim mirrors of `~/Obsidian/.../_Infrastructure For All Vaults/_Prototypes/LFW_*.md`): `LFW_Beat`, `LFW_Chapter`, `LFW_Character_Bible`, `LFW_Motif`, `LFW_Note`, `LFW_Reader`, `LFW_Scene`, `LFW_Session`, `LFW_Source`.
+- **Already in vault** (9, from v1.16.0; verbatim mirrors of `~/Obsidian/.../_Infrastructure For All Vaults/_types/LFW_*.md`): `LFW_Beat`, `LFW_Chapter`, `LFW_Character_Bible`, `LFW_Motif`, `LFW_Note`, `LFW_Reader`, `LFW_Scene`, `LFW_Session`, `LFW_Source`.
 - **Authored new** (27 — declared in shipping templates but never previously written as standalone Prototype definitions anywhere): `LFW_Act`, `LFW_Argument`, `LFW_Character`, `LFW_Continuity`, `LFW_Craft_Log`, `LFW_Craft_Profile`, `LFW_Inspiration`, `LFW_Manuscript_Manifest`, `LFW_Outline`, `LFW_Overlay_Freytag`, `LFW_Overlay_Heros_Journey`, `LFW_Overlay_Save_The_Cat`, `LFW_Overlay_Story_Circle`, `LFW_Promises`, `LFW_Relationships`, `LFW_Revision_Pass`, `LFW_Section`, `LFW_Setting`, `LFW_Spine`, `LFW_State`, `LFW_Storyboard`, `LFW_Style_Sheet`, `LFW_Theme`, `LFW_Thread`, `LFW_Timeline`, `LFW_Voice_Samples`, `LFW_Worldbuilding`.
 
 Each authored Prototype definition was drawn from authoritative sources: the corresponding `_writing-engine/_templates/TEMPLATE-*.md` for frontmatter and body structure; the relevant engine chapter (chapters 04, 07, 09–16) for purpose, relationships, and notes; the existing example cartridges for concrete Example Items. No fabrication; nothing invented from outside the documented LFW system.
@@ -108,7 +112,7 @@ Total: 101 files modified, 121 substitutions. CHANGELOG preserved historical ref
 
 ### Vault-Infrastructure dependency
 
-The operator-side `Master_Schema.yaml` v1.20.0 (shipping in parallel with this release) adds the 36 `LFW_*` prototype declarations to the central prototypes block — the v1.16.0 changelog claimed 9 of these had been added but the entries were never written; v1.20.0 closes that gap and adds 27 more. Operators with the vault Infrastructure get the centralized declarations automatically; operators without it use this repo's local `_Prototypes/` folder as the canonical source per OVE Convention 6.
+The operator-side `Master_Schema.yaml` v1.20.0 (shipping in parallel with this release) adds the 36 `LFW_*` prototype declarations to the central prototypes block — the v1.16.0 changelog claimed 9 of these had been added but the entries were never written; v1.20.0 closes that gap and adds 27 more. Operators with the vault Infrastructure get the centralized declarations automatically; operators without it use this repo's local `_types/` folder as the canonical source per OVE Convention 6.
 
 ### Migration for existing forks
 
@@ -123,11 +127,11 @@ find . -type f -name '*.md' ! -path './CHANGELOG.md' -exec perl -i -pe '
 ' {} \;
 ```
 
-The `_Prototypes/` folder is additive; pull this release to receive it. No backbone fields added; no engine chapters removed.
+The `_types/` folder is additive; pull this release to receive it. No backbone fields added; no engine chapters removed.
 
 ### Notes
 
-This is an additive minor release. The `_Prototypes/` adoption is OVE Convention 6 conformance work, not a schema change. The lowercase-form rename completes v1.6.0's intent. Existing private manuscripts continue to work; the lowercase migration script above is the only operator action required.
+This is an additive minor release. The `_types/` adoption is OVE Convention 6 conformance work, not a schema change. The lowercase-form rename completes v1.6.0's intent. Existing private manuscripts continue to work; the lowercase migration script above is the only operator action required.
 
 ## [1.6.0] — 2026-06-06
 

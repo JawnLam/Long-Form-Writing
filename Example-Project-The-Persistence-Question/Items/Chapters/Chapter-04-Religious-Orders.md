@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Chapter
+type: LFW_Chapter
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "ch04-religious-orders"
-Title: "Chapter 4: Religious Orders — Benedictine Monasticism"
+title: "Chapter 4: Religious Orders — Benedictine Monasticism"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: chapter
 lfw_status: planned

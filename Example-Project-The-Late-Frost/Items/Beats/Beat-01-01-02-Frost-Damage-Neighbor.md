@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Beat
+type: LFW_Beat
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "beat-01-01-02-frost-damage-neighbor"
-Title: "Beat 01-01-02 — Frost Damage on a Neighbor's Vines"
+title: "Beat 01-01-02 — Frost Damage on a Neighbor's Vines"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: beat
 lfw_status: drafted

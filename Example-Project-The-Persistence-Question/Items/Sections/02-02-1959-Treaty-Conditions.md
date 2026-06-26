@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Section
+type: LFW_Section
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "02-02-1959-treaty-conditions"
-Title: "Section 2.2: The 1959 Treaty Conditions"
+title: "Section 2.2: The 1959 Treaty Conditions"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: section
 lfw_status: planned

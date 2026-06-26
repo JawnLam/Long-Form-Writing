@@ -129,9 +129,9 @@ The smallest unit. A beat is a single move — a turn in argument, a moment of a
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Beat
+type: LFW_Beat
 Item_ID: "<lowercase-kebab-slug>"
-Title: "<short descriptive name>"
+title: "<short descriptive name>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: beat
 lfw_status: planned   # planned | drafting | drafted | revising | revised | final
@@ -165,9 +165,9 @@ A scene is a dramatic unit: typically continuous in time and place, with charact
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Scene
+type: LFW_Scene
 Item_ID: "<lowercase-kebab-slug>"
-Title: "<descriptive title>"
+title: "<descriptive title>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: scene
 lfw_status: planned   # planned | drafting | drafted | revising | revised | final
@@ -211,9 +211,9 @@ A section is a unit of argument or narrative within a chapter. Roughly analogous
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Section
+type: LFW_Section
 Item_ID: "<lowercase-kebab-slug>"
-Title: "<section title>"
+title: "<section title>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: section
 lfw_status: planned   # planned | drafting | drafted | revising | revised | fact-checked | final
@@ -252,9 +252,9 @@ A chapter is a composition of scenes or sections, usually with a coherent arc.
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Chapter
+type: LFW_Chapter
 Item_ID: "<lowercase-kebab-slug>"
-Title: "<chapter title>"
+title: "<chapter title>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: chapter
 lfw_status: planned   # planned | drafting | drafted | revising | revised | final
@@ -288,9 +288,9 @@ Screenplay and play equivalent of Chapter. Composes scenes within an act structu
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Act
+type: LFW_Act
 Item_ID: "<lowercase-kebab-slug>"
-Title: "Act <N>: <title>"
+title: "Act <N>: <title>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: act
 lfw_status: planned   # planned | drafting | drafted | revising | revised | final
@@ -322,9 +322,9 @@ Records a location, period, and stage-condition combination that scenes can refe
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Setting
+type: LFW_Setting
 Item_ID: "<lowercase-kebab-slug>"
-Title: "<Setting name>"
+title: "<Setting name>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: setting
 lfw_status: sketched   # sketched | defined | final
@@ -355,9 +355,9 @@ A modeled audience member: what they bring to the page, what they reward, what t
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Reader
+type: LFW_Reader
 Item_ID: "<lowercase-kebab-slug>"
-Title: "<Reader name — short, descriptive>"
+title: "<Reader name — short, descriptive>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: reader
 lfw_status: developing   # developing | active | retired
@@ -391,9 +391,9 @@ A recurring sub-surface element — theme, image system, recurring object, gestu
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Motif
+type: LFW_Motif
 Item_ID: "<lowercase-kebab-slug>"
-Title: "<Motif name>"
+title: "<Motif name>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: motif
 lfw_kind: image-system | recurring-object | thematic-pattern | gesture | symbol | sound
@@ -427,9 +427,9 @@ Recurring participant. First-class Item.
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Character
+type: LFW_Character
 Item_ID: "<slug>"
-Title: "<character full name>"
+title: "<character full name>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: character
 lfw_role: protagonist | antagonist | major-supporting | minor | speaking | non-speaking
@@ -475,9 +475,9 @@ The extended companion Item for POV-bearing characters, antagonists, and major s
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Character_Bible
+type: LFW_Character_Bible
 Item_ID: "<character-slug>-bible"
-Title: "<Character Name> — Bible"
+title: "<Character Name> — Bible"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: character-bible
 lfw_status: drafting | established | revised | final
@@ -506,9 +506,9 @@ The abstract idea the manuscript is *about*. Carried, not declared. Distinct fro
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Theme
+type: LFW_Theme
 Item_ID: "<theme-slug>"
-Title: "Theme — <Name>"
+title: "Theme — <Name>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: theme
 lfw_status: candidate | developing | threaded | resolved
@@ -545,9 +545,9 @@ Multi-layer timeline Item. Distinct from `_continuity.md`'s embedded story-time 
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Timeline
+type: LFW_Timeline
 Item_ID: "<slug>"
-Title: "<Timeline name>"
+title: "<Timeline name>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: timeline
 lfw_status: drafting | established | revised | final
@@ -581,9 +581,9 @@ Research-as-compost. Distinct from Source (which carries non-fiction citation di
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Inspiration
+type: LFW_Inspiration
 Item_ID: "<slug>"
-Title: "<Inspiration title>"
+title: "<Inspiration title>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: inspiration
 lfw_status: noted | absorbed | folded-in | retired
@@ -616,9 +616,9 @@ Recurring topic, argument, framing device, or analytical lens that spans section
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Thread
+type: LFW_Thread
 Item_ID: "<slug>"
-Title: "<thread name>"
+title: "<thread name>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: thread
 lfw_kind: argument | counter-argument | framing | concept | recurring-example | methodology
@@ -650,9 +650,9 @@ External material: books, papers, interviews, datasets, primary documents, video
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Source
+type: LFW_Source
 Item_ID: "<slug>"
-Title: "<source title>"
+title: "<source title>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: source
 lfw_source_kind: book | paper | article | interview | dataset | primary-document | video | other
@@ -688,9 +688,9 @@ Unplaced fragment, idea, future inclusion, possible scene, dialogue snippet, obs
 **Frontmatter:**
 
 ```yaml
-Item_Prototype: LFW_Note
+type: LFW_Note
 Item_ID: "<slug>"
-Title: "<short label>"
+title: "<short label>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: note
 lfw_kind: idea | fragment | dialogue | observation | research-lead | structural-thought

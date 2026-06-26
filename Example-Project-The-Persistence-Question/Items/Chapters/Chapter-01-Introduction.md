@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Chapter
+type: LFW_Chapter
+timestamp: "2026-05-28T00:00:00Z"
 Item_ID: "ch01-introduction"
-Title: "Chapter 1: The Question"
+title: "Chapter 1: The Question"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: chapter
 lfw_status: drafted

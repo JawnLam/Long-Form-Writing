@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Note
+type: LFW_Note
 Item_ID: "<slug>"
-Title: "<short label>"
+title: "<short label>"
 lfw_manuscript: ""
 lfw_item_type: note
 lfw_kind: ""    # idea | fragment | dialogue | observation | research-lead | structural-thought

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Section
+type: LFW_Section
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "02-01-antarctic-opening-scene"
-Title: "Section 2.1: Antarctic Opening Scene"
+title: "Section 2.1: Antarctic Opening Scene"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: section
 lfw_status: planned

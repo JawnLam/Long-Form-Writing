@@ -106,9 +106,9 @@ The template ships at `_writing-engine/_templates/TEMPLATE-worldbuilding.md`. Bo
 
 ```yaml
 ---
-Item_Prototype: LFW_Timeline
+type: LFW_Timeline
 Item_ID: ""
-Title: ""
+title: ""
 lfw_manuscript: ""
 lfw_item_type: timeline
 lfw_status: drafting | established | revised | final
@@ -257,9 +257,9 @@ The Inspiration Item is fiction's research-tracking — what the writer has abso
 
 ```yaml
 ---
-Item_Prototype: LFW_Inspiration
+type: LFW_Inspiration
 Item_ID: ""
-Title: ""
+title: ""
 lfw_manuscript: ""
 lfw_item_type: inspiration
 lfw_status: noted | absorbed | folded-in | retired

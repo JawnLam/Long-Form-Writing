@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Promises
+type: LFW_Promises
 Item_ID: "<manuscript-slug>-promises"
-Title: "<Manuscript Title> — Setup/Payoff Ledger"
+title: "<Manuscript Title> — Setup/Payoff Ledger"
 Date_Added:
 Date_Modified:
 lfw_manuscript: "<manuscript-slug>"

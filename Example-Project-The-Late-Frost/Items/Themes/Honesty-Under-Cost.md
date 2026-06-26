@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Theme
+type: LFW_Theme
+timestamp: "2026-06-03T00:00:00Z"
 Item_ID: "honesty-under-cost"
-Title: "Theme — Honesty Under Cost"
+title: "Theme — Honesty Under Cost"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: theme
 lfw_status: developing

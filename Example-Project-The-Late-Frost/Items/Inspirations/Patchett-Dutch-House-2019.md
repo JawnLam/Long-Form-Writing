@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Inspiration
+type: LFW_Inspiration
+timestamp: "2026-06-03T00:00:00Z"
 Item_ID: "patchett-dutch-house-2019"
-Title: "Ann Patchett — The Dutch House (2019)"
+title: "Ann Patchett — The Dutch House (2019)"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: inspiration
 lfw_status: absorbed

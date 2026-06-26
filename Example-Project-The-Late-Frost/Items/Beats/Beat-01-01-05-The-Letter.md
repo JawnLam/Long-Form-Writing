@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Beat
+type: LFW_Beat
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "beat-01-01-05-the-letter"
-Title: "Beat 01-01-05 — The Letter"
+title: "Beat 01-01-05 — The Letter"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: beat
 lfw_status: planned

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Section
+type: LFW_Section
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "01-03-methodology-note"
-Title: "Section 1.3: Methodology Note"
+title: "Section 1.3: Methodology Note"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: section
 lfw_status: planned

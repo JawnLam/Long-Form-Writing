@@ -39,7 +39,7 @@ python3 _writing-engine/_scripts/validate.py /path/to/my-manuscript-cartridge
 | `Item-type-known` | `lfw_item_type` values that aren't one of the known ten |
 | `template-exists` | Prototypes used in the cartridge that have no corresponding `TEMPLATE-<Type>.md` |
 | `filename-conforms` | Filenames that don't match the naming pattern declared in `04-ITEMS-AND-STRUCTURE.md` (chapter-prefixed sections/scenes/beats, `Chapter-NN-<title>` for chapters, etc.) |
-| `required-frontmatter` | Items missing `Item_Prototype`, `Item_ID`, or `Title` |
+| `required-frontmatter` | Items missing `type`, `Item_ID`, or `Title` |
 | `unique-item-id` | `Item_ID` collisions across the cartridge |
 
 ## When to run

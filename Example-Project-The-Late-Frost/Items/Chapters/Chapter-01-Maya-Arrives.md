@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Chapter
+type: LFW_Chapter
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "chapter-01-maya-arrives"
-Title: "Chapter 1 — Maya Arrives at the Vineyard"
+title: "Chapter 1 — Maya Arrives at the Vineyard"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: chapter
 lfw_status: drafting

@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Worldbuilding
+type: LFW_Worldbuilding
 Item_ID: "<manuscript-slug>-worldbuilding"
-Title: "<World Name> — Worldbuilding"
+title: "<World Name> — Worldbuilding"
 lfw_manuscript: ""
 lfw_worldbuilding_version: 1
 Date_Added:

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Section
+type: LFW_Section
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "01-01-the-question"
-Title: "Section 1.1: The Question"
+title: "Section 1.1: The Question"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: section
 lfw_status: planned

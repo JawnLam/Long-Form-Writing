@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Timeline
+type: LFW_Timeline
+timestamp: "2026-06-03T00:00:00Z"
 Item_ID: "story-time-three-weeks"
-Title: "Story-Time — Three Weeks of Frost-Watch (April 4–25, 2026)"
+title: "Story-Time — Three Weeks of Frost-Watch (April 4–25, 2026)"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: timeline
 lfw_status: established

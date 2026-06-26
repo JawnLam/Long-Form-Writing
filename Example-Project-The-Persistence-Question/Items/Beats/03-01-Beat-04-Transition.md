@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Beat
+type: LFW_Beat
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "03-01-beat-04-transition"
-Title: "Beat 4: Transition — Setting Up the Statistical Question"
+title: "Beat 4: Transition — Setting Up the Statistical Question"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: beat
 lfw_status: planned

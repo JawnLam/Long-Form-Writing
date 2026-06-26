@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Section
+type: LFW_Section
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "01-02-four-conditions-introduced"
-Title: "Section 1.2: The Four Conditions, Introduced"
+title: "Section 1.2: The Four Conditions, Introduced"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: section
 lfw_status: planned

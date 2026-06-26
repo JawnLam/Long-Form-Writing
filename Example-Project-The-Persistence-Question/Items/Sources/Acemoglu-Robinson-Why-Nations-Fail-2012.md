@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Source
+type: LFW_Source
+timestamp: "2026-05-05T00:00:00Z"
 Item_ID: "acemoglu-robinson-why-nations-fail-2012"
-Title: "Why Nations Fail: The Origins of Power, Prosperity, and Poverty"
+title: "Why Nations Fail: The Origins of Power, Prosperity, and Poverty"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: source
 lfw_source_kind: book

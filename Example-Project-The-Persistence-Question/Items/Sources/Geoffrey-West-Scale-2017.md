@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Source
+type: LFW_Source
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "west-scale-2017"
-Title: "Scale: The Universal Laws of Growth, Innovation, Sustainability, and the Pace of Life"
+title: "Scale: The Universal Laws of Growth, Innovation, Sustainability, and the Pace of Life"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: source
 lfw_source_kind: book

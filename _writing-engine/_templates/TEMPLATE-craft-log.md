@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Craft_Log
+type: LFW_Craft_Log
 Item_ID: "<manuscript-slug>-craft-log"
-Title: "<Manuscript Title> — Craft Log"
+title: "<Manuscript Title> — Craft Log"
 Date_Added:
 Date_Modified:
 lfw_manuscript: "<manuscript-slug>"

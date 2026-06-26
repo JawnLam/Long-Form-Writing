@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Overlay_Heros_Journey
+type: LFW_Overlay_Heros_Journey
 Item_ID: "<manuscript-slug>-overlay-heros-journey"
-Title: "<Manuscript Title> — Hero's Journey Overlay"
+title: "<Manuscript Title> — Hero's Journey Overlay"
 lfw_manuscript: ""
 lfw_overlay_type: heros-journey
 lfw_overlay_version: 1

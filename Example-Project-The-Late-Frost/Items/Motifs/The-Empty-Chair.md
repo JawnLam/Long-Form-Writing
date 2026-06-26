@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Motif
+type: LFW_Motif
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "the-empty-chair"
-Title: "Motif — The Empty Chair"
+title: "Motif — The Empty Chair"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: motif
 lfw_status: latent

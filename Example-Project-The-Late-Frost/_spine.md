@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Spine
+type: LFW_Spine
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "the-late-frost-spine"
-Title: "The Late Frost — Causal Spine"
+title: "The Late Frost — Causal Spine"
 Date_Added: 2026-06-02
 Date_Modified: 2026-06-02
 lfw_manuscript: "the-late-frost"

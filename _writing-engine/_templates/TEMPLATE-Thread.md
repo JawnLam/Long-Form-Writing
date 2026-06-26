@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Thread
+type: LFW_Thread
 Item_ID: "<slug>"
-Title: "<Thread name>"
+title: "<Thread name>"
 lfw_manuscript: ""
 lfw_item_type: thread
 lfw_kind: ""    # argument | counter-argument | framing | concept | recurring-example | methodology

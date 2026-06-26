@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Chapter
+type: LFW_Chapter
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "ch08-conclusion"
-Title: "Chapter 8: Conclusion"
+title: "Chapter 8: Conclusion"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: chapter
 lfw_status: planned

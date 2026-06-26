@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Promises
+type: LFW_Promises
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "the-late-frost-promises"
-Title: "The Late Frost — Setup/Payoff Ledger"
+title: "The Late Frost — Setup/Payoff Ledger"
 Date_Added: 2026-06-02
 Date_Modified: 2026-06-02
 lfw_manuscript: "the-late-frost"

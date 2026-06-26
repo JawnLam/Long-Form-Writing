@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Chapter
+type: LFW_Chapter
+timestamp: "2026-05-31T00:00:00Z"
 Item_ID: "ch02-antarctic-treaty"
-Title: "Chapter 2: The Antarctic Treaty"
+title: "Chapter 2: The Antarctic Treaty"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: chapter
 lfw_status: drafting

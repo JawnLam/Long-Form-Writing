@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Relationships
+type: LFW_Relationships
 Item_ID: "<manuscript-slug>-relationships"
-Title: "<Manuscript Title> — Relationship Map"
+title: "<Manuscript Title> — Relationship Map"
 lfw_manuscript: ""
 lfw_relationships_version: 1
 Date_Added:

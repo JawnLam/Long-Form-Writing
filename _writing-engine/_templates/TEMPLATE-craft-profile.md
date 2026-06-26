@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Craft_Profile
+type: LFW_Craft_Profile
 Item_ID: "<writer-slug>-craft-profile"
-Title: "<Writer name> — Craft Profile"
+title: "<Writer name> — Craft Profile"
 Date_Added:
 Date_Modified:
 lfw_writer: "<writer name>"

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Source
+type: LFW_Source
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "schein-organizational-culture-and-leadership-2010"
-Title: "Organizational Culture and Leadership"
+title: "Organizational Culture and Leadership"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: source
 lfw_source_kind: book

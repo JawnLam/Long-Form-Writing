@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Timeline
+type: LFW_Timeline
 Item_ID: "<slug>"
-Title: "<Timeline name>"
+title: "<Timeline name>"
 lfw_manuscript: ""
 lfw_item_type: timeline
 lfw_status: drafting           # drafting | established | revised | final

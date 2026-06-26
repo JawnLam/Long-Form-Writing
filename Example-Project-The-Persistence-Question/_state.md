@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_State
+type: LFW_State
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "the-persistence-question-state"
-Title: "The Persistence Question — State"
+title: "The Persistence Question — State"
 Date_Added: 2026-06-02
 Date_Modified: 2026-06-02
 Needs_Processing: false

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Beat
+type: LFW_Beat
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "03-01-beat-03-the-family"
-Title: "Beat 3: The Family — Zengoro Hoshi and the Apprenticeship Line"
+title: "Beat 3: The Family — Zengoro Hoshi and the Apprenticeship Line"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: beat
 lfw_status: drafted

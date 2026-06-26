@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Outline
+type: LFW_Outline
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "the-persistence-question-outline"
-Title: "The Persistence Question — Outline"
+title: "The Persistence Question — Outline"
 Date_Added: 2026-06-02
 Date_Modified: 2026-06-02
 Needs_Processing: false

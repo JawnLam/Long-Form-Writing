@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Beat
+type: LFW_Beat
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "beat-01-01-04-empty-house-walkthrough"
-Title: "Beat 01-01-04 — Empty House Walkthrough"
+title: "Beat 01-01-04 — Empty House Walkthrough"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: beat
 lfw_status: drafting
