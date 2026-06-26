@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Source
+type: LFW_Source
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "taleb-antifragile-2012"
-Title: "Antifragile: Things That Gain from Disorder"
+title: "Antifragile: Things That Gain from Disorder"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: source
 lfw_source_kind: book

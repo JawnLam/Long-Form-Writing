@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Storyboard
+type: LFW_Storyboard
 Item_ID: "<manuscript-slug>-storyboard"
-Title: "<Manuscript Title> — Storyboard"
+title: "<Manuscript Title> — Storyboard"
 lfw_manuscript: ""
 lfw_storyboard_version: 1
 Date_Added:

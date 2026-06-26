@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Overlay_Freytag
+type: LFW_Overlay_Freytag
 Item_ID: "<manuscript-slug>-overlay-freytag"
-Title: "<Manuscript Title> — Freytag's Pyramid Overlay"
+title: "<Manuscript Title> — Freytag's Pyramid Overlay"
 lfw_manuscript: ""
 lfw_overlay_type: freytag
 lfw_overlay_version: 1

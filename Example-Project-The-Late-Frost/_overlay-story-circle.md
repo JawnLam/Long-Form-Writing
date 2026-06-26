@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Overlay_Story_Circle
+type: LFW_Overlay_Story_Circle
+timestamp: "2026-06-03T00:00:00Z"
 Item_ID: "the-late-frost-overlay-story-circle"
-Title: "The Late Frost — Story Circle Overlay"
+title: "The Late Frost — Story Circle Overlay"
 lfw_manuscript: "the-late-frost"
 lfw_overlay_type: story-circle
 lfw_overlay_version: 1

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Chapter
+type: LFW_Chapter
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "ch06-counter-examples"
-Title: "Chapter 6: Counter-Examples — Failed and Anomalous Persistence"
+title: "Chapter 6: Counter-Examples — Failed and Anomalous Persistence"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: chapter
 lfw_status: planned

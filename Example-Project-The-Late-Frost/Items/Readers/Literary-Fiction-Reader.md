@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Reader
+type: LFW_Reader
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "literary-fiction-reader"
-Title: "Reader — Literary Fiction Reader"
+title: "Reader — Literary Fiction Reader"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: reader
 lfw_status: active

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Section
+type: LFW_Section
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "03-02-family-business-statistics"
-Title: "Section 3.2: Family-Business Statistics"
+title: "Section 3.2: Family-Business Statistics"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: section
 lfw_status: planned

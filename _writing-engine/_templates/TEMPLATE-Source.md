@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Source
+type: LFW_Source
 Item_ID: "<slug>"
-Title: "<Source Title>"
+title: "<Source Title>"
 lfw_manuscript: ""
 lfw_item_type: source
 lfw_source_kind: ""    # book | paper | article | interview | dataset | primary-document | video | other

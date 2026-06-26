@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Source
+type: LFW_Source
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "lo-adaptive-markets-2017"
-Title: "Adaptive Markets: Financial Evolution at the Speed of Thought"
+title: "Adaptive Markets: Financial Evolution at the Speed of Thought"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: source
 lfw_source_kind: book

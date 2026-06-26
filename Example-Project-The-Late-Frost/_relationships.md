@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Relationships
+type: LFW_Relationships
+timestamp: "2026-06-03T00:00:00Z"
 Item_ID: "the-late-frost-relationships"
-Title: "The Late Frost — Relationship Map"
+title: "The Late Frost — Relationship Map"
 lfw_manuscript: "the-late-frost"
 lfw_relationships_version: 1
 Date_Added: 2026-06-03

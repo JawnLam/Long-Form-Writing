@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_State
+type: LFW_State
 Item_ID: "<manuscript-slug>-state"
-Title: "<Manuscript Title> — State"
+title: "<Manuscript Title> — State"
 Date_Added:
 Date_Modified:
 Needs_Processing: false

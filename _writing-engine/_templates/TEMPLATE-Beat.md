@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Beat
+type: LFW_Beat
 Item_ID: "<slug>"
-Title: "<Beat name>"
+title: "<Beat name>"
 lfw_manuscript: ""
 lfw_item_type: beat
 lfw_status: planned    # planned | drafting | drafted | revising | revised | final

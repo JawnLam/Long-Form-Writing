@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Source
+type: LFW_Source
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "trevor-roper-invention-of-scotland-2008"
-Title: "The Invention of Scotland: Myth and History"
+title: "The Invention of Scotland: Myth and History"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: source
 lfw_source_kind: book

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Argument
+type: LFW_Argument
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "the-persistence-question-argument"
-Title: "The Persistence Question — Argument Backbone"
+title: "The Persistence Question — Argument Backbone"
 Date_Added: 2026-06-02
 Date_Modified: 2026-06-02
 lfw_manuscript: "the-persistence-question"

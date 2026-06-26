@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Beat
+type: LFW_Beat
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "03-01-beat-02-time-marker"
-Title: "Beat 2: Time Marker — 718 AD"
+title: "Beat 2: Time Marker — 718 AD"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: beat
 lfw_status: drafted

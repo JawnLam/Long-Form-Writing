@@ -93,9 +93,9 @@ Non-fiction's recurring argumentative through-lines have somewhere to live (Thre
 ### Frontmatter
 
 ```yaml
-Item_Prototype: LFW_Motif
+type: LFW_Motif
 Item_ID: "<lowercase-kebab-slug>"
-Title: "<Motif name>"
+title: "<Motif name>"
 lfw_manuscript: <manuscript-slug>
 lfw_item_type: motif
 lfw_kind: image-system | recurring-object | thematic-pattern | gesture | symbol | sound

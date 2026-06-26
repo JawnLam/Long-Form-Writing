@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Style_Sheet
+type: LFW_Style_Sheet
 Item_ID: "<manuscript-slug>-style-sheet"
-Title: "<Manuscript Title> — Style Sheet"
+title: "<Manuscript Title> — Style Sheet"
 lfw_manuscript: ""
 lfw_style_sheet_version: 1
 Date_Added:

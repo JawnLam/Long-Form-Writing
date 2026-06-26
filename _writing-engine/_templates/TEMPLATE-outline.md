@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Outline
+type: LFW_Outline
 Item_ID: "<manuscript-slug>-outline"
-Title: "<Manuscript Title> — Outline"
+title: "<Manuscript Title> — Outline"
 Date_Added:
 Date_Modified:
 Needs_Processing: false

@@ -1,5 +1,5 @@
 ---
-lfw_version: "1.7.2"
+lfw_version: "1.8.0"
 schema_version: "1.6"
 schema_status: "STABLE"
 release_date: 2026-06-07

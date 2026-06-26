@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Voice_Samples
+type: LFW_Voice_Samples
 Item_ID: "<manuscript-slug>-voice-samples"
-Title: "<Manuscript Title> — Voice Samples"
+title: "<Manuscript Title> — Voice Samples"
 Date_Added:
 Date_Modified:
 Needs_Processing: false

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Craft_Log
+type: LFW_Craft_Log
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "the-persistence-question-craft-log"
-Title: "The Persistence Question — Craft Log"
+title: "The Persistence Question — Craft Log"
 Date_Added: 2026-06-02
 Date_Modified: 2026-06-02
 lfw_manuscript: "the-persistence-question"

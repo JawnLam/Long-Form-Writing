@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Chapter
+type: LFW_Chapter
 Item_ID: "<slug>"
-Title: "Chapter <N>: <Title>"
+title: "Chapter <N>: <Title>"
 lfw_manuscript: ""
 lfw_item_type: chapter
 lfw_status: planned    # planned | drafting | drafted | revising | revised | final

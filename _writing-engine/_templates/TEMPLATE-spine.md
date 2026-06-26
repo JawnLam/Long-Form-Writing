@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Spine
+type: LFW_Spine
 Item_ID: "<manuscript-slug>-spine"
-Title: "<Manuscript Title> — Causal Spine"
+title: "<Manuscript Title> — Causal Spine"
 Date_Added:
 Date_Modified:
 lfw_manuscript: "<manuscript-slug>"

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Section
+type: LFW_Section
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "03-05-other-long-lived-family-firms"
-Title: "Section 3.5: Other Long-Lived Family Firms"
+title: "Section 3.5: Other Long-Lived Family Firms"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: section
 lfw_status: planned

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Session_Log
+type: LFW_Session_Log
+timestamp: "2026-06-03T00:00:00Z"
 Item_ID: "2026-06-03-006-weather-check"
-Title: "Session 006 — WEATHER-CHECK on Beat 5 dread"
+title: "Session 006 — WEATHER-CHECK on Beat 5 dread"
 lfw_manuscript: "the-late-frost"
 lfw_session_date: 2026-06-03
 lfw_session_number: 6

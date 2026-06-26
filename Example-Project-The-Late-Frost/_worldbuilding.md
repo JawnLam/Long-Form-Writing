@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Worldbuilding
+type: LFW_Worldbuilding
+timestamp: "2026-06-03T00:00:00Z"
 Item_ID: "the-late-frost-worldbuilding"
-Title: "The Late Frost — Worldbuilding (minimal)"
+title: "The Late Frost — Worldbuilding (minimal)"
 lfw_manuscript: "the-late-frost"
 lfw_worldbuilding_version: 1
 Date_Added: 2026-06-03

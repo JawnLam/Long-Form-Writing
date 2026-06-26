@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Character
+type: LFW_Character
 Item_ID: "<slug>"
-Title: "<Character Full Name>"
+title: "<Character Full Name>"
 lfw_manuscript: ""
 lfw_item_type: character
 lfw_role: ""    # protagonist | antagonist | major-supporting | minor | speaking | non-speaking

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Source
+type: LFW_Source
+timestamp: "2026-05-20T00:00:00Z"
 Item_ID: "beard-spqr-2015"
-Title: "SPQR: A History of Ancient Rome"
+title: "SPQR: A History of Ancient Rome"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: source
 lfw_source_kind: book

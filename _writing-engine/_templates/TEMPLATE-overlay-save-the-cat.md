@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Overlay_Save_The_Cat
+type: LFW_Overlay_Save_The_Cat
 Item_ID: "<manuscript-slug>-overlay-save-the-cat"
-Title: "<Manuscript Title> — Save the Cat Overlay"
+title: "<Manuscript Title> — Save the Cat Overlay"
 lfw_manuscript: ""
 lfw_overlay_type: save-the-cat
 lfw_overlay_version: 1

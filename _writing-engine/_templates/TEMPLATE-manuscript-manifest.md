@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Manuscript_Manifest
+type: LFW_Manuscript_Manifest
 Item_ID: "<manuscript-slug>-manifest"
-Title: "<Manuscript Title> — Manuscript Manifest"
+title: "<Manuscript Title> — Manuscript Manifest"
 Date_Added:
 Date_Modified:
 Needs_Processing: false

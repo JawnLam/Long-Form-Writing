@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Continuity
+type: LFW_Continuity
 Item_ID: "<manuscript-slug>-continuity"
-Title: "<Manuscript Title> — Continuity Ledger"
+title: "<Manuscript Title> — Continuity Ledger"
 Date_Added:
 Date_Modified:
 lfw_manuscript: "<manuscript-slug>"

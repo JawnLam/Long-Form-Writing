@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Section
+type: LFW_Section
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "02-04-treaty-analyzed-against-conditions"
-Title: "Section 2.4: The Treaty Analyzed Against the Four Conditions"
+title: "Section 2.4: The Treaty Analyzed Against the Four Conditions"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: section
 lfw_status: planned

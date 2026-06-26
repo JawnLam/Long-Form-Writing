@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Voice_Samples
+type: LFW_Voice_Samples
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "the-persistence-question-voice-samples"
-Title: "The Persistence Question — Voice Samples"
+title: "The Persistence Question — Voice Samples"
 Date_Added: 2026-06-02
 Date_Modified: 2026-06-02
 Needs_Processing: false

@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Section
+type: LFW_Section
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "03-01-hoshi-opening"
-Title: "Section 3.1: Hoshi Opening"
+title: "Section 3.1: Hoshi Opening"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: section
 lfw_status: drafting

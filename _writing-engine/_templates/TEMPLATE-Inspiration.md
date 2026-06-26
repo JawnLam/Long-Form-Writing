@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Inspiration
+type: LFW_Inspiration
 Item_ID: "<slug>"
-Title: "<Inspiration title>"
+title: "<Inspiration title>"
 lfw_manuscript: ""
 lfw_item_type: inspiration
 lfw_status: noted           # noted | absorbed | folded-in | retired

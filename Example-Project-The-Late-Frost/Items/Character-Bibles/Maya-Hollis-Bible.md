@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Character_Bible
+type: LFW_Character_Bible
+timestamp: "2026-06-03T00:00:00Z"
 Item_ID: "maya-hollis-bible"
-Title: "Maya Hollis — Bible"
+title: "Maya Hollis — Bible"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: character-bible
 lfw_status: drafting

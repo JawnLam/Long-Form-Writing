@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Section
+type: LFW_Section
 Item_ID: "<slug>"
-Title: "<Section title>"
+title: "<Section title>"
 lfw_manuscript: ""
 lfw_item_type: section
 lfw_status: planned    # planned | drafting | drafted | revising | revised | fact-checked | final

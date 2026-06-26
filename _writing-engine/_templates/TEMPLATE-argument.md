@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Argument
+type: LFW_Argument
 Item_ID: "<manuscript-slug>-argument"
-Title: "<Manuscript Title> — Argument Backbone"
+title: "<Manuscript Title> — Argument Backbone"
 Date_Added:
 Date_Modified:
 lfw_manuscript: "<manuscript-slug>"

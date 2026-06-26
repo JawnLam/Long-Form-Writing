@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Reader
+type: LFW_Reader
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "vineyard-expert"
-Title: "Reader — Vineyard Expert"
+title: "Reader — Vineyard Expert"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: reader
 lfw_status: active

@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Motif
+type: LFW_Motif
 Item_ID: "<lowercase-kebab-slug>"
-Title: "<Motif name>"
+title: "<Motif name>"
 lfw_manuscript: ""
 lfw_item_type: motif
 lfw_kind: thematic-pattern    # image-system | recurring-object | thematic-pattern | gesture | symbol | sound

@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Theme
+type: LFW_Theme
 Item_ID: "<theme-slug>"
-Title: "Theme — <Name>"
+title: "Theme — <Name>"
 lfw_manuscript: ""
 lfw_item_type: theme
 lfw_status: candidate         # candidate | developing | threaded | resolved

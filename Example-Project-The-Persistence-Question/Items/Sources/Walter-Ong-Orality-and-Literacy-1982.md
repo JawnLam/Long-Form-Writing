@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Source
+type: LFW_Source
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "ong-orality-and-literacy-1982"
-Title: "Orality and Literacy: The Technologizing of the Word"
+title: "Orality and Literacy: The Technologizing of the Word"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: source
 lfw_source_kind: book

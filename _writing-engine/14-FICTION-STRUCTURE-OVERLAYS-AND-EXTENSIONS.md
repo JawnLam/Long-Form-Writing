@@ -142,9 +142,9 @@ Frontmatter:
 
 ```yaml
 ---
-Item_Prototype: LFW_Character_Bible
+type: LFW_Character_Bible
 Item_ID: ""
-Title: ""
+title: ""
 lfw_manuscript: ""
 lfw_item_type: character-bible
 lfw_status: drafting       # drafting | established | revised | final
@@ -259,9 +259,9 @@ v1.2's `_spine.md` carried thematic implication but didn't name it. v1.3.1 adds 
 
 ```yaml
 ---
-Item_Prototype: LFW_Theme
+type: LFW_Theme
 Item_ID: ""
-Title: ""
+title: ""
 lfw_manuscript: ""
 lfw_item_type: theme
 lfw_status: candidate    # candidate | developing | threaded | resolved

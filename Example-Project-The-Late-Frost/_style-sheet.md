@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Style_Sheet
+type: LFW_Style_Sheet
+timestamp: "2026-06-03T00:00:00Z"
 Item_ID: "the-late-frost-style-sheet"
-Title: "The Late Frost — Style Sheet"
+title: "The Late Frost — Style Sheet"
 lfw_manuscript: "the-late-frost"
 lfw_style_sheet_version: 1
 Date_Added: 2026-06-03

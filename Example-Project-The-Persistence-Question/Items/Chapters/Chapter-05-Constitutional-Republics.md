@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Chapter
+type: LFW_Chapter
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "ch05-constitutional-republics"
-Title: "Chapter 5: Constitutional Republics — The United States Case"
+title: "Chapter 5: Constitutional Republics — The United States Case"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: chapter
 lfw_status: planned

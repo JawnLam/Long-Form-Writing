@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Timeline
+type: LFW_Timeline
+timestamp: "2026-06-03T00:00:00Z"
 Item_ID: "family-history-1968-2026"
-Title: "Family History — The Hollis Vineyard (1968–2026)"
+title: "Family History — The Hollis Vineyard (1968–2026)"
 lfw_manuscript: "the-late-frost"
 lfw_item_type: timeline
 lfw_status: established

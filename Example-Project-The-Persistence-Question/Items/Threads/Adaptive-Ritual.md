@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Thread
+type: LFW_Thread
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "adaptive-ritual"
-Title: "Adaptive Ritual"
+title: "Adaptive Ritual"
 lfw_manuscript: "the-persistence-question"
 lfw_item_type: thread
 lfw_kind: argument

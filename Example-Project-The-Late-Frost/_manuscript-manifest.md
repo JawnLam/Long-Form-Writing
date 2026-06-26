@@ -1,7 +1,8 @@
 ---
-Item_Prototype: LFW_Manuscript_Manifest
+type: LFW_Manuscript_Manifest
+timestamp: "2026-06-02T00:00:00Z"
 Item_ID: "the-late-frost-manifest"
-Title: "The Late Frost — Manuscript Manifest"
+title: "The Late Frost — Manuscript Manifest"
 Date_Added: 2026-06-02
 Date_Modified: 2026-06-02
 Needs_Processing: false

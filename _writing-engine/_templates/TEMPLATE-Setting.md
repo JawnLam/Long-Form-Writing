@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Setting
+type: LFW_Setting
 Item_ID: "<lowercase-kebab-slug>"
-Title: "<Setting Name>"
+title: "<Setting Name>"
 lfw_manuscript: ""
 lfw_item_type: setting
 lfw_status: sketched    # sketched | defined | final

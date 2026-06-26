@@ -1,7 +1,7 @@
 ---
-Item_Prototype: LFW_Act
+type: LFW_Act
 Item_ID: "<lowercase-kebab-slug>"
-Title: "Act <N>: <Title>"
+title: "Act <N>: <Title>"
 lfw_manuscript: ""
 lfw_item_type: act
 lfw_status: planned    # planned | drafting | drafted | revising | revised | final
