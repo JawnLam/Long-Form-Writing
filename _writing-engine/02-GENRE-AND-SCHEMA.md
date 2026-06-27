@@ -24,7 +24,7 @@ lfw_genre: fiction | non-fiction | screenplay | play | dissertation
 
 This is the load-bearing setting. It determines:
 
-- Which Prototypes are first-class in the cartridge
+- Which Types are first-class in the cartridge
 - Which optional Items apply
 - What `_outline.md` looks like
 - Which session activities apply (e.g., WORLDBUILDING is fiction-only)
@@ -113,7 +113,7 @@ Sub-genre tunes the activity-decision algorithm's defaults (chapter 03 §6b'): c
 - **Character** (primary) — speaking roles; first-class
 - **Act** (high) — composes Scenes
 - **Beat** (high) — dramatic moves within Scenes
-- **Setting** (custom Item for plays) — locations and stage requirements; may be a custom Prototype per the cartridge
+- **Setting** (custom Item for plays) — locations and stage requirements; may be a custom Type per the cartridge
 - **Note** (medium) — alt versions, dramaturgical notes
 
 **Outline structure:** Play → Act → Scene → Beat.
@@ -147,7 +147,7 @@ Sub-genre tunes the activity-decision algorithm's defaults (chapter 03 §6b'): c
 
 When loading a cartridge, the AI reads `_manuscript-manifest.md` for the `lfw_genre` field, then comes back to this chapter to know:
 
-- Which Prototypes to expect and create
+- Which Types to expect and create
 - Which lifecycle stage labels are valid
 - Which session activities to consider in the activity-decision algorithm
 - What "done" looks like for THIS manuscript

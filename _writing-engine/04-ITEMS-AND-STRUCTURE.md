@@ -18,7 +18,7 @@ lfw_load:
 
 An Item is the smallest reusable, referenceable unit of a manuscript. Items have frontmatter, structured body sections, and named relationships to other Items. They are stored as individual markdown files in the cartridge's `Items/` subfolders.
 
-The sixteen Prototypes in LFW v1.3.2:
+The sixteen Types in LFW v1.3.2:
 
 | Type | Role | Genre relevance |
 |------|------|-----------------|
@@ -57,9 +57,9 @@ planned → drafting → drafted → revising → revised → fact-checked → f
 
 These are the **only** legal `lfw_status` values for prose-bearing Items. Templates and validators enforce this. Older drafts of the engine had Chapter-specific values (`outlined`); these are deprecated. Use `planned` for "outline not yet done" and `drafting` for "outline done, prose in progress."
 
-Other Prototypes use type-specific lifecycle fields, NOT `lfw_status`:
+Other Types use type-specific lifecycle fields, NOT `lfw_status`:
 
-| Prototype | Lifecycle field | Legal values |
+| Type | Lifecycle field | Legal values |
 |-----------|-----------------|--------------|
 | Beat / Scene / Section / Chapter / Act | `lfw_status` | `planned`, `drafting`, `drafted`, `revising`, `revised`, `final` (+ `fact-checked` for non-fiction Section) |
 | Character | `lfw_status` | `developing`, `established`, `revised`, `final` |
@@ -80,9 +80,9 @@ Wiki-links in Item bodies (`[[Foo]]`) target the **filename without the `.md` ex
 
 This forces a **disciplined naming convention**, because a flat folder (`Items/Sections/`) collects sections from every chapter and order-only names (`01-Opening.md`) collide globally. Canonical names below.
 
-### Filename conventions per Prototype
+### Filename conventions per Type
 
-| Prototype | Naming pattern | Example | Folder |
+| Type | Naming pattern | Example | Folder |
 |-----------|---------------|---------|--------|
 | Beat | `<chapter>-<section-or-scene>-Beat-<order>-<short-slug>.md` | `03-01-Beat-01-Arrival.md` | `Items/Beats/` |
 | Scene | `<chapter>-<order>-<short-slug>.md` (chapter-prefixed) | `04-03-Library-Confrontation.md` | `Items/Scenes/` |
@@ -741,7 +741,7 @@ Used in Item frontmatter and body wiki-links:
 
 ## Cartridge backbone files (not Items)
 
-In addition to the Items above, every cartridge has a set of **backbone files** — structural markdown files at the cartridge root that organize the Items and capture state, outline, argument, and development context. They are not Items (no `lfw_item_type` field) but they have their own prototypes and are first-class engine artifacts.
+In addition to the Items above, every cartridge has a set of **backbone files** — structural markdown files at the cartridge root that organize the Items and capture state, outline, argument, and development context. They are not Items (no `lfw_item_type` field) but they have their own types and are first-class engine artifacts.
 
 | File | Purpose | Required in | Defined in |
 |------|---------|-------------|------------|
@@ -793,7 +793,7 @@ Non-prose Items (Character, Thread, Source, Setting, Note) use type-specific sta
 
 Extending the Item set requires:
 
-1. A real need (a recurring concept that doesn't fit any existing Prototype)
+1. A real need (a recurring concept that doesn't fit any existing Type)
 2. A template in `_writing-engine/_templates/` for the new Item
 3. A note in the cartridge's `_manuscript-manifest.md` under `lfw_custom_items`
 4. Consistent application (don't have the new Item only in one cartridge if the engine should know about it)

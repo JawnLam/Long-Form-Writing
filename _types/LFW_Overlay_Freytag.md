@@ -1,16 +1,16 @@
 ---
 type: Fleeting
 timestamp: "2026-06-06T00:00:00Z"
-Item_ID: prototype-lfw-overlay-freytag
-title: "LFW_Overlay_Freytag Prototype"
+Item_ID: type-lfw-overlay-freytag
+title: "LFW_Overlay_Freytag Type"
 Date_Added: 2026-06-06
 Date_Modified: 2026-06-06
 Needs_Processing: false
 ---
 
-# `LFW_Overlay_Freytag` — Prototype Definition
+# `LFW_Overlay_Freytag` — Type Definition
 
-> **What this file is.** The canonical definition of the `LFW_Overlay_Freytag` Prototype for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Overlay_Freytag` conform to the contract described below.
+> **What this file is.** The canonical definition of the `LFW_Overlay_Freytag` Type for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Overlay_Freytag` conform to the contract described below.
 
 ## Purpose
 

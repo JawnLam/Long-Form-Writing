@@ -22,7 +22,7 @@ A complete cartridge inside the `Long-Form-Writing/` folder for the new manuscri
 2. `_state.md` — initial lifecycle stage and today's focus
 3. `_outline.md` — initial structural outline (can be very rough at first)
 4. `_voice-samples.md` — if the writer opts into voice-samples mode
-5. Empty-but-ready `Items/` subfolders for the genre's Prototypes
+5. Empty-but-ready `Items/` subfolders for the genre's Types
 6. `Sessions/` and `Revision-Passes/` folders ready for use
 7. A bootstrap session log (Session 000) documenting setup
 
@@ -52,7 +52,7 @@ State it in one sentence. The shape matters: "a novel" is too broad; "a 75,000-w
 
 ### CQ2 — Genre?
 
-Which of fiction / non-fiction / screenplay / play / dissertation, or hybrid? If hybrid (memoir, narrative non-fiction, autofiction), pick the closest match and we'll override Prototypes as needed.
+Which of fiction / non-fiction / screenplay / play / dissertation, or hybrid? If hybrid (memoir, narrative non-fiction, autofiction), pick the closest match and we'll override Types as needed.
 
 ### CQ3 — Target length?
 

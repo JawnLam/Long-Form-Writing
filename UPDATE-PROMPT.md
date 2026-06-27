@@ -45,7 +45,7 @@ Begin.
 
 ## When this file is the wrong tool
 
-- **Major version transitions** (e.g., v2.0 ships while you're at v1.7). The CHANGELOG.md entry for the major version will include explicit migration instructions that may go beyond this prompt's scope (LFW v2.0 would likely involve Prototype-shape changes that affect drafted Items). Read the CHANGELOG entry first, then ask the AI to apply that specific migration rather than the generic update flow.
+- **Major version transitions** (e.g., v2.0 ships while you're at v1.7). The CHANGELOG.md entry for the major version will include explicit migration instructions that may go beyond this prompt's scope (LFW v2.0 would likely involve Type-shape changes that affect drafted Items). Read the CHANGELOG entry first, then ask the AI to apply that specific migration rather than the generic update flow.
 - **You're at a folder that needs renaming first.** If the latest release announces a major.minor folder transition (e.g., `Long-Form-Writing-v1.7 → Long-Form-Writing-v1.8`) the rename happens at the filesystem level before `git pull`. Do that manually first, then run this prompt.
 - **You've made substantial engine customizations.** If your `_writing-engine/` has handfuls of operator-edited chapters, the stash-pop conflict resolution may need manual review beyond what the AI can confidently handle. Fall back to the manual update workflow in `OPERATOR-GUIDE.md § Updates`.
 

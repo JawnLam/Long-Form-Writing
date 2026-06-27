@@ -1,16 +1,16 @@
 ---
 type: Fleeting
 timestamp: "2026-06-06T00:00:00Z"
-Item_ID: prototype-lfw-character
-title: "LFW_Character Prototype"
+Item_ID: type-lfw-character
+title: "LFW_Character Type"
 Date_Added: 2026-06-06
 Date_Modified: 2026-06-06
 Needs_Processing: false
 ---
 
-# `LFW_Character` — Prototype Definition
+# `LFW_Character` — Type Definition
 
-> **What this file is.** The canonical definition of the `LFW_Character` Prototype for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Character` conform to the contract described below.
+> **What this file is.** The canonical definition of the `LFW_Character` Type for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Character` conform to the contract described below.
 
 ## Purpose
 

@@ -53,7 +53,7 @@ Documented in `02-GENRE-AND-SCHEMA.md`. Each genre emphasizes different Items:
 
 The branch is declared in `_manuscript-manifest.md` (`lfw_genre`). 
 
-- Non-fiction and dissertation add `_argument.md` as required backbone and Reader Items as primary Prototype.
+- Non-fiction and dissertation add `_argument.md` as required backbone and Reader Items as primary Type.
 - Fiction, screenplay, and play add `_spine.md` and `_promises.md` as required backbones, plus Motif Items as the recurring-element Item (the fiction analog to non-fiction's Thread).
 - Fiction with worldbuilding or plot secrets adds `_continuity.md` as required backbone.
 
@@ -88,18 +88,18 @@ The validator at `_writing-engine/_scripts/validate.py` enforces a subset of the
 
 ## Versioning
 
-The Layer 1 universals are stable. Schema additions (new optional Prototypes, new optional backbone files, new activities) are minor releases (v1.x). Breaking changes (removed fields, renamed Prototypes, changed required-field shape) require a major release (v2.0). See `CONTRIBUTING.md`.
+The Layer 1 universals are stable. Schema additions (new optional Types, new optional backbone files, new activities) are minor releases (v1.x). Breaking changes (removed fields, renamed Types, changed required-field shape) require a major release (v2.0). See `CONTRIBUTING.md`.
 
 v1.1 additions:
 - Layer 0 introduced (OV-root files: `_craft-profile.md`)
-- New Prototype: **Reader** (Layer 1 universal; primary for non-fiction)
+- New Type: **Reader** (Layer 1 universal; primary for non-fiction)
 - New backbone files: `_argument.md` (required for non-fiction/dissertation), `_craft-log.md` (optional, recommended)
 - Activity set expanded from 10 → 16 (six new development activities defined in chapter 10)
 - Scaffolding-mode setting (`lfw_scaffolding_mode`) added to `_manuscript-manifest.md` frontmatter
 - Opt-in craft modules introduced as a coaching framework (chapter 09)
 
 v1.2 additions:
-- New Prototype: **Motif** (Layer 1 universal; primary for fiction). The fiction analog to non-fiction's Thread.
+- New Type: **Motif** (Layer 1 universal; primary for fiction). The fiction analog to non-fiction's Thread.
 - New backbone files: `_spine.md` (required for fiction/screenplay/play — causal backbone), `_continuity.md` (required for genre-fiction-with-worldbuilding and plot-with-secrets — verification ledger), `_promises.md` (required for plot-driven fiction — setup/payoff ledger)
 - Activity set expanded from 16 → 20 (four new fiction-weighted development activities defined in chapters 11 + 12: SCENE-AUDIT, CHARACTER-CONSISTENCY, CONTINUITY-CHECK, SETUP-PAYOFF-AUDIT)
 - READER-SIMULATION extended (not duplicated) with fiction sub-protocol (chapter 12 §6)
@@ -109,7 +109,7 @@ v1.2 additions:
 - The `prefigures` relation (which existed but was unused in v1.0–v1.1) becomes the canonical mechanism for declaring promises in `_promises.md`
 
 v1.3.1 additions:
-- New Prototypes: **Character-Bible** (Layer 1 universal; opt-in extended companion to Character; chapter 14 §3), **Theme** (Layer 1 universal; primary for fiction; carried-not-declared; distinct from Motif and from `_argument.md`; chapter 14 §4)
+- New Types: **Character-Bible** (Layer 1 universal; opt-in extended companion to Character; chapter 14 §3), **Theme** (Layer 1 universal; primary for fiction; carried-not-declared; distinct from Motif and from `_argument.md`; chapter 14 §4)
 - Scene Item gains `lfw_scene_type` field (scene | sequel | scene-sequel; chapter 14 §1 scene-and-sequel rhythm); sequel-typed Scenes are exempt from value-shift requirements (they carry decisions instead)
 - Character Item gains `lfw_pov_voice_register` field (required for POV-bearing characters), dialogue-tells sub-section, optional subtext-patterns section; `lfw_character_bible` soft pointer
 - Beat Item gains optional Subtext body section (for beats where dialogue carries weight)
@@ -122,7 +122,7 @@ v1.3.1 additions:
 - Validator extended: check 9 exempts sequel-typed Scenes; new check 10 (scene-type-legal); new advisory check 11 (pov-voice-register on established protagonists/antagonists)
 
 v1.3.2 additions:
-- New Prototypes: **Timeline** (Layer 1 universal; multi-layer — story-time / world-history / real-world / character-specific; chapter 15 §2), **Inspiration** (Layer 1 universal; research-as-compost; distinct from Source's citation discipline; chapter 15 §5)
+- New Types: **Timeline** (Layer 1 universal; multi-layer — story-time / world-history / real-world / character-specific; chapter 15 §2), **Inspiration** (Layer 1 universal; research-as-compost; distinct from Source's citation discipline; chapter 15 §5)
 - New backbone files: `_worldbuilding.md` (required for SFF / fantasy / speculative / alt-history / horror with non-natural elements; chapter 15 §1), `_storyboard.md` (optional; scene-card view; chapter 15 §3), `_style-sheet.md` (optional but recommended; lexicon as sub-section; chapter 15 §4), `_relationships.md` (optional; symmetric multi-character map; chapter 15 §6)
 - `_spine.md` template gains Stakes-ladder section (per-chapter tracking of stakes at personal / relational / societal / existential levels; chapter 15 §7)
 - No new activities. Artifacts feed existing activities (READ-THROUGH, CONTINUITY-CHECK, CHARACTER-CONSISTENCY, BETA-PREP, REVISE)

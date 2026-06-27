@@ -87,7 +87,7 @@ For setup details, see [`INSTALL.md`](INSTALL.md). For day-to-day operation and 
 | `LICENSE.md`                               | CC-BY 4.0                                                               |
 | `_USER.md.template`                        | Optional user-profile template                                          |
 | `_writing-engine/`                         | The subject-agnostic writing operating manual                           |
-| `_writing-engine/_templates/`              | Templates for every Prototype + cartridge backbone files                |
+| `_writing-engine/_templates/`              | Templates for every Type + cartridge backbone files                |
 | `_writing-engine/_meta/`                   | Schema-of-schemas + the failure-modes catalog                           |
 | `Example-Project-The-Persistence-Question/` | Worked example: a hypothetical non-fiction book at outlining-to-mid-draft stage |
 

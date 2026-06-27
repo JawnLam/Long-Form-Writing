@@ -1,16 +1,16 @@
 ---
 type: Fleeting
 timestamp: "2026-06-06T00:00:00Z"
-Item_ID: prototype-lfw-overlay-heros-journey
-title: "LFW_Overlay_Heros_Journey Prototype"
+Item_ID: type-lfw-overlay-heros-journey
+title: "LFW_Overlay_Heros_Journey Type"
 Date_Added: 2026-06-06
 Date_Modified: 2026-06-06
 Needs_Processing: false
 ---
 
-# `LFW_Overlay_Heros_Journey` — Prototype Definition
+# `LFW_Overlay_Heros_Journey` — Type Definition
 
-> **What this file is.** The canonical definition of the `LFW_Overlay_Heros_Journey` Prototype for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Overlay_Heros_Journey` conform to the contract described below.
+> **What this file is.** The canonical definition of the `LFW_Overlay_Heros_Journey` Type for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Overlay_Heros_Journey` conform to the contract described below.
 
 ## Purpose
 

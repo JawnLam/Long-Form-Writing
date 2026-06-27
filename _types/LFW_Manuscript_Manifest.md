@@ -1,16 +1,16 @@
 ---
 type: Fleeting
 timestamp: "2026-06-06T00:00:00Z"
-Item_ID: prototype-lfw-manuscript-manifest
-title: "LFW_Manuscript_Manifest Prototype"
+Item_ID: type-lfw-manuscript-manifest
+title: "LFW_Manuscript_Manifest Type"
 Date_Added: 2026-06-06
 Date_Modified: 2026-06-06
 Needs_Processing: false
 ---
 
-# `LFW_Manuscript_Manifest` — Prototype Definition
+# `LFW_Manuscript_Manifest` — Type Definition
 
-> **What this file is.** The canonical definition of the `LFW_Manuscript_Manifest` Prototype for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Manuscript_Manifest` conform to the contract described below.
+> **What this file is.** The canonical definition of the `LFW_Manuscript_Manifest` Type for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Manuscript_Manifest` conform to the contract described below.
 
 ## Purpose
 
@@ -35,7 +35,7 @@ The Manuscript Manifest is the **identity card of a cartridge** — the single p
 | `lfw_citation_style` | string | optional | `chicago-notes-bibliography` \| `chicago-author-date` \| `mla` \| `apa` \| `harvard` \| `custom` \| blank for fiction |
 | `lfw_writer_name` | string | yes | Operator-confirmed; never inferred (see P7 / F3) |
 | `lfw_bootstrapped` | date | yes | Cartridge bootstrap date |
-| `lfw_custom_items` | list[string] | optional | Operator-defined custom Prototype names beyond the universal Layer 1 set |
+| `lfw_custom_items` | list[string] | optional | Operator-defined custom Type names beyond the universal Layer 1 set |
 | `lfw_active_overlays` | list[enum] | optional | Subset of: `story-circle`, `save-the-cat`, `heros-journey`, `freytag` (v1.3.1) |
 | `lfw_active_craft_modules` | list[enum] | optional | Subset of: `show-dont-tell`, `dialogue-and-subtext`, `pov-and-psychic-distance`, `concrete-to-abstract`, `signposting`, `given-new`, `curse-of-knowledge` (v1.3.1) |
 | `lfw_show_dont_tell_calibration` | object | optional | Sub-fields: `standing_position` (enum), `load_bearing_moments_only` (boolean). Only if show-dont-tell module is active (v1.3.1) |
@@ -187,5 +187,5 @@ Defaults.
 - **One per cartridge, required.** Validator fails any cartridge missing `_manuscript-manifest.md`.
 - **`lfw_writer_name` must be operator-confirmed.** Per LFW's identity-from-indirect-signals rule (F3 in `_meta/FAILURE-MODES.md`), the writer name is never inferred from git config, username, or path. Use `[OPERATOR-CONFIRMED]` placeholder until the writer provides their name. (The vault-wide CLAUDE.md feedback memory `feedback_no_identity_fabrication` reinforces this.)
 - **Genre determines conditional backbone.** Non-fiction/dissertation triggers required `_argument.md`. Fiction/screenplay/play triggers required `_spine.md` and `_promises.md`. Fiction with worldbuilding or plot secrets triggers required `_continuity.md`. The validator enforces these based on the declared genre.
-- **`lfw_custom_items`** (formerly `lfw_custom_items`) lets a cartridge declare extra OV-specific Prototype names beyond the universal set. Use sparingly; the universals are usually sufficient.
+- **`lfw_custom_items`** (formerly `lfw_custom_items`) lets a cartridge declare extra OV-specific Type names beyond the universal set. Use sparingly; the universals are usually sufficient.
 - **The Manifest is read first at every session.** Treat it as the cartridge's bootstrap pointer; update it when the manuscript's identity (not its content) shifts.
