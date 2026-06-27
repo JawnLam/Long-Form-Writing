@@ -1,16 +1,16 @@
 ---
 type: Fleeting
 timestamp: "2026-06-06T00:00:00Z"
-Item_ID: prototype-lfw-inspiration
-title: "LFW_Inspiration Prototype"
+Item_ID: type-lfw-inspiration
+title: "LFW_Inspiration Type"
 Date_Added: 2026-06-06
 Date_Modified: 2026-06-06
 Needs_Processing: false
 ---
 
-# `LFW_Inspiration` — Prototype Definition
+# `LFW_Inspiration` — Type Definition
 
-> **What this file is.** The canonical definition of the `LFW_Inspiration` Prototype for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Inspiration` conform to the contract described below.
+> **What this file is.** The canonical definition of the `LFW_Inspiration` Type for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Inspiration` conform to the contract described below.
 
 ## Purpose
 
@@ -111,7 +111,7 @@ Re-read the first 30 pages before starting Act 2. The rhythm there is teaching m
 
 ## Notes
 
-- **Compost, not citation.** Inspirations don't appear in bibliographies. The fold-in is implicit. Fiction's debts to other fiction are infinite and unenumerable; this Prototype lets the writer track what they're deliberately drawing on without overclaiming.
+- **Compost, not citation.** Inspirations don't appear in bibliographies. The fold-in is implicit. Fiction's debts to other fiction are infinite and unenumerable; this Type lets the writer track what they're deliberately drawing on without overclaiming.
 - **`lfw_status` is load-bearing.** A `noted` inspiration is a future-self note. An `absorbed` inspiration has become part of the writer's diffuse register. A `folded-in` inspiration has a traceable scene-level effect. A `retired` inspiration is archive-only — keep it, don't delete; the journey from interesting to not-relevant is data.
 - **Excluded from `.gitignore` by default** (in v1.3.2 default `.gitignore`) as operator-private. The writer may opt in to tracking if shipping the cartridge.
 - **Cross-genre.** Non-fiction can benefit from Inspirations too — for prose rhythm, for argumentative posture, for tonal register that doesn't belong in the bibliography but matters to the writing.

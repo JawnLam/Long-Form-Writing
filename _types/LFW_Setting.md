@@ -1,16 +1,16 @@
 ---
 type: Fleeting
 timestamp: "2026-06-06T00:00:00Z"
-Item_ID: prototype-lfw-setting
-title: "LFW_Setting Prototype"
+Item_ID: type-lfw-setting
+title: "LFW_Setting Type"
 Date_Added: 2026-06-06
 Date_Modified: 2026-06-06
 Needs_Processing: false
 ---
 
-# `LFW_Setting` — Prototype Definition
+# `LFW_Setting` — Type Definition
 
-> **What this file is.** The canonical definition of the `LFW_Setting` Prototype for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Setting` conform to the contract described below.
+> **What this file is.** The canonical definition of the `LFW_Setting` Type for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Setting` conform to the contract described below.
 
 ## Purpose
 
@@ -128,4 +128,4 @@ Periodically referenced backstory: the 1968 Hofstra purchase, the 1985 Hollis ta
 - **Sensory anchors > description.** The most-useful Setting Items are not exhaustive descriptions; they are short lists of operative sensory anchors that the prose can reach for as needed. A Setting that says "a New York apartment" is not yet a Setting; one that says "the boiler kicks on every twenty minutes; the radiator in the bedroom is louder than the one in the living room" is.
 - **Stage requirements are play-specific.** For plays, the staging discipline is load-bearing — entrances/exits, set pieces, lighting cues. For fiction/screenplay, this section is omittable.
 - **Auto-populated reverse references.** `lfw_scenes_using` is maintained automatically as Scene Items add `lfw_setting` references. Per the bidirectional-reference convention; the Setting Item doesn't need manual editing for new Scenes.
-- **Optional Prototype.** Many cartridges (especially short-scope or single-setting) don't need Setting Items — the Scene itself can carry the sensory anchors inline. Use Setting when a place recurs and the work of writing it consistently is worth centralizing.
+- **Optional Type.** Many cartridges (especially short-scope or single-setting) don't need Setting Items — the Scene itself can carry the sensory anchors inline. Use Setting when a place recurs and the work of writing it consistently is worth centralizing.

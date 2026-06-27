@@ -1,16 +1,16 @@
 ---
 type: Fleeting
 timestamp: "2026-06-06T00:00:00Z"
-Item_ID: prototype-lfw-worldbuilding
-title: "LFW_Worldbuilding Prototype"
+Item_ID: type-lfw-worldbuilding
+title: "LFW_Worldbuilding Type"
 Date_Added: 2026-06-06
 Date_Modified: 2026-06-06
 Needs_Processing: false
 ---
 
-# `LFW_Worldbuilding` — Prototype Definition
+# `LFW_Worldbuilding` — Type Definition
 
-> **What this file is.** The canonical definition of the `LFW_Worldbuilding` Prototype for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Worldbuilding` conform to the contract described below.
+> **What this file is.** The canonical definition of the `LFW_Worldbuilding` Type for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Worldbuilding` conform to the contract described below.
 
 ## Purpose
 
@@ -182,7 +182,7 @@ Cross-reference [[Iron-Archive-World-History-Founding-to-412AF]] for the full Ti
 ## Notes
 
 - **Genre-required.** Required for SFF, fantasy, speculative, alt-history, and horror cartridges with non-natural elements. Optional or skipped for contemporary realism (whose "worldbuilding" is the writer's everyday-world fluency).
-- **F45 — Worldbuilding-as-procrastination.** The most dangerous failure mode for this Prototype. When this file grows faster than the manuscript itself, the writer is procrastinating in the guise of preparation. WORLDBUILDING activities propose CONTINUITY-CHECK at session-end as a discipline pivot — the rules just established must be checked against drafted prose, which forces return to drafting.
+- **F45 — Worldbuilding-as-procrastination.** The most dangerous failure mode for this Type. When this file grows faster than the manuscript itself, the writer is procrastinating in the guise of preparation. WORLDBUILDING activities propose CONTINUITY-CHECK at session-end as a discipline pivot — the rules just established must be checked against drafted prose, which forces return to drafting.
 - **Anti-procrastination check section is mandatory in body.** The section exists to force the writer to confront the worldbuilding-vs-drafting ratio. If the ratio is acceptable, the section is a heartbeat check; if it's not, the section is the alarm.
 - **World serves story, not the reverse.** Per chapter 15 §1. Rules that are not referenced in drafted prose are speculative architecture — keep, but don't expand without scene-demand.
 - **Distinct from `_continuity.md`.** Worldbuilding holds rules; Continuity verifies adherence. The two files have orthogonal responsibilities; don't duplicate rules in both.

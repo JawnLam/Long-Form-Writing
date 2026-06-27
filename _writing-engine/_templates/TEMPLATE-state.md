@@ -59,7 +59,7 @@ Status values: `planned` | `drafted` | `revised` | `final`
 
 ### Characters / Threads / Sources
 
-*Lists per Prototype. Status field per Prototype.*
+*Lists per Type. Status field per Type.*
 
 ## Open Threads (to address next session)
 

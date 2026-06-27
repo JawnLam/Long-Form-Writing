@@ -439,7 +439,7 @@ See `_meta/FAILURE-MODES.md` for full entries.
 ## §10 — How this chapter interacts with the rest of the engine
 
 - **Chapter 03** — no new activities, but READ-THROUGH, CONTINUITY-CHECK, CHARACTER-CONSISTENCY, and BETA-PREP all gain new artifacts to consult
-- **Chapter 04** — Timeline and Inspiration Prototypes added; six new backbone files documented
+- **Chapter 04** — Timeline and Inspiration Types added; six new backbone files documented
 - **Chapter 09** — F45 (worldbuilding-as-procrastination) added to the procrastination-pattern family
 - **Chapter 11** — `_spine.md` template gains Stakes-ladder section
 - **Chapter 12** — `_continuity.md` becomes cross-layer reconciliation when Timeline Items exist

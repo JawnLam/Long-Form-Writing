@@ -33,7 +33,7 @@ Checks performed (each emits one line per failure):
   6. filename-conforms    : section/scene/beat files are chapter-prefixed;
                             chapter files use Chapter-NN- prefix; source files
                             follow Lastname-Title-Year pattern (heuristic).
-  7. required-frontmatter : Item_Prototype, Item_ID, Title present on every
+  7. required-frontmatter : type, Item_ID, Title present on every
                             atom.
   8. unique-item-id       : Item_IDs are unique across the cartridge.
   9. scene-value-shift    : every Scene with status `drafted | revising |
@@ -302,13 +302,13 @@ def check_cartridge(cartridge: pathlib.Path) -> list:
             if link not in basenames:
                 issues.append(("wiki-link-resolves", f"{rel}: [[{link}]] does not resolve to any file in the cartridge"))
 
-        # Identify atom files: must have Item_Prototype starting with LFW_
-        prototype = fm.get("Item_Prototype", "")
-        if not prototype.startswith("LFW_"):
-            continue  # not an atom (e.g., outline file, voice-samples file with non-LFW prototype, README, etc.)
+        # Identify atom files: must have type starting with LFW_
+        type = fm.get("type", "")
+        if not type.startswith("LFW_"):
+            continue  # not an atom (e.g., outline file, voice-samples file with non-LFW type, README, etc.)
 
         # Check 7: required frontmatter
-        for required in ("Item_Prototype", "Item_ID", "Title"):
+        for required in ("type", "Item_ID", "Title"):
             if required not in fm or not fm[required]:
                 issues.append(("required-frontmatter", f"{rel}: missing or empty `{required}`"))
 

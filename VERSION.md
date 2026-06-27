@@ -26,12 +26,12 @@ This is Long-Form-Writing **v1.4.0** — minor release adding two soft-skill act
 
 ## Schema policy
 
-The Item prototypes are stable at v1.3 (no changes in v1.4.0):
+The Item types are stable at v1.3 (no changes in v1.4.0):
 
 - v1.0 stable: `LFW_Manuscript_Manifest`, `LFW_State`, `LFW_Beat`, `LFW_Scene`, `LFW_Section`, `LFW_Chapter`, `LFW_Character`, `LFW_Thread`, `LFW_Source`, `LFW_Note`, `LFW_Session`, `LFW_Revision_Pass`, `LFW_Voice_Sample`
 - v1.1 added: `LFW_Reader`, `LFW_Argument`, `LFW_Craft_Log`, `LFW_Craft_Profile`
 - v1.2 added: `LFW_Motif`, `LFW_Spine`, `LFW_Continuity`, `LFW_Promises`
-- v1.3.1 added: `LFW_Character_Bible`, `LFW_Theme`, four beat-sheet overlay prototypes
+- v1.3.1 added: `LFW_Character_Bible`, `LFW_Theme`, four beat-sheet overlay types
 - v1.3.2 added: `LFW_Timeline`, `LFW_Inspiration`, `LFW_Worldbuilding`, `LFW_Storyboard`, `LFW_Style_Sheet`, `LFW_Relationships`
 - v1.4.0 added: **nothing**
 

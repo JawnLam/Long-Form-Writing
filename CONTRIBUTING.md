@@ -17,15 +17,15 @@ The following contributions do **not** require a major version bump:
 | New Item subtype for an under-covered genre                                  | `_writing-engine/_templates/TEMPLATE-<Subtype>.md` + section in `02-GENRE-AND-SCHEMA.md` |
 | Clarification, correction, or expansion in any engine file (00–08, BOOTSTRAP) | Edit in place; minor version bump                                            |
 | Documentation fix (README, INSTALL, OPERATOR-GUIDE, this file)              | Edit in place                                                                  |
-| New optional field on an Item prototype (additive only)                     | Update `_meta/SCHEMA-OF-SCHEMAS.md` + the template + minor version bump        |
+| New optional field on an Item type (additive only)                     | Update `_meta/SCHEMA-OF-SCHEMAS.md` + the template + minor version bump        |
 | New session activity beyond the universal ten                                | Document in `03-CADENCE-AND-SESSIONS.md` with trigger conditions; minor bump  |
 
 ## 2. What requires a major version bump (v2.0)
 
 Any change that breaks existing cartridges:
 
-- Adding a **required** field to a cartridge backbone file or Item prototype
-- Renaming or removing an Prototype
+- Adding a **required** field to a cartridge backbone file or Item type
+- Renaming or removing an Type
 - Changing the cartridge folder convention (e.g., renaming `Items/`, `Sessions/`, `Revision-Passes/`)
 - Restructuring the engine such that v1 cartridges can't be read
 - Changing the universal activity set in a way that breaks existing session logs
@@ -86,7 +86,7 @@ Every file in this repo belongs to one of four zones. Knowing which zone a file 
 |--------------|-------|
 | `README.md`, `AI-BOOTSTRAP.md`, `INSTALL.md`, `OPERATOR-GUIDE.md`, `CONTRIBUTING.md`, `LICENSE.md`, `VERSION.md`, `CHANGELOG.md`, `MIGRATION-NOTES.md` | Front-door docs |
 | `_writing-engine/**` | Engine chapters, templates, meta, scripts (router-generation) |
-| `_types/**` | OVE Convention 6 — LFW's own Prototype definitions |
+| `_types/**` | OVE Convention 6 — LFW's own Type definitions |
 | `_USER.md.template` | Template only; the populated `_USER.md` is operator-private |
 | `.gitignore` | Engine-zone file; its patterns define the Operator-Private patterns below |
 

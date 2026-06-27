@@ -1,16 +1,16 @@
 ---
 type: Fleeting
 timestamp: "2026-06-06T00:00:00Z"
-Item_ID: prototype-lfw-style-sheet
-title: "LFW_Style_Sheet Prototype"
+Item_ID: type-lfw-style-sheet
+title: "LFW_Style_Sheet Type"
 Date_Added: 2026-06-06
 Date_Modified: 2026-06-06
 Needs_Processing: false
 ---
 
-# `LFW_Style_Sheet` — Prototype Definition
+# `LFW_Style_Sheet` — Type Definition
 
-> **What this file is.** The canonical definition of the `LFW_Style_Sheet` Prototype for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Style_Sheet` conform to the contract described below.
+> **What this file is.** The canonical definition of the `LFW_Style_Sheet` Type for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Style_Sheet` conform to the contract described below.
 
 ## Purpose
 

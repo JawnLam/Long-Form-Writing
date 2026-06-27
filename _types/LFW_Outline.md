@@ -1,16 +1,16 @@
 ---
 type: Fleeting
 timestamp: "2026-06-06T00:00:00Z"
-Item_ID: prototype-lfw-outline
-title: "LFW_Outline Prototype"
+Item_ID: type-lfw-outline
+title: "LFW_Outline Type"
 Date_Added: 2026-06-06
 Date_Modified: 2026-06-06
 Needs_Processing: false
 ---
 
-# `LFW_Outline` — Prototype Definition
+# `LFW_Outline` — Type Definition
 
-> **What this file is.** The canonical definition of the `LFW_Outline` Prototype for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Outline` conform to the contract described below.
+> **What this file is.** The canonical definition of the `LFW_Outline` Type for the Long-Form-Writing Operating Volume. Items in any cartridge that declare `type: LFW_Outline` conform to the contract described below.
 
 ## Purpose
 
