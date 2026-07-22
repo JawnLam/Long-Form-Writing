@@ -76,6 +76,12 @@ Checks performed (each emits one line per failure):
                             `_fpeds/` type: fped) are non-canonical — their type
                             does not start with LFW_, so they are NOT run through
                             the canonical-atom checks (4, 7, 8, 9, ...).
+ 18. piece-status         : every LFW_Piece (rolling-workshop piece-folder front
+                            doc, `_piece.md`) declares an lfw_piece_status in
+                            {germinating, drafting, revising, ready, published,
+                            archived} (v1.10.0). LFW_Piece / LFW_Published_Ledger
+                            are LFW_ Items but not scene-style atoms (no
+                            lfw_atom_type), so they take only checks 7/8/18.
 
 The script is intentionally simple and forgiving: it parses YAML frontmatter
 without a YAML library (regex + line-walk), so unusual frontmatter shapes
@@ -139,6 +145,9 @@ SCENE_TYPE_ENUM = {"scene", "sequel", "scene-sequel"}
 
 # v1.9.0: legal FPED workspace status values (_fpeds/; type: fped — non-canonical workspace)
 FPED_STATUS_ENUM = {"working", "parked", "promoted", "abandoned"}
+
+# v1.10.0: legal LFW_Piece status values (piece-folder lifecycle in a rolling-workshop cartridge)
+PIECE_STATUS_ENUM = {"germinating", "drafting", "revising", "ready", "published", "archived"}
 
 # v1.3.1: legal lfw_fiction_subgenre values (advisory; enforced on manuscript-manifest only)
 FICTION_SUBGENRE_ENUM = {
@@ -335,6 +344,14 @@ def check_cartridge(cartridge: pathlib.Path) -> list:
         # Check 8: collect Item_IDs for uniqueness check
         if fm.get("Item_ID"):
             item_ids[fm["Item_ID"]].append(str(rel))
+
+        # Check 18 (v1.10.0): LFW_Piece (rolling-workshop piece-folder front doc) must
+        # carry a legal lfw_piece_status. LFW_Piece / LFW_Published_Ledger are LFW_ Items
+        # but not scene-style atoms (no lfw_atom_type), so they skip the atom checks below.
+        if type == "LFW_Piece":
+            piece_status = str(fm.get("lfw_piece_status", "")).strip()
+            if piece_status not in PIECE_STATUS_ENUM:
+                issues.append(("piece-status", f"{rel}: lfw_piece_status='{piece_status}' not in legal set ({', '.join(sorted(PIECE_STATUS_ENUM))})"))
 
         atom_type = fm.get("lfw_atom_type", "").strip()
         if not atom_type:
