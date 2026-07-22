@@ -2,6 +2,32 @@
 
 All notable changes to Long-Form-Writing are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.9.0] — 2026-07-21
+
+Minor — **capture & exploration workspace.** Every cartridge now ships two root-level, underscore-prefixed *workspace* folders (non-canonical, outside the `Items/` atom system, excluded-by-convention): `_notes/` and `_fpeds/`. Also fixes a pre-existing validator bug and clears a stale router.
+
+### Added
+
+- **`_notes/` — the raw ingestion tank.** A zero-friction brain-dump inbox; the first-ever triage point for ANY idea (full prose, scraps, links, half-sentences), pre-canonical and pre-typed. Distinct from `Items/Notes/` (the kept, typed `LFW_Note` atoms) and from `_fpeds/` (full prose). Seeded with `README.md` + `_inbox.md`; docs use `type: Fleeting`.
+- **`_fpeds/` — Full Prose Exploratory Drafts.** Formalizes the ad-hoc FPED convention: a scene/passage written OUT in prose to feel out tone / voice / shape without committing to the canonical Scene/Section atom system ("Full Prose" is load-bearing — never a shorthand fragment). New workspace **type `fped`** with a four-value `status` lifecycle (`working | parked | promoted | abandoned`; `promoted_to` links the canonical atom on graduation; abandoned FPEDs are kept indefinitely). File convention `_fpeds/YYYY-MM-DD_short-name.md`.
+- **Four templates:** `TEMPLATE-notes-README.md`, `TEMPLATE-notes-inbox.md`, `TEMPLATE-fped.md`, `TEMPLATE-fpeds-README.md`.
+- **Validator check 17 (`fped-status`)** — enforces the FPED status enum. Workspace docs (`type: Fleeting` / `type: fped`) are non-canonical and skip the atom checks by construction.
+- Documented in `_writing-engine/04-ITEMS-AND-STRUCTURE.md` (new "Workspaces (pre-canonical)" section + the triage flow: `_notes/` → `Items/Notes/` and/or `_fpeds/` → canonical Scene/Section atom) and registered in `_meta/SCHEMA-OF-SCHEMAS.md`.
+- Both shipped example cartridges gained `_notes/` + `_fpeds/`; the fiction example (`The-Late-Frost`) seeds a sample FPED.
+
+### Changed
+
+- **`BOOTSTRAP-NEW-MANUSCRIPT.md`** now creates `_notes/` and `_fpeds/` (seeded READMEs + `_inbox.md` + `.gitkeep`) in every new cartridge — added to the produces-list, Step 3, Step 7, and the quality gates.
+
+### Fixed
+
+- **Validator check 7 (`required-frontmatter`)** now accepts OKF-conformant lowercase `title` (it had hard-required capital `Title` — a leftover from before the v1.8.0 OKF rename — so every atom in both example cartridges was failing it: 97 spurious failures cleared).
+- **Stale `_ROUTER.md`** regenerated via `build-router.py`, clearing the `router-fresh` check failure.
+
+### Notes
+
+- `schema_version` bumped to 1.7 in `VERSION.md` and 1.5.0 in `SCHEMA-OF-SCHEMAS.md` (the two fields used different pre-existing numbering; not reconciled here). `VERSION.md`'s prose body remains stale from v1.5–v1.8.1 (still documents v1.4.0) — this CHANGELOG is authoritative.
+
 ## [1.8.1] — 2026-06-27
 
 Patch — **terminology retirement: "Prototype" → "Type".** The OVE engine concept formerly called a *Prototype* (the type-definition unit) is now uniformly called a **Type**, completing the OKF `type` vocabulary adopted in 1.8.0. Infrastructure surfaces only — `_writing-engine/` docs, `SCHEMA-OF-SCHEMAS.md`, `_scripts/validate.py`, the 27 `_types/LFW_*.md` definitions, templates, and front-door docs. Manuscript/craft prose, historical CHANGELOG entries below, and Hugo are unchanged. No behavioral or content change.
@@ -98,7 +124,7 @@ Adopts Operating-Volume-Engineering Convention 6 (every OV ships its own `_types
 
 A new top-level folder, `_types/`, contains one Markdown file per LFW Prototype in the namespace. Each file is structured per OVE's `TEMPLATE-Prototype.md` (Purpose, Required frontmatter, Body structure, Naming, Example Item, Relationships, Notes). The 36 files:
 
-- **Already in vault** (9, from v1.16.0; verbatim mirrors of `~/Obsidian/.../_Infrastructure For All Vaults/_types/LFW_*.md`): `LFW_Beat`, `LFW_Chapter`, `LFW_Character_Bible`, `LFW_Motif`, `LFW_Note`, `LFW_Reader`, `LFW_Scene`, `LFW_Session`, `LFW_Source`.
+- **Already in vault** (9, from v1.16.0; verbatim mirrors of `~/Obsidian/.../_INFRA/_types/LFW_*.md`): `LFW_Beat`, `LFW_Chapter`, `LFW_Character_Bible`, `LFW_Motif`, `LFW_Note`, `LFW_Reader`, `LFW_Scene`, `LFW_Session`, `LFW_Source`.
 - **Authored new** (27 — declared in shipping templates but never previously written as standalone Prototype definitions anywhere): `LFW_Act`, `LFW_Argument`, `LFW_Character`, `LFW_Continuity`, `LFW_Craft_Log`, `LFW_Craft_Profile`, `LFW_Inspiration`, `LFW_Manuscript_Manifest`, `LFW_Outline`, `LFW_Overlay_Freytag`, `LFW_Overlay_Heros_Journey`, `LFW_Overlay_Save_The_Cat`, `LFW_Overlay_Story_Circle`, `LFW_Promises`, `LFW_Relationships`, `LFW_Revision_Pass`, `LFW_Section`, `LFW_Setting`, `LFW_Spine`, `LFW_State`, `LFW_Storyboard`, `LFW_Style_Sheet`, `LFW_Theme`, `LFW_Thread`, `LFW_Timeline`, `LFW_Voice_Samples`, `LFW_Worldbuilding`.
 
 Each authored Prototype definition was drawn from authoritative sources: the corresponding `_writing-engine/_templates/TEMPLATE-*.md` for frontmatter and body structure; the relevant engine chapter (chapters 04, 07, 09–16) for purpose, relationships, and notes; the existing example cartridges for concrete Example Items. No fabrication; nothing invented from outside the documented LFW system.

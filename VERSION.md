@@ -1,24 +1,24 @@
 ---
-lfw_version: "1.8.0"
-schema_version: "1.6"
+lfw_version: "1.9.0"
+schema_version: "1.7"
 schema_status: "STABLE"
-release_date: 2026-06-07
-release_phase: "Patch release — adds UPDATE-PROMPT.md (OVE Convention 7's fourth required artifact); copy-pasteable AI prompt that walks the operator through routine updates"
+release_date: 2026-07-21
+release_phase: "Minor release — adds the two-folder capture-&-exploration workspace (_notes/ raw ingestion tank + _fpeds/ Full Prose Exploratory Drafts) to every cartridge; registers the fped workspace type; fixes validator check 7 (accept OKF-conformant lowercase title). See CHANGELOG.md."
 ---
 
 # Long-Form-Writing — Version
 
-This is Long-Form-Writing **v1.4.0** — minor release adding two soft-skill activities that fill the gaps the production / development / structural-artifact layers of v1.0–v1.3.2 did not touch. **WEATHER-CHECK** names and triages the writer's affective state (dread, doubt, grief, despair, boredom, burnout, overwhelm) — acknowledgment + diagnostic, NOT therapy or motivation. **MIDDLE-AUDIT** is a specific seven-question structural audit run at the midpoint of the manuscript, the place where most fiction projects die.
+This is Long-Form-Writing **v1.9.0** — a minor release adding a standard two-folder **capture & exploration workspace** to every cartridge: `_notes/` (the raw ingestion tank — a zero-friction, pre-canonical brain-dump inbox and first triage point for any idea) and `_fpeds/` (Full Prose Exploratory Drafts — prose written out to feel out tone / voice / shape before committing to the canonical Scene/Section atom system). It registers the workspace `fped` type and its four-value `status` lifecycle, seeds both workspaces in `BOOTSTRAP-NEW-MANUSCRIPT.md` and in both example cartridges (the fiction example gains a sample FPED), and fixes a pre-existing validator bug — check 7 now accepts OKF-conformant lowercase `title` (it had hard-required capital `Title`, which every atom failed). No Item, backbone, or activity changed; the workspaces are deliberately non-canonical.
 
-**v1.4.0 deliberately adds zero new Items, zero new backbones, zero new templates, and zero new validator checks.** It is the first release in the v1.x series whose architectural posture is honest scope-limitation: two carefully-scoped activities filling two specific gaps, not another schema-growth pass. The schema-creep concern noted in the v1.3.2 self-critique is respected.
+> **`CHANGELOG.md` is the authoritative release history.** The detailed prose below this section documents the **v1.4.0** release and has NOT been refreshed for the v1.5–v1.8.1 releases (a pre-existing gap); treat `CHANGELOG.md` as canonical for anything after v1.4.0.
 
 ## Version identifiers
 
 | Identifier              | Value         | Notes                                                                  |
 |-------------------------|---------------|------------------------------------------------------------------------|
 | **Artifact category**   | Operating volume | See [Operating-Volume-Engineering](https://github.com/JawnLam/Operating-Volume-Engineering) for the category definition |
-| **Software**            | v1.4.0        | Minor release — soft-skill activity pass; zero schema growth           |
-| **Schema**              | v1.4          | STABLE — no Item or backbone additions; activity set expands 23 → 25  |
+| **Software**            | v1.9.0        | Minor release — `_notes/` + `_fpeds/` capture-&-exploration workspaces; `fped` type; validator check-7 fix |
+| **Schema**              | v1.7          | STABLE — adds the non-canonical `_notes/` + `_fpeds/` workspace convention and the `fped` type; no Item / backbone / activity change |
 | **Writing engine**      | v1.4.0        | 16 chapters now (00–08 unchanged; 09–10 from v1.1; 11–12 from v1.2; 13–14 from v1.3.1; 15 from v1.3.2; 16 added v1.4.0) |
 | **Templates**           | v1.4.0        | Unchanged from v1.3.2 (28 templates)                                   |
 | **Worked examples**     | v1.4.0        | Two cartridges: Persistence-Question (non-fiction); Late-Frost (fiction; gained session 006 demonstrating WEATHER-CHECK in action) |

@@ -70,6 +70,12 @@ Checks performed (each emits one line per failure):
                             chapter 06 / 10-ARGUMENT under fiction / screenplay
                             / play. The packaging is correct by construction
                             and this check is the executable proof (v1.5).
+ 17. fped-status         : every `_fpeds/` workspace doc (type: fped) declares a
+                            status in {working, parked, promoted, abandoned}
+                            (v1.9.0). Workspace docs (`_notes/` type: Fleeting,
+                            `_fpeds/` type: fped) are non-canonical — their type
+                            does not start with LFW_, so they are NOT run through
+                            the canonical-atom checks (4, 7, 8, 9, ...).
 
 The script is intentionally simple and forgiving: it parses YAML frontmatter
 without a YAML library (regex + line-walk), so unusual frontmatter shapes
@@ -130,6 +136,9 @@ TIMELINE_LAYER_ENUM = {"story-time", "world-history", "real-world", "character-s
 
 # v1.3.1: legal lfw_scene_type values
 SCENE_TYPE_ENUM = {"scene", "sequel", "scene-sequel"}
+
+# v1.9.0: legal FPED workspace status values (_fpeds/; type: fped — non-canonical workspace)
+FPED_STATUS_ENUM = {"working", "parked", "promoted", "abandoned"}
 
 # v1.3.1: legal lfw_fiction_subgenre values (advisory; enforced on manuscript-manifest only)
 FICTION_SUBGENRE_ENUM = {
@@ -302,15 +311,26 @@ def check_cartridge(cartridge: pathlib.Path) -> list:
             if link not in basenames:
                 issues.append(("wiki-link-resolves", f"{rel}: [[{link}]] does not resolve to any file in the cartridge"))
 
-        # Identify atom files: must have type starting with LFW_
+        # Identify atom files: canonical atoms have a type starting with LFW_.
         type = fm.get("type", "")
-        if not type.startswith("LFW_"):
-            continue  # not an atom (e.g., outline file, voice-samples file with non-LFW type, README, etc.)
 
-        # Check 7: required frontmatter
-        for required in ("type", "Item_ID", "Title"):
+        # Check 17 (v1.9.0): FPED workspace docs (_fpeds/; type: fped) must carry a legal status.
+        # Workspace docs are deliberately NON-canonical (type does not start with LFW_), so they
+        # skip the canonical-atom checks below — this status check is the only one that applies.
+        if type == "fped":
+            fped_status = str(fm.get("status", "")).strip()
+            if fped_status not in FPED_STATUS_ENUM:
+                issues.append(("fped-status", f"{rel}: fped status='{fped_status}' not in legal set ({', '.join(sorted(FPED_STATUS_ENUM))})"))
+
+        if not type.startswith("LFW_"):
+            continue  # not a canonical atom (workspace docs: type fped / Fleeting, outline, README, etc.)
+
+        # Check 7: required frontmatter. OKF v0.1 uses lowercase `title`; tolerate legacy `Title`.
+        for required in ("type", "Item_ID"):
             if required not in fm or not fm[required]:
                 issues.append(("required-frontmatter", f"{rel}: missing or empty `{required}`"))
+        if not (fm.get("title") or fm.get("Title")):
+            issues.append(("required-frontmatter", f"{rel}: missing or empty `title`"))
 
         # Check 8: collect Item_IDs for uniqueness check
         if fm.get("Item_ID"):
