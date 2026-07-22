@@ -2,8 +2,8 @@
 type: writing-engine
 role: meta-ontology
 scope: subject-agnostic
-updated: 2026-06-03
-schema_version: 1.4.0
+updated: 2026-07-21
+schema_version: 1.5.0
 lfw_load:
   tier: core
   genres: [all]
@@ -33,6 +33,7 @@ These hold inside every cartridge regardless of genre:
 - Cartridge backbone files: `_manuscript-manifest.md`, `_state.md`, `_outline.md`
 - Conditional backbone files: `_voice-samples.md`, `_argument.md`, `_craft-log.md`, `_spine.md`, `_continuity.md`, `_promises.md`
 - Item-storage subfolders: `Items/Beats/`, `Items/Chapters/`, `Items/Readers/`, `Items/Motifs/`, `Items/Themes/`, `Items/Character-Bibles/`, `Items/Timelines/`, `Items/Inspirations/`, `Items/Notes/`, etc.
+- Pre-canonical **workspace** folders (v1.9.0): `_notes/` (raw ingestion tank; `type: Fleeting`) and `_fpeds/` (Full Prose Exploratory Drafts; `type: fped`, status lifecycle `working | parked | promoted | abandoned`) — root-level, underscore-prefixed, outside the `Items/` atom system and excluded-by-convention. Workspace, not canon. See chapter 04.
 - `Sessions/` folder with append-only logs
 - `Revision-Passes/` folder with append-only logs
 - Session lifecycle (READ → DIAGNOSE → PROPOSE → WAIT → EXECUTE → CAPTURE → WRITE → UPDATE)
@@ -128,7 +129,7 @@ v1.3.2 additions:
 - No new activities. Artifacts feed existing activities (READ-THROUGH, CONTINUITY-CHECK, CHARACTER-CONSISTENCY, BETA-PREP, REVISE)
 - Validator extended: new check 12 (timeline-layer); STATUS_ENUM gains `timeline` and `inspiration`; BACKBONE_FILES gains `_worldbuilding`, `_storyboard`, `_style-sheet`, `_relationships`
 
-v1.4.0 additions (this version):
+v1.4.0 additions:
 - **No new Items, no new backbones, no new templates.** The first release in the v1.x series that adds purely activity-level behavior without growing the schema
 - New engine chapter: **`16-WRITER-WEATHER-AND-MIDDLE-AUDIT.md`** — two soft-skill activities that fill the gaps the production / development / structural-artifact layers don't touch
 - Activity set expanded from 23 → 25:
@@ -140,6 +141,14 @@ v1.4.0 additions (this version):
 - New failure modes F52–F60: motivation-as-substitute-for-diagnostic, weather-check-as-therapy-substitute, affective-state-misdiagnosed-as-stuck, middle-spine-slip, want-forgotten, subplot-gravity, confrontation-avoidance-systemic, reader-question-starvation, why-drift
 - Validator unchanged (no schema additions to validate)
 - The architectural posture of v1.4.0 is **honest scope-limitation**: two carefully-scoped activities filling two specific gaps, not another schema-growth pass
+
+v1.9.0 additions (this version):
+- **Pre-canonical workspaces (not Items, not backbones, not activities).** Two root-level, underscore-prefixed workspace folders added to every cartridge, deliberately *outside* the atom system:
+  - **`_notes/`** — the raw ingestion tank: a zero-friction brain-dump inbox and first triage point for any idea (full prose, scraps, links, half-sentences). Pre-canonical and pre-typed; docs use `type: Fleeting`. Distinct from `Items/Notes/` (the kept, typed `LFW_Note` atoms ideas graduate into) and from `_fpeds/` (which is specifically full prose).
+  - **`_fpeds/`** — Full Prose Exploratory Drafts: prose written OUT to feel out tone / voice / shape without committing to the canonical Scene/Section atom system. New workspace type **`fped`** with a four-value `status` lifecycle (`working | parked | promoted | abandoned`; `promoted_to` links the canonical atom on graduation; abandoned FPEDs are kept indefinitely). Documented in chapter 04; new templates `TEMPLATE-fped.md`, `TEMPLATE-fpeds-README.md`, `TEMPLATE-notes-README.md`, `TEMPLATE-notes-inbox.md`.
+- `BOOTSTRAP-NEW-MANUSCRIPT.md` now creates both workspaces (seeded READMEs + `_inbox.md` + `.gitkeep`) in every new cartridge; both shipped example cartridges carry them (the fiction example seeds one sample FPED).
+- Validator: new **check 17 (fped-status)** enforces the FPED status enum; workspace docs (`type: Fleeting` / `type: fped`) are non-canonical and skip the atom checks by construction. The pre-existing **check 7** was corrected to accept OKF-conformant lowercase `title` (it had hard-required capital `Title`, which every atom failed).
+- These are **non-canonical workspace** additions — no Item definition, backbone, or activity changed. `schema_version` bumped to register the new workspace convention + `fped` type. (Note: this file's `schema_version` and `VERSION.md`'s `schema_version` used different numbering pre-existing to v1.9.0; each was bumped one minor step and they are not reconciled here.)
 
 ## Connection to OVE's meta-ontology
 

@@ -273,4 +273,4 @@ chapters (§1).
 
 ---
 
-_Content hash (sha256, first 16 chars): `57e9ee7d85d984ba`_
+_Content hash (sha256, first 16 chars): `e9f6e136a9e0962b`_

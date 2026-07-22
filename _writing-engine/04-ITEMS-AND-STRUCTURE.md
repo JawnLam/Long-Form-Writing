@@ -712,6 +712,36 @@ Needs_Processing: false
 
 **Location:** `Items/Notes/`.
 
+## Workspaces (pre-canonical): `_notes/` and `_fpeds/` *(v1.9.0)*
+
+Two root-level, underscore-prefixed folders in every cartridge are **workspace, not canon**. Like all `_`-prefixed dirs they sit outside `Items/` and are excluded-by-convention from the atom system. Their docs carry non-`LFW_` types (`Fleeting`, `fped`), so the validator does not run them through canonical-atom checks.
+
+### `_notes/` — the raw ingestion tank
+
+A zero-friction brain-dump inbox: the **first-ever triage point for ANY idea** — full prose, scraps, clippings, links, half-sentences. Pre-canonical and pre-typed; the place you dump *before you know what a thing is*. Shape: a running `_notes/_inbox.md` plus freeform `_notes/*.md`, with a `README.md` stating the triage flow. Docs use `type: Fleeting`.
+
+`_notes/` is explicitly **distinct** from:
+
+- **`Items/Notes/`** — the typed, *kept* `LFW_Note` atoms that ideas graduate INTO (see ## Note above).
+- **`_fpeds/`** — which is specifically *full prose* (below). A half-sentence or a link is a `_notes/` item, never an FPED.
+
+### `_fpeds/` — Full Prose Exploratory Drafts
+
+An FPED is a scene/passage written OUT in prose to feel out tone, voice, shape, or a character moment — **without** committing to the canonical Scene/Section atom system. "Full Prose" is load-bearing: an FPED is always written-out prose (crude to nearly-final), never a shorthand fragment. Files: `_fpeds/YYYY-MM-DD_short-descriptive-name.md`, `type: fped` (see `_templates/TEMPLATE-fped.md`).
+
+Lifecycle via the `status` field: `working` (active candidate), `parked` (set aside), `promoted` (graduated into a canonical Scene/Section atom; `promoted_to` links it; the FPED stays for provenance), `abandoned` (dead but **kept indefinitely** — never delete an FPED). FPEDs **reference** canonical atoms (characters, spine, promises, continuity) but are **not referenced by** canonical atoms until promoted.
+
+### The triage flow
+
+```
+_notes/            (dump anything; first triage)
+  -> Items/Notes/  (typed, kept LFW_Note atom)          and/or
+  -> _fpeds/       (draft it out in prose to test it)
+  -> canonical Scene/Section atom   (on promotion)
+```
+
+Neither workspace obligates graduation — most of `_notes/` evaporates, and most FPEDs stay `working` or end `abandoned`. The point is a friction-free place to think *before* the atom system's discipline applies. The validator recognizes both workspaces automatically (non-`LFW_` types skip atom checks) and enforces only that each `_fpeds/` doc carries a legal `status` (check 17).
+
 ## Relationship vocabulary
 
 Used in Item frontmatter and body wiki-links:

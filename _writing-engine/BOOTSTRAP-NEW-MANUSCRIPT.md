@@ -23,8 +23,10 @@ A complete cartridge inside the `Long-Form-Writing/` folder for the new manuscri
 3. `_outline.md` — initial structural outline (can be very rough at first)
 4. `_voice-samples.md` — if the writer opts into voice-samples mode
 5. Empty-but-ready `Items/` subfolders for the genre's Types
-6. `Sessions/` and `Revision-Passes/` folders ready for use
-7. A bootstrap session log (Session 000) documenting setup
+6. `_notes/` — the raw-ingestion-tank workspace (seeded `README.md` + `_inbox.md` + `.gitkeep`)
+7. `_fpeds/` — the Full Prose Exploratory Drafts workspace (seeded `README.md` + `.gitkeep`)
+8. `Sessions/` and `Revision-Passes/` folders ready for use
+9. A bootstrap session log (Session 000) documenting setup
 
 ## Before you start
 
@@ -164,6 +166,21 @@ Based on genre (see `02-GENRE-AND-SCHEMA.md`):
 
 Include only the folders relevant to the declared genre.
 
+Then create the two root-level **workspace** folders (siblings of `Items/`, not inside it). They are underscore-prefixed, non-canonical, and excluded-by-convention like other `_`-prefixed dirs — workspace, NOT part of the atom system:
+
+```
+<Cartridge>/
+├── _notes/     # raw ingestion tank — zero-friction brain-dump; first triage of ANY idea
+│   ├── README.md   (from _templates/TEMPLATE-notes-README.md)
+│   ├── _inbox.md   (from _templates/TEMPLATE-notes-inbox.md)
+│   └── .gitkeep
+└── _fpeds/     # Full Prose Exploratory Drafts — prose written out to test tone/voice/shape
+    ├── README.md   (from _templates/TEMPLATE-fpeds-README.md)
+    └── .gitkeep
+```
+
+`_notes/` is the pre-canonical dump — distinct from `Items/Notes/` (the kept, typed `LFW_Note` atoms) and from `_fpeds/` (which is specifically *full prose*). `_fpeds/` holds `type: fped` drafts (from `_templates/TEMPLATE-fped.md`) that reference canonical atoms but aren't referenced by them until promoted. Seed each README from its template. Workspace docs use `type: Fleeting` / `type: fped` — non-`LFW_` types — so they are not run through canonical-atom validation. See `04-ITEMS-AND-STRUCTURE.md` for the triage flow.
+
 ### Step 4 — Initialize state
 
 Use `_templates/TEMPLATE-state.md`. Set:
@@ -189,7 +206,7 @@ If the writer opted for writer-maintains mode (default), skip this file. Don't c
 
 ### Step 7 — Empty subfolders
 
-Add `.gitkeep` to `Sessions/`, `Revision-Passes/`, and any empty Item folders so they survive transport.
+Add `.gitkeep` to `Sessions/`, `Revision-Passes/`, and any empty Item folders so they survive transport. The `_notes/` and `_fpeds/` workspaces from Step 3 already carry a seeded `README.md` (plus a `.gitkeep`), so they transport intact.
 
 ### Step 8 — Write the bootstrap session log
 
@@ -218,6 +235,8 @@ Before considering cartridging complete:
 - [ ] `_outline.md` exists (even if mostly placeholder)
 - [ ] Voice samples file present if voice mode requires it
 - [ ] All required Item folders created
+- [ ] `_notes/` workspace created (seeded `README.md` + `_inbox.md`)
+- [ ] `_fpeds/` workspace created (seeded `README.md`)
 - [ ] `Sessions/` and `Revision-Passes/` exist
 - [ ] Bootstrap session log written
 - [ ] Summary shown to writer
