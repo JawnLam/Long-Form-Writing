@@ -2,6 +2,26 @@
 
 All notable changes to Long-Form-Writing are documented in this file. Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/); versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.10.0] — 2026-07-22
+
+Minor — **rolling-workshop short-form pattern.** A *rolling-workshop* cartridge produces many self-contained short pieces (essays / commentary) over time rather than one long manuscript. Two Layer-1 Types support it. Registered in coordination with the vault Master Schema (**v1.47.0**).
+
+### Added
+
+- **`LFW_Piece`** — the front document (`_piece.md`) of a **piece-folder**: a self-contained short-form work in its own folder alongside a companion Obsidian Canvas `_wall.canvas`. Its `lfw_piece_status` (`germinating | drafting | revising | ready | published | archived`) represents the state of the **entire** folder. `published` is the signal MultiVac's intake sweep watches for to graduate the piece onto the shelf; `archived` closes the folder out. A finer granularity than `LFW_Manuscript_Manifest` (whole-book front doc) or `LFW_Section` (a unit inside a manuscript). Type definition in `_types/LFW_Piece.md`; template `TEMPLATE-piece.md`.
+- **`LFW_Published_Ledger`** — the per-cartridge, append-only history (`_published-ledger.md`) of pieces that graduated out to MultiVac (date, title, canonical/mirror URLs, destination). Complements the per-Piece `lfw_graduated_to_multivac` idempotency flag (machine signal) with a human-readable audit trail. `lfw_durability: append-only`. Type definition in `_types/LFW_Published_Ledger.md`; template `TEMPLATE-published-ledger.md`.
+- **Validator check 18 (`piece-status`)** — enforces the `lfw_piece_status` enum on `LFW_Piece`. Both new Types are `LFW_` Items but not scene-style atoms (no `lfw_atom_type`), so they take only checks 7/8/18 and skip the manuscript-atom checks by construction.
+- Registered in the vault `Master_Schema.yaml` (v1.47.0): 2 types, 2 net-new `lfw_` properties (`lfw_Piece_Status`, `lfw_Graduated_To_MultiVac`) plus `lfw_Durability`, and 2 enums (`lfw_piece_statuses`, `lfw_durability_modes`). Documented in `_writing-engine/_meta/SCHEMA-OF-SCHEMAS.md` (schema_version 1.5.0 → 1.6.0).
+
+### Changed
+
+- **Companion `_wall.canvas` is a documented convention, not a Type** — a `.canvas` file is JSON with no YAML frontmatter, so it is deliberately not schema-registered.
+
+### Notes
+
+- **Publication metadata reuses the universal core, by design.** Publication date → `Publication_Date`; canonical URL → `resource`; mirror URL → `URL`. Proposed piece-specific `lfw_published_date` / platform-named URL properties (`lfw_substack_url` / `lfw_medium_url`) were **rejected as redundant** with the universal core during registration.
+- `schema_version` bumped to 1.8 in `VERSION.md`. As in prior releases, `VERSION.md`'s prose body remains stale from v1.4.0; this CHANGELOG is authoritative.
+
 ## [1.9.0] — 2026-07-21
 
 Minor — **capture & exploration workspace.** Every cartridge now ships two root-level, underscore-prefixed *workspace* folders (non-canonical, outside the `Items/` atom system, excluded-by-convention): `_notes/` and `_fpeds/`. Also fixes a pre-existing validator bug and clears a stale router.

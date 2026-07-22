@@ -2,8 +2,8 @@
 type: writing-engine
 role: meta-ontology
 scope: subject-agnostic
-updated: 2026-07-21
-schema_version: 1.5.0
+updated: 2026-07-22
+schema_version: 1.6.0
 lfw_load:
   tier: core
   genres: [all]
@@ -149,6 +149,15 @@ v1.9.0 additions (this version):
 - `BOOTSTRAP-NEW-MANUSCRIPT.md` now creates both workspaces (seeded READMEs + `_inbox.md` + `.gitkeep`) in every new cartridge; both shipped example cartridges carry them (the fiction example seeds one sample FPED).
 - Validator: new **check 17 (fped-status)** enforces the FPED status enum; workspace docs (`type: Fleeting` / `type: fped`) are non-canonical and skip the atom checks by construction. The pre-existing **check 7** was corrected to accept OKF-conformant lowercase `title` (it had hard-required capital `Title`, which every atom failed).
 - These are **non-canonical workspace** additions — no Item definition, backbone, or activity changed. `schema_version` bumped to register the new workspace convention + `fped` type. (Note: this file's `schema_version` and `VERSION.md`'s `schema_version` used different numbering pre-existing to v1.9.0; each was bumped one minor step and they are not reconciled here.)
+
+v1.10.0 additions (this version):
+- **Rolling-workshop pattern — two new Layer-1 Types for short-form workshops.** A *rolling-workshop* cartridge (e.g. "Public Square One") produces many self-contained short pieces over time rather than one long manuscript. Two Types support it:
+  - **`LFW_Piece`** — the front document (`_piece.md`) of a **piece-folder**: a self-contained short-form work (essay / commentary) in its own folder alongside an Obsidian Canvas of supporting material (`_wall.canvas`). Its `lfw_piece_status` (`germinating | drafting | revising | ready | published | archived`) represents the state of the ENTIRE folder. `published` is the signal MultiVac's intake sweep watches for to graduate the piece onto the shelf. A finer granularity than `LFW_Manuscript_Manifest` (whole-book front doc) and than `LFW_Section` (a unit inside a manuscript). New template `TEMPLATE-piece.md`.
+  - **`LFW_Published_Ledger`** — the per-cartridge, append-only history (`_published-ledger.md`) of pieces that graduated out to MultiVac (date, title, canonical/mirror URLs, destination). Complements the per-Piece `lfw_graduated_to_multivac` idempotency flag (machine signal) with a human-readable audit trail. `lfw_durability: append-only`. New template `TEMPLATE-published-ledger.md`.
+- **Publication metadata reuses the universal core, not new properties.** Publication date → core `Publication_Date`; canonical URL → core `resource`; mirror URL → core `URL`. No `lfw_published_date` / platform-specific URL properties (rejected as redundant during registration).
+- **Companion `_wall.canvas` is a convention, not a Type.** A `.canvas` file is JSON with no YAML frontmatter, so it is documented but not schema-registered.
+- Registered in the vault `Master_Schema.yaml` (**v1.47.0**): 2 types (`LFW_Piece`, `LFW_Published_Ledger`), 2 net-new `lfw_` properties (`lfw_Piece_Status`, `lfw_Graduated_To_MultiVac`) + `lfw_Durability`, 2 enums (`lfw_piece_statuses`, `lfw_durability_modes`). New type-definition files under `_types/`.
+- Validator: `LFW_Piece` / `LFW_Published_Ledger` are recognized as `LFW_`-family Items; `lfw_piece_status` is validated against its enum (new check 18). No existing Item, backbone, or activity changed.
 
 ## Connection to OVE's meta-ontology
 
